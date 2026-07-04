@@ -26,6 +26,9 @@ colab_upload/
 # ── Thesis document ────────────────────────────────────────────────────────────
 scripts/Street_Scout_Thesis.docx
 
+# ── Claude Code project instructions ──────────────────────────────────────────
+CLAUDE.md
+
 # ── Misc ───────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
