@@ -38,8 +38,8 @@ The following files exceed Git's size limits and are hosted on Google Drive. Dow
 
 | File | Destination | Link |
 |---|---|---|
-| `reference_images.zip` (3.3 GB) | Extract to `ai-service/model/reference_images/` | [DRIVE_LINK_IMAGES] |
-| `reference_embeddings.pt` (98.5 MB) | Place in `ai-service/model/` | [DRIVE_LINK_EMBEDDINGS] |
+| `reference_images.zip` (3.3 GB) | Extract to `ai-service/model/reference_images/` | [https://drive.google.com/drive/folders/1IRskjWEsWlUsSQ97ez3m1y9lkhjECYy3?usp=drive_link] |
+| `reference_embeddings.pt` (98.5 MB) | Place in `ai-service/model/` | [https://drive.google.com/file/d/113GbOr-4FYQPYesx-I081HBBCbMzffSQ/view?usp=drive_link] |
 
 > `reference_images/` contains the reference photos used to build the FAISS index.  
 > `reference_embeddings.pt` is the pre-computed FAISS index — the app uses this directly without needing to rebuild.
