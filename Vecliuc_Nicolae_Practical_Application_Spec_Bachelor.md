@@ -1,7 +1,7 @@
 # Street Scout — Practical Application Specification
 
 **Author:** Vecliuc Nicolae-Vlăduț  
-**Repository:** [REPO_URL_HERE]
+**Repository:** [https://github.com/Nick45490/Thesis]
 
 ---
 
@@ -51,7 +51,7 @@ The following files exceed Git's size limits and are hosted on Google Drive. Dow
 ### 1. Clone the repository
 
 ```bash
-git clone [REPO_URL_HERE]
+git clone [https://github.com/Nick45490/Thesis]
 cd Thesis
 ```
 
