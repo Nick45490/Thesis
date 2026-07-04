@@ -1,0 +1,32 @@
+# ── Dependencies ───────────────────────────────────────────────────────────────
+node_modules/
+ai-service/venv/
+
+# ── Python cache ───────────────────────────────────────────────────────────────
+**/__pycache__/
+*.pyc
+
+# ── Build output ───────────────────────────────────────────────────────────────
+frontend/dist/
+
+# ── Secrets ────────────────────────────────────────────────────────────────────
+.env
+!*.env.example
+
+# ── Large model weights & binaries (hosted on Google Drive — see README) ───────
+ai-service/yolov8n.pt
+ai-service/model/reference_embeddings.pt
+ai-service/model/efficientnet_cars.pt
+ai-service/model/clip_lora/
+
+# ── Large datasets (hosted on Google Drive — see README) ───────────────────────
+ai-service/model/reference_images/
+colab_upload/
+
+# ── Thesis document ────────────────────────────────────────────────────────────
+scripts/Street_Scout_Thesis.docx
+
+# ── Misc ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log

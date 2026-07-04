@@ -1,0 +1,120 @@
+const {
+	acceptChallenge,
+	createChallenge,
+	declineChallenge,
+	getChallengeById,
+	listChallenges,
+} = require("../db");
+
+function resolveUserId(req) {
+	return Number(req.headers["x-user-id"] || req.user?.id);
+}
+
+async function postChallenge(req, res) {
+	const userId = resolveUserId(req);
+	if (!userId) return res.status(401).json({ message: "Missing user identity" });
+
+	const {
+		opponentUserId,
+		distance,
+		challengerGenerationId,
+		challengerMake,
+		challengerModel,
+		challengerGenCode,
+		challengerHorsepower,
+		challengerWeightKg,
+	} = req.body;
+
+	if (!opponentUserId || !distance || !challengerGenerationId || !challengerMake || !challengerModel) {
+		return res.status(400).json({ message: "Missing required fields" });
+	}
+
+	if (!["quarter", "half", "full"].includes(distance)) {
+		return res.status(400).json({ message: "distance must be quarter, half, or full" });
+	}
+
+	if (Number(opponentUserId) === userId) {
+		return res.status(400).json({ message: "Cannot challenge yourself" });
+	}
+
+	try {
+		const challenge = await createChallenge({
+			challengerUserId:      userId,
+			opponentUserId:        Number(opponentUserId),
+			distance,
+			challengerGenerationId: Number(challengerGenerationId),
+			challengerMake,
+			challengerModel,
+			challengerGenCode:     challengerGenCode     || "",
+			challengerHorsepower:  challengerHorsepower  || null,
+			challengerWeightKg:    challengerWeightKg    || null,
+		});
+		return res.status(201).json({ challenge });
+	} catch {
+		return res.status(500).json({ message: "Failed to create challenge" });
+	}
+}
+
+async function getChallenges(req, res) {
+	const userId = resolveUserId(req);
+	if (!userId) return res.status(401).json({ message: "Missing user identity" });
+
+	try {
+		const challenges = await listChallenges(userId);
+		return res.status(200).json({ challenges });
+	} catch {
+		return res.status(500).json({ message: "Failed to list challenges" });
+	}
+}
+
+async function patchAccept(req, res) {
+	const userId = resolveUserId(req);
+	if (!userId) return res.status(401).json({ message: "Missing user identity" });
+
+	const challengeId = Number(req.params.id);
+	const { opponentGenerationId, opponentMake, opponentModel, opponentGenCode, opponentHorsepower, opponentWeightKg } = req.body;
+
+	if (!opponentGenerationId || !opponentMake || !opponentModel) {
+		return res.status(400).json({ message: "Missing opponent car details" });
+	}
+
+	try {
+		const existing = await getChallengeById(challengeId);
+		if (!existing) return res.status(404).json({ message: "Challenge not found" });
+		if (existing.opponentUserId !== userId) return res.status(403).json({ message: "Not your challenge to accept" });
+		if (existing.status !== "pending") return res.status(409).json({ message: "Challenge is not pending" });
+
+		const result = await acceptChallenge(challengeId, {
+			opponentGenerationId: Number(opponentGenerationId),
+			opponentMake,
+			opponentModel,
+			opponentGenCode:     opponentGenCode     || "",
+			opponentHorsepower:  opponentHorsepower  || null,
+			opponentWeightKg:    opponentWeightKg    || null,
+		});
+		return res.status(200).json(result);
+	} catch {
+		return res.status(500).json({ message: "Failed to accept challenge" });
+	}
+}
+
+async function patchDecline(req, res) {
+	const userId = resolveUserId(req);
+	if (!userId) return res.status(401).json({ message: "Missing user identity" });
+
+	const challengeId = Number(req.params.id);
+
+	try {
+		const existing = await getChallengeById(challengeId);
+		if (!existing) return res.status(404).json({ message: "Challenge not found" });
+		if (existing.opponentUserId !== userId) return res.status(403).json({ message: "Not your challenge to decline" });
+		if (existing.status !== "pending") return res.status(409).json({ message: "Challenge is not pending" });
+
+		const challenge = await declineChallenge(challengeId);
+		return res.status(200).json({ challenge });
+	} catch {
+		return res.status(500).json({ message: "Failed to decline challenge" });
+	}
+}
+
+module.exports = { postChallenge, getChallenges, patchAccept, patchDecline };
