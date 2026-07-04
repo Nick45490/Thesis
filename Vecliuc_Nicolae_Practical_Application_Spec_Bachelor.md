@@ -66,25 +66,23 @@ ai-service/model/reference_embeddings.pt
 
 ### 3. Install Node.js dependencies
 
-Run in separate terminals or sequentially:
+Run from the project root:
 
 ```powershell
-cd gateway           ; npm install ; cd ..
-cd auth-service      ; npm install ; cd ..
-cd catalogue-service ; npm install ; cd ..
-cd collection-service; npm install ; cd ..
-cd gamification-service ; npm install ; cd ..
-cd frontend          ; npm install ; cd ..
+npm install --prefix gateway
+npm install --prefix auth-service
+npm install --prefix catalogue-service
+npm install --prefix collection-service
+npm install --prefix gamification-service
+npm install --prefix frontend
 ```
 
 ### 4. Install Python dependencies
 
 ```powershell
-cd ai-service
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r requirements.txt
-cd ..
+python -m venv ai-service\venv
+ai-service\venv\Scripts\activate
+pip install -r ai-service\requirements.txt
 ```
 
 ### 5. Set up PostgreSQL
