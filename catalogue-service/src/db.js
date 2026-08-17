@@ -5,8 +5,15 @@ function toInt(value) {
 	return Number.isNaN(converted) ? null : converted;
 }
 
+// Express parses a repeated query param (?q=a&q=b) into an array, which has no
+// .toLowerCase — take the first value so a duplicated param degrades instead
+// of throwing.
+function firstOf(value) {
+	return Array.isArray(value) ? value[0] : value;
+}
+
 function listManufacturers(query) {
-	const search = (query || "").toLowerCase().trim();
+	const search = (firstOf(query) || "").toLowerCase().trim();
 	if (!search) {
 		return seedData.manufacturers;
 	}
@@ -18,7 +25,7 @@ function listManufacturers(query) {
 
 function findManufacturerById(id) {
 	const manufacturerId = toInt(id);
-	if (!manufacturerId) {
+	if (manufacturerId == null) {
 		return null;
 	}
 
@@ -27,10 +34,10 @@ function findManufacturerById(id) {
 
 function listModels(filters = {}) {
 	const manufacturerId = toInt(filters.manufacturerId);
-	const query = (filters.q || "").toLowerCase().trim();
+	const query = (firstOf(filters.q) || "").toLowerCase().trim();
 
 	return seedData.models.filter((model) => {
-		const manufacturerOk = manufacturerId ? model.manufacturerId === manufacturerId : true;
+		const manufacturerOk = manufacturerId != null ? model.manufacturerId === manufacturerId : true;
 		const queryOk = query ? model.name.toLowerCase().includes(query) : true;
 		return manufacturerOk && queryOk;
 	});
@@ -38,7 +45,7 @@ function listModels(filters = {}) {
 
 function findModelById(id) {
 	const modelId = toInt(id);
-	if (!modelId) {
+	if (modelId == null) {
 		return null;
 	}
 
@@ -48,13 +55,13 @@ function findModelById(id) {
 function listGenerations(filters = {}) {
 	const modelId = toInt(filters.modelId);
 	return seedData.generations.filter((generation) =>
-		modelId ? generation.modelId === modelId : true
+		modelId != null ? generation.modelId === modelId : true
 	);
 }
 
 function findGenerationById(id) {
 	const generationId = toInt(id);
-	if (!generationId) {
+	if (generationId == null) {
 		return null;
 	}
 

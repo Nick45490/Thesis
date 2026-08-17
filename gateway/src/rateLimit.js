@@ -1,8 +1,8 @@
 const rateLimit = require("express-rate-limit");
 
 const WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000);
-const DEFAULT_MAX = Number(process.env.RATE_LIMIT_MAX || 300);
-const AUTH_MAX = Number(process.env.AUTH_RATE_LIMIT_MAX || 50);
+const DEFAULT_MAX = Number(process.env.RATE_LIMIT_MAX || 1000);
+const AUTH_MAX = Number(process.env.AUTH_RATE_LIMIT_MAX || 200);
 
 function createRateLimiter(max = DEFAULT_MAX) {
 	return rateLimit({
@@ -16,11 +16,9 @@ function createRateLimiter(max = DEFAULT_MAX) {
 	});
 }
 
-const globalLimiter = createRateLimiter(DEFAULT_MAX);
 const authLimiter = createRateLimiter(AUTH_MAX);
 
 module.exports = {
 	createRateLimiter,
-	globalLimiter,
 	authLimiter
 };

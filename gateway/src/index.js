@@ -4,7 +4,6 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 require("dotenv").config();
 
-const { globalLimiter } = require("./rateLimit");
 const { registerGatewayRoutes } = require("./routes");
 
 const app = express();
@@ -12,7 +11,10 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(morgan("dev"));
-app.use(globalLimiter);
+// Rate limiting is applied per-prefix inside registerGatewayRoutes (auth gets
+// its own stricter limiter, everything else gets a default one) — a second
+// blanket limiter here used to stack on top of that, silently halving the
+// effective ceiling on every non-auth route.
 
 app.get("/health", (req, res) => {
 	res.status(200).json({
@@ -31,6 +33,9 @@ app.use((req, res) => {
 app.use((error, req, res, next) => {
 	if (error?.code === "ECONNREFUSED") {
 		return res.status(502).json({ message: "Upstream service unavailable" });
+	}
+	if (error?.code === "ETIMEDOUT" || error?.code === "ECONNRESET") {
+		return res.status(504).json({ message: "Upstream service timed out" });
 	}
 
 	return res.status(500).json({

@@ -55,6 +55,17 @@ app.use((req, res) => {
 	res.status(404).json({ message: "Route not found" });
 });
 
+// Catches anything thrown synchronously in a route handler (e.g. a malformed
+// query param) so it returns a clean 500 instead of Express's default handler,
+// which leaks a stack trace to the client.
+app.use((error, req, res, next) => {
+	console.error(error);
+	res.status(500).json({
+		message: "Catalogue service error",
+		details: process.env.NODE_ENV === "development" ? error.message : undefined
+	});
+});
+
 const port = Number(process.env.PORT || 3002);
 app.listen(port, () => {
 	console.log(`Catalogue service listening on port ${port}`);
