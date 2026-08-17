@@ -6,27 +6,14 @@ import { useAuth } from "../context/AuthContext";
 import { RARITY_COLOR, RARITY_LABEL, RARITY_ORDER, S } from "../theme";
 import { getLogoUrl, getLogoUrlFallbacks, getInitials, getHeroUrl } from "../logos";
 import AuthImage from "../components/AuthImage";
+import { getCarRarity } from "../utils/rarity";
 
 // â"€â"€ rarity helpers â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
-const LEGENDARY_MAKES = new Set([
-	"Ferrari", "Lamborghini", "McLaren", "Bugatti", "Koenigsegg", "Pagani", "Rimac",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche", "Aston Martin", "Maserati", "Lotus", "De Tomaso", "Bentley", "Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW", "Mercedes-Benz", "Audi", "Cadillac", "Lexus", "Genesis",
-	"Dodge", "Chevrolet", "Volvo", "Jaguar", "Land Rover", "Alfa Romeo",
-	"Infiniti", "Acura", "Lincoln", "Tesla",
-]);
-const QUICK_MODEL_RE = [
-	/type[\s-]?r/i, /gti/i, /\bgtr?\b/i, /gt86/i, /gr86/i, /gr yaris/i,
-	/gr corolla/i, /focus\s+(st|rs)/i, /fiesta\s+st/i, /megane\s+rs/i,
-	/clio\s+rs/i, /civic\s+si/i, /\bwrx\b/i, /\bsti\b/i, /evolution/i,
-	/\bevo\b/i, /veloster\s+n/i, /i30\s+n/i, /\bgts\b/i,
-	/\bstinger\b/i, /\bsupra\b/i, /370z/i, /mx-?5/i, /rx-?8/i, /\bbrz\b/i,
-];
+// Rarity here previews the BEST engine available across a make/model's
+// generations (derived from data already fetched for the progress bars below —
+// no extra request needed), since there's no single "owned" engine to read at
+// this browsing level, unlike Profile.jsx/Race.jsx which show a specific scanned car.
 
 const COUNTRY_CODE = {
 	"Italy": "it", "Germany": "de", "United Kingdom": "gb", "France": "fr",
@@ -80,14 +67,6 @@ function LogoBadge({ name, complete }) {
 			)}
 		</div>
 	);
-}
-
-function getCarRarity(make, model = "") {
-	if (LEGENDARY_MAKES.has(make)) return "legendary";
-	if (EPIC_MAKES.has(make))      return "epic";
-	if (RARE_MAKES.has(make))      return "rare";
-	if (QUICK_MODEL_RE.some((re) => re.test(model))) return "rare";
-	return "common";
 }
 
 function ManufacturerLogo({ name, color }) {
@@ -180,7 +159,7 @@ function RarityBadge({ rarity }) {
 
 // â"€â"€ makes grid â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
-function MakesView({ discoveredMakes, modelCountByMakeId, completeModelCountByMakeName, isAuthenticated }) {
+function MakesView({ discoveredMakes, modelCountByMakeId, completeModelCountByMakeName, isAuthenticated, bestEngineByMakeId }) {
 	const [manufacturers, setManufacturers] = useState([]);
 	const [loading, setLoading] = useState(true);
 
@@ -207,7 +186,8 @@ function MakesView({ discoveredMakes, modelCountByMakeId, completeModelCountByMa
 				gap: "0.75rem",
 			}}>
 				{sorted.map((m) => {
-					const rarity     = getCarRarity(m.name);
+					const bestEngine = bestEngineByMakeId[m.id];
+					const rarity     = getCarRarity(bestEngine?.horsepower, bestEngine?.weightKg);
 					const color      = RARITY_COLOR[rarity];
 					const totalMdls  = modelCountByMakeId[m.id] || 0;
 					const discMdls   = isAuthenticated ? (completeModelCountByMakeName[m.name] || 0) : 0;
@@ -452,7 +432,7 @@ function ModelPhoto({ genId, modelName, complete }) {
 	);
 }
 
-function ModelsView({ makeId, discoveredModels, genCountByModelId, newestGenIdByModelId, isAuthenticated }) {
+function ModelsView({ makeId, discoveredModels, genCountByModelId, newestGenIdByModelId, isAuthenticated, bestEngineByModelId }) {
 	const [manufacturer, setManufacturer] = useState(null);
 	const [models, setModels]             = useState([]);
 	const [loading, setLoading]           = useState(true);
@@ -469,12 +449,13 @@ function ModelsView({ makeId, discoveredModels, genCountByModelId, newestGenIdBy
 
 	const filtered = useMemo(() => {
 		return [...models].sort((a, b) => {
-			const make = manufacturer?.name || "";
-			const ra = RARITY_ORDER[getCarRarity(make, a.name)];
-			const rb = RARITY_ORDER[getCarRarity(make, b.name)];
+			const engA = bestEngineByModelId[a.id];
+			const engB = bestEngineByModelId[b.id];
+			const ra = RARITY_ORDER[getCarRarity(engA?.horsepower, engA?.weightKg)];
+			const rb = RARITY_ORDER[getCarRarity(engB?.horsepower, engB?.weightKg)];
 			return ra !== rb ? ra - rb : a.name.localeCompare(b.name);
 		});
-	}, [models, manufacturer]);
+	}, [models, bestEngineByModelId]);
 
 	// Make-level completion stats
 	const makeStats = useMemo(() => {
@@ -491,7 +472,11 @@ function ModelsView({ makeId, discoveredModels, genCountByModelId, newestGenIdBy
 	if (loading) return <p className="muted">Loading...</p>;
 	if (!manufacturer) return <p className="muted">Manufacturer not found.</p>;
 
-	const makeRarity = getCarRarity(manufacturer.name);
+	const makeBestEngine = models.reduce((best, m) => {
+		const eng = bestEngineByModelId[m.id];
+		return eng && (eng.horsepower || 0) > (best?.horsepower || 0) ? eng : best;
+	}, null);
+	const makeRarity = getCarRarity(makeBestEngine?.horsepower, makeBestEngine?.weightKg);
 	const makeColor  = RARITY_COLOR[makeRarity];
 	const makeComplete = makeStats && makeStats.completeCount === makeStats.totalModels && makeStats.totalModels > 0;
 
@@ -544,7 +529,8 @@ function ModelsView({ makeId, discoveredModels, genCountByModelId, newestGenIdBy
 				gap: "0.75rem",
 			}}>
 				{filtered.map((m) => {
-					const rarity      = getCarRarity(manufacturer.name, m.name);
+					const modelEngine = bestEngineByModelId[m.id];
+					const rarity      = getCarRarity(modelEngine?.horsepower, modelEngine?.weightKg);
 					const color       = RARITY_COLOR[rarity];
 					const totalGens   = genCountByModelId[m.id] || 0;
 					const discGens    = isAuthenticated
@@ -590,6 +576,8 @@ export default function BrowsePage() {
 	const [allModels, setAllModels]               = useState([]);
 	const [allMakers, setAllMakers]               = useState([]);
 	const [allGenCountByModelId, setAllGenCountByModelId] = useState({});
+	const [bestEngineByMakeId, setBestEngineByMakeId]   = useState({});
+	const [bestEngineByModelId, setBestEngineByModelId] = useState({});
 
 	// Fetch models + manufacturers + generations for the makes-grid progress bars
 	useEffect(() => {
@@ -613,6 +601,26 @@ export default function BrowsePage() {
 					genCounts[g.modelId] = (genCounts[g.modelId] || 0) + 1;
 				}
 				setAllGenCountByModelId(genCounts);
+
+				// Best (highest-hp) engine per model, then rolled up per make — used to
+				// preview rarity before any specific car is owned/scanned.
+				const modelEngine = {};
+				for (const g of gens) {
+					for (const e of (g.engines || [])) {
+						const cur = modelEngine[g.modelId];
+						if (!cur || (e.horsepower || 0) > (cur.horsepower || 0)) modelEngine[g.modelId] = e;
+					}
+				}
+				setBestEngineByModelId(modelEngine);
+
+				const makeEngine = {};
+				for (const m of models) {
+					const eng = modelEngine[m.id];
+					if (!eng) continue;
+					const cur = makeEngine[m.manufacturerId];
+					if (!cur || (eng.horsepower || 0) > (cur.horsepower || 0)) makeEngine[m.manufacturerId] = eng;
+				}
+				setBestEngineByMakeId(makeEngine);
 			})
 			.catch(() => {});
 	}, [makeId]);
@@ -662,17 +670,23 @@ export default function BrowsePage() {
 			.then((res) => {
 				const counts  = {};
 				const newest  = {};
+				const modelEngine = {};
 				for (const g of (res.generations || [])) {
 					counts[g.modelId] = (counts[g.modelId] || 0) + 1;
 					const cur = newest[g.modelId];
 					if (!cur || (g.startYear || 0) > (cur.startYear || 0)) {
 						newest[g.modelId] = g;
 					}
+					for (const e of (g.engines || [])) {
+						const curEng = modelEngine[g.modelId];
+						if (!curEng || (e.horsepower || 0) > (curEng.horsepower || 0)) modelEngine[g.modelId] = e;
+					}
 				}
 				setGenCountByModelId(counts);
 				setNewestGenIdByModelId(Object.fromEntries(
 					Object.entries(newest).map(([mid, g]) => [mid, g.id])
 				));
+				setBestEngineByModelId(modelEngine);
 			})
 			.catch(() => {});
 	}, [makeId]);
@@ -691,6 +705,7 @@ export default function BrowsePage() {
 						genCountByModelId={genCountByModelId}
 						newestGenIdByModelId={newestGenIdByModelId}
 						isAuthenticated={isAuthenticated}
+						bestEngineByModelId={bestEngineByModelId}
 					/>
 				) : (
 					<MakesView
@@ -698,6 +713,7 @@ export default function BrowsePage() {
 						modelCountByMakeId={modelCountByMakeId}
 						completeModelCountByMakeName={completeModelCountByMakeName}
 						isAuthenticated={isAuthenticated}
+						bestEngineByMakeId={bestEngineByMakeId}
 					/>
 				)}
 			</section>

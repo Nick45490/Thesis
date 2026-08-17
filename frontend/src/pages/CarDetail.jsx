@@ -5,35 +5,9 @@ import { getCollection } from "../api/collection.api";
 import { useAuth } from "../context/AuthContext";
 import { RARITY_COLOR, RARITY_LABEL, S, DRIVETRAIN_COLOR } from "../theme";
 import AuthImage from "../components/AuthImage";
+import { getCarRarity } from "../utils/rarity";
 
 // â"€â"€ rarity helpers â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
-
-const LEGENDARY_MAKES = new Set([
-	"Ferrari", "Lamborghini", "McLaren", "Bugatti", "Koenigsegg", "Pagani", "Rimac",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche", "Aston Martin", "Maserati", "Lotus", "De Tomaso", "Bentley", "Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW", "Mercedes-Benz", "Audi", "Cadillac", "Lexus", "Genesis",
-	"Dodge", "Chevrolet", "Volvo", "Jaguar", "Land Rover", "Alfa Romeo",
-	"Infiniti", "Acura", "Lincoln", "Tesla",
-]);
-const QUICK_MODEL_RE = [
-	/type[\s-]?r/i, /gti/i, /\bgtr?\b/i, /gt86/i, /gr86/i, /gr yaris/i,
-	/gr corolla/i, /focus\s+(st|rs)/i, /fiesta\s+st/i, /megane\s+rs/i,
-	/clio\s+rs/i, /civic\s+si/i, /\bwrx\b/i, /\bsti\b/i, /evolution/i,
-	/\bevo\b/i, /veloster\s+n/i, /i30\s+n/i, /\bgts\b/i,
-	/\bstinger\b/i, /\bsupra\b/i, /370z/i, /mx-?5/i, /rx-?8/i, /\bbrz\b/i,
-];
-
-function getCarRarity(make, model = "") {
-	if (LEGENDARY_MAKES.has(make)) return "legendary";
-	if (EPIC_MAKES.has(make))      return "epic";
-	if (RARE_MAKES.has(make))      return "rare";
-	if (QUICK_MODEL_RE.some((re) => re.test(model))) return "rare";
-	return "common";
-}
 
 function RarityBadge({ rarity }) {
 	const color = RARITY_COLOR[rarity] || RARITY_COLOR.common;
@@ -154,7 +128,15 @@ export default function CarDetailPage() {
 		);
 	}
 
-	const rarity = getCarRarity(manufacturer?.name || "", model.name);
+	// Preview rarity from the best (highest-hp) engine across this model's
+	// generations — no owned/scanned item to read from at this browsing level.
+	const bestEngine = generations.reduce((best, gen) => {
+		for (const e of (gen.engines || [])) {
+			if (!best || (e.horsepower || 0) > (best.horsepower || 0)) best = e;
+		}
+		return best;
+	}, null);
+	const rarity = getCarRarity(bestEngine?.horsepower, bestEngine?.weightKg);
 	const color  = RARITY_COLOR[rarity];
 	const discoveredCount = generations.filter((g) => discoveredIds.has(g.id)).length;
 

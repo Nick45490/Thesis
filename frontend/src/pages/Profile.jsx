@@ -7,30 +7,12 @@ import { useAuth } from "../context/AuthContext";
 import { useCollection } from "../context/CollectionContext";
 import { RARITY_COLOR, RARITY_LABEL, S } from "../theme";
 
-const LEGENDARY_MAKES = new Set([
-	"Ferrari","Lamborghini","McLaren","Bugatti","Koenigsegg","Pagani","Rimac","De Tomaso",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche","Aston Martin","Maserati","Lotus","Bentley","Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW","Mercedes-Benz","Audi","Cadillac","Lexus","Genesis","Dodge","Chevrolet",
-	"Volvo","Jaguar","Land Rover","Alfa Romeo","Infiniti","Acura","Lincoln","Tesla",
-]);
-
 const RARITY_STRIP_BG = {
 	legendary: "#1a1100",
 	epic:      "#15092a",
 	rare:      "#081428",
 	common:    "#101012",
 };
-
-function getCarRarity(make) {
-	if (LEGENDARY_MAKES.has(make)) return "legendary";
-	if (EPIC_MAKES.has(make)) return "epic";
-	if (RARE_MAKES.has(make)) return "rare";
-	return "common";
-}
 
 function StatRow({ label, value }) {
 	return (
@@ -167,7 +149,7 @@ export default function ProfilePage() {
 
 function CollectionCard({ item, onRemove }) {
 	const eng    = item.engine;
-	const rarity = getCarRarity(item.manufacturerName);
+	const rarity = item.rarity || "common";
 	const color  = RARITY_COLOR[rarity];
 
 	return (

@@ -6,35 +6,9 @@ import { getCollection, getCollectionAchievements } from "../api/collection.api"
 import { getAchievements, getChallenges, getRaces } from "../api/gamification.api";
 import { useAuth } from "../context/AuthContext";
 import { RARITY_COLOR, RARITY_LABEL, RARITY_ORDER, S } from "../theme";
+import { getCarRarity } from "../utils/rarity";
 
 // â"€â"€ rarity helpers â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
-
-const LEGENDARY_MAKES = new Set([
-	"Ferrari", "Lamborghini", "McLaren", "Bugatti", "Koenigsegg", "Pagani", "Rimac",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche", "Aston Martin", "Maserati", "Lotus", "De Tomaso", "Bentley", "Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW", "Mercedes-Benz", "Audi", "Cadillac", "Lexus", "Genesis",
-	"Dodge", "Chevrolet", "Volvo", "Jaguar", "Land Rover", "Alfa Romeo",
-	"Infiniti", "Acura", "Lincoln", "Tesla",
-]);
-const QUICK_MODEL_RE = [
-	/type[\s-]?r/i, /gti/i, /\bgtr?\b/i, /gt86/i, /gr86/i, /gr yaris/i,
-	/gr corolla/i, /focus\s+(st|rs)/i, /fiesta\s+st/i, /megane\s+rs/i,
-	/clio\s+rs/i, /civic\s+si/i, /\bwrx\b/i, /\bsti\b/i, /evolution/i,
-	/\bevo\b/i, /veloster\s+n/i, /i30\s+n/i, /\bgts\b/i,
-	/\bstinger\b/i, /\bsupra\b/i, /370z/i, /mx-?5/i, /rx-?8/i, /\bbrz\b/i,
-];
-
-function getCarRarity(make, model = "") {
-	if (LEGENDARY_MAKES.has(make)) return "legendary";
-	if (EPIC_MAKES.has(make))      return "epic";
-	if (RARE_MAKES.has(make))      return "rare";
-	if (QUICK_MODEL_RE.some((re) => re.test(model))) return "rare";
-	return "common";
-}
 
 function RarityBadge({ rarity }) {
 	const color = RARITY_COLOR[rarity] || RARITY_COLOR.common;
@@ -201,7 +175,7 @@ function LastSpottedCard({ lastCar }) {
 				}}>
 					<div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
 						<strong style={{ fontSize: "1.15rem" }}>{lastCar.manufacturerName} {lastCar.modelName}</strong>
-						<RarityBadge rarity={getCarRarity(lastCar.manufacturerName, lastCar.modelName)} />
+						<RarityBadge rarity={lastCar.rarity || "common"} />
 					</div>
 					<p style={{ margin: 0, fontSize: "0.82rem", opacity: 0.55 }}>{lastCar.generationCode}</p>
 					<p style={{ margin: 0, fontSize: "0.75rem", opacity: 0.38 }}>Discovered {formatDate(lastCar.discoveredAt)}</p>
@@ -225,7 +199,7 @@ function LastSpottedCard({ lastCar }) {
 						<h2 className="last-spotted-name" style={{ margin: 0 }}>
 							{lastCar.manufacturerName} {lastCar.modelName}
 						</h2>
-						<RarityBadge rarity={getCarRarity(lastCar.manufacturerName, lastCar.modelName)} />
+						<RarityBadge rarity={lastCar.rarity || "common"} />
 					</div>
 					<p className="last-spotted-gen">{lastCar.generationCode}</p>
 					<p className="last-spotted-date">Discovered {formatDate(lastCar.discoveredAt)}</p>
@@ -283,19 +257,20 @@ function NextAchievementCard({ racingCatalogue, collectionCatalogue }) {
 	);
 }
 
-function DiscoveryGrid({ models, manufacturerMap, discoveredModelIds, newestGenIdByModelId }) {
+function DiscoveryGrid({ models, manufacturerMap, discoveredModelIds, newestGenIdByModelId, bestEngineByModelId }) {
 	const enriched = useMemo(() => {
 		return models
 			.map((m) => {
 				const make = manufacturerMap[m.manufacturerId] || "";
-				return { ...m, make, rarity: getCarRarity(make, m.name), discovered: discoveredModelIds.has(m.id) };
+				const eng  = bestEngineByModelId[m.id];
+				return { ...m, make, rarity: getCarRarity(eng?.horsepower, eng?.weightKg), discovered: discoveredModelIds.has(m.id) };
 			})
 			.sort((a, b) => {
 				if (a.discovered !== b.discovered) return a.discovered ? 1 : -1;
 				return RARITY_ORDER[a.rarity] - RARITY_ORDER[b.rarity];
 			})
 			.slice(0, 8);
-	}, [models, manufacturerMap, discoveredModelIds]);
+	}, [models, manufacturerMap, discoveredModelIds, bestEngineByModelId]);
 
 	return (
 		<section className="card">
@@ -383,6 +358,7 @@ export default function HomePage() {
 	);
 
 	const [newestGenIdByModelId, setNewestGenIdByModelId] = useState({});
+	const [bestEngineByModelId, setBestEngineByModelId] = useState({});
 
 	// Public catalogue data
 	useEffect(() => {
@@ -391,13 +367,19 @@ export default function HomePage() {
 				setManufacturers(mfRes.manufacturers || []);
 				setModels(modelRes.models || []);
 				const newest = {};
+				const modelEngine = {};
 				for (const g of (genRes.generations || [])) {
 					const cur = newest[g.modelId];
 					if (!cur || (g.startYear || 0) > (cur.startYear || 0)) newest[g.modelId] = g;
+					for (const e of (g.engines || [])) {
+						const curEng = modelEngine[g.modelId];
+						if (!curEng || (e.horsepower || 0) > (curEng.horsepower || 0)) modelEngine[g.modelId] = e;
+					}
 				}
 				setNewestGenIdByModelId(Object.fromEntries(
 					Object.entries(newest).map(([mid, g]) => [mid, g.id])
 				));
+				setBestEngineByModelId(modelEngine);
 			})
 			.catch(() => {});
 	}, []);
@@ -508,6 +490,7 @@ export default function HomePage() {
 					manufacturerMap={manufacturerMap}
 					discoveredModelIds={enrichedDiscoveredIds}
 					newestGenIdByModelId={newestGenIdByModelId}
+					bestEngineByModelId={bestEngineByModelId}
 				/>
 			)}
 		</main>
