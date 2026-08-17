@@ -137,7 +137,8 @@ async function createFriendRequest(requesterId, targetId) {
 			targetId: row.target_id,
 			status: row.status,
 			createdAt: row.created_at,
-			updatedAt: row.updated_at
+			updatedAt: row.updated_at,
+			alreadyFriends: row.status === "accepted",
 		};
 	}
 

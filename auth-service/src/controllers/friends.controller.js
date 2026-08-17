@@ -22,6 +22,7 @@ async function listFriends(req, res) {
 			pendingRequests
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to load friends" });
 	}
 }
@@ -45,8 +46,12 @@ async function sendFriendRequest(req, res) {
 		}
 
 		const request = await createFriendRequest(requesterId, targetId);
+		if (request.alreadyFriends) {
+			return res.status(409).json({ message: "You're already friends", request });
+		}
 		return res.status(201).json({ request });
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to send friend request" });
 	}
 }
@@ -70,6 +75,7 @@ async function acceptRequest(req, res) {
 			request: result
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to accept friend request" });
 	}
 }
@@ -90,6 +96,7 @@ async function removeFriend(req, res) {
 
 		return res.status(200).json({ message: "Friend removed" });
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to remove friend" });
 	}
 }
@@ -98,7 +105,8 @@ async function generateInviteCode(req, res) {
 	try {
 		const { code, expiresAt } = await createInviteCode(req.auth.userId);
 		return res.status(200).json({ code, expiresAt });
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to generate invite code" });
 	}
 }
@@ -120,7 +128,8 @@ async function redeemCode(req, res) {
 			request: result.request,
 			to: result.codeOwner ? { id: result.codeOwner.id, username: result.codeOwner.username } : null,
 		});
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to redeem invite code" });
 	}
 }
