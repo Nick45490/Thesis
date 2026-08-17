@@ -75,13 +75,15 @@ export default function CameraPage() {
 
 			if (nextPrediction) {
 				let engine = null;
+				let drivetrain = null;
 				try {
 					const genRes = await getGenerationById(nextPrediction.generationId);
 					const engines = genRes?.generation?.engines;
 					if (Array.isArray(engines) && engines.length > 0) {
 						engine = engines[Math.floor(Math.random() * engines.length)];
 					}
-				} catch { /* engine stays null */ }
+					drivetrain = genRes?.generation?.drivetrain || null;
+				} catch { /* engine/drivetrain stay null */ }
 
 				const addResponse = await addItem({
 					generationId:     nextPrediction.generationId,
@@ -89,6 +91,7 @@ export default function CameraPage() {
 					modelName:        nextPrediction.modelName,
 					generationCode:   nextPrediction.generationCode,
 					engine,
+					drivetrain,
 					scanPhoto:        photo,
 				});
 				setUnlocked(addResponse.unlockedAchievements || []);

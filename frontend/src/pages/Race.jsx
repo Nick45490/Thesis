@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import AuthImage from "../components/AuthImage";
 import { useAuth } from "../context/AuthContext";
@@ -12,43 +12,54 @@ import {
 	declineChallenge,
 } from "../api/gamification.api";
 import { RARITY_COLOR, RARITY_LABEL, S } from "../theme";
+import { getCarRarity } from "../utils/rarity";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
-const DISTANCE_LABELS = { quarter: "Quarter mile (¼)", half: "Half mile (½)", full: "Full mile" };
+const DISTANCE_LABELS = { quarter: "Quarter mile (¼)", half: "Half mile (½)", full: "Full mile", circuit: "Circuit" };
 
 function carImageUrl(make, model, genCode) {
 	const slug = (s) => String(s || "").replace(/\s+/g, "_");
 	return `${API_BASE}/catalogue/car-images/${slug(make)}_${slug(model)}_${slug(genCode)}_0.jpg`;
 }
+
+// Circuit isn't a drag race — "Circuit drag" would read wrong.
+function raceModeLabel(distance) {
+	const label = DISTANCE_LABELS[distance] || distance;
+	return distance === "circuit" ? label : `${label} drag`;
+}
 const DISTANCE_METERS = { quarter: 402, half: 805, full: 1609 };
 
-const LEGENDARY_MAKES = new Set([
-	"Ferrari", "Lamborghini", "McLaren", "Bugatti", "Koenigsegg", "Pagani", "Rimac",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche", "Aston Martin", "Maserati", "Lotus", "De Tomaso",
-	"Bentley", "Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW", "Mercedes-Benz", "Audi", "Cadillac", "Lexus", "Genesis",
-	"Dodge", "Chevrolet", "Volvo", "Jaguar", "Land Rover", "Alfa Romeo",
-	"Infiniti", "Acura", "Lincoln", "Tesla",
-]);
-const QUICK_MODEL_RE = [
-	/type[\s-]?r/i, /gti/i, /\bgtr?\b/i, /gt86/i, /gr86/i, /gr yaris/i,
-	/gr corolla/i, /focus\s+(st|rs)/i, /fiesta\s+st/i, /megane\s+rs/i,
-	/clio\s+rs/i, /civic\s+si/i, /\bwrx\b/i, /\bsti\b/i, /evolution/i,
-	/\bevo\b/i, /veloster\s+n/i, /i30\s+n/i, /\bgts\b/i,
-	/\bstinger\b/i, /\bsupra\b/i, /370z/i, /mx-?5/i, /rx-?8/i, /\bbrz\b/i,
+// Real Silverstone Grand Prix Circuit centerline, pixel-extracted from a reference
+// track map (color-thresholded on the track line, skeletonized, simplified to 71
+// points) rather than hand-traced. viewBox matches the source image's pixel space.
+// Point 0 sits on Hamilton Straight (start/finish); order matches the real driving
+// direction: Abbey, Farm Curve, Village, The Loop, Aintree, Wellington Straight,
+// Brooklands, Luffield, Woodcote, Copse, Maggotts, Becketts, Chapel Curve, Hangar
+// Straight, Stowe, Vale, Club, back to start.
+const CIRCUIT_VIEWBOX = "0 0 938 555";
+const SILVERSTONE_TRACK_POINTS = [
+	[522.0,398.0], [497.0,381.0], [488.0,370.0], [485.0,360.0], [487.0,300.0], [483.0,285.0],
+	[426.0,217.0], [427.0,210.0], [431.0,206.0], [467.0,193.0], [471.0,189.0], [471.0,180.0],
+	[467.0,176.0], [426.0,165.0], [408.0,165.0], [390.0,170.0], [244.0,357.0], [238.0,370.0],
+	[237.0,381.0], [241.0,392.0], [245.0,396.0], [260.0,399.0], [283.0,399.0], [296.0,408.0],
+	[299.0,420.0], [298.0,428.0], [294.0,434.0], [287.0,438.0], [271.0,438.0], [236.0,423.0],
+	[209.0,405.0], [190.0,387.0], [183.0,377.0], [176.0,359.0], [174.0,333.0], [155.0,211.0],
+	[157.0,190.0], [167.0,179.0], [188.0,165.0], [234.0,150.0], [272.0,142.0], [346.0,135.0],
+	[359.0,131.0], [385.0,116.0], [424.0,127.0], [446.0,127.0], [456.0,122.0], [476.0,106.0],
+	[495.0,104.0], [506.0,109.0], [515.0,118.0], [527.0,139.0], [544.0,154.0], [741.0,244.0],
+	[785.0,267.0], [802.0,277.0], [812.0,288.0], [816.0,308.0], [814.0,320.0], [801.0,334.0],
+	[776.0,347.0], [760.0,359.0], [696.0,423.0], [694.0,430.0], [708.0,444.0], [708.0,455.0],
+	[693.0,472.0], [678.0,481.0], [659.0,485.0], [645.0,481.0],
 ];
 
-function getCarRarity(make, model) {
-	if (LEGENDARY_MAKES.has(make)) return "legendary";
-	if (EPIC_MAKES.has(make))      return "epic";
-	if (RARE_MAKES.has(make))      return "rare";
-	if (QUICK_MODEL_RE.some((re) => re.test(model))) return "rare";
-	return "common";
+function closedPathFromPoints(points) {
+	let d = `M ${points[0][0]},${points[0][1]} `;
+	for (let i = 1; i < points.length; i++) d += `L ${points[i][0]},${points[i][1]} `;
+	return d + "Z";
 }
+
+const CIRCUIT_PATH_D = closedPathFromPoints(SILVERSTONE_TRACK_POINTS);
+const CIRCUIT_START  = SILVERSTONE_TRACK_POINTS[0];
 
 function RarityBadge({ rarity }) {
 	const color = RARITY_COLOR[rarity] || RARITY_COLOR.common;
@@ -112,7 +123,7 @@ function HistoryCard({ challenge, currentUserId, onOpen }) {
 			}}
 		>
 			<div style={{ fontSize: "0.8rem", fontWeight: 600, color: S.textSub, marginBottom: "0.6rem" }}>
-				{DISTANCE_LABELS[challenge.distance]} drag · {new Date(challenge.createdAt).toLocaleString()}
+				{raceModeLabel(challenge.distance)} · {new Date(challenge.createdAt).toLocaleString()}
 			</div>
 			<div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: "0.75rem" }}>
 				<CarThumb genId={my.genId} make={my.make} model={my.model} time={my.time} timeColor={iWon ? "#22c55e" : "#ef4444"} username={my.username} />
@@ -237,7 +248,7 @@ function RaceDetailModal({ challenge, currentUserId, cardRect, onClose }) {
 				>✕</button>
 
 				<div style={{ fontSize: "0.78rem", color: S.faint, marginBottom: "1rem" }}>
-					{DISTANCE_LABELS[challenge.distance]} drag · {new Date(challenge.resolvedAt || challenge.createdAt).toLocaleString()}
+					{raceModeLabel(challenge.distance)} · {new Date(challenge.resolvedAt || challenge.createdAt).toLocaleString()}
 				</div>
 
 				{/* Main layout: photo + stats under each side */}
@@ -345,7 +356,7 @@ function CarSelector({ cars, value, onChange, placeholder = "Select your car" })
 			>
 				{selected ? (
 					<span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-						<RarityBadge rarity={getCarRarity(selected.manufacturerName, selected.modelName)} />
+						<RarityBadge rarity={selected.rarity || "common"} />
 						{selected.manufacturerName} {selected.modelName} {selected.generationCode}
 					</span>
 				) : (
@@ -362,7 +373,7 @@ function CarSelector({ cars, value, onChange, placeholder = "Select your car" })
 					maxHeight: "260px", overflowY: "auto",
 				}}>
 					{cars.map((c) => {
-						const rarity  = getCarRarity(c.manufacturerName, c.modelName);
+						const rarity  = c.rarity || "common";
 						const isChosen = String(c.generationId) === String(value);
 						return (
 							<div
@@ -398,7 +409,7 @@ function CarSelector({ cars, value, onChange, placeholder = "Select your car" })
 	);
 }
 
-function RaceLane({ car, duration, won, label, started, done }) {
+function RaceLane({ car, progress, won, label, done }) {
 	return (
 		<div style={{ marginBottom: "1.1rem" }}>
 			<div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
@@ -421,8 +432,7 @@ function RaceLane({ car, duration, won, label, started, done }) {
 			}}>
 				<div style={{
 					height: "100%",
-					width: started ? "100%" : "0%",
-					transition: `width ${duration}s linear`,
+					width: `${progress * 100}%`,
 					background: won
 						? "linear-gradient(90deg, #14532d, #16a34a, #22c55e)"
 						: "linear-gradient(90deg, #1e3a8a, #2563eb, #3b82f6)",
@@ -439,9 +449,69 @@ function RaceLane({ car, duration, won, label, started, done }) {
 	);
 }
 
+function CircuitCarInfo({ car, won, label, done }) {
+	return (
+		<div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", gap: "0.6rem" }}>
+			<div style={{ width: 52, height: 40, borderRadius: "6px", overflow: "hidden", background: S.cardAlt, flexShrink: 0 }}>
+				<AuthImage src={`/recognize/images/${car.genId}`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+			</div>
+			<div style={{ minWidth: 0 }}>
+				<div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#e2e8f0", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+					{label}{done && won && <span style={{ color: "#22c55e" }}> &#x2713;</span>}
+				</div>
+				<div style={{ fontSize: "0.72rem", color: S.faint, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{car.make} {car.model}</div>
+				<div style={{ fontSize: "0.72rem", color: won ? "#22c55e" : "#60a5fa", fontWeight: 600 }}>{car.time}s</div>
+			</div>
+		</div>
+	);
+}
+
+function CircuitTrackView({ my, opp, markers, iWon, done }) {
+	return (
+		<div style={{ marginBottom: "1.1rem" }}>
+			<svg viewBox={CIRCUIT_VIEWBOX} style={{ width: "100%", height: "auto", display: "block" }}>
+				<path d={CIRCUIT_PATH_D} fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+				<path d={CIRCUIT_PATH_D} fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+				<line
+					x1={CIRCUIT_START[0] - 9} y1={CIRCUIT_START[1] + 9}
+					x2={CIRCUIT_START[0] + 9} y2={CIRCUIT_START[1] - 9}
+					stroke="#fbbf24" strokeWidth="4"
+				/>
+				{markers.opp && (
+					<circle cx={markers.opp.x} cy={markers.opp.y} r="9" fill={!iWon ? "#22c55e" : "#3b82f6"} stroke="#0a0a14" strokeWidth="2" />
+				)}
+				{markers.my && (
+					<circle cx={markers.my.x} cy={markers.my.y} r="9" fill={iWon ? "#22c55e" : "#3b82f6"} stroke="#0a0a14" strokeWidth="2" />
+				)}
+			</svg>
+			<div style={{ display: "flex", gap: "1rem", marginTop: "0.85rem" }}>
+				<CircuitCarInfo car={my}  won={iWon}  label="You"          done={done} />
+				<CircuitCarInfo car={opp} won={!iWon} label={opp.username} done={done} />
+			</div>
+		</div>
+	);
+}
+
 function RaceAnimationModal({ result, currentUserId, onClose }) {
-	const [started, setStarted] = useState(false);
-	const [done,    setDone]    = useState(false);
+	const [progress, setProgress] = useState({ my: 0, opp: 0 });
+	const [markers,  setMarkers]  = useState({ my: null, opp: null });
+	const [done,     setDone]     = useState(false);
+	const [speed,    setSpeed]    = useState(1);
+
+	const speedRef     = useRef(speed);
+	const raceClockRef = useRef(0);
+	const finishedRef  = useRef(false);
+	useEffect(() => { speedRef.current = speed; }, [speed]);
+
+	const isCircuit = result.distance === "circuit";
+	// Detached (never mounted) SVG path used purely for getPointAtLength math —
+	// doesn't need to be in the DOM, path geometry methods work off the `d` alone.
+	const trackGeom = useMemo(() => {
+		if (!isCircuit) return null;
+		const el = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		el.setAttribute("d", CIRCUIT_PATH_D);
+		return { el, len: el.getTotalLength() };
+	}, [isCircuit]);
 
 	const iAmChallenger = result.challengerUserId === currentUserId;
 	const iWon          = result.winnerUserId     === currentUserId;
@@ -462,29 +532,51 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 			: (result.challengerUsername || `User #${result.challengerUserId}`),
 	};
 
-	const winnerTime = Math.min(my.time, opp.time);
-	const loserTime  = Math.max(my.time, opp.time);
-	const margin     = Math.abs(my.time - opp.time).toFixed(3);
+	const margin = Math.abs(my.time - opp.time).toFixed(3);
 
-	// Each bar targets 100% but takes exactly its real race time.
+	// Each lane's 1x-baseline duration — same pacing as before the speed toggle existed.
 	// Winner arrives first; loser bar is still moving when result shows.
-	const myDuration  = my.time  / 2;
-	const oppDuration = opp.time / 2;
+	const myDuration     = my.time  / 2;
+	const oppDuration    = opp.time / 2;
+	const winnerDuration = Math.min(myDuration, oppDuration);
 
-	useLayoutEffect(() => {
-		let raf1, raf2;
-		// Double RAF guarantees the browser has painted width:0% before we trigger the transition
-		raf1 = requestAnimationFrame(() => {
-			raf2 = requestAnimationFrame(() => setStarted(true));
-		});
-		// Show result 0.8s after the winner crosses the finish
-		const t2 = setTimeout(() => setDone(true), (winnerTime / 2 + 0.8) * 1000);
+	useEffect(() => {
+		let rafId;
+		let doneTimer;
+		let lastFrame = performance.now();
+
+		function tick(now) {
+			const dt = (now - lastFrame) / 1000;
+			lastFrame = now;
+			raceClockRef.current += dt * speedRef.current;
+
+			const myProgress  = Math.min(1, raceClockRef.current / myDuration);
+			const oppProgress = Math.min(1, raceClockRef.current / oppDuration);
+			setProgress({ my: myProgress, opp: oppProgress });
+
+			if (trackGeom) {
+				const myPt  = trackGeom.el.getPointAtLength(myProgress  * trackGeom.len);
+				const oppPt = trackGeom.el.getPointAtLength(oppProgress * trackGeom.len);
+				setMarkers({ my: { x: myPt.x, y: myPt.y }, opp: { x: oppPt.x, y: oppPt.y } });
+			}
+
+			// Show result 0.8s (fixed, not speed-scaled) after the winner crosses the finish
+			if (!finishedRef.current && raceClockRef.current >= winnerDuration) {
+				finishedRef.current = true;
+				doneTimer = setTimeout(() => setDone(true), 800);
+			}
+
+			if (myProgress < 1 || oppProgress < 1) {
+				rafId = requestAnimationFrame(tick);
+			}
+		}
+		rafId = requestAnimationFrame(tick);
+
 		return () => {
-			cancelAnimationFrame(raf1);
-			cancelAnimationFrame(raf2);
-			clearTimeout(t2);
+			cancelAnimationFrame(rafId);
+			clearTimeout(doneTimer);
 		};
-	}, [winnerTime]);
+	}, [myDuration, oppDuration, winnerDuration, trackGeom]);
 
 	return createPortal(
 		<>
@@ -500,12 +592,38 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 					boxShadow: "0 8px 48px rgba(0,0,0,0.8)",
 				}}
 			>
-				<h3 style={{ margin: "0 0 1.5rem", color: "#e2e8f0", textAlign: "center", letterSpacing: "0.04em" }}>
+				<h3 style={{ margin: "0 0 1rem", color: "#e2e8f0", textAlign: "center", letterSpacing: "0.04em" }}>
 					{DISTANCE_LABELS[result.distance]} Race
 				</h3>
 
-				<RaceLane car={my}  duration={myDuration}  won={iWon}  label="You"          started={started} done={done} />
-				<RaceLane car={opp} duration={oppDuration} won={!iWon} label={opp.username} started={started} done={done} />
+				{!done && (
+					<div style={{ display: "flex", justifyContent: "center", gap: "0.4rem", marginBottom: "1.25rem" }}>
+						{[1, 2, 4, 8].map((s) => (
+							<button
+								key={s}
+								onClick={() => setSpeed(s)}
+								style={{
+									padding: "0.3rem 0.7rem", borderRadius: "8px", fontSize: "0.78rem", fontWeight: 700,
+									border: `1px solid ${speed === s ? "#60a5fa" : "rgba(255,255,255,0.12)"}`,
+									background: speed === s ? "rgba(96,165,250,0.18)" : "transparent",
+									color: speed === s ? "#60a5fa" : S.faint,
+									cursor: "pointer",
+								}}
+							>
+								{s}x
+							</button>
+						))}
+					</div>
+				)}
+
+				{isCircuit ? (
+					<CircuitTrackView my={my} opp={opp} markers={markers} iWon={iWon} done={done} />
+				) : (
+					<>
+						<RaceLane car={my}  progress={progress.my}  won={iWon}  label="You"          done={done} />
+						<RaceLane car={opp} progress={progress.opp} won={!iWon} label={opp.username} done={done} />
+					</>
+				)}
 
 				{done && (
 					<div style={{
@@ -572,7 +690,7 @@ function CarPickerModal({ cars, value, onSelect, onClose }) {
 				)}
 				<div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" }}>
 					{cars.map((car) => {
-						const rarity = getCarRarity(car.manufacturerName, car.modelName);
+						const rarity = car.rarity || "common";
 						const color = RARITY_COLOR[rarity];
 						const isSelected = String(car.generationId) === String(value);
 						return (
@@ -682,7 +800,7 @@ function FriendPickerModal({ friends, value, onSelect, onClose }) {
 }
 
 function CarPreview({ car, onClick }) {
-	const rarity = getCarRarity(car.manufacturerName, car.modelName);
+	const rarity = car.rarity || "common";
 	const color = RARITY_COLOR[rarity];
 	return (
 		<div
@@ -771,6 +889,8 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 				opponentGenCode:      car.generationCode,
 				opponentHorsepower:   car.engine?.horsepower || null,
 				opponentWeightKg:     car.engine?.weightKg   || null,
+				opponentTorqueNm:     car.engine?.torqueNm   || null,
+				opponentDrivetrain:   car.drivetrain          || null,
 			});
 		} finally {
 			setBusy(false);
@@ -795,7 +915,7 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 		}}>
 			<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.4rem", marginBottom: "0.5rem" }}>
 				<span style={{ fontWeight: 600, fontSize: "0.9rem" }}>
-					{DISTANCE_LABELS[challenge.distance]} drag
+					{raceModeLabel(challenge.distance)}
 				</span>
 				<span style={{
 					fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase",
@@ -808,7 +928,7 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 
 			<p style={{ margin: "0.15rem 0", fontSize: "0.85rem", color: S.textSub, display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
 				<strong>Challenger:</strong>
-				<RarityBadge rarity={getCarRarity(challenge.challengerMake, challenge.challengerModel)} />
+				<RarityBadge rarity={getCarRarity(challenge.challengerHorsepower, challenge.challengerWeightKg)} />
 				{challenge.challengerMake} {challenge.challengerModel} {challenge.challengerGenCode}
 				<span style={{ color: S.faint }}>(#{challenge.challengerUserId})</span>
 			</p>
@@ -816,7 +936,7 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 			{challenge.opponentMake && (
 				<p style={{ margin: "0.15rem 0", fontSize: "0.85rem", color: S.textSub, display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
 					<strong>Opponent:</strong>
-					<RarityBadge rarity={getCarRarity(challenge.opponentMake, challenge.opponentModel)} />
+					<RarityBadge rarity={getCarRarity(challenge.opponentHorsepower, challenge.opponentWeightKg)} />
 					{challenge.opponentMake} {challenge.opponentModel} {challenge.opponentGenCode}
 					<span style={{ color: S.faint }}>(#{challenge.opponentUserId})</span>
 				</p>
@@ -874,7 +994,7 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 									{challenge.challengerUsername || `User #${challenge.challengerUserId}`}
 								</div>
 								<div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
-									<RarityBadge rarity={getCarRarity(challenge.challengerMake, challenge.challengerModel)} />
+									<RarityBadge rarity={getCarRarity(challenge.challengerHorsepower, challenge.challengerWeightKg)} />
 									<span style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
 										{challenge.challengerMake} {challenge.challengerModel}
 										{challenge.challengerGenCode && (
@@ -1015,6 +1135,8 @@ export default function RacePage() {
 				challengerGenCode:     car.generationCode,
 				challengerHorsepower:  car.engine?.horsepower || null,
 				challengerWeightKg:    car.engine?.weightKg   || null,
+				challengerTorqueNm:    car.engine?.torqueNm   || null,
+				challengerDrivetrain:  car.drivetrain          || null,
 			});
 			setSubmitOk(true);
 			setForm((prev) => ({ ...prev, opponentUserId: "", challengerGenerationId: "" }));
@@ -1181,7 +1303,9 @@ export default function RacePage() {
 												style={{ display: "none" }}
 											/>
 											{label}
-											<span style={{ fontSize: "0.75rem", color: form.distance === key ? "#60a5fa" : "rgba(148,163,184,0.6)" }}>{DISTANCE_METERS[key]}m</span>
+											{DISTANCE_METERS[key] != null && (
+												<span style={{ fontSize: "0.75rem", color: form.distance === key ? "#60a5fa" : "rgba(148,163,184,0.6)" }}>{DISTANCE_METERS[key]}m</span>
+											)}
 										</label>
 									))}
 								</div>
@@ -1262,7 +1386,7 @@ export default function RacePage() {
 									fontSize: "0.85rem", color: S.muted,
 								}}
 							>
-								<span style={{ fontWeight: 600 }}>{DISTANCE_LABELS[c.distance]} drag</span>
+								<span style={{ fontWeight: 600 }}>{raceModeLabel(c.distance)}</span>
 								{" — Declined · "}
 								<span style={{ color: S.faint, fontSize: "0.75rem" }}>
 									{new Date(c.createdAt).toLocaleString()}

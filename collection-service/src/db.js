@@ -1,5 +1,6 @@
 const { Pool } = require("pg");
 const { buildCollectionCatalogue } = require("./achievementEmitter");
+const { getCarRarity } = require("./rarity");
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
@@ -45,6 +46,11 @@ async function initDb() {
 	`);
 
 	await pool.query(`
+		ALTER TABLE user_collections
+			ADD COLUMN IF NOT EXISTS drivetrain VARCHAR(20)
+	`);
+
+	await pool.query(`
 		CREATE TABLE IF NOT EXISTS collection_achievements (
 			id SERIAL PRIMARY KEY,
 			user_id INTEGER NOT NULL,
@@ -59,19 +65,22 @@ async function initDb() {
 }
 
 function mapCollectionRow(row) {
+	const engine = row.engine_name ? {
+		name:       row.engine_name,
+		fuelType:   row.engine_fuel_type,
+		horsepower: row.engine_horsepower,
+		torqueNm:   row.engine_torque_nm,
+		weightKg:   row.engine_weight_kg,
+	} : null;
 	return {
 		generationId:     row.generation_id,
 		manufacturerName: row.manufacturer_name,
 		modelName:        row.model_name,
 		generationCode:   row.generation_code,
 		scanPhoto:        row.scan_photo || null,
-		engine: row.engine_name ? {
-			name:       row.engine_name,
-			fuelType:   row.engine_fuel_type,
-			horsepower: row.engine_horsepower,
-			torqueNm:   row.engine_torque_nm,
-			weightKg:   row.engine_weight_kg,
-		} : null,
+		engine,
+		drivetrain: row.drivetrain || null,
+		rarity: engine ? getCarRarity(engine.horsepower, engine.weightKg) : "common",
 		discoveredAt: row.discovered_at,
 	};
 }
@@ -80,7 +89,7 @@ async function listCollection(userId) {
 	const result = await pool.query(
 		`SELECT generation_id, manufacturer_name, model_name, generation_code,
 		        engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-		        scan_photo, discovered_at
+		        drivetrain, scan_photo, discovered_at
 		 FROM user_collections
 		 WHERE user_id = $1
 		 ORDER BY discovered_at DESC`,
@@ -93,7 +102,7 @@ async function addCollectionItem(userId, item) {
 	const existing = await pool.query(
 		`SELECT generation_id, manufacturer_name, model_name, generation_code,
 		        engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-		        discovered_at
+		        drivetrain, discovered_at
 		 FROM user_collections
 		 WHERE user_id = $1 AND generation_id = $2
 		 LIMIT 1`,
@@ -107,7 +116,7 @@ async function addCollectionItem(userId, item) {
 				 WHERE user_id = $2 AND generation_id = $3
 				 RETURNING generation_id, manufacturer_name, model_name, generation_code,
 				           engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-				           scan_photo, discovered_at`,
+				           drivetrain, scan_photo, discovered_at`,
 				[item.scanPhoto, Number(userId), Number(item.generationId)]
 			);
 			return { created: false, item: mapCollectionRow(updated.rows[0]) };
@@ -120,11 +129,11 @@ async function addCollectionItem(userId, item) {
 		`INSERT INTO user_collections
 		   (user_id, generation_id, manufacturer_name, model_name, generation_code,
 		    engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-		    scan_photo)
-		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+		    drivetrain, scan_photo)
+		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
 		 RETURNING generation_id, manufacturer_name, model_name, generation_code,
 		           engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-		           scan_photo, discovered_at`,
+		           drivetrain, scan_photo, discovered_at`,
 		[
 			Number(userId), Number(item.generationId),
 			item.manufacturerName, item.modelName, item.generationCode,
@@ -133,6 +142,7 @@ async function addCollectionItem(userId, item) {
 			engine.horsepower || null,
 			engine.torqueNm   || null,
 			engine.weightKg   || null,
+			item.drivetrain   || null,
 			item.scanPhoto    || null,
 		]
 	);
@@ -149,21 +159,10 @@ async function removeCollectionItem(userId, generationId) {
 	return result.rowCount > 0;
 }
 
-const LEGENDARY_MAKES = new Set([
-	"Ferrari","Lamborghini","McLaren","Bugatti","Koenigsegg","Pagani","Rimac",
-]);
-const EPIC_MAKES = new Set([
-	"Porsche","Aston Martin","Maserati","Lotus","De Tomaso","Bentley","Rolls-Royce",
-]);
-const RARE_MAKES = new Set([
-	"BMW","Mercedes-Benz","Audi","Cadillac","Lexus","Genesis",
-	"Dodge","Chevrolet","Volvo","Jaguar","Land Rover","Alfa Romeo",
-	"Infiniti","Acura","Lincoln","Tesla",
-]);
-
 async function getProgressStats(userId) {
 	const result = await pool.query(
-		`SELECT manufacturer_name, model_name FROM user_collections WHERE user_id = $1`,
+		`SELECT manufacturer_name, model_name, engine_horsepower, engine_weight_kg
+		 FROM user_collections WHERE user_id = $1`,
 		[Number(userId)]
 	);
 
@@ -177,9 +176,10 @@ async function getProgressStats(userId) {
 		const model = r.model_name;
 		seenMake.add(make.toLowerCase());
 		seenModel.add((make + "::" + model).toLowerCase());
-		if      (LEGENDARY_MAKES.has(make)) legendary++;
-		else if (EPIC_MAKES.has(make))      epic++;
-		else if (RARE_MAKES.has(make))      rare++;
+		const rarity = getCarRarity(r.engine_horsepower, r.engine_weight_kg);
+		if      (rarity === "legendary") legendary++;
+		else if (rarity === "epic")      epic++;
+		else if (rarity === "rare")      rare++;
 	}
 
 	return {

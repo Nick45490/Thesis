@@ -46,11 +46,27 @@ const RARITY_TIER = {
 	legendary: 3,
 };
 
-function getCarRarity(make, model) {
+// Make/model-based rarity — kept only as a fallback for when engine data (hp/weight)
+// is missing, since performance-based rarity can't be computed without it.
+function _legacyMakeRarity(make, model) {
 	if (LEGENDARY_MAKES.has(make)) return "legendary";
 	if (EPIC_MAKES.has(make))      return "epic";
 	if (RARE_MAKES.has(make))      return "rare";
 	if (QUICK_MODEL_RE.some((re) => re.test(model))) return "rare";
+	return "common";
+}
+
+// Rarity is derived from a car's power-to-weight ratio (horsepower / weightKg) —
+// e.g. a BMW M5 (genuine performance) now correctly ranks above a Lamborghini Urus
+// (a heavy SUV), regardless of badge prestige. Falls back to make/model when engine
+// data is unavailable. Cutoffs calibrated against the catalogue's real engine
+// distribution (top ~1.5% = legendary, ~3.5% = epic, ~15% = rare).
+function getCarRarity(horsepower, weightKg, make, model) {
+	if (!horsepower || !weightKg) return _legacyMakeRarity(make, model);
+	const ratio = horsepower / weightKg;
+	if (ratio >= 0.40) return "legendary";
+	if (ratio >= 0.28) return "epic";
+	if (ratio >= 0.17) return "rare";
 	return "common";
 }
 
@@ -71,7 +87,7 @@ function estimateDragTime(horsepower, weightKg, make, model, distance) {
 		const variance  = 1 + (Math.random() * 0.08 - 0.04);
 		quarterTime     = Math.round(base * variance * 1000) / 1000;
 	} else {
-		const rarity    = getCarRarity(make, model);
+		const rarity    = getCarRarity(horsepower, weightKg, make, model);
 		const base      = QUARTER_TIME[rarity];
 		const variance  = 1 + (Math.random() * 0.08 - 0.04);
 		quarterTime     = Math.round(base * variance * 1000) / 1000;
@@ -89,6 +105,77 @@ function estimateDragTime(horsepower, weightKg, make, model, distance) {
 	return Math.round(quarterTime * (DISTANCE_MULT.full - topSpeedAdj * 1.5) * 1000) / 1000;
 }
 
+// Grip multiplier by drivetrain — AWD/4WD put power to all four wheels (better
+// corner-exit traction), RWD is the balanced baseline, FWD loses grip under power
+// as the same wheels have to steer and accelerate (penalty grows with horsepower).
+// Compound catalogue values (e.g. "RWD/AWD", for generations offering both across
+// trims) average each listed option's own grip value.
+const DRIVETRAIN_GRIP = { AWD: 1.08, RWD: 1.00, "4WD": 1.08 };
+
+function drivetrainGrip(drivetrain, horsepower) {
+	const fwdGrip = 1.00 - Math.min(0.10, (horsepower || 0) / 4000);
+	if (!drivetrain) return 1.00; // unknown → RWD baseline
+	if (drivetrain === "FWD") return fwdGrip;
+	if (DRIVETRAIN_GRIP[drivetrain] != null) return DRIVETRAIN_GRIP[drivetrain];
+	const parts = drivetrain.split("/").map((d) => (d === "FWD" ? fwdGrip : (DRIVETRAIN_GRIP[d] ?? 1.00)));
+	return parts.reduce((a, b) => a + b, 0) / parts.length;
+}
+
+/**
+ * Circuit mode is modeled on the real Silverstone Grand Prix Circuit (5.891 km,
+ * current F1 layout) — 3 straights (2,400m combined) + 15 named corners, each
+ * rated 1-10 on how much braking it needs before entry (10 = lightest braking,
+ * e.g. Copse taken flat-out; 1 = heaviest, e.g. Village/Luffield). Contribution
+ * to lap time is (11 - rating), so heavy-braking corners cost more.
+ */
+const CIRCUIT_STRAIGHTS_M = 2400; // Start/Finish 800 + Wellington 700 + Hangar 900
+const CIRCUIT_CORNER_SUM  = 81;   // sum of (11 - rating) across all 15 corners
+
+const CIRCUIT_STRAIGHT_CONST = 1.0;
+const CIRCUIT_CORNER_CONST   = 0.67;
+const CIRCUIT_FALLBACK_MULT  = 10; // rarity-tier fallback multiplier, calibrated to this lap's range
+
+// Small secondary nudge only (±2-3% typical) — weight decides between cars that
+// are already close on torque-to-weight/grip, never overrides a real power gap
+// (an earlier version let weight dominate corners outright and had a Lamborghini
+// Urus losing to a VW Golf GTI on weight alone, which isn't realistic).
+function circuitAgilityFactor(weightKg) {
+	return 1 + 0.03 * ((weightKg - 1500) / 1000);
+}
+
+/**
+ * Returns an estimated circuit lap time in seconds (3 decimal places).
+ * Straights are driven by power-to-weight (same physics as drag), scaled by
+ * total straight distance. Corners are driven primarily by torque-to-weight ×
+ * drivetrain grip (so a high-torque AWD car can still beat a higher-hp RWD car
+ * here even if it loses the drag race), with the small agility nudge above.
+ * Falls back to a rarity-tier base time when horsepower/torque/weight are
+ * missing. Adds ±4% variance for rematches, same as drag.
+ */
+function estimateCircuitTime(horsepower, weightKg, torqueNm, drivetrain, make, model) {
+	let base;
+
+	if (horsepower && weightKg && torqueNm && horsepower > 0 && weightKg > 0 && torqueNm > 0) {
+		const straightTime = CIRCUIT_STRAIGHT_CONST
+			* Math.pow(weightKg / horsepower, 1 / 3)
+			* (CIRCUIT_STRAIGHTS_M / 100);
+
+		const effective = (torqueNm / weightKg) * drivetrainGrip(drivetrain, horsepower);
+		const cornerTime = CIRCUIT_CORNER_CONST
+			* CIRCUIT_CORNER_SUM
+			* Math.pow(1 / effective, 1 / 3)
+			* circuitAgilityFactor(weightKg);
+
+		base = straightTime + cornerTime;
+	} else {
+		const rarity = getCarRarity(horsepower, weightKg, make, model);
+		base = QUARTER_TIME[rarity] * CIRCUIT_FALLBACK_MULT;
+	}
+
+	const variance = 1 + (Math.random() * 0.08 - 0.04);
+	return Math.round(base * variance * 1000) / 1000;
+}
+
 /**
  * Points awarded to the winner.
  * Base: always 50 pts.
@@ -99,11 +186,15 @@ function estimateDragTime(horsepower, weightKg, make, model, distance) {
  * Underdog multiplier: applied when winner rarity is below loser rarity.
  *   1 tier below → ×1.5, 2 tiers → ×2.0, 3 tiers → ×2.5.
  */
-const DISTANCE_MARGIN_MULT = { quarter: 1.0, half: 1.25, full: 1.5 };
+// Circuit's base time runs ~5x a quarter mile's, so raw margins are proportionally
+// larger without being proportionally more decisive — discounted here (rather than
+// amplified like half/full) to keep the threshold/bonus math feeling consistent.
+// A starting value, tunable once there's real played data to calibrate against.
+const DISTANCE_MARGIN_MULT = { quarter: 1.0, half: 1.25, full: 1.5, circuit: 0.17 };
 
-function computePointsAwarded(loserMake, loserModel, distance, winnerMake, winnerModel, marginSeconds) {
-	const winnerTier = RARITY_TIER[getCarRarity(winnerMake, winnerModel)];
-	const loserTier  = RARITY_TIER[getCarRarity(loserMake, loserModel)];
+function computePointsAwarded(loserHorsepower, loserWeightKg, distance, winnerHorsepower, winnerWeightKg, marginSeconds) {
+	const winnerTier = RARITY_TIER[getCarRarity(winnerHorsepower, winnerWeightKg)];
+	const loserTier  = RARITY_TIER[getCarRarity(loserHorsepower, loserWeightKg)];
 	const thresholdS = 2 + (winnerTier - loserTier);
 	const effectiveMargin = marginSeconds * (DISTANCE_MARGIN_MULT[distance] || 1.0);
 	const overMs     = Math.max(0, (effectiveMargin - thresholdS) * 1000);
@@ -115,4 +206,4 @@ function computePointsAwarded(loserMake, loserModel, distance, winnerMake, winne
 	return Math.round((50 + bonus) * underdogMult);
 }
 
-module.exports = { getCarRarity, estimateDragTime, computePointsAwarded };
+module.exports = { getCarRarity, estimateDragTime, estimateCircuitTime, computePointsAwarded };

@@ -17,6 +17,7 @@ function normalizeItemPayload(payload = {}) {
 		modelName:        normalizeString(payload.modelName),
 		generationCode:   normalizeString(payload.generationCode),
 		engine,
+		drivetrain: normalizeString(payload.drivetrain) || null,
 		scanPhoto: typeof payload.scanPhoto === "string" && payload.scanPhoto.startsWith("data:image/") ? payload.scanPhoto : null,
 	};
 }
