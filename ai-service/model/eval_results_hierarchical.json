@@ -1,0 +1,3484 @@
+{
+	"total": 812,
+	"skipped": 0,
+	"top1Accuracy": 0.6367,
+	"top5Accuracy": 0.8547,
+	"perPair": [
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Arteon",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.4",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "T-Cross",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.5",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "up!",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X5",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "i4",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLS",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLB",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "EQE",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "EQS",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Crossland",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Mokka-e",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Frontera",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Mustang Mach-E",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Clio",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Koleos",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Austral",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Arkana",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Megane E-Tech",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "2008",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "108",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "207",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "RCZ",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C4",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "Grand C-Picasso",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C4 SpaceTourer",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Logan",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Lodgy",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Dokker",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Jogger",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Spring",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Bigster",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Kodiaq",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Citigo",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Elroq",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Leon",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Ateca",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Arona",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Altea",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Alhambra",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Exeo",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Punto",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Bravo",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Stilo",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "600",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A3",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A6",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q3",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q7",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q2",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q4 e-tron",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "147",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "159",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Stelvio",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Tonale",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Brera",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "XC40",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "XC60",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "XC90",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "C30",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "S40",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "EX40",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Cooper",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Hatch 5dr",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Macan",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Discovery Sport",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Evoque",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "XE",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "Smart #1",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "DS7",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Formentor",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Born",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Ateca",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Leon",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Terramar",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Tavascan",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Saab",
+			"modelName": "9-3",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Saab",
+			"modelName": "9-5",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lancia",
+			"modelName": "Delta",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "458 Italia",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "488",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "Roma",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "296 GTB",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "SF90 Stradale",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "812 Superfast",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Aventador",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Urus",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Revuelto",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "Ghibli",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Phantom",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DB9",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DB11",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "720S",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "GT",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "750S",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Evora",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Exige",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Polestar",
+			"modelName": "Polestar 2",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG3",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG ZS",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG HS",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG EHS",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Rover",
+			"modelName": "45",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Corolla",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Land Cruiser",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "bZ4X",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Accord",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "i30",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "ix20",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "NEXO",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Soul",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Stonic",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Venga",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "Mazda6",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "MX-30",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-9",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "RX-8",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Grandis",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "SX4",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Baleno",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "SX4 S-Cross",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "LC",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Avenger",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Camaro",
+			"count": 2,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Chrysler",
+			"modelName": "Voyager",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "CT5",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "XT4",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Lyriq",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "G70",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "GV60",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "e:Ny1",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Sonata",
+			"count": 4,
+			"accuracy": 0.25
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "RX",
+			"count": 4,
+			"accuracy": 0.25
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Octavia",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Fabia",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Cayenne",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Cayman",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Range Rover",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Camry",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Jazz",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "i20",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Santa Fe",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "X-Trail",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "XV",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Polo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "5 Series",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "1 Series",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X3",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "M3",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "2 Series",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X2",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "M5",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "A-Class",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLC",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "CLA",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLA",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "AMG GT",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Astra",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Mokka",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Zafira",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Fiesta",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "S-MAX",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Galaxy",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Megane",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Espace",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Symbol",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "208",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "308",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "508",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "3008",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "5008",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C3",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Superb",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Ibiza",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Toledo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Panda",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Doblo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q5",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A5",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A1",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A7",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A8",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "R8",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Convertible",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "XF",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "ForFour",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "DS4",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "GranTurismo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Continental GT",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Flying Spur",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Bentayga",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Auris",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Aygo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Civic",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Accent",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Niro",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Note",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "MX-5",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Impreza",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Forester",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "WRX",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "LS",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Aveo",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Malibu",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Trax",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Tesla",
+			"modelName": "Model X",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Passat",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Tiguan",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X6",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "S-Class",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "SL",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Focus",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Kuga",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Scenic",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Countryman",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "911",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "ForTwo",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "RAV4",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Prius",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Ceed",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Sportage",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Sorento",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Qashqai",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "Mazda3",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Outlander",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Legacy",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Tahoe",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "CR-V",
+			"count": 4,
+			"accuracy": 0.75
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Touareg",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "T-Roc",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Sharan",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Touran",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Taigo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.7",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Caddy",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "3 Series",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "7 Series",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X1",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "4 Series",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X4",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X7",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "M2",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "M4",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "Z4",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "i3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "iX",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "8 Series",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "6 Series GT",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "iX1",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "iX3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "C-Class",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "E-Class",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLE",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "B-Class",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "CLS",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "EQA",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "EQB",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "EQC",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "SLC",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLK",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLC Coupe",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Corsa",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Insignia",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Vectra",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Grandland",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Meriva",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Antara",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Adam",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Cascada",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Combo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Mondeo",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Puma",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "EcoSport",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Mustang",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Ranger",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "C-MAX",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Edge",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Explorer",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Bronco",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Transit Custom",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Captur",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Kadjar",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Zoe",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Talisman",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Twingo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Kangoo",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Fluence",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Rafale",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "407",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "107",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "Partner",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "206",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "307",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "408",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "Rifter",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Peugeot",
+			"modelName": "4008",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "Berlingo",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C5 Aircross",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C3 Aircross",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C-Picasso",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C-Elys\u00e9e",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C1",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C4 Cactus",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C2",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C5 X",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Sandero",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dacia",
+			"modelName": "Duster",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Karoq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Yeti",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Rapid",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Scala",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Enyaq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Kamiq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Tarraco",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Mii",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "500",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Tipo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "500X",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "500L",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Freemont",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "500e",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Croma",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Sedici",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Linea",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "TT",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q8",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "e-tron",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "e-tron GT",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q6 e-tron",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "156",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Giulietta",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "MiTo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Spider",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "GT",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "4C",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
+			"modelName": "Junior",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "V40",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "S60",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "S90",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "C40",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "S80",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "EX30",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "EX90",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Paceman",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Coupe",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Roadster",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mini",
+			"modelName": "Aceman",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Panamera",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Boxster",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Taycan",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Cayenne Coupe",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Defender",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Discovery",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Freelander",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Range Rover Sport",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Land Rover",
+			"modelName": "Velar",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "F-Pace",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "E-Pace",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "I-Pace",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "F-Type",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "XJ",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "Smart #3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "DS3",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "DS5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "DS9",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lancia",
+			"modelName": "Ypsilon",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lancia",
+			"modelName": "Musa",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "F8 Tributo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "California",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "Purosangue",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "Portofino",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Gallardo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Huracan",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "Quattroporte",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "Levante",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "Grecale",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Mulsanne",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Ghost",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Wraith",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Cullinan",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Spectre",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rolls-Royce",
+			"modelName": "Dawn",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Vantage",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DBS",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Rapide",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DBX",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "570S",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "Artura",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Elise",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Emira",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Eletre",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Polestar",
+			"modelName": "Polestar 3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Polestar",
+			"modelName": "Polestar 4",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG4",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG Cyberster",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Daewoo",
+			"modelName": "Matiz",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Daewoo",
+			"modelName": "Kalos",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Daewoo",
+			"modelName": "Lacetti",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Daewoo",
+			"modelName": "Nubira",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rover",
+			"modelName": "75",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Rover",
+			"modelName": "25",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Yaris",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "C-HR",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Hilux",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Supra",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Avensis",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Verso",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Aygo X",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "GR Yaris",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Proace City",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "HR-V",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "FR-V",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Stream",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Honda e",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "ZR-V",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Legend",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Insight",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "i40",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Tucson",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Ioniq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Kona",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Ioniq 5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Ioniq 6",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Bayon",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Veloster",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Ioniq 9",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "ix35",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "i10",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Rio",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Stinger",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "EV6",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Picanto",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Xceed",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "EV9",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Carens",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Micra",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Juke",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Leaf",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Navara",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "370Z",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Ariya",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "GT-R",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Murano",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Pulsar",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "Mazda2",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-5",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-30",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-60",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "ASX",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Eclipse Cross",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "L200",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Colt",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Galant",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Pajero",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Space Star",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "i-MiEV",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Swift",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Vitara",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Grand Vitara",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Jimny",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "S-Cross",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Ignis",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Celerio",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Across",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "BRZ",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Solterra",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "IS",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "ES",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "NX",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "UX",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "GS",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "CT",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "RC",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "RZ",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "LX",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Cherokee",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Grand Cherokee",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Renegade",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Compass",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Wrangler",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Gladiator",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Cruze",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Captiva",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Orlando",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Spark",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Equinox",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dodge",
+			"modelName": "Challenger",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dodge",
+			"modelName": "Charger",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dodge",
+			"modelName": "Durango",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chrysler",
+			"modelName": "300",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chrysler",
+			"modelName": "Pacifica",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "RAM",
+			"modelName": "1500",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "RAM",
+			"modelName": "ProMaster",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Escalade",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "XT5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "CT4",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Tesla",
+			"modelName": "Model S",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Tesla",
+			"modelName": "Model 3",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Tesla",
+			"modelName": "Model Y",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Tesla",
+			"modelName": "Cybertruck",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "G80",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "G90",
+			"count": 2,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "GV70",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "GV80",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"count": 1,
+			"accuracy": 1.0
+		}
+	],
+	"worstConfusion": [
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLS"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLS"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Peugeot",
+				"modelName": "2008"
+			},
+			"predicted": {
+				"manufacturerName": "Peugeot",
+				"modelName": "2008"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Porsche",
+				"modelName": "Cayenne"
+			},
+			"predicted": {
+				"manufacturerName": "Porsche",
+				"modelName": "Cayenne"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Porsche",
+				"modelName": "Macan"
+			},
+			"predicted": {
+				"manufacturerName": "Porsche",
+				"modelName": "Cayenne"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Land Rover",
+				"modelName": "Range Rover"
+			},
+			"predicted": {
+				"manufacturerName": "Land Rover",
+				"modelName": "Range Rover Sport"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Honda",
+				"modelName": "Civic"
+			},
+			"predicted": {
+				"manufacturerName": "Honda",
+				"modelName": "Civic"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Hyundai",
+				"modelName": "Sonata"
+			},
+			"predicted": {
+				"manufacturerName": "Hyundai",
+				"modelName": "Sonata"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Kia",
+				"modelName": "Soul"
+			},
+			"predicted": {
+				"manufacturerName": "Kia",
+				"modelName": "Soul"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Camaro"
+			},
+			"predicted": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Camaro"
+			},
+			"count": 2
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Passat"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Golf Variant"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Polo"
+			},
+			"predicted": {
+				"manufacturerName": "Skoda",
+				"modelName": "Scala"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Tiguan"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Touareg"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Arteon"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Passat"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "ID.4"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Tiguan"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "T-Cross"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "T-Roc"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "ID.5"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "ID.4"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "up!"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Polo"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Golf Variant"
+			},
+			"predicted": {
+				"manufacturerName": "Volkswagen",
+				"modelName": "Golf Variant"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "5 Series"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "3 Series"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "1 Series"
+			},
+			"predicted": {
+				"manufacturerName": "Opel",
+				"modelName": "Adam"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "X3"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLC"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "X5"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "X3"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "X5"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "EQB"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "M3"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "M5"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "2 Series"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "1 Series"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "X2"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "X2"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "X6"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "M3"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "M5"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "M3"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "i4"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "2 Series"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "A-Class"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "C-Class"
+			},
+			"count": 1
+		}
+	]
+}
