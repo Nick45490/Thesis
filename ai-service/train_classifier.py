@@ -7,8 +7,10 @@ once to build it, then run this script.
 
 Usage:
     python train_classifier.py
+    python train_classifier.py --cache model/reference_embeddings_no_lora.pt --output model/classifier_no_lora.pkl
 """
 
+import argparse
 import json
 import pickle
 from pathlib import Path
@@ -16,7 +18,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import GroupShuffleSplit
 
 BASE_DIR    = Path(__file__).parent
 CACHE_PATH  = BASE_DIR / "model" / "reference_embeddings.pt"
@@ -25,15 +27,27 @@ CLF_PATH    = BASE_DIR / "model" / "classifier.pkl"
 
 
 def main() -> None:
-    if not CACHE_PATH.exists():
-        print("ERROR: reference_embeddings.pt not found.")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cache", type=Path, default=CACHE_PATH, help="Embedding cache to train on")
+    parser.add_argument("--output", type=Path, default=CLF_PATH, help="Where to save the trained classifier")
+    args = parser.parse_args()
+    cache_path, clf_path = args.cache, args.output
+
+    if not cache_path.exists():
+        print(f"ERROR: {cache_path} not found.")
         print("Start the ai-service once to build it, then re-run this script.")
         return
 
-    print("Loading embedding cache …")
-    cache = torch.load(CACHE_PATH, weights_only=False)
+    print(f"Loading embedding cache from {cache_path} …")
+    cache = torch.load(cache_path, weights_only=False)
     all_embeddings: np.ndarray = cache["embeddings"]   # (N, 512)
     all_keys: list[str]        = cache["keys"]          # generation key per row
+    all_source_ids = cache.get("source_ids")            # source image path per row
+
+    if all_source_ids is None:
+        print("ERROR: cache has no 'source_ids' (stale format).")
+        print("Delete reference_embeddings.pt and restart the ai-service to rebuild it, then re-run this script.")
+        return
 
     print(f"  {len(all_keys)} embeddings loaded")
 
@@ -47,13 +61,15 @@ def main() -> None:
     valid = [(i, k) for i, k in enumerate(all_keys) if k in key_to_idx]
     X = all_embeddings[[i for i, _ in valid]]
     y = np.array([key_to_idx[k] for _, k in valid])
+    groups = np.array([all_source_ids[i] for i, _ in valid])
 
     n_classes = len(set(y.tolist()))
-    print(f"  {len(y)} samples across {n_classes} classes")
+    print(f"  {len(y)} samples across {n_classes} classes, {len(set(groups.tolist()))} source images")
 
-    # Stratified 90/10 train/val split
-    sss = StratifiedShuffleSplit(n_splits=1, test_size=0.1, random_state=42)
-    train_idx, val_idx = next(sss.split(X, y))
+    # Group split so a source image's augmented variants never straddle train/val
+    # (a plain per-row stratified split previously leaked near-duplicate rows into val)
+    gss = GroupShuffleSplit(n_splits=1, test_size=0.1, random_state=42)
+    train_idx, val_idx = next(gss.split(X, y, groups=groups))
     X_train, X_val = X[train_idx], X[val_idx]
     y_train, y_val = y[train_idx], y[val_idx]
 
@@ -83,14 +99,14 @@ def main() -> None:
     print(f"Val   top-1 : {val_top1:.3f}")
     print(f"Val   top-5 : {val_top5:.3f}")
 
-    with open(CLF_PATH, "wb") as f:
+    with open(clf_path, "wb") as f:
         pickle.dump({
             "clf":        clf,
             "key_to_idx": key_to_idx,
             "idx_to_key": idx_to_key,
         }, f)
 
-    print(f"\nClassifier saved to {CLF_PATH}")
+    print(f"\nClassifier saved to {clf_path}")
     print("Restart the ai-service to use it.")
 
 

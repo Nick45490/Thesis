@@ -375,7 +375,12 @@ def _filter_outliers(
             T = np.mean(tvecs, axis=0).astype(np.float32)
             T /= np.linalg.norm(T)
             text_scores = E @ T   # (n,)
-            text_thr = max(0.26, float(text_scores.mean() - 1.2 * text_scores.std()))
+            # CLIP zero-shot text-image similarity runs low for narrow, specific prompts
+            # like "a 2012 Volkswagen Golf Mk6" — a 0.26 floor was rejecting >50% of most
+            # batches (hitting the max_drop cap below and capping nearly every generation
+            # at ~10/20 kept regardless of actual photo quality). 0.20 still catches clearly
+            # wrong-car photos (observed well below this) without discarding plausible ones.
+            text_thr = max(0.20, float(text_scores.mean() - 1.2 * text_scores.std()))
 
     # --- Combine: collect candidates that fail either gate, evict worst first ---
     max_drop = n // 2

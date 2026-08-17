@@ -18,6 +18,7 @@ ai-service/yolov8n.pt
 ai-service/model/reference_embeddings.pt
 ai-service/model/efficientnet_cars.pt
 ai-service/model/clip_lora/
+ai-service/model/backup_v4_65pct/reference_embeddings.pt
 
 # ── Large datasets (hosted on Google Drive — see README) ───────────────────────
 ai-service/model/reference_images/

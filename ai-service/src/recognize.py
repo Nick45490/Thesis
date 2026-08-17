@@ -19,6 +19,7 @@ class RecognitionResult:
     height: int
     image_format: str
     candidates: List[dict] = field(default_factory=list)
+    no_vehicle_detected: bool = False
 
     def as_dict(self) -> Dict[str, object]:
         best = self.candidates[0] if self.candidates else {}
@@ -31,6 +32,7 @@ class RecognitionResult:
             "generationCode": self.generation_code,
             "generationSource": best.get("generationSource", "catalogue"),
             "candidates": self.candidates,
+            "noVehicleDetected": self.no_vehicle_detected,
             "image": {
                 "width": self.width,
                 "height": self.height,
@@ -41,7 +43,7 @@ class RecognitionResult:
 
 def run_recognition(image_bytes: bytes, classifier: CarClassifier) -> RecognitionResult | None:
     width, height, image_format = validate_and_get_metadata(image_bytes)
-    label, confidence, meta, candidates = classifier.predict(image_bytes)
+    label, confidence, meta, candidates, no_vehicle_detected = classifier.predict(image_bytes)
     if not label or not meta:
         return None
     return RecognitionResult(
@@ -55,4 +57,5 @@ def run_recognition(image_bytes: bytes, classifier: CarClassifier) -> Recognitio
         height=height,
         image_format=image_format,
         candidates=candidates,
+        no_vehicle_detected=no_vehicle_detected,
     )
