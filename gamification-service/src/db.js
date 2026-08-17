@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 const { RACING_CATALOGUE, buildRacingCatalogue } = require("./engine/achievementChecker");
-const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity } = require("./engine/performanceEngine");
+const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity, RARITY_TIER } = require("./engine/performanceEngine");
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
@@ -362,7 +362,7 @@ async function acceptChallenge(id, opponentInput) {
 			const loserMakeR       = challengerWon ? opponentInput.opponentMake  : existing.challengerMake;
 			const loserModelR      = challengerWon ? opponentInput.opponentModel : existing.challengerModel;
 			const marginSeconds    = Math.abs(challengerTime - opponentTime);
-			const pointsAwarded    = computePointsAwarded(loserHorsepower, loserWeightKg, existing.distance, winnerHorsepower, winnerWeightKg, marginSeconds);
+			const pointsAwarded    = computePointsAwarded(loserHorsepower, loserWeightKg, existing.distance, winnerHorsepower, winnerWeightKg, marginSeconds, winnerMake, winnerModel, loserMakeR, loserModelR);
 
 			winnerUserId = challengerWon ? existing.challengerUserId : existing.opponentUserId;
 
@@ -409,7 +409,7 @@ async function acceptChallenge(id, opponentInput) {
 			} else {
 				const winnerRarity = getCarRarity(winnerHorsepower, winnerWeightKg, winnerMake, winnerModel);
 				const loserRarity  = getCarRarity(loserHorsepower,  loserWeightKg,  loserMakeR, loserModelR);
-				const wasUnderdog  = ["common","rare","epic","legendary"].indexOf(winnerRarity) < ["common","rare","epic","legendary"].indexOf(loserRarity);
+				const wasUnderdog  = RARITY_TIER[winnerRarity] < RARITY_TIER[loserRarity];
 
 				await addRace(winnerUserId, {
 					points:      pointsAwarded,

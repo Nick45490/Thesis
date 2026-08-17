@@ -457,8 +457,11 @@ class CarClassifier:
 
     def _predict_faiss(self, query: np.ndarray, top_k: int) -> Tuple[str, float, dict, List[dict]]:
         if self._index is None or self._index.ntotal == 0:
-            fallback = next(iter(self._labels))
-            return fallback, 0.05, self._labels[fallback], []
+            # No reference embeddings to search — report "unknown" rather than
+            # fabricating a match. The old fallback (first label in
+            # class_labels.json at confidence 0.05) was ABOVE MIN_CONFIDENCE
+            # (0.04), so it was reported to the user as a real identification.
+            return "", 0.0, {}, []
 
         k = min(top_k, self._index.ntotal)
         distances, indices = self._index.search(query, k=k)

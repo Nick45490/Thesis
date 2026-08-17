@@ -7,6 +7,7 @@ async function getLeaderboard(req, res) {
 			leaderboard: await listLeaderboard(limit)
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to load leaderboard" });
 	}
 }

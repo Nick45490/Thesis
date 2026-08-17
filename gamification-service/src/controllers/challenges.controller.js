@@ -6,8 +6,11 @@ const {
 	listChallenges,
 } = require("../db");
 
+// req.user is never set in this service — requireInternalSecret (index.js)
+// verifies every request before it reaches a handler, so x-user-id alone is
+// the real (now-trusted) identity.
 function resolveUserId(req) {
-	return Number(req.headers["x-user-id"] || req.user?.id);
+	return Number(req.headers["x-user-id"]);
 }
 
 async function postChallenge(req, res) {
@@ -54,7 +57,8 @@ async function postChallenge(req, res) {
 			challengerDrivetrain:  challengerDrivetrain  || null,
 		});
 		return res.status(201).json({ challenge });
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to create challenge" });
 	}
 }
@@ -66,7 +70,8 @@ async function getChallenges(req, res) {
 	try {
 		const challenges = await listChallenges(userId);
 		return res.status(200).json({ challenges });
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to list challenges" });
 	}
 }
@@ -102,7 +107,8 @@ async function patchAccept(req, res) {
 		// transaction + row lock in acceptChallenge) — not a server error.
 		if (result.alreadyResolved) return res.status(409).json({ message: "Challenge is not pending" });
 		return res.status(200).json(result);
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to accept challenge" });
 	}
 }
@@ -121,7 +127,8 @@ async function patchDecline(req, res) {
 
 		const challenge = await declineChallenge(challengeId);
 		return res.status(200).json({ challenge });
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to decline challenge" });
 	}
 }

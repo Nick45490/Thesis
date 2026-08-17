@@ -1,7 +1,7 @@
 const { getRaceStats, listRaces } = require("../db");
 
 function resolveUserId(req) {
-	return Number(req.headers["x-user-id"] || req.user?.id);
+	return Number(req.headers["x-user-id"]);
 }
 
 async function getMyRaces(req, res) {
@@ -17,6 +17,7 @@ async function getMyRaces(req, res) {
 			stats
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to fetch races" });
 	}
 }

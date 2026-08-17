@@ -70,6 +70,13 @@ function getCarRarity(horsepower, weightKg, make, model) {
 	return "common";
 }
 
+// ±4% variance for rematches — shared by drag and circuit so tuning it once
+// keeps both modes in sync instead of three independently-hand-copied lines.
+function applyVariance(base) {
+	const variance = 1 + (Math.random() * 0.08 - 0.04);
+	return Math.round(base * variance * 1000) / 1000;
+}
+
 /**
  * Returns an estimated drag time in seconds (3 decimal places).
  * Uses Hollander's ET formula when hp+weight are available:
@@ -84,13 +91,10 @@ function estimateDragTime(horsepower, weightKg, make, model, distance) {
 	if (horsepower && weightKg && horsepower > 0 && weightKg > 0) {
 		const weightLbs = weightKg * 2.20462;
 		const base      = 6.269 * Math.pow(weightLbs / horsepower, 1 / 3);
-		const variance  = 1 + (Math.random() * 0.08 - 0.04);
-		quarterTime     = Math.round(base * variance * 1000) / 1000;
+		quarterTime     = applyVariance(base);
 	} else {
 		const rarity    = getCarRarity(horsepower, weightKg, make, model);
-		const base      = QUARTER_TIME[rarity];
-		const variance  = 1 + (Math.random() * 0.08 - 0.04);
-		quarterTime     = Math.round(base * variance * 1000) / 1000;
+		quarterTime     = applyVariance(QUARTER_TIME[rarity]);
 	}
 
 	if (distance === "quarter") return quarterTime;
@@ -172,8 +176,7 @@ function estimateCircuitTime(horsepower, weightKg, torqueNm, drivetrain, make, m
 		base = QUARTER_TIME[rarity] * CIRCUIT_FALLBACK_MULT;
 	}
 
-	const variance = 1 + (Math.random() * 0.08 - 0.04);
-	return Math.round(base * variance * 1000) / 1000;
+	return applyVariance(base);
 }
 
 /**
@@ -192,9 +195,9 @@ function estimateCircuitTime(horsepower, weightKg, torqueNm, drivetrain, make, m
 // A starting value, tunable once there's real played data to calibrate against.
 const DISTANCE_MARGIN_MULT = { quarter: 1.0, half: 1.25, full: 1.5, circuit: 0.17 };
 
-function computePointsAwarded(loserHorsepower, loserWeightKg, distance, winnerHorsepower, winnerWeightKg, marginSeconds) {
-	const winnerTier = RARITY_TIER[getCarRarity(winnerHorsepower, winnerWeightKg)];
-	const loserTier  = RARITY_TIER[getCarRarity(loserHorsepower, loserWeightKg)];
+function computePointsAwarded(loserHorsepower, loserWeightKg, distance, winnerHorsepower, winnerWeightKg, marginSeconds, winnerMake, winnerModel, loserMake, loserModel) {
+	const winnerTier = RARITY_TIER[getCarRarity(winnerHorsepower, winnerWeightKg, winnerMake, winnerModel)];
+	const loserTier  = RARITY_TIER[getCarRarity(loserHorsepower, loserWeightKg, loserMake, loserModel)];
 	const thresholdS = 2 + (winnerTier - loserTier);
 	const effectiveMargin = marginSeconds * (DISTANCE_MARGIN_MULT[distance] || 1.0);
 	const overMs     = Math.max(0, (effectiveMargin - thresholdS) * 1000);
@@ -206,4 +209,4 @@ function computePointsAwarded(loserHorsepower, loserWeightKg, distance, winnerHo
 	return Math.round((50 + bonus) * underdogMult);
 }
 
-module.exports = { getCarRarity, estimateDragTime, estimateCircuitTime, computePointsAwarded };
+module.exports = { getCarRarity, estimateDragTime, estimateCircuitTime, computePointsAwarded, RARITY_TIER };

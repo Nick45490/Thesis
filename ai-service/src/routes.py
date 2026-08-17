@@ -18,6 +18,11 @@ class RecognizeBase64Request(BaseModel):
     imageBase64: str
 
 
+# Matches collection-service's express.json({ limit: "10mb" }) convention —
+# nothing previously capped how large a payload could reach YOLO/CLIP here.
+MAX_IMAGE_BYTES = 10 * 1024 * 1024
+
+
 def _build_image_index() -> tuple[dict[int, str], dict[str, list[str]]]:
     """Build generationId→key and key→[paths] maps from model files."""
     gen_id_to_key: dict[int, str] = {}
@@ -110,6 +115,8 @@ def build_router(classifier: CarClassifier) -> APIRouter:
         image_bytes = await file.read()
         if not image_bytes:
             raise HTTPException(status_code=400, detail="Uploaded file is empty")
+        if len(image_bytes) > MAX_IMAGE_BYTES:
+            raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
         try:
             result       = run_recognition(image_bytes, classifier)
             censored_b64 = censor_to_base64(image_bytes)
@@ -121,9 +128,16 @@ def build_router(classifier: CarClassifier) -> APIRouter:
     def recognize_from_base64(payload: RecognizeBase64Request) -> dict:
         try:
             image_bytes  = decode_base64_image(payload.imageBase64)
+            if len(image_bytes) > MAX_IMAGE_BYTES:
+                raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
             result       = run_recognition(image_bytes, classifier)
             censored_b64 = censor_to_base64(image_bytes)
             return {"prediction": result.as_dict() if result else None, "censoredPhoto": censored_b64}
+        except HTTPException:
+            # Let the 413 above through as-is — HTTPException is itself an
+            # Exception, so without this it would get re-wrapped as a
+            # misleading 400 "Invalid image" by the handler below.
+            raise
         except Exception as error:
             raise HTTPException(status_code=400, detail=f"Invalid image: {error}") from error
 
