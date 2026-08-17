@@ -1,7 +1,7 @@
 const { getProgressStats, listCollection } = require("../db");
 
 function resolveUserId(req) {
-	return Number(req.headers["x-user-id"] || req.user?.id);
+	return Number(req.headers["x-user-id"]);
 }
 
 async function getProgress(req, res) {
@@ -17,6 +17,7 @@ async function getProgress(req, res) {
 			latestDiscoveries: items.slice(0, 5)
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to fetch progress" });
 	}
 }

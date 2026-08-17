@@ -27,8 +27,11 @@ async function isFriendOf(requesterId, targetId) {
 
 const { isValidCollectionPayload, normalizeItemPayload } = require("../models/user.collection");
 
+// The req.user fallback here was always dead code — nothing in this service
+// sets it; requireInternalSecret (index.js) verifies every request before it
+// reaches a handler, so x-user-id alone is the real (now-trusted) identity.
 function resolveUserId(req) {
-	return Number(req.headers["x-user-id"] || req.user?.id);
+	return Number(req.headers["x-user-id"]);
 }
 
 async function getMyCollection(req, res) {
@@ -42,6 +45,7 @@ async function getMyCollection(req, res) {
 			items: await listCollection(userId)
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to fetch collection" });
 	}
 }
@@ -118,6 +122,7 @@ async function addToCollection(req, res) {
 			unlockedAchievements
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to update collection" });
 	}
 }
@@ -138,6 +143,7 @@ async function removeFromCollection(req, res) {
 			message: "Collection item removed"
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to remove collection item" });
 	}
 }
@@ -165,6 +171,7 @@ async function getUserCollection(req, res) {
 
 		return res.status(200).json({ items, progress });
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to fetch user collection" });
 	}
 }

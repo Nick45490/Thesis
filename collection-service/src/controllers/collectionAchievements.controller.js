@@ -4,7 +4,7 @@ const { buildCompletionistCatalogue, buildCountryCatalogue } = require("../achie
 const CATALOGUE_URL = process.env.CATALOGUE_URL || "http://localhost:3002";
 
 function resolveUserId(req) {
-	return Number(req.headers["x-user-id"] || req.user?.id);
+	return Number(req.headers["x-user-id"]);
 }
 
 async function getMyCollectionAchievements(req, res) {
@@ -31,6 +31,7 @@ async function getMyCollectionAchievements(req, res) {
 
 		return res.status(200).json({ catalogue, completionistCatalogue, countryCatalogue, progress });
 	} catch (error) {
+		console.error(error);
 		return res.status(500).json({ message: "Failed to fetch collection achievements" });
 	}
 }

@@ -99,38 +99,17 @@ async function listCollection(userId) {
 }
 
 async function addCollectionItem(userId, item) {
-	const existing = await pool.query(
-		`SELECT generation_id, manufacturer_name, model_name, generation_code,
-		        engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-		        drivetrain, discovered_at
-		 FROM user_collections
-		 WHERE user_id = $1 AND generation_id = $2
-		 LIMIT 1`,
-		[Number(userId), Number(item.generationId)]
-	);
-
-	if (existing.rowCount > 0) {
-		if (item.scanPhoto && !existing.rows[0].scan_photo) {
-			const updated = await pool.query(
-				`UPDATE user_collections SET scan_photo = $1
-				 WHERE user_id = $2 AND generation_id = $3
-				 RETURNING generation_id, manufacturer_name, model_name, generation_code,
-				           engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
-				           drivetrain, scan_photo, discovered_at`,
-				[item.scanPhoto, Number(userId), Number(item.generationId)]
-			);
-			return { created: false, item: mapCollectionRow(updated.rows[0]) };
-		}
-		return { created: false, item: mapCollectionRow(existing.rows[0]) };
-	}
-
 	const engine = item.engine || {};
+
+	// ON CONFLICT DO NOTHING makes the existence check atomic — two concurrent
+	// scans of the same car no longer race between a SELECT and an INSERT.
 	const inserted = await pool.query(
 		`INSERT INTO user_collections
 		   (user_id, generation_id, manufacturer_name, model_name, generation_code,
 		    engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
 		    drivetrain, scan_photo)
 		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+		 ON CONFLICT (user_id, generation_id) DO NOTHING
 		 RETURNING generation_id, manufacturer_name, model_name, generation_code,
 		           engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
 		           drivetrain, scan_photo, discovered_at`,
@@ -147,7 +126,40 @@ async function addCollectionItem(userId, item) {
 		]
 	);
 
-	return { created: true, item: mapCollectionRow(inserted.rows[0]) };
+	if (inserted.rowCount > 0) {
+		return { created: true, item: mapCollectionRow(inserted.rows[0]) };
+	}
+
+	// Already collected — backfill anything the existing row is still missing
+	// (e.g. it was added before engine/drivetrain existed, or before a photo
+	// was captured) rather than leaving a rescan as a total no-op. COALESCE
+	// only fills NULL columns, never overwrites already-populated data.
+	const updated = await pool.query(
+		`UPDATE user_collections SET
+		   scan_photo        = COALESCE(user_collections.scan_photo, $1),
+		   engine_name       = COALESCE(user_collections.engine_name, $2),
+		   engine_fuel_type  = COALESCE(user_collections.engine_fuel_type, $3),
+		   engine_horsepower = COALESCE(user_collections.engine_horsepower, $4),
+		   engine_torque_nm  = COALESCE(user_collections.engine_torque_nm, $5),
+		   engine_weight_kg  = COALESCE(user_collections.engine_weight_kg, $6),
+		   drivetrain        = COALESCE(user_collections.drivetrain, $7)
+		 WHERE user_id = $8 AND generation_id = $9
+		 RETURNING generation_id, manufacturer_name, model_name, generation_code,
+		           engine_name, engine_fuel_type, engine_horsepower, engine_torque_nm, engine_weight_kg,
+		           drivetrain, scan_photo, discovered_at`,
+		[
+			item.scanPhoto    || null,
+			engine.name       || null,
+			engine.fuelType   || null,
+			engine.horsepower || null,
+			engine.torqueNm   || null,
+			engine.weightKg   || null,
+			item.drivetrain   || null,
+			Number(userId), Number(item.generationId),
+		]
+	);
+
+	return { created: false, item: mapCollectionRow(updated.rows[0]) };
 }
 
 async function removeCollectionItem(userId, generationId) {
@@ -193,24 +205,23 @@ async function getProgressStats(userId) {
 }
 
 async function unlockCollectionAchievements(userId, achievements) {
+	// RETURNING tells us exactly which rows this call actually inserted, rather
+	// than guessing from a wall-clock window — the old 2-second window could
+	// both miss unlocks (slow request) and double-report them (two calls
+	// landing within 2s of each other).
+	const justUnlocked = [];
 	for (const a of achievements) {
-		await pool.query(
+		const result = await pool.query(
 			`INSERT INTO collection_achievements (user_id, code, title)
 			 VALUES ($1, $2, $3)
-			 ON CONFLICT (user_id, code) DO NOTHING`,
+			 ON CONFLICT (user_id, code) DO NOTHING
+			 RETURNING code`,
 			[Number(userId), a.code, a.title]
 		);
+		if (result.rowCount > 0) justUnlocked.push(result.rows[0].code);
 	}
 
-	const justUnlocked = await pool.query(
-		`SELECT code, title, unlocked_at
-		 FROM collection_achievements
-		 WHERE user_id = $1 AND unlocked_at >= NOW() - INTERVAL '2 seconds'
-		 ORDER BY unlocked_at DESC`,
-		[Number(userId)]
-	);
-
-	return justUnlocked.rows.map((r) => r.code);
+	return justUnlocked;
 }
 
 async function getCollectionAchievementCatalogue(userId, progressStats) {
