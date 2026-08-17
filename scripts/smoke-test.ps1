@@ -59,7 +59,7 @@ try {
   Print-Ok "Manufacturers returned: $($manufacturers.manufacturers.Count)"
 
   Step "Recognition"
-  $tinyPngBase64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/axkP7wAAAAASUVORK5CYII="
+  $tinyPngBase64 = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAKUlEQVR4nO3NMQEAAAjDMED15GMCvlRA00nqs3m9AwAAAAAAAAAAgMMWm14BqD+TOGcAAAAASUVORK5CYII="
   $recognizeBody = @{ imageBase64 = $tinyPngBase64 } | ConvertTo-Json
   $recognize = Invoke-RestMethod -Method Post -Uri "$BaseUrl/recognize/predict" -ContentType "application/json" -Headers $authHeaders -Body $recognizeBody
   Print-Ok "Recognition label: $($recognize.prediction.label)"
