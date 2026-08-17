@@ -7,6 +7,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/auth.routes");
 const friendsRoutes = require("./routes/friends.routes");
 const usersRoutes = require("./routes/users.routes");
+const internalRoutes = require("./routes/internal.routes");
 const { initDb } = require("./db");
 
 const app = express();
@@ -27,6 +28,7 @@ app.get("/health", (req, res) => {
 app.use("/", authRoutes);
 app.use("/friends", friendsRoutes);
 app.use("/users", usersRoutes);
+app.use("/internal", internalRoutes);
 
 app.use((req, res) => {
 	res.status(404).json({ message: "Route not found" });

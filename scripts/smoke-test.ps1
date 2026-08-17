@@ -75,9 +75,7 @@ try {
   $collectionProgress = Invoke-RestMethod -Method Get -Uri "$BaseUrl/collection/progress" -Headers $authHeaders
   Print-Ok "Collection generations discovered: $($collectionProgress.discoveredGenerations)"
 
-  Step "Race write + achievements read"
-  $raceBody = @{ points = 35; distanceM = 1200; durationS = 90 } | ConvertTo-Json
-  $race = Invoke-RestMethod -Method Post -Uri "$BaseUrl/gamification/races" -ContentType "application/json" -Headers $authHeaders -Body $raceBody
+  Step "Achievements read"
   $achievements = Invoke-RestMethod -Method Get -Uri "$BaseUrl/gamification/achievements" -Headers $authHeaders
   Print-Ok "Achievements count: $($achievements.achievements.Count)"
 

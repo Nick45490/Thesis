@@ -192,6 +192,18 @@ async function removeFriendship(userA, userB) {
 	return result.rowCount > 0;
 }
 
+async function areFriends(userA, userB) {
+	if (Number(userA) === Number(userB)) return true;
+	const result = await pool.query(
+		`SELECT 1 FROM friend_requests
+		 WHERE status = 'accepted'
+		 AND ((requester_id = $1 AND target_id = $2) OR (requester_id = $2 AND target_id = $1))
+		 LIMIT 1`,
+		[userA, userB]
+	);
+	return result.rowCount > 0;
+}
+
 async function getFriendsForUser(userId) {
 	const result = await pool.query(
 		`SELECT u.id, u.email, u.username, u.profile_photo, u.created_at
@@ -279,11 +291,13 @@ async function redeemInviteCode(code, redeemerId) {
 	if (new Date(row.expires_at) < new Date()) return { error: "expired" };
 	if (row.user_id === Number(redeemerId)) return { error: "self" };
 
-	// Mark as used
-	await pool.query(
-		`UPDATE friend_invite_codes SET used_at = NOW() WHERE id = $1`,
+	// Mark as used atomically — guards against two concurrent redemptions of the
+	// same code both passing the used_at check above before either UPDATE commits.
+	const claim = await pool.query(
+		`UPDATE friend_invite_codes SET used_at = NOW() WHERE id = $1 AND used_at IS NULL RETURNING id`,
 		[row.id]
 	);
+	if (!claim.rowCount) return { error: "used" };
 
 	// Create friend request from redeemer → code owner
 	const request = await createFriendRequest(Number(redeemerId), row.user_id);
@@ -293,6 +307,7 @@ async function redeemInviteCode(code, redeemerId) {
 
 module.exports = {
 	acceptFriendRequest,
+	areFriends,
 	createFriendRequest,
 	createInviteCode,
 	createUser,

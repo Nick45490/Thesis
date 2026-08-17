@@ -9,6 +9,7 @@ const achievementRoutes = require("./routes/achievements.routes");
 const leaderboardRoutes = require("./routes/leaderboard.routes");
 const challengeRoutes = require("./routes/challenges.routes");
 const { initDb } = require("./db");
+const { requireInternalSecret } = require("./middleware/internalSecret.middleware");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/health", (req, res) => {
 	});
 });
 
+app.use(requireInternalSecret);
 app.use("/races", raceRoutes);
 app.use("/achievements", achievementRoutes);
 app.use("/leaderboard", leaderboardRoutes);

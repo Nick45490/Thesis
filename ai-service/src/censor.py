@@ -4,7 +4,9 @@ before they are stored in the collection.
 
 Both detection models are loaded lazily on first use and cached for the
 lifetime of the process. If a model fails to download (offline, etc.) the
-corresponding region type is simply skipped — censoring never blocks a scan.
+corresponding region type is simply skipped. A crash during actual detection
+on a given image is a different case and is NOT swallowed — it propagates so
+the scan is rejected rather than stored with an unblurred plate/face.
 """
 from __future__ import annotations
 
@@ -60,7 +62,12 @@ def _detect(model, img: Image.Image) -> list[tuple[int, int, int, int]]:
                  int(b.xyxy[0][2]), int(b.xyxy[0][3]))
                 for b in results[0].boxes]
     except Exception:
-        return []
+        # Distinct from "model not loaded" above (which is an intentional skip) —
+        # a crash mid-inference must not look like "no detections found", since
+        # that would silently ship an unblurred plate/face. Let it propagate so
+        # censor_image_bytes rejects the photo instead of treating this as clean.
+        logger.exception("Detector inference failed on this image.")
+        raise
 
 
 def _apply_blur(img: Image.Image, boxes: list[tuple[int, int, int, int]]) -> Image.Image:
@@ -79,26 +86,25 @@ def _apply_blur(img: Image.Image, boxes: list[tuple[int, int, int, int]]) -> Ima
 
 def censor_image_bytes(image_bytes: bytes) -> bytes:
     """
-    Detect and blur license plates and faces.
-    Returns JPEG bytes. Falls back to the original if anything fails.
+    Detect and blur license plates and faces. Returns JPEG bytes.
+
+    Deliberately does NOT fall back to the original image on failure — a photo
+    that can't be censored must not be stored uncensored. Callers (see routes.py)
+    already turn an exception here into a 400, rejecting the scan instead.
     """
-    try:
-        img = Image.open(BytesIO(image_bytes)).convert("RGB")
+    img = Image.open(BytesIO(image_bytes)).convert("RGB")
 
-        plate_boxes = _detect(_get_plate_model(), img)
-        face_boxes  = _detect(_get_face_model(),  img)
-        all_boxes   = plate_boxes + face_boxes
+    plate_boxes = _detect(_get_plate_model(), img)
+    face_boxes  = _detect(_get_face_model(),  img)
+    all_boxes   = plate_boxes + face_boxes
 
-        if all_boxes:
-            img = _apply_blur(img, all_boxes)
-            logger.info("Censored %d plate(s), %d face(s).", len(plate_boxes), len(face_boxes))
+    if all_boxes:
+        img = _apply_blur(img, all_boxes)
+        logger.info("Censored %d plate(s), %d face(s).", len(plate_boxes), len(face_boxes))
 
-        buf = BytesIO()
-        img.save(buf, format="JPEG", quality=92)
-        return buf.getvalue()
-    except Exception as exc:
-        logger.warning("Censoring failed (%s) — returning original image.", exc)
-        return image_bytes
+    buf = BytesIO()
+    img.save(buf, format="JPEG", quality=92)
+    return buf.getvalue()
 
 
 def censor_to_base64(image_bytes: bytes) -> str:

@@ -11,6 +11,20 @@ async function getCatalogueCounts() {
 	_catalogueCountsCache = data.counts || {};
 	return _catalogueCountsCache;
 }
+
+const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || "http://localhost:3001";
+async function isFriendOf(requesterId, targetId) {
+	const res = await fetch(
+		`${AUTH_SERVICE_URL}/internal/friends/${requesterId}/${targetId}`,
+		{ headers: { "x-internal-secret": process.env.INTERNAL_SERVICE_SECRET || "" } }
+	).catch(() => null);
+	// Fail closed — a network error or auth-service being down must not turn into
+	// "assume they're friends" for what is otherwise the actual access check.
+	if (!res?.ok) return false;
+	const data = await res.json().catch(() => null);
+	return data?.friends === true;
+}
+
 const { isValidCollectionPayload, normalizeItemPayload } = require("../models/user.collection");
 
 function resolveUserId(req) {
@@ -133,6 +147,15 @@ async function getUserCollection(req, res) {
 		const targetId = Number(req.params.userId);
 		if (!targetId) {
 			return res.status(400).json({ message: "Invalid userId" });
+		}
+
+		const requesterId = resolveUserId(req);
+		if (!requesterId) {
+			return res.status(401).json({ message: "Missing user identity" });
+		}
+
+		if (requesterId !== targetId && !(await isFriendOf(requesterId, targetId))) {
+			return res.status(403).json({ message: "You can only view friends' collections" });
 		}
 
 		const [items, progress] = await Promise.all([

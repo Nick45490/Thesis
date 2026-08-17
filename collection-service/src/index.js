@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const collectionRoutes = require("./routes/collection.routes");
 const { initDb } = require("./db");
+const { requireInternalSecret } = require("./middleware/internalSecret.middleware");
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.get("/health", (req, res) => {
 	});
 });
 
-app.use("/", collectionRoutes);
+app.use("/", requireInternalSecret, collectionRoutes);
 
 app.use((req, res) => {
 	res.status(404).json({ message: "Route not found" });

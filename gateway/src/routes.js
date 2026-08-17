@@ -24,6 +24,13 @@ function createServiceProxy(target, prefix, timeoutMs = 30000) {
 				if (req.user?.email) {
 					proxyReq.setHeader("x-user-email", req.user.email);
 				}
+				// Proves this request actually came through the gateway — services
+				// that trust x-user-id (collection, gamification) require this and
+				// are also reachable directly on their own ports, so without it
+				// x-user-id alone would let anyone impersonate any user.
+				if (process.env.INTERNAL_SERVICE_SECRET) {
+					proxyReq.setHeader("x-internal-secret", process.env.INTERNAL_SERVICE_SECRET);
+				}
 			}
 		}
 	});

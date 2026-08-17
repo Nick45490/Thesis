@@ -23,14 +23,16 @@ async function postChallenge(req, res) {
 		challengerGenCode,
 		challengerHorsepower,
 		challengerWeightKg,
+		challengerTorqueNm,
+		challengerDrivetrain,
 	} = req.body;
 
 	if (!opponentUserId || !distance || !challengerGenerationId || !challengerMake || !challengerModel) {
 		return res.status(400).json({ message: "Missing required fields" });
 	}
 
-	if (!["quarter", "half", "full"].includes(distance)) {
-		return res.status(400).json({ message: "distance must be quarter, half, or full" });
+	if (!["quarter", "half", "full", "circuit"].includes(distance)) {
+		return res.status(400).json({ message: "distance must be quarter, half, full, or circuit" });
 	}
 
 	if (Number(opponentUserId) === userId) {
@@ -48,6 +50,8 @@ async function postChallenge(req, res) {
 			challengerGenCode:     challengerGenCode     || "",
 			challengerHorsepower:  challengerHorsepower  || null,
 			challengerWeightKg:    challengerWeightKg    || null,
+			challengerTorqueNm:    challengerTorqueNm    || null,
+			challengerDrivetrain:  challengerDrivetrain  || null,
 		});
 		return res.status(201).json({ challenge });
 	} catch {
@@ -72,7 +76,7 @@ async function patchAccept(req, res) {
 	if (!userId) return res.status(401).json({ message: "Missing user identity" });
 
 	const challengeId = Number(req.params.id);
-	const { opponentGenerationId, opponentMake, opponentModel, opponentGenCode, opponentHorsepower, opponentWeightKg } = req.body;
+	const { opponentGenerationId, opponentMake, opponentModel, opponentGenCode, opponentHorsepower, opponentWeightKg, opponentTorqueNm, opponentDrivetrain } = req.body;
 
 	if (!opponentGenerationId || !opponentMake || !opponentModel) {
 		return res.status(400).json({ message: "Missing opponent car details" });
@@ -91,7 +95,12 @@ async function patchAccept(req, res) {
 			opponentGenCode:     opponentGenCode     || "",
 			opponentHorsepower:  opponentHorsepower  || null,
 			opponentWeightKg:    opponentWeightKg    || null,
+			opponentTorqueNm:    opponentTorqueNm    || null,
+			opponentDrivetrain:  opponentDrivetrain  || null,
 		});
+		// Lost a race against a concurrent accept on the same challenge (see the
+		// transaction + row lock in acceptChallenge) — not a server error.
+		if (result.alreadyResolved) return res.status(409).json({ message: "Challenge is not pending" });
 		return res.status(200).json(result);
 	} catch {
 		return res.status(500).json({ message: "Failed to accept challenge" });

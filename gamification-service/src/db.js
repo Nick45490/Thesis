@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 const { RACING_CATALOGUE, buildRacingCatalogue } = require("./engine/achievementChecker");
-const { estimateDragTime, computePointsAwarded, getCarRarity } = require("./engine/performanceEngine");
+const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity } = require("./engine/performanceEngine");
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
@@ -68,7 +68,11 @@ async function initDb() {
 			ADD COLUMN IF NOT EXISTS challenger_horsepower INTEGER,
 			ADD COLUMN IF NOT EXISTS challenger_weight_kg INTEGER,
 			ADD COLUMN IF NOT EXISTS opponent_horsepower INTEGER,
-			ADD COLUMN IF NOT EXISTS opponent_weight_kg INTEGER
+			ADD COLUMN IF NOT EXISTS opponent_weight_kg INTEGER,
+			ADD COLUMN IF NOT EXISTS challenger_torque_nm INTEGER,
+			ADD COLUMN IF NOT EXISTS challenger_drivetrain VARCHAR(20),
+			ADD COLUMN IF NOT EXISTS opponent_torque_nm INTEGER,
+			ADD COLUMN IF NOT EXISTS opponent_drivetrain VARCHAR(20)
 	`);
 
 	await pool.query(`
@@ -98,10 +102,10 @@ function mapAchievementRow(row) {
 	};
 }
 
-async function addRace(userId, raceInput) {
+async function addRace(userId, raceInput, client = pool) {
 	const won         = raceInput.won         !== false;
 	const wasUnderdog = raceInput.wasUnderdog  === true;
-	const result = await pool.query(
+	const result = await client.query(
 		`INSERT INTO races (user_id, points, distance_m, duration_s, won, was_underdog)
 		 VALUES ($1, $2, $3, $4, $5, $6)
 		 RETURNING id, points, distance_m, duration_s, created_at`,
@@ -229,12 +233,16 @@ function mapChallengeRow(row) {
 		challengerGenCode:      row.challenger_gen_code,
 		challengerHorsepower:   row.challenger_horsepower,
 		challengerWeightKg:     row.challenger_weight_kg,
+		challengerTorqueNm:     row.challenger_torque_nm,
+		challengerDrivetrain:   row.challenger_drivetrain,
 		opponentGenerationId:   row.opponent_generation_id,
 		opponentMake:           row.opponent_make,
 		opponentModel:          row.opponent_model,
 		opponentGenCode:        row.opponent_gen_code,
 		opponentHorsepower:     row.opponent_horsepower,
 		opponentWeightKg:       row.opponent_weight_kg,
+		opponentTorqueNm:       row.opponent_torque_nm,
+		opponentDrivetrain:     row.opponent_drivetrain,
 		status:                 row.status,
 		winnerUserId:           row.winner_user_id,
 		challengerTime:         row.challenger_time !== null ? Number(row.challenger_time) : null,
@@ -250,8 +258,8 @@ async function createChallenge(input) {
 		`INSERT INTO race_challenges
 		   (challenger_user_id, opponent_user_id, distance,
 		    challenger_generation_id, challenger_make, challenger_model, challenger_gen_code,
-		    challenger_horsepower, challenger_weight_kg)
-		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+		    challenger_horsepower, challenger_weight_kg, challenger_torque_nm, challenger_drivetrain)
+		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
 		 RETURNING *`,
 		[
 			Number(input.challengerUserId),
@@ -263,6 +271,8 @@ async function createChallenge(input) {
 			input.challengerGenCode    || "",
 			input.challengerHorsepower || null,
 			input.challengerWeightKg   || null,
+			input.challengerTorqueNm   || null,
+			input.challengerDrivetrain || null,
 		]
 	);
 	return mapChallengeRow(result.rows[0]);
@@ -298,85 +308,139 @@ async function listChallenges(userId) {
 	return result.rows.map(mapChallengeRow);
 }
 
+// Wrapped in a transaction with a row lock so two near-simultaneous accepts on
+// the same challenge can't both resolve it — the second sees status != 'pending'
+// (or loses the guarded UPDATE below) and backs off instead of double-awarding
+// points and inserting duplicate race rows.
 async function acceptChallenge(id, opponentInput) {
-	const existing = await getChallengeById(id);
+	const client = await pool.connect();
+	let winnerUserId, alreadyResolved = false;
 
-	const challengerTime = estimateDragTime(
-		existing.challengerHorsepower, existing.challengerWeightKg,
-		existing.challengerMake, existing.challengerModel, existing.distance
-	);
-	const opponentTime = estimateDragTime(
-		opponentInput.opponentHorsepower, opponentInput.opponentWeightKg,
-		opponentInput.opponentMake, opponentInput.opponentModel, existing.distance
-	);
+	try {
+		await client.query("BEGIN");
 
-	const challengerWon    = challengerTime <= opponentTime;
-	const winnerUserId     = challengerWon ? existing.challengerUserId : existing.opponentUserId;
-	const loserMake        = challengerWon ? opponentInput.opponentMake      : existing.challengerMake;
-	const loserModel       = challengerWon ? opponentInput.opponentModel     : existing.challengerModel;
-	const winnerMake       = challengerWon ? existing.challengerMake         : opponentInput.opponentMake;
-	const winnerModel      = challengerWon ? existing.challengerModel        : opponentInput.opponentModel;
-	const winnerHorsepower = challengerWon ? existing.challengerHorsepower   : opponentInput.opponentHorsepower;
-	const winnerWeightKg   = challengerWon ? existing.challengerWeightKg     : opponentInput.opponentWeightKg;
-	const marginSeconds    = Math.abs(challengerTime - opponentTime);
-	const pointsAwarded    = computePointsAwarded(loserMake, loserModel, existing.distance, winnerMake, winnerModel, marginSeconds);
+		const lockResult = await client.query(
+			`SELECT * FROM race_challenges WHERE id = $1 FOR UPDATE`,
+			[id]
+		);
+		const existing = lockResult.rowCount ? mapChallengeRow(lockResult.rows[0]) : null;
 
-	const distanceMap = { quarter: 402, half: 805, full: 1609 };
-	const distanceM   = distanceMap[existing.distance] || 402;
+		if (!existing || existing.status !== "pending") {
+			await client.query("ROLLBACK");
+			alreadyResolved = true;
+		} else {
+			const isCircuit = existing.distance === "circuit";
+			const challengerTime = isCircuit
+				? estimateCircuitTime(
+					existing.challengerHorsepower, existing.challengerWeightKg,
+					existing.challengerTorqueNm, existing.challengerDrivetrain,
+					existing.challengerMake, existing.challengerModel
+				)
+				: estimateDragTime(
+					existing.challengerHorsepower, existing.challengerWeightKg,
+					existing.challengerMake, existing.challengerModel, existing.distance
+				);
+			const opponentTime = isCircuit
+				? estimateCircuitTime(
+					opponentInput.opponentHorsepower, opponentInput.opponentWeightKg,
+					opponentInput.opponentTorqueNm, opponentInput.opponentDrivetrain,
+					opponentInput.opponentMake, opponentInput.opponentModel
+				)
+				: estimateDragTime(
+					opponentInput.opponentHorsepower, opponentInput.opponentWeightKg,
+					opponentInput.opponentMake, opponentInput.opponentModel, existing.distance
+				);
 
-	await pool.query(
-		`UPDATE race_challenges
-		 SET opponent_generation_id = $1,
-		     opponent_make           = $2,
-		     opponent_model          = $3,
-		     opponent_gen_code       = $4,
-		     opponent_horsepower     = $5,
-		     opponent_weight_kg      = $6,
-		     status                  = 'completed',
-		     winner_user_id          = $7,
-		     challenger_time         = $8,
-		     opponent_time           = $9,
-		     points_awarded          = $10,
-		     resolved_at             = NOW()
-		 WHERE id = $11`,
-		[
-			Number(opponentInput.opponentGenerationId),
-			opponentInput.opponentMake,
-			opponentInput.opponentModel,
-			opponentInput.opponentGenCode    || "",
-			opponentInput.opponentHorsepower || null,
-			opponentInput.opponentWeightKg   || null,
-			winnerUserId,
-			challengerTime,
-			opponentTime,
-			pointsAwarded,
-			id,
-		]
-	);
+			const challengerWon    = challengerTime <= opponentTime;
+			const loserUserId      = challengerWon ? existing.opponentUserId    : existing.challengerUserId;
+			const winnerMake       = challengerWon ? existing.challengerMake         : opponentInput.opponentMake;
+			const winnerModel      = challengerWon ? existing.challengerModel        : opponentInput.opponentModel;
+			const winnerHorsepower = challengerWon ? existing.challengerHorsepower   : opponentInput.opponentHorsepower;
+			const winnerWeightKg   = challengerWon ? existing.challengerWeightKg     : opponentInput.opponentWeightKg;
+			const loserHorsepower  = challengerWon ? opponentInput.opponentHorsepower : existing.challengerHorsepower;
+			const loserWeightKg    = challengerWon ? opponentInput.opponentWeightKg   : existing.challengerWeightKg;
+			const loserMakeR       = challengerWon ? opponentInput.opponentMake  : existing.challengerMake;
+			const loserModelR      = challengerWon ? opponentInput.opponentModel : existing.challengerModel;
+			const marginSeconds    = Math.abs(challengerTime - opponentTime);
+			const pointsAwarded    = computePointsAwarded(loserHorsepower, loserWeightKg, existing.distance, winnerHorsepower, winnerWeightKg, marginSeconds);
 
-	const loserUserId  = challengerWon ? existing.opponentUserId  : existing.challengerUserId;
-	const loserMakeR   = challengerWon ? opponentInput.opponentMake  : existing.challengerMake;
-	const loserModelR  = challengerWon ? opponentInput.opponentModel : existing.challengerModel;
-	const winnerRarity = getCarRarity(winnerMake, winnerModel);
-	const loserRarity  = getCarRarity(loserMakeR,  loserModelR);
-	const wasUnderdog  = ["common","rare","epic","legendary"].indexOf(winnerRarity) < ["common","rare","epic","legendary"].indexOf(loserRarity);
+			winnerUserId = challengerWon ? existing.challengerUserId : existing.opponentUserId;
 
-	await addRace(winnerUserId, {
-		points:      pointsAwarded,
-		distanceM:   distanceM,
-		durationS:   Math.round(challengerWon ? challengerTime : opponentTime),
-		won:         true,
-		wasUnderdog: wasUnderdog,
-	});
+			const distanceMap = { quarter: 402, half: 805, full: 1609, circuit: 5891 };
+			const distanceM   = distanceMap[existing.distance] || 402;
 
-	// Record the loser's row (0 points, won=false) so their race stats are complete
-	await addRace(loserUserId, {
-		points:      0,
-		distanceM:   distanceM,
-		durationS:   Math.round(challengerWon ? opponentTime : challengerTime),
-		won:         false,
-		wasUnderdog: false,
-	});
+			const updateResult = await client.query(
+				`UPDATE race_challenges
+				 SET opponent_generation_id = $1,
+				     opponent_make           = $2,
+				     opponent_model          = $3,
+				     opponent_gen_code       = $4,
+				     opponent_horsepower     = $5,
+				     opponent_weight_kg      = $6,
+				     opponent_torque_nm      = $7,
+				     opponent_drivetrain     = $8,
+				     status                  = 'completed',
+				     winner_user_id          = $9,
+				     challenger_time         = $10,
+				     opponent_time           = $11,
+				     points_awarded          = $12,
+				     resolved_at             = NOW()
+				 WHERE id = $13 AND status = 'pending'`,
+				[
+					Number(opponentInput.opponentGenerationId),
+					opponentInput.opponentMake,
+					opponentInput.opponentModel,
+					opponentInput.opponentGenCode    || "",
+					opponentInput.opponentHorsepower || null,
+					opponentInput.opponentWeightKg   || null,
+					opponentInput.opponentTorqueNm   || null,
+					opponentInput.opponentDrivetrain || null,
+					winnerUserId,
+					challengerTime,
+					opponentTime,
+					pointsAwarded,
+					id,
+				]
+			);
+
+			if (!updateResult.rowCount) {
+				await client.query("ROLLBACK");
+				alreadyResolved = true;
+			} else {
+				const winnerRarity = getCarRarity(winnerHorsepower, winnerWeightKg, winnerMake, winnerModel);
+				const loserRarity  = getCarRarity(loserHorsepower,  loserWeightKg,  loserMakeR, loserModelR);
+				const wasUnderdog  = ["common","rare","epic","legendary"].indexOf(winnerRarity) < ["common","rare","epic","legendary"].indexOf(loserRarity);
+
+				await addRace(winnerUserId, {
+					points:      pointsAwarded,
+					distanceM:   distanceM,
+					durationS:   Math.round(challengerWon ? challengerTime : opponentTime),
+					won:         true,
+					wasUnderdog: wasUnderdog,
+				}, client);
+
+				// Record the loser's row (0 points, won=false) so their race stats are complete
+				await addRace(loserUserId, {
+					points:      0,
+					distanceM:   distanceM,
+					durationS:   Math.round(challengerWon ? opponentTime : challengerTime),
+					won:         false,
+					wasUnderdog: false,
+				}, client);
+
+				await client.query("COMMIT");
+			}
+		}
+	} catch (err) {
+		await client.query("ROLLBACK");
+		throw err;
+	} finally {
+		client.release();
+	}
+
+	if (alreadyResolved) {
+		return { alreadyResolved: true };
+	}
 
 	const winnerStats = await getRaceStats(winnerUserId);
 	const { unlockedNow } = await unlockAchievementsForUser(winnerUserId, winnerStats);
