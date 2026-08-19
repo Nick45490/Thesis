@@ -1,0 +1,65 @@
+# Street Scout — Future Improvements
+
+A running list of possible next steps, compiled after the AI pipeline overhaul,
+rarity redesign, circuit race mode, and the two-pass backend security/quality
+audit (2026-08-17).
+
+## AI / Recognition pipeline
+
+- The LoRA ablation notebook (`ai-service/colab_lora_ablation.ipynb`) was built
+  but results were never reported back — find out if base CLIP vs.
+  LoRA-adapted actually makes a measurable accuracy difference.
+- Domain-matched training data — the reference set is built from
+  catalogue/stock photos, but real scans are phone photos in the wild
+  (varied lighting, angles, backgrounds). This gap between training and
+  real-world distribution is the single biggest lever left for accuracy.
+- Revisit `MIN_CONFIDENCE` (currently 0.04) now that the classifier's been
+  retrained on the expanded dataset — trades off false "confident" IDs vs.
+  false "unknown"s.
+- No mechanism to retrain periodically as real user scans accumulate — the
+  reference set only grows when someone manually re-runs the fetch scripts.
+
+## Backend architecture
+
+- catalogue-service reaches directly into ai-service's filesystem for car
+  images — fragile if either service moves. Needs a decision: ai-service
+  serves them itself, or catalogue-service proxies over HTTP.
+- gamification-service directly `JOIN`s auth-service's `users` table across
+  a service boundary. Now that the internal-secret infrastructure exists
+  (from the security fixes), exposing a proper "usernames by ids" endpoint
+  on auth-service is more feasible than when this was first flagged.
+- No automated test suite anywhere (unit or integration) — every fix this
+  session was verified by hand with live curl calls, which doesn't scale or
+  protect against regressions going forward.
+- No CI — nothing runs the smoke test or catches a broken build
+  automatically on push.
+
+## Features / gameplay
+
+- Circuit mode has exactly one track (Silverstone) — multi-track support was
+  the natural next step when it was designed, never built.
+- `DELETE /friends/:friendId` exists in the backend but has zero UI surface
+  (called out in CLAUDE.md as a known gap).
+- Leaderboard is all-time only — no weekly/monthly reset, so early players
+  entrench a permanent lead.
+- Splitting high-performance trims into separate catalogue entries (e.g.
+  base Mustang vs. GT500) was explicitly deferred as "post-production" —
+  still on the table.
+
+## Frontend UX
+
+- Nothing tells existing users *why* their collection's rarity distribution
+  changed when it flipped from make-based to power-to-weight-based — a
+  returning user could be confused their "legendary" Ferrari is now "epic."
+- The circuit track view shows a marker moving along Silverstone but no
+  lap-progress indicator (% complete, corner names) beyond the dot itself.
+- No user-facing messaging for the censoring-fails-closed behavior — if a
+  scan gets rejected because censoring crashed, does the UI explain why, or
+  does it look like a generic error?
+
+## Security / ops (lower priority)
+
+- `INTERNAL_SERVICE_SECRET`/`JWT_SECRET` have no rotation story — fine for a
+  personal project, but worth knowing if this ever goes further.
+- Rate limiting is IP-based only — no additional per-user limiting on
+  authenticated routes.
