@@ -18,12 +18,29 @@ Usage:
 
 import argparse
 import json
+import statistics
 from collections import Counter
 from pathlib import Path
 
 from src.model_loader import CarClassifier, load_labels_dict, HELD_OUT_PATH, LORA_DIR, CLASSIFIER_PATH, EMBEDDINGS_CACHE
 
 BASE_DIR = Path(__file__).parent
+
+
+def _stats(values: list) -> dict:
+    if not values:
+        return {}
+    s = sorted(values)
+    n = len(s)
+    return {
+        "count":  n,
+        "mean":   round(statistics.mean(s), 4),
+        "median": round(statistics.median(s), 4),
+        "p25":    round(s[int(n * 0.25)], 4),
+        "p75":    round(s[int(n * 0.75)], 4),
+        "min":    round(s[0], 4),
+        "max":    round(s[-1], 4),
+    }
 
 
 def main() -> None:
@@ -60,12 +77,34 @@ def main() -> None:
 
     top1_correct = 0
     top5_correct = 0
+    make_model_correct = 0       # predicted (make, model) matches, regardless of exact generation
+    make_model_top5_correct = 0  # actual (make, model) appears among the top-5 candidates' (make, model)
     total = 0
     skipped = 0
 
     pair_total: Counter = Counter()
     pair_correct: Counter = Counter()
     confusion: Counter = Counter()   # (actual_pair, predicted_pair) -> count
+
+    # To check whether a confidently-wrong top-1 (no close second place, still
+    # incorrect — e.g. BMW M3 G80 confidently called an M4 G82) can be caught
+    # by an absolute-confidence floor rather than only a close-second-place
+    # ratio, which by definition can't see this failure mode at all.
+    correct_top1_conf   : list = []
+    incorrect_top1_conf : list = []
+    correct_top2_ratio  : list = []  # candidates[1].confidence / candidates[0].confidence
+    incorrect_top2_ratio: list = []
+
+    top10_correct = 0
+    not_in_candidates: list = []  # true (make, model, genCode) entirely absent from the returned list
+
+    # Calibration data for MIN_RAW_SIMILARITY (out-of-catalogue detection) — every
+    # held-out image is a GENUINE catalogue car, so this distribution is "how
+    # similar does a real match look, at the low end" — there's no true-negative
+    # set to sweep against, so the floor gets set comfortably below this range.
+    raw_similarities: list = []
+    correct_raw_sim: list = []
+    incorrect_raw_sim: list = []
 
     for key, img_path in held_out.items():
         p = Path(img_path)
@@ -79,6 +118,7 @@ def main() -> None:
         image_bytes = p.read_bytes()
         try:
             label, confidence, meta, candidates, no_vehicle_detected = classifier.predict(image_bytes)
+            raw_sim = classifier.raw_top1_similarity(image_bytes)
         except Exception as exc:
             print(f"  Skipping {p.name}: {exc}")
             skipped += 1
@@ -86,22 +126,54 @@ def main() -> None:
 
         total += 1
         pair_total[actual_pair] += 1
+        raw_similarities.append(raw_sim)
 
         predicted_keys_top5 = [c["key"] for c in candidates[:5]]
+        all_predicted_keys  = [c["key"] for c in candidates]  # top_k=10 by default
         is_top1 = label == key
         is_top5 = key in predicted_keys_top5
+        is_top10 = key in all_predicted_keys
+        (correct_raw_sim if is_top1 else incorrect_raw_sim).append(raw_sim)
+
+        if is_top10:
+            top10_correct += 1
+        else:
+            not_in_candidates.append({
+                "manufacturerName": actual_meta["manufacturerName"],
+                "modelName": actual_meta["modelName"],
+                "generationCode": actual_meta["generationCode"],
+            })
+
+        predicted_pair = (
+            (meta["manufacturerName"], meta["modelName"]) if meta else ("unknown", "unknown")
+        )
 
         if is_top1:
             top1_correct += 1
             pair_correct[actual_pair] += 1
+            correct_top1_conf.append(confidence)
         else:
-            predicted_pair = (
-                (meta["manufacturerName"], meta["modelName"]) if meta else ("unknown", "unknown")
-            )
             confusion[(actual_pair, predicted_pair)] += 1
+            incorrect_top1_conf.append(confidence)
+
+        if len(candidates) > 1 and candidates[0]["confidence"] > 0:
+            ratio = candidates[1]["confidence"] / candidates[0]["confidence"]
+            (correct_top2_ratio if is_top1 else incorrect_top2_ratio).append(ratio)
 
         if is_top5:
             top5_correct += 1
+
+        # Right car, possibly wrong model year — a much smaller miss than a
+        # completely different make/model, and the thing that actually
+        # determines whether a scan "feels" correct to a user.
+        if predicted_pair == actual_pair:
+            make_model_correct += 1
+
+        top5_pairs = {
+            (c["manufacturerName"], c["modelName"]) for c in candidates[:5]
+        }
+        if actual_pair in top5_pairs:
+            make_model_top5_correct += 1
 
     if total == 0:
         print("No valid held-out images evaluated.")
@@ -109,10 +181,59 @@ def main() -> None:
 
     top1_acc = top1_correct / total
     top5_acc = top5_correct / total
+    top10_acc = top10_correct / total
+    make_model_acc = make_model_correct / total
+    make_model_top5_acc = make_model_top5_correct / total
 
     print(f"\nEvaluated {total} held-out images ({skipped} skipped).")
-    print(f"Top-1 accuracy: {top1_acc:.3f}")
-    print(f"Top-5 accuracy: {top5_acc:.3f}")
+    print(f"Top-1 accuracy (exact generation):        {top1_acc:.3f}")
+    print(f"Top-5 accuracy (exact generation):        {top5_acc:.3f}")
+    print(f"Top-10 accuracy (exact generation):       {top10_acc:.3f}")
+    print(f"Make+model accuracy (any generation):     {make_model_acc:.3f}")
+    print(f"Make+model top-5 accuracy (any generation): {make_model_top5_acc:.3f}")
+    print(f"\nCompletely missed (true answer not even in the top-10): {len(not_in_candidates)} / {total} ({len(not_in_candidates)/total:.1%})")
+    for row in not_in_candidates:
+        print(f"  {row['manufacturerName']} {row['modelName']} ({row['generationCode']})")
+
+    correct_conf_stats   = _stats(correct_top1_conf)
+    incorrect_conf_stats = _stats(incorrect_top1_conf)
+    correct_ratio_stats   = _stats(correct_top2_ratio)
+    incorrect_ratio_stats = _stats(incorrect_top2_ratio)
+
+    print("\nTop-1 confidence, correct vs incorrect predictions:")
+    print(f"  Correct:   {correct_conf_stats}")
+    print(f"  Incorrect: {incorrect_conf_stats}")
+    print("\nTop-2/top-1 confidence ratio, correct vs incorrect predictions:")
+    print(f"  Correct:   {correct_ratio_stats}")
+    print(f"  Incorrect: {incorrect_ratio_stats}")
+
+    # Precision/recall sweep for an absolute-confidence floor: at each
+    # candidate threshold, what fraction of WRONG top-1s get caught (flagged
+    # for confirmation) vs what fraction of RIGHT top-1s get needlessly
+    # flagged too (friction cost).
+    print("\nAbsolute-confidence floor sweep (flag if top-1 confidence < threshold):")
+    print(f"  {'threshold':>9}  {'wrong caught':>13}  {'right flagged':>14}")
+    for threshold in [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]:
+        wrong_caught = sum(1 for c in incorrect_top1_conf if c < threshold) / len(incorrect_top1_conf)
+        right_flagged = sum(1 for c in correct_top1_conf if c < threshold) / len(correct_top1_conf)
+        print(f"  {threshold:>9.2f}  {wrong_caught:>12.1%}  {right_flagged:>13.1%}")
+
+    # Calibration data for MIN_RAW_SIMILARITY (out-of-catalogue detection). Every
+    # held-out image is a genuine catalogue car, so this is "how similar does a
+    # real match look, even at the low end" — there's no true-negative set to
+    # sweep against here, so the floor should be set comfortably below this range.
+    raw_sim_stats = _stats(raw_similarities)
+    correct_raw_sim_stats = _stats(correct_raw_sim)
+    incorrect_raw_sim_stats = _stats(incorrect_raw_sim)
+    print("\nRaw top-1 FAISS similarity (all held-out images are genuine catalogue cars):")
+    print(f"  Overall:   {raw_sim_stats}")
+    print(f"  Correct:   {correct_raw_sim_stats}")
+    print(f"  Incorrect: {incorrect_raw_sim_stats}")
+    sorted_sims = sorted(raw_similarities)
+    n = len(sorted_sims)
+    for pct in (1, 2, 5, 10):
+        idx = max(0, int(n * pct / 100) - 1)
+        print(f"  p{pct}: {sorted_sims[idx]:.4f}")
 
     per_pair = []
     for pair, n in pair_total.items():
@@ -131,7 +252,7 @@ def main() -> None:
             "predicted": {"manufacturerName": pr[0], "modelName": pr[1]},
             "count": n,
         }
-        for (a, pr), n in confusion.most_common(30)
+        for (a, pr), n in confusion.most_common(None)
     ]
 
     print("\nWorst-performing (make, model) pairs:")
@@ -143,6 +264,21 @@ def main() -> None:
         "skipped": skipped,
         "top1Accuracy": round(top1_acc, 4),
         "top5Accuracy": round(top5_acc, 4),
+        "top10Accuracy": round(top10_acc, 4),
+        "makeModelAccuracy": round(make_model_acc, 4),
+        "makeModelTop5Accuracy": round(make_model_top5_acc, 4),
+        "notInCandidates": not_in_candidates,
+        "confidenceStats": {
+            "correctTop1":     correct_conf_stats,
+            "incorrectTop1":   incorrect_conf_stats,
+            "correctTop2Ratio":   correct_ratio_stats,
+            "incorrectTop2Ratio": incorrect_ratio_stats,
+        },
+        "rawSimilarityStats": {
+            "overall":   raw_sim_stats,
+            "correct":   correct_raw_sim_stats,
+            "incorrect": incorrect_raw_sim_stats,
+        },
         "perPair": per_pair,
         "worstConfusion": worst_confusion,
     }
