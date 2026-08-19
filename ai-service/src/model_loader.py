@@ -332,19 +332,66 @@ class CarClassifier:
     # Below this the car is treated as unknown / not in catalogue.
     MIN_CONFIDENCE = 0.04
 
+    # Minimum absolute cosine similarity to the single closest reference embedding
+    # of ANY class — catches cars that don't resemble anything in the catalogue at
+    # all (e.g. a Lister Storm, genuinely not one of the 813 known generations),
+    # which MIN_CONFIDENCE alone can't: that's a *relative* score among the 813
+    # classes, so a genuinely novel car can still "win" relatively without
+    # actually resembling anything closely in absolute terms.
+    # Calibrated in two stages. First pass (0.87) used only the held-out set (812
+    # genuine catalogue images, similarity never below 0.8824) with a safety
+    # margin below that floor — but live-tested against two real photos of a
+    # genuinely out-of-catalogue car (a Lister Storm) and didn't catch either one
+    # (0.8700 and 0.8734 — both just above 0.87). The true gap between "known car,
+    # worst case" and "this actual unknown car" turned out to be only ~0.01-0.012
+    # wide. Retuned to sit in that gap: catches both real unknown examples while
+    # staying below the genuine-catalogue floor (0.8824), so it shouldn't newly
+    # reject any real catalogue car either. Calibrated against exactly one
+    # negative example (two photos of the same car) — a thin sample; revisit if
+    # more real "unknown car" cases surface.
+    MIN_RAW_SIMILARITY = 0.878
+
+    def _embed_query(self, cropped: Image.Image) -> np.ndarray:
+        # CLIP embedding of the cropped car, pooled with its horizontal flip
+        # (test-time augmentation — averages out some of the crop/orientation noise)
+        flipped = cropped.transpose(Image.FLIP_LEFT_RIGHT)
+        vec_orig, vec_flip = _clip_embed_batch(self._clip, self._processor, [cropped, flipped], self._device)
+        pooled = vec_orig + vec_flip
+        pooled = pooled / np.linalg.norm(pooled)
+        return pooled.reshape(1, -1).astype(np.float32)
+
+    def _raw_top1_similarity(self, query: np.ndarray) -> float:
+        # Absolute resemblance to the single closest reference embedding of ANY
+        # class — independent of the classifier's own (relative) confidence.
+        # IndexFlatIP on normalized vectors gives cosine similarity directly.
+        if self._index is None or self._index.ntotal == 0:
+            return 1.0  # nothing to compare against — don't reject on this signal
+        distances, _ = self._index.search(query, k=1)
+        return float(distances[0][0])
+
+    def raw_top1_similarity(self, image_bytes: bytes) -> float:
+        """Diagnostic entry point (see evaluate.py) — not used by predict() itself,
+        which already has the query embedding in hand and calls _raw_top1_similarity
+        directly to avoid embedding the image twice."""
+        image = Image.open(BytesIO(image_bytes)).convert("RGB")
+        cropped, _detected = self._crop_car(image)
+        query = self._embed_query(cropped)
+        return self._raw_top1_similarity(query)
+
     def predict(self, image_bytes: bytes, top_k: int = 10) -> Tuple[str, float, dict, List[dict], bool]:
         image = Image.open(BytesIO(image_bytes)).convert("RGB")
 
         # 1. YOLO → crop car out of the scene
         cropped, detected = self._crop_car(image)
 
-        # 2. CLIP embedding of the cropped car, pooled with its horizontal flip
-        #    (test-time augmentation — averages out some of the crop/orientation noise)
-        flipped = cropped.transpose(Image.FLIP_LEFT_RIGHT)
-        vec_orig, vec_flip = _clip_embed_batch(self._clip, self._processor, [cropped, flipped], self._device)
-        pooled = vec_orig + vec_flip
-        pooled = pooled / np.linalg.norm(pooled)
-        query = pooled.reshape(1, -1).astype(np.float32)
+        # 2. CLIP embedding of the cropped car (test-time augmented)
+        query = self._embed_query(cropped)
+
+        # 2b. Out-of-catalogue check — a car that doesn't resemble anything in the
+        # reference set at all shouldn't get a confident (if relatively-ranked)
+        # answer just because it's the "least bad" of 813 known options.
+        if self._raw_top1_similarity(query) < self.MIN_RAW_SIMILARITY:
+            return "", 0.0, {}, [], not detected
 
         # 3a. Classifier path (preferred — learns decision boundaries between similar cars)
         if self._clf is not None:
