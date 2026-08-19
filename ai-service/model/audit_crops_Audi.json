@@ -1,0 +1,190 @@
+{
+	"totalImages": 493,
+	"noDetection": [],
+	"tightCrop": [
+		{
+			"key": "Audi|A3|8P",
+			"manufacturerName": "Audi",
+			"modelName": "A3",
+			"generationCode": "8P",
+			"file": "Audi_A3_8P_19.jpg",
+			"boxAreaRatio": 0.875
+		},
+		{
+			"key": "Audi|A3|8V",
+			"manufacturerName": "Audi",
+			"modelName": "A3",
+			"generationCode": "8V",
+			"file": "Audi_A3_8V_19.jpg",
+			"boxAreaRatio": 0.911
+		},
+		{
+			"key": "Audi|A3|8Y",
+			"manufacturerName": "Audi",
+			"modelName": "A3",
+			"generationCode": "8Y",
+			"file": "Audi_A3_8Y_16.jpg",
+			"boxAreaRatio": 0.859
+		},
+		{
+			"key": "Audi|A4|B7",
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"generationCode": "B7",
+			"file": "Audi_A4_B7_0.jpg",
+			"boxAreaRatio": 0.922
+		},
+		{
+			"key": "Audi|A4|B7",
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"generationCode": "B7",
+			"file": "Audi_A4_B7_9.jpg",
+			"boxAreaRatio": 0.932
+		},
+		{
+			"key": "Audi|A4|B8",
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"generationCode": "B8",
+			"file": "Audi_A4_B8_4.jpg",
+			"boxAreaRatio": 0.965
+		},
+		{
+			"key": "Audi|A4|B8",
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"generationCode": "B8",
+			"file": "Audi_A4_B8_5.jpg",
+			"boxAreaRatio": 0.87
+		},
+		{
+			"key": "Audi|A4|B8",
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"generationCode": "B8",
+			"file": "Audi_A4_B8_15.jpg",
+			"boxAreaRatio": 0.919
+		},
+		{
+			"key": "Audi|A6|C6",
+			"manufacturerName": "Audi",
+			"modelName": "A6",
+			"generationCode": "C6",
+			"file": "Audi_A6_C6_4.jpg",
+			"boxAreaRatio": 0.896
+		},
+		{
+			"key": "Audi|Q3|F3",
+			"manufacturerName": "Audi",
+			"modelName": "Q3",
+			"generationCode": "F3",
+			"file": "Audi_Q3_F3_16.jpg",
+			"boxAreaRatio": 0.882
+		},
+		{
+			"key": "Audi|Q5|8R",
+			"manufacturerName": "Audi",
+			"modelName": "Q5",
+			"generationCode": "8R",
+			"file": "Audi_Q5_8R_0.jpg",
+			"boxAreaRatio": 0.927
+		},
+		{
+			"key": "Audi|Q5|8R",
+			"manufacturerName": "Audi",
+			"modelName": "Q5",
+			"generationCode": "8R",
+			"file": "Audi_Q5_8R_1.jpg",
+			"boxAreaRatio": 0.92
+		},
+		{
+			"key": "Audi|A5|F5",
+			"manufacturerName": "Audi",
+			"modelName": "A5",
+			"generationCode": "F5",
+			"file": "Audi_A5_F5_1.jpg",
+			"boxAreaRatio": 0.91
+		},
+		{
+			"key": "Audi|A5|F5",
+			"manufacturerName": "Audi",
+			"modelName": "A5",
+			"generationCode": "F5",
+			"file": "Audi_A5_F5_10.jpg",
+			"boxAreaRatio": 0.986
+		},
+		{
+			"key": "Audi|Q7|4L",
+			"manufacturerName": "Audi",
+			"modelName": "Q7",
+			"generationCode": "4L",
+			"file": "Audi_Q7_4L_14.jpg",
+			"boxAreaRatio": 0.875
+		},
+		{
+			"key": "Audi|Q7|4L",
+			"manufacturerName": "Audi",
+			"modelName": "Q7",
+			"generationCode": "4L",
+			"file": "Audi_Q7_4L_18.jpg",
+			"boxAreaRatio": 0.86
+		},
+		{
+			"key": "Audi|TT|8J",
+			"manufacturerName": "Audi",
+			"modelName": "TT",
+			"generationCode": "8J",
+			"file": "Audi_TT_8J_0.jpg",
+			"boxAreaRatio": 0.868
+		},
+		{
+			"key": "Audi|TT|8S",
+			"manufacturerName": "Audi",
+			"modelName": "TT",
+			"generationCode": "8S",
+			"file": "Audi_TT_8S_7.jpg",
+			"boxAreaRatio": 0.948
+		},
+		{
+			"key": "Audi|A8|D4",
+			"manufacturerName": "Audi",
+			"modelName": "A8",
+			"generationCode": "D4",
+			"file": "Audi_A8_D4_0.jpg",
+			"boxAreaRatio": 0.938
+		},
+		{
+			"key": "Audi|A8|D5",
+			"manufacturerName": "Audi",
+			"modelName": "A8",
+			"generationCode": "D5",
+			"file": "Audi_A8_D5_16.jpg",
+			"boxAreaRatio": 0.897
+		},
+		{
+			"key": "Audi|Q8|F1",
+			"manufacturerName": "Audi",
+			"modelName": "Q8",
+			"generationCode": "F1",
+			"file": "Audi_Q8_F1_8.jpg",
+			"boxAreaRatio": 0.859
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_3.jpg",
+			"boxAreaRatio": 0.902
+		},
+		{
+			"key": "Audi|Q4 e-tron|F4B",
+			"manufacturerName": "Audi",
+			"modelName": "Q4 e-tron",
+			"generationCode": "F4B",
+			"file": "Audi_Q4_e-tron_F4B_2.jpg",
+			"boxAreaRatio": 0.897
+		}
+	]
+}
