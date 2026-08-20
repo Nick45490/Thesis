@@ -6,9 +6,9 @@ audit (2026-08-17).
 
 ## AI / Recognition pipeline
 
-- The LoRA ablation notebook (`ai-service/colab_lora_ablation.ipynb`) was built
-  but results were never reported back — find out if base CLIP vs.
-  LoRA-adapted actually makes a measurable accuracy difference.
+- ~~The LoRA ablation notebook was built but results were never reported
+  back~~ — done (2026-08-20): LoRA is a decisive win, +7.6pp top-1 (64.5% vs
+  56.9% base CLIP) on the same 812-image held-out set. Keep the adapter.
 - Domain-matched training data — the reference set is built from
   catalogue/stock photos, but real scans are phone photos in the wild
   (varied lighting, angles, backgrounds). This gap between training and

@@ -6,6 +6,30 @@ function sanitizePrefix(prefix) {
 	return prefix.replace(/\/+$/, "");
 }
 
+// Strip first — http-proxy-middleware forwards the client's original
+// headers by default, so a caller-supplied x-user-id/x-user-email would
+// otherwise pass straight through unmodified on any route where req.user
+// isn't set (e.g. the public /auth, /catalogue prefixes). Only re-added
+// once verified from the JWT. Proves the request actually came through the
+// gateway — services that trust x-user-id (collection, gamification)
+// require x-internal-secret and are also reachable directly on their own
+// ports, so without it x-user-id alone would let anyone impersonate any
+// user. Extracted from the proxyReq handler below so it's unit-testable
+// without spinning up http-proxy-middleware.
+function applyIdentityHeaders(proxyReq, req) {
+	proxyReq.removeHeader("x-user-id");
+	proxyReq.removeHeader("x-user-email");
+	if (req.user?.id) {
+		proxyReq.setHeader("x-user-id", req.user.id);
+	}
+	if (req.user?.email) {
+		proxyReq.setHeader("x-user-email", req.user.email);
+	}
+	if (process.env.INTERNAL_SERVICE_SECRET) {
+		proxyReq.setHeader("x-internal-secret", process.env.INTERNAL_SERVICE_SECRET);
+	}
+}
+
 function createServiceProxy(target, prefix, timeoutMs = 30000) {
 	return createProxyMiddleware({
 		target,
@@ -17,28 +41,7 @@ function createServiceProxy(target, prefix, timeoutMs = 30000) {
 			[`^${prefix}`]: ""
 		},
 		on: {
-			proxyReq: (proxyReq, req) => {
-				// Strip first — http-proxy-middleware forwards the client's original
-				// headers by default, so a caller-supplied x-user-id/x-user-email
-				// would otherwise pass straight through unmodified on any route
-				// where req.user isn't set (e.g. the public /auth, /catalogue
-				// prefixes). Only re-added below once verified from the JWT.
-				proxyReq.removeHeader("x-user-id");
-				proxyReq.removeHeader("x-user-email");
-				if (req.user?.id) {
-					proxyReq.setHeader("x-user-id", req.user.id);
-				}
-				if (req.user?.email) {
-					proxyReq.setHeader("x-user-email", req.user.email);
-				}
-				// Proves this request actually came through the gateway — services
-				// that trust x-user-id (collection, gamification) require this and
-				// are also reachable directly on their own ports, so without it
-				// x-user-id alone would let anyone impersonate any user.
-				if (process.env.INTERNAL_SERVICE_SECRET) {
-					proxyReq.setHeader("x-internal-secret", process.env.INTERNAL_SERVICE_SECRET);
-				}
-			}
+			proxyReq: applyIdentityHeaders
 		}
 	});
 }
@@ -93,5 +96,7 @@ function registerGatewayRoutes(app) {
 }
 
 module.exports = {
-	registerGatewayRoutes
+	registerGatewayRoutes,
+	applyIdentityHeaders,
+	sanitizePrefix
 };
