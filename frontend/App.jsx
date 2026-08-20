@@ -8,6 +8,7 @@ import CarDetailPage from "./src/pages/CarDetail";
 import FriendsPage from "./src/pages/Friends";
 import FriendProfilePage from "./src/pages/FriendProfile";
 import HomePage from "./src/pages/Home";
+import LeaderboardPage from "./src/pages/Leaderboard";
 import LoginPage from "./src/pages/Login";
 import ProfilePage from "./src/pages/Profile";
 import RacePage from "./src/pages/Race";
@@ -90,6 +91,14 @@ export default function App() {
 					element={
 						<ProtectedRoute>
 							<AchievementsPage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/leaderboard"
+					element={
+						<ProtectedRoute>
+							<LeaderboardPage />
 						</ProtectedRoute>
 					}
 				/>

@@ -15,8 +15,8 @@ export function getAchievements() {
 	return apiFetch("/gamification/achievements");
 }
 
-export function getLeaderboard(limit = 20) {
-	return apiFetch(`/gamification/leaderboard?limit=${limit}`);
+export function getLeaderboard(period = "all", limit = 20) {
+	return apiFetch(`/gamification/leaderboard?period=${period}&limit=${limit}`);
 }
 
 export function getChallenges() {

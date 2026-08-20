@@ -36,7 +36,7 @@ audit (2026-08-17).
   endpoint), and collection-service (internal-secret middleware, rarity
   tiers, collection-payload validation, the achievement/completionist/country
   catalogue logic) — 87 tests total.
-- ~~No CI~~ — done (2026-08-20): GitHub Actions runs all three test suites
+- ~~No CI~~ — done (2026-08-20): GitHub Actions runs all four test suites
   on every push/PR to master, confirmed green on the actual runners. Doesn't
   run smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
   bigger lift than the unit tests were.
@@ -48,8 +48,14 @@ audit (2026-08-17).
 - ~~`DELETE /friends/:friendId` exists in the backend but has zero UI
   surface~~ — done (2026-08-20): Remove button on each Friends page row,
   with a confirm step. Live-tested.
-- Leaderboard is all-time only — no weekly/monthly reset, so early players
-  entrench a permanent lead.
+- ~~Leaderboard is all-time only — no weekly/monthly reset~~ — done
+  (2026-08-20): turned out there was no leaderboard page in the frontend at
+  all (the API existed, nothing called it) — built one from scratch rather
+  than just adding a toggle. `races.created_at` already existed, so periods
+  are a query filter (`period=weekly|monthly|all`), no schema change or
+  archival needed — old leaders aren't erased, they just stop dominating the
+  shorter views. New nav link, medal ranks, username resolution via the same
+  authClient pattern as race challenges. Live-tested.
 - Splitting high-performance trims into separate catalogue entries (e.g.
   base Mustang vs. GT500) was explicitly deferred as "post-production" —
   still on the table.

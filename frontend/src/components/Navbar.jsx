@@ -89,6 +89,7 @@ export default function Navbar() {
 						<>
 							<NavLink to="/camera" className={linkClass}>Camera</NavLink>
 							<NavLink to="/race" className={linkClass}>Race</NavLink>
+							<NavLink to="/leaderboard" className={linkClass}>Leaderboard</NavLink>
 							<NavLink to="/achievements" className={linkClass}>Achievements</NavLink>
 							<NavLink to="/friends" className={linkClass}>Friends</NavLink>
 							<NavLink to="/profile" className={linkClass}>Profile</NavLink>

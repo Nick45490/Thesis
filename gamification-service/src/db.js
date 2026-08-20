@@ -2,6 +2,7 @@ const { Pool } = require("pg");
 const { RACING_CATALOGUE, buildRacingCatalogue } = require("./engine/achievementChecker");
 const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity, RARITY_TIER } = require("./engine/performanceEngine");
 const { getUsernamesByIds } = require("./clients/authClient");
+const { periodStart } = require("./leaderboardPeriod");
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
@@ -158,21 +159,32 @@ async function getRaceStats(userId) {
 	};
 }
 
-async function listLeaderboard(limit = 20) {
+async function listLeaderboard(limit = 20, period = "all") {
+	const start = periodStart(period);
 	const result = await pool.query(
-		`SELECT user_id, SUM(points)::int AS points, COUNT(*)::int AS races_completed
-		 FROM races
-		 GROUP BY user_id
-		 ORDER BY points DESC
-		 LIMIT $1`,
-		[Number(limit)]
+		start
+			? `SELECT user_id, SUM(points)::int AS points, COUNT(*)::int AS races_completed
+			   FROM races
+			   WHERE created_at >= $2
+			   GROUP BY user_id
+			   ORDER BY points DESC
+			   LIMIT $1`
+			: `SELECT user_id, SUM(points)::int AS points, COUNT(*)::int AS races_completed
+			   FROM races
+			   GROUP BY user_id
+			   ORDER BY points DESC
+			   LIMIT $1`,
+		start ? [Number(limit), start] : [Number(limit)]
 	);
 
-	return result.rows.map((row) => ({
+	const rows = result.rows.map((row) => ({
 		userId: row.user_id,
 		points: row.points,
 		racesCompleted: row.races_completed
 	}));
+
+	const usernamesById = await getUsernamesByIds(rows.map((r) => r.userId));
+	return rows.map((r) => ({ ...r, username: usernamesById[r.userId]?.username || null }));
 }
 
 async function unlockAchievementsForUser(userId, stats) {
