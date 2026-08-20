@@ -117,28 +117,43 @@ def build_router(classifier: CarClassifier) -> APIRouter:
             raise HTTPException(status_code=400, detail="Uploaded file is empty")
         if len(image_bytes) > MAX_IMAGE_BYTES:
             raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
-        try:
-            result       = run_recognition(image_bytes, classifier)
-            censored_b64 = censor_to_base64(image_bytes)
-            return {"prediction": result.as_dict() if result else None, "censoredPhoto": censored_b64}
-        except Exception as error:
-            raise HTTPException(status_code=400, detail=f"Invalid image: {error}") from error
+        return _recognize_and_censor(image_bytes, classifier)
 
     @router.post("/predict")
     def recognize_from_base64(payload: RecognizeBase64Request) -> dict:
         try:
-            image_bytes  = decode_base64_image(payload.imageBase64)
-            if len(image_bytes) > MAX_IMAGE_BYTES:
-                raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
-            result       = run_recognition(image_bytes, classifier)
-            censored_b64 = censor_to_base64(image_bytes)
-            return {"prediction": result.as_dict() if result else None, "censoredPhoto": censored_b64}
-        except HTTPException:
-            # Let the 413 above through as-is — HTTPException is itself an
-            # Exception, so without this it would get re-wrapped as a
-            # misleading 400 "Invalid image" by the handler below.
-            raise
+            image_bytes = decode_base64_image(payload.imageBase64)
         except Exception as error:
             raise HTTPException(status_code=400, detail=f"Invalid image: {error}") from error
 
+        if len(image_bytes) > MAX_IMAGE_BYTES:
+            raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
+
+        return _recognize_and_censor(image_bytes, classifier)
+
     return router
+
+
+def _recognize_and_censor(image_bytes: bytes, classifier: CarClassifier) -> dict:
+    # Kept as two separate try/except blocks (not one shared one) — a
+    # censoring crash is a fundamentally different situation from a bad
+    # image and must not be reported to the user as "Invalid image", which
+    # would wrongly suggest the photo itself was the problem.
+    try:
+        result = run_recognition(image_bytes, classifier)
+    except Exception as error:
+        raise HTTPException(status_code=400, detail=f"Invalid image: {error}") from error
+
+    try:
+        censored_b64 = censor_to_base64(image_bytes)
+    except Exception as error:
+        # censor_image_bytes() deliberately re-raises on a mid-detection
+        # crash rather than shipping an unblurred plate/face (see censor.py)
+        # — that's correct fail-closed behavior, but the user still deserves
+        # an honest reason the scan didn't go through, not a generic error.
+        raise HTTPException(
+            status_code=503,
+            detail="Couldn't safely process this photo — please try again.",
+        ) from error
+
+    return {"prediction": result.as_dict() if result else None, "censoredPhoto": censored_b64}

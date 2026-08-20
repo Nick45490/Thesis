@@ -30,9 +30,10 @@ audit (2026-08-17).
   call from gamification-service, same pattern as the existing
   `checkFriends`/`isFriendOf` internal-secret flow.
 - ~~No automated test suite anywhere~~ — started (2026-08-20): Jest unit
-  tests for gamification-service (race/points formulas, internal-secret
-  middleware) and gateway (JWT auth, proxy identity-header handling), 39
-  tests total. Still no coverage for auth-service or collection-service.
+  tests across gamification-service (race/points formulas, internal-secret
+  middleware, username-merge logic), gateway (JWT auth, proxy
+  identity-header handling), and auth-service (the users-by-ids internal
+  endpoint), 56 tests total. Still no coverage for collection-service.
 - ~~No CI~~ — done (2026-08-20): GitHub Actions runs all three test suites
   on every push/PR to master, confirmed green on the actual runners. Doesn't
   run smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
@@ -62,9 +63,15 @@ audit (2026-08-17).
   animation. Corner lengths are evenly split from the real 5,891m lap minus
   the 3 straights' known lengths — an approximation, not sourced telemetry.
   Live-tested.
-- No user-facing messaging for the censoring-fails-closed behavior — if a
-  scan gets rejected because censoring crashed, does the UI explain why, or
-  does it look like a generic error?
+- ~~No user-facing messaging for the censoring-fails-closed behavior~~ —
+  done (2026-08-20): the answer was "looks like a generic error, and a
+  misleading one" — a censoring crash was caught by the same handler as an
+  actually-bad image and returned `400 "Invalid image: <raw exception>"`.
+  Split into its own handler on ai-service (`503`, honest message); no
+  frontend change needed, `apiFetch`/Camera.jsx already surface `detail`
+  correctly. Live-tested by temporarily forcing `_detect` to raise, sending
+  a real scan, confirming the actual HTTP response was `503` with the new
+  message (not the old `400 "Invalid image"`), then reverting the fault.
 
 ## Security / ops (lower priority)
 
