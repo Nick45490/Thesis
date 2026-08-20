@@ -111,6 +111,17 @@ async function findUserById(id) {
 	return mapUserRow(result.rows[0]);
 }
 
+async function findUsersByIds(ids) {
+	const numericIds = ids.map(Number).filter((n) => Number.isInteger(n));
+	if (numericIds.length === 0) return [];
+
+	const result = await pool.query(
+		`SELECT id, username FROM users WHERE id = ANY($1::int[])`,
+		[numericIds]
+	);
+	return result.rows.map((row) => ({ id: row.id, username: row.username }));
+}
+
 async function listUsers() {
 	const result = await pool.query(`SELECT id, email, username, created_at FROM users ORDER BY id ASC`);
 	return result.rows.map((row) => ({
@@ -314,6 +325,7 @@ module.exports = {
 	createUser,
 	findUserByEmail,
 	findUserById,
+	findUsersByIds,
 	initDb,
 	getFriendsForUser,
 	getPendingRequestsForUser,

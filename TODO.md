@@ -28,11 +28,14 @@ audit (2026-08-17).
   a service boundary. Now that the internal-secret infrastructure exists
   (from the security fixes), exposing a proper "usernames by ids" endpoint
   on auth-service is more feasible than when this was first flagged.
-- No automated test suite anywhere (unit or integration) — every fix this
-  session was verified by hand with live curl calls, which doesn't scale or
-  protect against regressions going forward.
-- No CI — nothing runs the smoke test or catches a broken build
-  automatically on push.
+- ~~No automated test suite anywhere~~ — started (2026-08-20): Jest unit
+  tests for gamification-service (race/points formulas, internal-secret
+  middleware) and gateway (JWT auth, proxy identity-header handling), 39
+  tests total. Still no coverage for auth-service or collection-service.
+- ~~No CI~~ — done (2026-08-20): GitHub Actions runs both test suites on
+  every push/PR to master (not yet pushed as of this writing). Doesn't run
+  smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
+  bigger lift than the unit tests were.
 
 ## Features / gameplay
 

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [gamification-service, gateway]
+        service: [auth-service, gamification-service, gateway]
     steps:
       - uses: actions/checkout@v4
 

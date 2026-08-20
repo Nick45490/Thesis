@@ -1,6 +1,7 @@
 const { Pool } = require("pg");
 const { RACING_CATALOGUE, buildRacingCatalogue } = require("./engine/achievementChecker");
 const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity, RARITY_TIER } = require("./engine/performanceEngine");
+const { getUsernamesByIds } = require("./clients/authClient");
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
@@ -219,13 +220,15 @@ async function getAchievementCatalogue(userId, stats) {
 	return buildRacingCatalogue(stats, unlockedMap);
 }
 
+// Usernames are never on race_challenges rows themselves — see attachUsernames()
+// below, which fills them in from auth-service after this mapping runs.
 function mapChallengeRow(row) {
 	return {
 		id:                     row.id,
 		challengerUserId:       row.challenger_user_id,
-		challengerUsername:     row.challenger_username || null,
+		challengerUsername:     null,
 		opponentUserId:         row.opponent_user_id,
-		opponentUsername:       row.opponent_username   || null,
+		opponentUsername:       null,
 		distance:               row.distance,
 		challengerGenerationId: row.challenger_generation_id,
 		challengerMake:         row.challenger_make,
@@ -278,34 +281,41 @@ async function createChallenge(input) {
 	return mapChallengeRow(result.rows[0]);
 }
 
+// Pure merge step, kept separate from the DB query and the HTTP call so it's
+// unit-testable on its own — usernamesById is the {id: {username}} map
+// authClient.getUsernamesByIds() resolves to.
+function attachUsernames(challenge, usernamesById) {
+	return {
+		...challenge,
+		challengerUsername: usernamesById[challenge.challengerUserId]?.username || null,
+		opponentUsername:   usernamesById[challenge.opponentUserId]?.username   || null,
+	};
+}
+
 async function getChallengeById(id) {
 	const result = await pool.query(
-		`SELECT rc.*,
-		        cu.username AS challenger_username,
-		        ou.username AS opponent_username
-		 FROM race_challenges rc
-		 LEFT JOIN users cu ON cu.id = rc.challenger_user_id
-		 LEFT JOIN users ou ON ou.id = rc.opponent_user_id
-		 WHERE rc.id = $1 LIMIT 1`,
+		`SELECT * FROM race_challenges WHERE id = $1 LIMIT 1`,
 		[Number(id)]
 	);
 	if (!result.rowCount) return null;
-	return mapChallengeRow(result.rows[0]);
+
+	const challenge = mapChallengeRow(result.rows[0]);
+	const usernamesById = await getUsernamesByIds([challenge.challengerUserId, challenge.opponentUserId]);
+	return attachUsernames(challenge, usernamesById);
 }
 
 async function listChallenges(userId) {
 	const result = await pool.query(
-		`SELECT rc.*,
-		        cu.username AS challenger_username,
-		        ou.username AS opponent_username
-		 FROM race_challenges rc
-		 LEFT JOIN users cu ON cu.id = rc.challenger_user_id
-		 LEFT JOIN users ou ON ou.id = rc.opponent_user_id
-		 WHERE rc.challenger_user_id = $1 OR rc.opponent_user_id = $1
-		 ORDER BY rc.created_at DESC`,
+		`SELECT * FROM race_challenges
+		 WHERE challenger_user_id = $1 OR opponent_user_id = $1
+		 ORDER BY created_at DESC`,
 		[Number(userId)]
 	);
-	return result.rows.map(mapChallengeRow);
+	const challenges = result.rows.map(mapChallengeRow);
+
+	const allIds = challenges.flatMap((c) => [c.challengerUserId, c.opponentUserId]);
+	const usernamesById = await getUsernamesByIds(allIds);
+	return challenges.map((c) => attachUsernames(c, usernamesById));
 }
 
 // Wrapped in a transaction with a row lock so two near-simultaneous accepts on
@@ -463,6 +473,7 @@ async function declineChallenge(id) {
 module.exports = {
 	acceptChallenge,
 	addRace,
+	attachUsernames,
 	createChallenge,
 	declineChallenge,
 	getAchievementCatalogue,
