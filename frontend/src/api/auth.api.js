@@ -40,6 +40,10 @@ export function acceptFriendRequest(requesterId) {
 	});
 }
 
+export function removeFriend(friendId) {
+	return apiFetch(`/auth/friends/${friendId}`, { method: "DELETE" });
+}
+
 export function generateInviteCode() {
 	return apiFetch("/auth/friends/invite/generate", { method: "POST", body: JSON.stringify({}) });
 }

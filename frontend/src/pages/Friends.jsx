@@ -1,12 +1,29 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { acceptFriendRequest, generateInviteCode, listFriends, redeemInviteCode } from "../api/auth.api";
+import { acceptFriendRequest, generateInviteCode, listFriends, redeemInviteCode, removeFriend } from "../api/auth.api";
 import { S } from "../theme";
 
-function FriendRow({ friend }) {
+function FriendRow({ friend, onRemoved }) {
 	const navigate = useNavigate();
+	const [removing, setRemoving] = useState(false);
 	const initials = (friend.username || friend.email || "?")
 		.split(/[\s.@]+/).slice(0, 2).map((w) => w[0]?.toUpperCase() || "").join("");
+
+	async function handleRemove() {
+		const name = friend.username || friend.email;
+		if (!window.confirm(`Remove ${name} from your friends? You'll need a new invite code to reconnect.`)) {
+			return;
+		}
+		setRemoving(true);
+		try {
+			await removeFriend(friend.id);
+			onRemoved(friend.id);
+		} catch (err) {
+			window.alert(err.message || "Failed to remove friend.");
+			setRemoving(false);
+		}
+	}
+
 	return (
 		<li style={{
 			display: "flex", alignItems: "center", gap: "0.75rem",
@@ -37,6 +54,19 @@ function FriendRow({ friend }) {
 				onClick={() => navigate(`/friends/${friend.id}`)}
 			>
 				View profile
+			</button>
+			<button
+				type="button"
+				onClick={handleRemove}
+				disabled={removing}
+				title="Remove friend"
+				style={{
+					padding: "0.3rem 0.7rem", fontSize: "0.82rem", borderRadius: "6px",
+					border: `1px solid ${S.borderStrong}`, background: "transparent",
+					color: removing ? S.faint : "#f87171", cursor: removing ? "default" : "pointer",
+				}}
+			>
+				{removing ? "Removing…" : "Remove"}
 			</button>
 		</li>
 	);
@@ -225,7 +255,11 @@ export default function FriendsPage() {
 				<h2 style={{ marginTop: 0 }}>Your friends</h2>
 				<ul className="list-clean">
 					{friends.map((friend) => (
-						<FriendRow key={friend.id} friend={friend} />
+						<FriendRow
+							key={friend.id}
+							friend={friend}
+							onRemoved={(id) => setFriends((prev) => prev.filter((f) => f.id !== id))}
+						/>
 					))}
 					{!friends.length && (
 						<li style={{ color: S.faint }}>No friends yet — share your code above to get started.</li>
