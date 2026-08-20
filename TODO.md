@@ -29,11 +29,13 @@ audit (2026-08-17).
   `GET /internal/users?ids=...` endpoint on auth-service, fail-closed HTTP
   call from gamification-service, same pattern as the existing
   `checkFriends`/`isFriendOf` internal-secret flow.
-- ~~No automated test suite anywhere~~ — started (2026-08-20): Jest unit
-  tests across gamification-service (race/points formulas, internal-secret
-  middleware, username-merge logic), gateway (JWT auth, proxy
-  identity-header handling), and auth-service (the users-by-ids internal
-  endpoint), 56 tests total. Still no coverage for collection-service.
+- ~~No automated test suite anywhere~~ — done (2026-08-20): Jest unit tests
+  across all four Node services — gamification-service (race/points
+  formulas, internal-secret middleware, username-merge logic), gateway (JWT
+  auth, proxy identity-header handling), auth-service (users-by-ids internal
+  endpoint), and collection-service (internal-secret middleware, rarity
+  tiers, collection-payload validation, the achievement/completionist/country
+  catalogue logic) — 87 tests total.
 - ~~No CI~~ — done (2026-08-20): GitHub Actions runs all three test suites
   on every push/PR to master, confirmed green on the actual runners. Doesn't
   run smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
