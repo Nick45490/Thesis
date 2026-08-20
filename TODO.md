@@ -42,8 +42,9 @@ audit (2026-08-17).
 
 - Circuit mode has exactly one track (Silverstone) — multi-track support was
   the natural next step when it was designed, never built.
-- `DELETE /friends/:friendId` exists in the backend but has zero UI surface
-  (called out in CLAUDE.md as a known gap).
+- ~~`DELETE /friends/:friendId` exists in the backend but has zero UI
+  surface~~ — done (2026-08-20): Remove button on each Friends page row,
+  with a confirm step. Live-tested.
 - Leaderboard is all-time only — no weekly/monthly reset, so early players
   entrench a permanent lead.
 - Splitting high-performance trims into separate catalogue entries (e.g.
