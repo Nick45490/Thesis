@@ -24,10 +24,11 @@ audit (2026-08-17).
 - catalogue-service reaches directly into ai-service's filesystem for car
   images — fragile if either service moves. Needs a decision: ai-service
   serves them itself, or catalogue-service proxies over HTTP.
-- gamification-service directly `JOIN`s auth-service's `users` table across
-  a service boundary. Now that the internal-secret infrastructure exists
-  (from the security fixes), exposing a proper "usernames by ids" endpoint
-  on auth-service is more feasible than when this was first flagged.
+- ~~gamification-service directly `JOIN`s auth-service's `users` table
+  across a service boundary~~ — done (2026-08-20): replaced with a batch
+  `GET /internal/users?ids=...` endpoint on auth-service, fail-closed HTTP
+  call from gamification-service, same pattern as the existing
+  `checkFriends`/`isFriendOf` internal-secret flow.
 - ~~No automated test suite anywhere~~ — started (2026-08-20): Jest unit
   tests for gamification-service (race/points formulas, internal-secret
   middleware) and gateway (JWT auth, proxy identity-header handling), 39
