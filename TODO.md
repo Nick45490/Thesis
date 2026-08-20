@@ -9,6 +9,19 @@ audit (2026-08-17).
 - ~~The LoRA ablation notebook was built but results were never reported
   back~~ — done (2026-08-20): LoRA is a decisive win, +7.6pp top-1 (64.5% vs
   56.9% base CLIP) on the same 812-image held-out set. Keep the adapter.
+- ~~Classifier hyperparameter sweep (`tune_classifier.py`) was built but
+  never acted on~~ — run (2026-08-20), negative result: the current
+  production config (logistic regression, C=10) already wins the entire
+  sweep (val top-1 0.656) against 4 weaker-regularization variants (val
+  top-1 0.171–0.608) and two MLP architectures (0.629, 0.642, both slower to
+  train too). The large train/val gap (0.912 vs 0.656) is real but doesn't
+  look fixable within this model family — looks like an inherent property of
+  813-way classification on ~77 samples/class, not overfitting a
+  differently-tuned model could resolve. Third negative result this session
+  in the same vein as the crop-cleanup and the pre-existing (2026-08-14)
+  hierarchical-classifier attempt (`classifier_hierarchical.pkl`,
+  63.7%/85.5% — also a wash). No further action here unless the underlying
+  data situation changes (see domain-matched training data, below).
 - Domain-matched training data — the reference set is built from
   catalogue/stock photos, but real scans are phone photos in the wild
   (varied lighting, angles, backgrounds). This gap between training and
