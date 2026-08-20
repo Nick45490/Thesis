@@ -21,9 +21,13 @@ audit (2026-08-17).
 
 ## Backend architecture
 
-- catalogue-service reaches directly into ai-service's filesystem for car
-  images — fragile if either service moves. Needs a decision: ai-service
-  serves them itself, or catalogue-service proxies over HTTP.
+- ~~catalogue-service reaches directly into ai-service's filesystem for car
+  images~~ — done (2026-08-20): turned out to be dead code, not a live
+  coupling — the `/car-images` static route's only consumer (`carImageUrl()`
+  in Race.jsx) was defined but never called anywhere. Everywhere car images
+  actually render uses ai-service's own `/recognize/images/:id` route
+  instead. Deleted both sides rather than picking an architecture, since
+  neither was actually needed.
 - ~~gamification-service directly `JOIN`s auth-service's `users` table
   across a service boundary~~ — done (2026-08-20): replaced with a batch
   `GET /internal/users?ids=...` endpoint on auth-service, fail-closed HTTP

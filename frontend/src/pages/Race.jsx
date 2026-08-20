@@ -14,13 +14,7 @@ import {
 import { RARITY_COLOR, RARITY_LABEL, S } from "../theme";
 import { getCarRarity } from "../utils/rarity";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 const DISTANCE_LABELS = { quarter: "Quarter mile (¼)", half: "Half mile (½)", full: "Full mile", circuit: "Circuit" };
-
-function carImageUrl(make, model, genCode) {
-	const slug = (s) => String(s || "").replace(/\s+/g, "_");
-	return `${API_BASE}/catalogue/car-images/${slug(make)}_${slug(model)}_${slug(genCode)}_0.jpg`;
-}
 
 // Circuit isn't a drag race — "Circuit drag" would read wrong.
 function raceModeLabel(distance) {

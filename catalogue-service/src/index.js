@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -13,10 +12,6 @@ const app = express();
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
 app.use(cors());
-
-// Serve reference images — flat files: Make_Model_GenCode_index.jpg
-const REF_IMAGES = path.join(__dirname, "../../ai-service/model/reference_images");
-app.use("/car-images", express.static(REF_IMAGES));
 app.use(express.json());
 app.use(morgan("dev"));
 
