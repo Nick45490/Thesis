@@ -16,6 +16,8 @@ frontend/dist/
 # ── Large model weights & binaries (hosted on Google Drive — see README) ───────
 ai-service/yolov8n.pt
 ai-service/model/reference_embeddings.pt
+ai-service/model/reference_embeddings_no_lora.pt
+ai-service/model/classifier_no_lora.pkl
 ai-service/model/efficientnet_cars.pt
 ai-service/model/clip_lora/
 ai-service/model/backup_v4_65pct/reference_embeddings.pt

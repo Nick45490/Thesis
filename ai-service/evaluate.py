@@ -117,8 +117,9 @@ def main() -> None:
 
         image_bytes = p.read_bytes()
         try:
-            label, confidence, meta, candidates, no_vehicle_detected = classifier.predict(image_bytes)
-            raw_sim = classifier.raw_top1_similarity(image_bytes)
+            label, confidence, meta, candidates, no_vehicle_detected, raw_sim = (
+                classifier.predict_with_raw_similarity(image_bytes)
+            )
         except Exception as exc:
             print(f"  Skipping {p.name}: {exc}")
             skipped += 1

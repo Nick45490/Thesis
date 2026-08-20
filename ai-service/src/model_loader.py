@@ -369,16 +369,26 @@ class CarClassifier:
         distances, _ = self._index.search(query, k=1)
         return float(distances[0][0])
 
-    def raw_top1_similarity(self, image_bytes: bytes) -> float:
-        """Diagnostic entry point (see evaluate.py) — not used by predict() itself,
-        which already has the query embedding in hand and calls _raw_top1_similarity
-        directly to avoid embedding the image twice."""
-        image = Image.open(BytesIO(image_bytes)).convert("RGB")
-        cropped, _detected = self._crop_car(image)
-        query = self._embed_query(cropped)
-        return self._raw_top1_similarity(query)
-
     def predict(self, image_bytes: bytes, top_k: int = 10) -> Tuple[str, float, dict, List[dict], bool]:
+        label, confidence, meta, candidates, no_vehicle_detected, _raw_sim = (
+            self._predict_full(image_bytes, top_k)
+        )
+        return label, confidence, meta, candidates, no_vehicle_detected
+
+    def predict_with_raw_similarity(
+        self, image_bytes: bytes, top_k: int = 10
+    ) -> Tuple[str, float, dict, List[dict], bool, float]:
+        """Diagnostic entry point (see evaluate.py) — same as predict() but also
+        returns the raw top-1 FAISS similarity, from the same embedding pass
+        predict() already needs internally. A prior version of this diagnostic
+        re-embedded the image from scratch (a second full YOLO+CLIP pass per
+        image), which roughly doubled evaluate.py's runtime on CPU — this shares
+        the single _predict_full() pass instead."""
+        return self._predict_full(image_bytes, top_k)
+
+    def _predict_full(
+        self, image_bytes: bytes, top_k: int
+    ) -> Tuple[str, float, dict, List[dict], bool, float]:
         image = Image.open(BytesIO(image_bytes)).convert("RGB")
 
         # 1. YOLO → crop car out of the scene
@@ -390,8 +400,9 @@ class CarClassifier:
         # 2b. Out-of-catalogue check — a car that doesn't resemble anything in the
         # reference set at all shouldn't get a confident (if relatively-ranked)
         # answer just because it's the "least bad" of 813 known options.
-        if self._raw_top1_similarity(query) < self.MIN_RAW_SIMILARITY:
-            return "", 0.0, {}, [], not detected
+        raw_sim = self._raw_top1_similarity(query)
+        if raw_sim < self.MIN_RAW_SIMILARITY:
+            return "", 0.0, {}, [], not detected, raw_sim
 
         # 3a. Classifier path (preferred — learns decision boundaries between similar cars)
         if self._clf is not None:
@@ -400,7 +411,7 @@ class CarClassifier:
             # 3b. FAISS fallback
             label, confidence, meta, candidates = self._predict_faiss(query, top_k)
 
-        return label, confidence, meta, candidates, not detected
+        return label, confidence, meta, candidates, not detected, raw_sim
 
     def _predict_classifier(self, query: np.ndarray, top_k: int) -> Tuple[str, float, dict, List[dict]]:
         if isinstance(self._clf, dict) and self._clf.get("format") == "hierarchical_v1":
