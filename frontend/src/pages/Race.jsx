@@ -61,6 +61,55 @@ function closedPathFromPoints(points) {
 const CIRCUIT_PATH_D = closedPathFromPoints(SILVERSTONE_TRACK_POINTS);
 const CIRCUIT_START  = SILVERSTONE_TRACK_POINTS[0];
 
+// Ordered segments around one lap (matches the real driving order documented
+// above), each tagged with its share of the 5,891m real Silverstone GP lap.
+// The three straights use the exact metres already established for the lap
+// time formula (CIRCUIT_STRAIGHTS_M in performanceEngine.js: 800 + 700 + 900).
+// The 15 corners don't have individually-sourced lengths anywhere in this
+// project, so the remaining 3,491m is split evenly across them — an honest
+// approximation for a "which bit of the lap is this" landmark, not a claim
+// of corner-by-corner telemetry precision.
+const SILVERSTONE_LAP_M = 5891;
+const CORNER_M = (SILVERSTONE_LAP_M - 800 - 700 - 900) / 15;
+const SILVERSTONE_SEGMENTS = [
+	{ name: "Start/Finish Straight", m: 800 },
+	{ name: "Abbey",       m: CORNER_M },
+	{ name: "Farm Curve",  m: CORNER_M },
+	{ name: "Village",     m: CORNER_M },
+	{ name: "The Loop",    m: CORNER_M },
+	{ name: "Aintree",     m: CORNER_M },
+	{ name: "Wellington Straight", m: 700 },
+	{ name: "Brooklands",  m: CORNER_M },
+	{ name: "Luffield",    m: CORNER_M },
+	{ name: "Woodcote",    m: CORNER_M },
+	{ name: "Copse",       m: CORNER_M },
+	{ name: "Maggotts",    m: CORNER_M },
+	{ name: "Becketts",    m: CORNER_M },
+	{ name: "Chapel Curve", m: CORNER_M },
+	{ name: "Hangar Straight", m: 900 },
+	{ name: "Stowe",       m: CORNER_M },
+	{ name: "Vale",        m: CORNER_M },
+	{ name: "Club",        m: CORNER_M },
+];
+// Cumulative fraction of the lap at which each segment starts, for a quick
+// progress -> segment lookup.
+let _cum = 0;
+const SILVERSTONE_SEGMENT_STARTS = SILVERSTONE_SEGMENTS.map((seg) => {
+	const start = _cum;
+	_cum += seg.m / SILVERSTONE_LAP_M;
+	return { name: seg.name, start };
+});
+
+function trackPositionLabel(progress) {
+	const frac = Math.max(0, Math.min(1, progress));
+	let current = SILVERSTONE_SEGMENT_STARTS[0];
+	for (const seg of SILVERSTONE_SEGMENT_STARTS) {
+		if (seg.start > frac) break;
+		current = seg;
+	}
+	return current.name;
+}
+
 function RarityBadge({ rarity }) {
 	const color = RARITY_COLOR[rarity] || RARITY_COLOR.common;
 	return (
@@ -449,7 +498,8 @@ function RaceLane({ car, progress, won, label, done }) {
 	);
 }
 
-function CircuitCarInfo({ car, won, label, done }) {
+function CircuitCarInfo({ car, won, label, done, progress }) {
+	const pct = Math.round(Math.min(1, progress) * 100);
 	return (
 		<div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", gap: "0.6rem" }}>
 			<div style={{ width: 52, height: 40, borderRadius: "6px", overflow: "hidden", background: S.cardAlt, flexShrink: 0 }}>
@@ -461,12 +511,17 @@ function CircuitCarInfo({ car, won, label, done }) {
 				</div>
 				<div style={{ fontSize: "0.72rem", color: S.faint, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{car.make} {car.model}</div>
 				<div style={{ fontSize: "0.72rem", color: won ? "#22c55e" : "#60a5fa", fontWeight: 600 }}>{car.time}s</div>
+				{!done && (
+					<div style={{ fontSize: "0.7rem", color: S.faint, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+						{pct}% &middot; {trackPositionLabel(progress)}
+					</div>
+				)}
 			</div>
 		</div>
 	);
 }
 
-function CircuitTrackView({ my, opp, markers, iWon, done }) {
+function CircuitTrackView({ my, opp, markers, iWon, done, progress }) {
 	return (
 		<div style={{ marginBottom: "1.1rem" }}>
 			<svg viewBox={CIRCUIT_VIEWBOX} style={{ width: "100%", height: "auto", display: "block" }}>
@@ -485,8 +540,8 @@ function CircuitTrackView({ my, opp, markers, iWon, done }) {
 				)}
 			</svg>
 			<div style={{ display: "flex", gap: "1rem", marginTop: "0.85rem" }}>
-				<CircuitCarInfo car={my}  won={iWon}  label="You"          done={done} />
-				<CircuitCarInfo car={opp} won={!iWon} label={opp.username} done={done} />
+				<CircuitCarInfo car={my}  won={iWon}  label="You"          done={done} progress={progress.my} />
+				<CircuitCarInfo car={opp} won={!iWon} label={opp.username} done={done} progress={progress.opp} />
 			</div>
 		</div>
 	);
@@ -617,7 +672,7 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 				)}
 
 				{isCircuit ? (
-					<CircuitTrackView my={my} opp={opp} markers={markers} iWon={iWon} done={done} />
+					<CircuitTrackView my={my} opp={opp} markers={markers} iWon={iWon} done={done} progress={progress} />
 				) : (
 					<>
 						<RaceLane car={my}  progress={progress.my}  won={iWon}  label="You"          done={done} />

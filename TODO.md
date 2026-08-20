@@ -33,9 +33,9 @@ audit (2026-08-17).
   tests for gamification-service (race/points formulas, internal-secret
   middleware) and gateway (JWT auth, proxy identity-header handling), 39
   tests total. Still no coverage for auth-service or collection-service.
-- ~~No CI~~ — done (2026-08-20): GitHub Actions runs both test suites on
-  every push/PR to master (not yet pushed as of this writing). Doesn't run
-  smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
+- ~~No CI~~ — done (2026-08-20): GitHub Actions runs all three test suites
+  on every push/PR to master, confirmed green on the actual runners. Doesn't
+  run smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
   bigger lift than the unit tests were.
 
 ## Features / gameplay
@@ -56,8 +56,12 @@ audit (2026-08-17).
 - Nothing tells existing users *why* their collection's rarity distribution
   changed when it flipped from make-based to power-to-weight-based — a
   returning user could be confused their "legendary" Ferrari is now "epic."
-- The circuit track view shows a marker moving along Silverstone but no
-  lap-progress indicator (% complete, corner names) beyond the dot itself.
+- ~~The circuit track view shows a marker moving along Silverstone but no
+  lap-progress indicator~~ — done (2026-08-20): each car now shows live
+  %-complete and current corner name (e.g. "42% · Maggotts") during the
+  animation. Corner lengths are evenly split from the real 5,891m lap minus
+  the 3 straights' known lengths — an approximation, not sourced telemetry.
+  Live-tested.
 - No user-facing messaging for the censoring-fails-closed behavior — if a
   scan gets rejected because censoring crashed, does the UI explain why, or
   does it look like a generic error?
