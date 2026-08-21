@@ -27,6 +27,22 @@ from src.model_loader import CarClassifier, load_labels_dict, HELD_OUT_PATH, LOR
 BASE_DIR = Path(__file__).parent
 
 
+# Mirrors Camera.jsx's isAmbiguous() exactly (frontend/src/pages/Camera.jsx) —
+# when this is true, the user sees a confirm-step picker instead of a silent
+# auto-add, so a wrong top-1 prediction doesn't necessarily mean a wrong scan
+# from the user's point of view.
+AMBIGUOUS_RATIO = 0.6
+LOW_CONFIDENCE_FLOOR = 0.30
+
+
+def _is_ambiguous(candidates: list) -> bool:
+    if not candidates:
+        return False
+    if candidates[0]["confidence"] < LOW_CONFIDENCE_FLOOR:
+        return True
+    return len(candidates) > 1 and candidates[1]["confidence"] >= candidates[0]["confidence"] * AMBIGUOUS_RATIO
+
+
 def _stats(values: list) -> dict:
     if not values:
         return {}
@@ -98,6 +114,27 @@ def main() -> None:
     top10_correct = 0
     not_in_candidates: list = []  # true (make, model, genCode) entirely absent from the returned list
 
+    # Does the confirm-step UX (Camera.jsx's isAmbiguous()) actually protect the
+    # user from a wrong top-1, or does it silently auto-add the wrong car? Split
+    # by same-manufacturer-wrong (the "right brand, wrong model in the lineup"
+    # failure mode) vs a completely different manufacturer, since they're
+    # different problems with potentially different confirm-UX behavior.
+    wrong_same_brand_ambiguous     = 0
+    wrong_same_brand_silent        = 0
+    wrong_diff_brand_ambiguous     = 0
+    wrong_diff_brand_silent        = 0
+    # Of the silently-wrong ones (no confirm chance at all), how many at least
+    # have the true answer somewhere in the candidates list (recoverable via the
+    # "all candidates" picker) vs genuinely absent (not_in_candidates).
+    silent_wrong_true_in_top10     = 0
+    silent_wrong_true_missing      = 0
+    # For the recoverable-but-silent cases specifically: where does the true
+    # answer actually rank, and how close were the two isAmbiguous() thresholds
+    # to firing? Answers "would a small threshold tweak catch most of these, or
+    # are they a fundamentally different shape (true answer ranked low, with a
+    # confident, un-close top-1)?"
+    silent_recoverable_detail: list = []
+
     # Calibration data for MIN_RAW_SIMILARITY (out-of-catalogue detection) — every
     # held-out image is a GENUINE catalogue car, so this distribution is "how
     # similar does a real match look, at the low end" — there's no true-negative
@@ -156,6 +193,28 @@ def main() -> None:
         else:
             confusion[(actual_pair, predicted_pair)] += 1
             incorrect_top1_conf.append(confidence)
+
+            same_brand = predicted_pair[0] == actual_pair[0]
+            ambiguous = _is_ambiguous(candidates)
+            if same_brand:
+                if ambiguous: wrong_same_brand_ambiguous += 1
+                else:         wrong_same_brand_silent    += 1
+            else:
+                if ambiguous: wrong_diff_brand_ambiguous += 1
+                else:         wrong_diff_brand_silent    += 1
+            if not ambiguous:
+                if is_top10:
+                    silent_wrong_true_in_top10 += 1
+                    top1_conf = candidates[0]["confidence"]
+                    top2_ratio = (candidates[1]["confidence"] / top1_conf) if len(candidates) > 1 and top1_conf > 0 else None
+                    silent_recoverable_detail.append({
+                        "trueRank": all_predicted_keys.index(key) + 1,
+                        "top1Confidence": round(top1_conf, 4),
+                        "top2Ratio": round(top2_ratio, 4) if top2_ratio is not None else None,
+                        "sameBrand": same_brand,
+                    })
+                else:
+                    silent_wrong_true_missing += 1
 
         if len(candidates) > 1 and candidates[0]["confidence"] > 0:
             ratio = candidates[1]["confidence"] / candidates[0]["confidence"]
@@ -236,6 +295,37 @@ def main() -> None:
         idx = max(0, int(n * pct / 100) - 1)
         print(f"  p{pct}: {sorted_sims[idx]:.4f}")
 
+    wrong_total = len(incorrect_top1_conf)
+    same_brand_total = wrong_same_brand_ambiguous + wrong_same_brand_silent
+    diff_brand_total = wrong_diff_brand_ambiguous + wrong_diff_brand_silent
+    silent_total = wrong_same_brand_silent + wrong_diff_brand_silent
+
+    def _pct(n, d):
+        return round(n / d, 4) if d else None
+
+    print("\nConfirm-UX protection against wrong top-1 predictions (isAmbiguous() replica):")
+    print(f"  Wrong predictions, same manufacturer (e.g. Audi->Audi): {same_brand_total}")
+    print(f"    -> caught by confirm-UX (ambiguous, user sees a picker): {wrong_same_brand_ambiguous} ({_pct(wrong_same_brand_ambiguous, same_brand_total):.1%})" if same_brand_total else "    (none)")
+    print(f"    -> silently auto-added wrong, no chance to correct:      {wrong_same_brand_silent} ({_pct(wrong_same_brand_silent, same_brand_total):.1%})" if same_brand_total else "")
+    print(f"  Wrong predictions, different manufacturer: {diff_brand_total}")
+    print(f"    -> caught by confirm-UX: {wrong_diff_brand_ambiguous} ({_pct(wrong_diff_brand_ambiguous, diff_brand_total):.1%})" if diff_brand_total else "    (none)")
+    print(f"    -> silently auto-added wrong:            {wrong_diff_brand_silent} ({_pct(wrong_diff_brand_silent, diff_brand_total):.1%})" if diff_brand_total else "")
+    print(f"  Overall: {wrong_total - silent_total}/{wrong_total} wrong predictions ({_pct(wrong_total - silent_total, wrong_total):.1%}) are caught by the confirm-UX.")
+    print(f"  Of the {silent_total} silently-wrong (no confirm chance at all):")
+    print(f"    -> true answer still recoverable somewhere in top-10: {silent_wrong_true_in_top10} ({_pct(silent_wrong_true_in_top10, silent_total):.1%})" if silent_total else "    (none)")
+    print(f"    -> true answer genuinely absent from top-10:          {silent_wrong_true_missing} ({_pct(silent_wrong_true_missing, silent_total):.1%})" if silent_total else "")
+
+    if silent_recoverable_detail:
+        ranks = [d["trueRank"] for d in silent_recoverable_detail]
+        rank_counts = Counter(ranks)
+        near_miss_ratio = sum(1 for d in silent_recoverable_detail if d["top2Ratio"] is not None and 0.5 <= d["top2Ratio"] < AMBIGUOUS_RATIO)
+        near_miss_conf  = sum(1 for d in silent_recoverable_detail if LOW_CONFIDENCE_FLOOR <= d["top1Confidence"] < LOW_CONFIDENCE_FLOOR + 0.05)
+        print(f"\nOf the {len(silent_recoverable_detail)} silent-but-recoverable cases — where does the true answer actually rank?")
+        for rank in sorted(rank_counts):
+            print(f"  rank #{rank}: {rank_counts[rank]}")
+        print(f"  Near-miss on the ratio threshold (top2/top1 in [0.50, {AMBIGUOUS_RATIO})): {near_miss_ratio} ({_pct(near_miss_ratio, len(silent_recoverable_detail)):.1%})")
+        print(f"  Near-miss on the confidence floor (top1 in [{LOW_CONFIDENCE_FLOOR}, {LOW_CONFIDENCE_FLOOR+0.05:.2f})): {near_miss_conf} ({_pct(near_miss_conf, len(silent_recoverable_detail)):.1%})")
+
     per_pair = []
     for pair, n in pair_total.items():
         acc = pair_correct[pair] / n
@@ -279,6 +369,23 @@ def main() -> None:
             "overall":   raw_sim_stats,
             "correct":   correct_raw_sim_stats,
             "incorrect": incorrect_raw_sim_stats,
+        },
+        "confirmUxProtection": {
+            "sameBrandWrong": {
+                "total": same_brand_total,
+                "caughtByConfirmUx": wrong_same_brand_ambiguous,
+                "silentlyWrong": wrong_same_brand_silent,
+            },
+            "diffBrandWrong": {
+                "total": diff_brand_total,
+                "caughtByConfirmUx": wrong_diff_brand_ambiguous,
+                "silentlyWrong": wrong_diff_brand_silent,
+            },
+            "silentlyWrongBreakdown": {
+                "trueAnswerInTop10": silent_wrong_true_in_top10,
+                "trueAnswerMissing": silent_wrong_true_missing,
+            },
+            "silentRecoverableDetail": silent_recoverable_detail,
         },
         "perPair": per_pair,
         "worstConfusion": worst_confusion,

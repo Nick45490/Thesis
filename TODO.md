@@ -31,6 +31,37 @@ audit (2026-08-17).
   false "unknown"s.
 - No mechanism to retrain periodically as real user scans accumulate — the
   reference set only grows when someone manually re-runs the fetch scripts.
+- ~~Deep-dive on what's actually driving the accuracy gap and whether the
+  confirm-UX already covers it~~ — done (2026-08-20/21), `evaluate.py`
+  permanently extended with two new diagnostics (not one-off scripts):
+  1. **Error breakdown**: of 288 wrong top-1s, only 17.7% are "right
+     make+model, wrong generation" — 82.3% are a genuinely different car.
+     Real per-segment top-1 accuracy ranges from Supercar 40% / Estate 50%
+     up to Convertible/Pickup 100% (small n). Two distinct failure modes:
+     same-brand-lineup confusion (Supercar 78%, SUV/Crossover 50% of their
+     own errors — a real, inherent visual-similarity limit) vs. Estate not
+     being recognized as its own body style at all (91% of Estate errors go
+     to a different segment entirely — visually confirmed: reference photos
+     mix dead-on front shots, which hide a wagon's defining feature, the
+     extended roofline, with good 3/4-angle shots that show it clearly, no
+     filtering between them). The Estate case is a genuinely fixable
+     reference-photo problem; the same-brand case isn't.
+  2. **Confirm-UX protection analysis** (new `confirmUxProtection` block in
+     `eval_results.json`): 75.3% of all wrong top-1s are already caught by
+     the existing confirm-step UX (`isAmbiguous()` in Camera.jsx) — user
+     sees a picker, not a silent wrong add. Practical/felt accuracy is
+     closer to ~91% (741/812) than the raw 64.5% top-1 suggests. Checked
+     whether a threshold tweak could close the remaining silent-wrong gap
+     (65 cases): no — 57% have the true answer at rank #3+ (structurally
+     invisible to a top-1-vs-top-2 ratio check), and only ~12-14% are near
+     either existing threshold. Confirmed: this validates the earlier
+     decision to build the confirm-UX instead of chasing raw top-1, and
+     there's no cheap further win here.
+  Net: no code/behavior change from this item itself (pure diagnostics),
+  but it rules out further classifier-side or threshold-side tuning as
+  worthwhile, and leaves two live threads — angle-filtering reference
+  photos for profile-defined segments (Estate/MPV/Crossover, untested) and
+  domain-matched training data (still the biggest lever, still blocked).
 
 ## Backend architecture
 
