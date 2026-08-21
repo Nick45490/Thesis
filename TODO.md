@@ -62,6 +62,20 @@ audit (2026-08-17).
   worthwhile, and leaves two live threads — angle-filtering reference
   photos for profile-defined segments (Estate/MPV/Crossover, untested) and
   domain-matched training data (still the biggest lever, still blocked).
+- Angle-filtering for Estate reference photos — attempted (2026-08-21),
+  shelved: built `audit_reference_angles.py` (uncommitted, in
+  ai-service/) using zero-shot CLIP (base model, 4 angle-prompt classes) to
+  flag dead-on front/rear reference photos, since one was visually
+  confirmed to hide a wagon's defining silhouette. The tool failed its own
+  sanity check — it classified that exact known dead-on-front image as
+  "three_quarter" (good), and every confidence score across the whole
+  320-image Estate run clustered tightly in a noise-level 0.17-0.24 range.
+  Zero-shot CLIP doesn't cleanly discriminate photographic angle the way it
+  discriminates car identity, at least not with these prompts. The reported
+  8.1% dead-on rate can't be trusted given that. Not pursued further for
+  now (better prompts, or manual human review of a sample, are the two
+  options if revisited) — reference-photo angle remains a plausible but
+  now-unconfirmed hypothesis, not a validated fix.
 
 ## Backend architecture
 
