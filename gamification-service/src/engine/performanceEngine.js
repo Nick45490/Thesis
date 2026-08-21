@@ -126,14 +126,36 @@ function drivetrainGrip(drivetrain, horsepower) {
 }
 
 /**
- * Circuit mode is modeled on the real Silverstone Grand Prix Circuit (5.891 km,
- * current F1 layout) — 3 straights (2,400m combined) + 15 named corners, each
- * rated 1-10 on how much braking it needs before entry (10 = lightest braking,
- * e.g. Copse taken flat-out; 1 = heaviest, e.g. Village/Luffield). Contribution
- * to lap time is (11 - rating), so heavy-braking corners cost more.
+ * Circuit mode is modeled on real circuits — each track contributes a total
+ * straight distance and a corner-difficulty sum (each corner rated 1-10 on how
+ * much braking it needs before entry, 10 = lightest braking/flat-out, 1 =
+ * heaviest; contribution to lap time is (11 - rating), so heavy-braking
+ * corners cost more). straightsM/cornerSum are per-track so estimateCircuitTime
+ * can produce comparable, realistic lap times across different real tracks
+ * without needing separate formula constants for each.
  */
-const CIRCUIT_STRAIGHTS_M = 2400; // Start/Finish 800 + Wellington 700 + Hangar 900
-const CIRCUIT_CORNER_SUM  = 81;   // sum of (11 - rating) across all 15 corners
+const CIRCUIT_TRACKS = {
+	// Real Silverstone Grand Prix Circuit (5.891 km, current F1 layout) —
+	// 3 straights (2,400m combined: Start/Finish 800 + Wellington 700 +
+	// Hangar 900) + 15 named corners, hand-rated 1-10.
+	silverstone: {
+		straightsM: 2400,
+		cornerSum:  81,
+	},
+	// Real Hockenheimring Grand Prix Circuit (4.574 km, current post-2002
+	// layout) — 2 long straights (Start/Finish + the Parabolika-to-Hairpin
+	// blast this track is historically known for, ~2,200m combined) + 16
+	// named/numbered corners, hand-rated 1-10 from the extracted track shape.
+	// Rated tighter overall than Silverstone (cornerSum 99 vs 81 across a
+	// similar corner count) to reflect the twisty Motodrom stadium section
+	// contrasted against the two very long straights — real-world reasoning,
+	// not an official source (same methodology Silverstone's ratings used).
+	hockenheimring: {
+		straightsM: 2200,
+		cornerSum:  99,
+	},
+};
+const DEFAULT_TRACK = "silverstone";
 
 const CIRCUIT_STRAIGHT_CONST = 1.0;
 const CIRCUIT_CORNER_CONST   = 0.67;
@@ -150,23 +172,25 @@ function circuitAgilityFactor(weightKg) {
 /**
  * Returns an estimated circuit lap time in seconds (3 decimal places).
  * Straights are driven by power-to-weight (same physics as drag), scaled by
- * total straight distance. Corners are driven primarily by torque-to-weight ×
- * drivetrain grip (so a high-torque AWD car can still beat a higher-hp RWD car
- * here even if it loses the drag race), with the small agility nudge above.
- * Falls back to a rarity-tier base time when horsepower/torque/weight are
- * missing. Adds ±4% variance for rematches, same as drag.
+ * the track's total straight distance. Corners are driven primarily by
+ * torque-to-weight × drivetrain grip (so a high-torque AWD car can still beat
+ * a higher-hp RWD car here even if it loses the drag race), scaled by the
+ * track's corner-difficulty sum, with the small agility nudge above. Falls
+ * back to a rarity-tier base time when horsepower/torque/weight are missing.
+ * Adds ±4% variance for rematches, same as drag.
  */
-function estimateCircuitTime(horsepower, weightKg, torqueNm, drivetrain, make, model) {
+function estimateCircuitTime(horsepower, weightKg, torqueNm, drivetrain, make, model, track = DEFAULT_TRACK) {
+	const { straightsM, cornerSum } = CIRCUIT_TRACKS[track] || CIRCUIT_TRACKS[DEFAULT_TRACK];
 	let base;
 
 	if (horsepower && weightKg && torqueNm && horsepower > 0 && weightKg > 0 && torqueNm > 0) {
 		const straightTime = CIRCUIT_STRAIGHT_CONST
 			* Math.pow(weightKg / horsepower, 1 / 3)
-			* (CIRCUIT_STRAIGHTS_M / 100);
+			* (straightsM / 100);
 
 		const effective = (torqueNm / weightKg) * drivetrainGrip(drivetrain, horsepower);
 		const cornerTime = CIRCUIT_CORNER_CONST
-			* CIRCUIT_CORNER_SUM
+			* cornerSum
 			* Math.pow(1 / effective, 1 / 3)
 			* circuitAgilityFactor(weightKg);
 
@@ -209,4 +233,4 @@ function computePointsAwarded(loserHorsepower, loserWeightKg, distance, winnerHo
 	return Math.round((50 + bonus) * underdogMult);
 }
 
-module.exports = { getCarRarity, estimateDragTime, estimateCircuitTime, computePointsAwarded, RARITY_TIER };
+module.exports = { getCarRarity, estimateDragTime, estimateCircuitTime, computePointsAwarded, RARITY_TIER, CIRCUIT_TRACKS, DEFAULT_TRACK };

@@ -5,6 +5,7 @@ const {
 	getChallengeById,
 	listChallenges,
 } = require("../db");
+const { CIRCUIT_TRACKS, DEFAULT_TRACK } = require("../engine/performanceEngine");
 
 // req.user is never set in this service — requireInternalSecret (index.js)
 // verifies every request before it reaches a handler, so x-user-id alone is
@@ -20,6 +21,7 @@ async function postChallenge(req, res) {
 	const {
 		opponentUserId,
 		distance,
+		track,
 		challengerGenerationId,
 		challengerMake,
 		challengerModel,
@@ -38,6 +40,10 @@ async function postChallenge(req, res) {
 		return res.status(400).json({ message: "distance must be quarter, half, full, or circuit" });
 	}
 
+	if (distance === "circuit" && track && !CIRCUIT_TRACKS[track]) {
+		return res.status(400).json({ message: `track must be one of: ${Object.keys(CIRCUIT_TRACKS).join(", ")}` });
+	}
+
 	if (Number(opponentUserId) === userId) {
 		return res.status(400).json({ message: "Cannot challenge yourself" });
 	}
@@ -47,6 +53,7 @@ async function postChallenge(req, res) {
 			challengerUserId:      userId,
 			opponentUserId:        Number(opponentUserId),
 			distance,
+			track:                 distance === "circuit" ? (track || DEFAULT_TRACK) : undefined,
 			challengerGenerationId: Number(challengerGenerationId),
 			challengerMake,
 			challengerModel,

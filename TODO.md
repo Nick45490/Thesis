@@ -134,8 +134,25 @@ audit (2026-08-17).
 
 ## Features / gameplay
 
-- Circuit mode has exactly one track (Silverstone) — multi-track support was
-  the natural next step when it was designed, never built.
+- ~~Circuit mode has exactly one track (Silverstone)~~ — done (2026-08-21):
+  added Hockenheimring as a real second track, proving out actual
+  multi-track support rather than just swapping data. Hockenheimring's
+  track outline was extracted directly from the official Wikimedia Commons
+  SVG diagram's vector path (not a raster trace like Silverstone — the
+  source was already vector, sampled at 90 uniform-arc-length points,
+  verified pixel-for-pixel against the source before use). Corner segment
+  lengths use the real vector arc-length proportions (more precise than
+  Silverstone's evenly-split approximation). Backend `CIRCUIT_TRACKS`
+  registry in performanceEngine.js holds real per-track straights/corner-sum
+  constants (Hockenheimring's hand-derived the same way Silverstone's were —
+  an automated curvature-based approach was tried first and abandoned, it
+  produced implausible straight/corner splits on this hand-drawn diagram).
+  `race_challenges` gets a `track` column (defaults to `silverstone`, safe
+  for existing rows) so race history always shows the track it was actually
+  raced on. Track selector appears in the challenge form for Circuit
+  distance. 5 new backend tests. Live-tested: track selector appears,
+  animation renders the chosen track, lap-progress shows correct corner
+  names for each.
 - ~~`DELETE /friends/:friendId` exists in the backend but has zero UI
   surface~~ — done (2026-08-20): Remove button on each Friends page row,
   with a confirm step. Live-tested.

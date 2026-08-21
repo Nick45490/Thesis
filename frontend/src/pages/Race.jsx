@@ -17,9 +17,10 @@ import { getCarRarity } from "../utils/rarity";
 const DISTANCE_LABELS = { quarter: "Quarter mile (¼)", half: "Half mile (½)", full: "Full mile", circuit: "Circuit" };
 
 // Circuit isn't a drag race — "Circuit drag" would read wrong.
-function raceModeLabel(distance) {
+function raceModeLabel(distance, trackId) {
 	const label = DISTANCE_LABELS[distance] || distance;
-	return distance === "circuit" ? label : `${label} drag`;
+	if (distance !== "circuit") return `${label} drag`;
+	return trackId ? `${label} — ${getTrack(trackId).name}` : label;
 }
 const DISTANCE_METERS = { quarter: 402, half: 805, full: 1609 };
 
@@ -30,74 +31,161 @@ const DISTANCE_METERS = { quarter: 402, half: 805, full: 1609 };
 // direction: Abbey, Farm Curve, Village, The Loop, Aintree, Wellington Straight,
 // Brooklands, Luffield, Woodcote, Copse, Maggotts, Becketts, Chapel Curve, Hangar
 // Straight, Stowe, Vale, Club, back to start.
-const CIRCUIT_VIEWBOX = "0 0 938 555";
-const SILVERSTONE_TRACK_POINTS = [
-	[522.0,398.0], [497.0,381.0], [488.0,370.0], [485.0,360.0], [487.0,300.0], [483.0,285.0],
-	[426.0,217.0], [427.0,210.0], [431.0,206.0], [467.0,193.0], [471.0,189.0], [471.0,180.0],
-	[467.0,176.0], [426.0,165.0], [408.0,165.0], [390.0,170.0], [244.0,357.0], [238.0,370.0],
-	[237.0,381.0], [241.0,392.0], [245.0,396.0], [260.0,399.0], [283.0,399.0], [296.0,408.0],
-	[299.0,420.0], [298.0,428.0], [294.0,434.0], [287.0,438.0], [271.0,438.0], [236.0,423.0],
-	[209.0,405.0], [190.0,387.0], [183.0,377.0], [176.0,359.0], [174.0,333.0], [155.0,211.0],
-	[157.0,190.0], [167.0,179.0], [188.0,165.0], [234.0,150.0], [272.0,142.0], [346.0,135.0],
-	[359.0,131.0], [385.0,116.0], [424.0,127.0], [446.0,127.0], [456.0,122.0], [476.0,106.0],
-	[495.0,104.0], [506.0,109.0], [515.0,118.0], [527.0,139.0], [544.0,154.0], [741.0,244.0],
-	[785.0,267.0], [802.0,277.0], [812.0,288.0], [816.0,308.0], [814.0,320.0], [801.0,334.0],
-	[776.0,347.0], [760.0,359.0], [696.0,423.0], [694.0,430.0], [708.0,444.0], [708.0,455.0],
-	[693.0,472.0], [678.0,481.0], [659.0,485.0], [645.0,481.0],
-];
-
 function closedPathFromPoints(points) {
 	let d = `M ${points[0][0]},${points[0][1]} `;
 	for (let i = 1; i < points.length; i++) d += `L ${points[i][0]},${points[i][1]} `;
 	return d + "Z";
 }
 
-const CIRCUIT_PATH_D = closedPathFromPoints(SILVERSTONE_TRACK_POINTS);
-const CIRCUIT_START  = SILVERSTONE_TRACK_POINTS[0];
+// Cumulative fraction of the lap at which each segment starts, for a quick
+// progress -> segment lookup (used by trackPositionLabel below).
+function withSegmentStarts(segments, lapM) {
+	let cum = 0;
+	return segments.map((seg) => {
+		const start = cum;
+		cum += seg.m / lapM;
+		return { name: seg.name, start };
+	});
+}
 
-// Ordered segments around one lap (matches the real driving order documented
-// above), each tagged with its share of the 5,891m real Silverstone GP lap.
+const SILVERSTONE_LAP_M = 5891;
 // The three straights use the exact metres already established for the lap
 // time formula (CIRCUIT_STRAIGHTS_M in performanceEngine.js: 800 + 700 + 900).
 // The 15 corners don't have individually-sourced lengths anywhere in this
 // project, so the remaining 3,491m is split evenly across them — an honest
 // approximation for a "which bit of the lap is this" landmark, not a claim
 // of corner-by-corner telemetry precision.
-const SILVERSTONE_LAP_M = 5891;
-const CORNER_M = (SILVERSTONE_LAP_M - 800 - 700 - 900) / 15;
-const SILVERSTONE_SEGMENTS = [
-	{ name: "Start/Finish Straight", m: 800 },
-	{ name: "Abbey",       m: CORNER_M },
-	{ name: "Farm Curve",  m: CORNER_M },
-	{ name: "Village",     m: CORNER_M },
-	{ name: "The Loop",    m: CORNER_M },
-	{ name: "Aintree",     m: CORNER_M },
-	{ name: "Wellington Straight", m: 700 },
-	{ name: "Brooklands",  m: CORNER_M },
-	{ name: "Luffield",    m: CORNER_M },
-	{ name: "Woodcote",    m: CORNER_M },
-	{ name: "Copse",       m: CORNER_M },
-	{ name: "Maggotts",    m: CORNER_M },
-	{ name: "Becketts",    m: CORNER_M },
-	{ name: "Chapel Curve", m: CORNER_M },
-	{ name: "Hangar Straight", m: 900 },
-	{ name: "Stowe",       m: CORNER_M },
-	{ name: "Vale",        m: CORNER_M },
-	{ name: "Club",        m: CORNER_M },
-];
-// Cumulative fraction of the lap at which each segment starts, for a quick
-// progress -> segment lookup.
-let _cum = 0;
-const SILVERSTONE_SEGMENT_STARTS = SILVERSTONE_SEGMENTS.map((seg) => {
-	const start = _cum;
-	_cum += seg.m / SILVERSTONE_LAP_M;
-	return { name: seg.name, start };
-});
+const SILVERSTONE_CORNER_M = (SILVERSTONE_LAP_M - 800 - 700 - 900) / 15;
+const HOCKENHEIM_LAP_M = 4574;
 
-function trackPositionLabel(progress) {
+// Each entry is a full circuit: a real track map traced into a closed pixel
+// path (point 0 = start/finish, order matches real driving direction), plus
+// the segment breakdown the lap-progress indicator (trackPositionLabel) uses.
+// straightsM/cornerSum for the actual lap-time formula live separately in
+// gamification-service/src/engine/performanceEngine.js's CIRCUIT_TRACKS —
+// kept in sync by hand since frontend/backend don't share code.
+const TRACKS = {
+	silverstone: {
+		name: "Silverstone",
+		// Real Silverstone Grand Prix Circuit, pixel-extracted from a reference
+		// track map (color-thresholded on the track line, skeletonized,
+		// simplified to 71 points) rather than hand-traced. viewBox matches the
+		// source image's pixel space. Point 0 sits on Hamilton Straight
+		// (start/finish); order matches the real driving direction: Abbey, Farm
+		// Curve, Village, The Loop, Aintree, Wellington Straight, Brooklands,
+		// Luffield, Woodcote, Copse, Maggotts, Becketts, Chapel Curve, Hangar
+		// Straight, Stowe, Vale, Club, back to start.
+		viewBox: "0 0 938 555",
+		points: [
+			[522.0,398.0], [497.0,381.0], [488.0,370.0], [485.0,360.0], [487.0,300.0], [483.0,285.0],
+			[426.0,217.0], [427.0,210.0], [431.0,206.0], [467.0,193.0], [471.0,189.0], [471.0,180.0],
+			[467.0,176.0], [426.0,165.0], [408.0,165.0], [390.0,170.0], [244.0,357.0], [238.0,370.0],
+			[237.0,381.0], [241.0,392.0], [245.0,396.0], [260.0,399.0], [283.0,399.0], [296.0,408.0],
+			[299.0,420.0], [298.0,428.0], [294.0,434.0], [287.0,438.0], [271.0,438.0], [236.0,423.0],
+			[209.0,405.0], [190.0,387.0], [183.0,377.0], [176.0,359.0], [174.0,333.0], [155.0,211.0],
+			[157.0,190.0], [167.0,179.0], [188.0,165.0], [234.0,150.0], [272.0,142.0], [346.0,135.0],
+			[359.0,131.0], [385.0,116.0], [424.0,127.0], [446.0,127.0], [456.0,122.0], [476.0,106.0],
+			[495.0,104.0], [506.0,109.0], [515.0,118.0], [527.0,139.0], [544.0,154.0], [741.0,244.0],
+			[785.0,267.0], [802.0,277.0], [812.0,288.0], [816.0,308.0], [814.0,320.0], [801.0,334.0],
+			[776.0,347.0], [760.0,359.0], [696.0,423.0], [694.0,430.0], [708.0,444.0], [708.0,455.0],
+			[693.0,472.0], [678.0,481.0], [659.0,485.0], [645.0,481.0],
+		],
+		lapM: SILVERSTONE_LAP_M,
+		segments: [
+			{ name: "Start/Finish Straight", m: 800 },
+			{ name: "Abbey",       m: SILVERSTONE_CORNER_M },
+			{ name: "Farm Curve",  m: SILVERSTONE_CORNER_M },
+			{ name: "Village",     m: SILVERSTONE_CORNER_M },
+			{ name: "The Loop",    m: SILVERSTONE_CORNER_M },
+			{ name: "Aintree",     m: SILVERSTONE_CORNER_M },
+			{ name: "Wellington Straight", m: 700 },
+			{ name: "Brooklands",  m: SILVERSTONE_CORNER_M },
+			{ name: "Luffield",    m: SILVERSTONE_CORNER_M },
+			{ name: "Woodcote",    m: SILVERSTONE_CORNER_M },
+			{ name: "Copse",       m: SILVERSTONE_CORNER_M },
+			{ name: "Maggotts",    m: SILVERSTONE_CORNER_M },
+			{ name: "Becketts",    m: SILVERSTONE_CORNER_M },
+			{ name: "Chapel Curve", m: SILVERSTONE_CORNER_M },
+			{ name: "Hangar Straight", m: 900 },
+			{ name: "Stowe",       m: SILVERSTONE_CORNER_M },
+			{ name: "Vale",        m: SILVERSTONE_CORNER_M },
+			{ name: "Club",        m: SILVERSTONE_CORNER_M },
+		],
+	},
+	hockenheimring: {
+		name: "Hockenheimring",
+		// Real Hockenheimring GP Circuit (current post-2002 layout, 4.574km),
+		// extracted directly from the official Wikimedia Commons SVG track
+		// diagram's vector path (not a raster trace like Silverstone — the
+		// source was already a clean vector outline, sampled at 90
+		// uniform-arc-length points). Point 0 sits at the start/finish
+		// straight next to NordKurve, matching the source diagram's direction
+		// arrow. Order: NordKurve, Turn 2, Turn 3, Turn 4, Parabolika, Hairpin,
+		// Turn 7, Mercedes, Turn 9, Turn 10, Mobil 1, Sachs, Turn 13, Turn 14,
+		// Turn 15, SudKurve, back to start.
+		viewBox: "0 0 1100 750",
+		points: [
+			[133.8,497.3], [120.0,467.7], [106.2,438.1], [91.8,408.8], [76.4,379.9], [61.3,351.0],
+			[72.7,320.9], [86.4,291.2], [103.1,263.2], [123.6,237.7], [144.5,212.7], [167.1,189.1],
+			[189.7,165.4], [212.1,141.7], [234.5,117.9], [256.9,94.1], [279.8,70.8], [305.7,81.2],
+			[312.4,112.7], [318.5,144.1], [343.8,164.6], [371.8,181.4], [400.2,197.6], [429.1,212.8],
+			[459.2,225.5], [490.0,236.4], [521.3,245.9], [553.1,253.2], [585.4,258.2], [618.0,261.1],
+			[650.6,262.0], [683.2,260.5], [715.5,255.4], [747.2,247.4], [778.0,236.5], [808.6,225.2],
+			[839.3,213.9], [870.0,202.6], [900.6,191.3], [931.0,179.4], [961.5,167.4], [992.4,157.7],
+			[985.7,180.3], [958.4,198.3], [931.1,216.2], [903.8,234.2], [876.5,252.2], [849.2,270.2],
+			[822.0,288.2], [794.7,306.2], [766.0,321.3], [733.5,318.7], [701.2,314.0], [668.8,309.3],
+			[636.5,304.6], [604.1,299.9], [583.9,316.0], [586.0,348.5], [598.5,378.3], [609.6,407.9],
+			[594.8,436.5], [570.5,458.1], [543.1,476.0], [515.7,493.8], [488.3,511.6], [460.8,529.2],
+			[433.2,546.7], [405.4,563.8], [373.4,567.7], [344.5,553.4], [323.3,528.6], [302.3,503.6],
+			[281.3,478.5], [260.3,453.5], [236.8,431.2], [207.9,440.3], [205.6,471.6], [214.6,503.0],
+			[232.4,529.0], [262.2,542.2], [284.8,565.3], [301.6,593.2], [292.7,622.5], [265.9,641.2],
+			[236.6,654.4], [207.4,642.8], [190.1,615.3], [175.9,585.9], [161.8,556.4], [147.8,526.8],
+		],
+		lapM: HOCKENHEIM_LAP_M,
+		// Segment lengths computed from the real vector arc-length proportions
+		// (not evenly split like Silverstone's corners — the source SVG gave
+		// exact geometry, so each segment's real share of the 4,574m lap could
+		// be computed directly). Totals 4,572m, 2m off target from rounding.
+		segments: [
+			{ name: "Start/Finish Straight", m: 183 },
+			{ name: "NordKurve", m: 686 },
+			{ name: "Turn 2",    m: 137 },
+			{ name: "Turn 3",    m: 91 },
+			{ name: "Turn 4",    m: 366 },
+			{ name: "Parabolika", m: 686 },
+			{ name: "Hairpin",   m: 274 },
+			{ name: "Turn 7",    m: 320 },
+			{ name: "Mercedes",  m: 183 },
+			{ name: "Turn 9",    m: 137 },
+			{ name: "Turn 10",   m: 412 },
+			{ name: "Mobil 1",   m: 183 },
+			{ name: "Sachs",     m: 137 },
+			{ name: "Turn 13",   m: 137 },
+			{ name: "Turn 14",   m: 183 },
+			{ name: "Turn 15",   m: 183 },
+			{ name: "SudKurve",  m: 274 },
+		],
+	},
+};
+
+// Derive pathD/start/segmentStarts once per track rather than per render.
+for (const track of Object.values(TRACKS)) {
+	track.pathD = closedPathFromPoints(track.points);
+	track.start = track.points[0];
+	track.segmentStarts = withSegmentStarts(track.segments, track.lapM);
+}
+
+const DEFAULT_TRACK_ID = "silverstone";
+
+function getTrack(trackId) {
+	return TRACKS[trackId] || TRACKS[DEFAULT_TRACK_ID];
+}
+
+function trackPositionLabel(trackId, progress) {
 	const frac = Math.max(0, Math.min(1, progress));
-	let current = SILVERSTONE_SEGMENT_STARTS[0];
-	for (const seg of SILVERSTONE_SEGMENT_STARTS) {
+	const segmentStarts = getTrack(trackId).segmentStarts;
+	let current = segmentStarts[0];
+	for (const seg of segmentStarts) {
 		if (seg.start > frac) break;
 		current = seg;
 	}
@@ -166,7 +254,7 @@ function HistoryCard({ challenge, currentUserId, onOpen }) {
 			}}
 		>
 			<div style={{ fontSize: "0.8rem", fontWeight: 600, color: S.textSub, marginBottom: "0.6rem" }}>
-				{raceModeLabel(challenge.distance)} · {new Date(challenge.createdAt).toLocaleString()}
+				{raceModeLabel(challenge.distance, challenge.track)} · {new Date(challenge.createdAt).toLocaleString()}
 			</div>
 			<div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: "0.75rem" }}>
 				<CarThumb genId={my.genId} make={my.make} model={my.model} time={my.time} timeColor={iWon ? "#22c55e" : "#ef4444"} username={my.username} />
@@ -291,7 +379,7 @@ function RaceDetailModal({ challenge, currentUserId, cardRect, onClose }) {
 				>✕</button>
 
 				<div style={{ fontSize: "0.78rem", color: S.faint, marginBottom: "1rem" }}>
-					{raceModeLabel(challenge.distance)} · {new Date(challenge.resolvedAt || challenge.createdAt).toLocaleString()}
+					{raceModeLabel(challenge.distance, challenge.track)} · {new Date(challenge.resolvedAt || challenge.createdAt).toLocaleString()}
 				</div>
 
 				{/* Main layout: photo + stats under each side */}
@@ -492,7 +580,7 @@ function RaceLane({ car, progress, won, label, done }) {
 	);
 }
 
-function CircuitCarInfo({ car, won, label, done, progress }) {
+function CircuitCarInfo({ car, won, label, done, progress, trackId }) {
 	const pct = Math.round(Math.min(1, progress) * 100);
 	return (
 		<div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", gap: "0.6rem" }}>
@@ -507,7 +595,7 @@ function CircuitCarInfo({ car, won, label, done, progress }) {
 				<div style={{ fontSize: "0.72rem", color: won ? "#22c55e" : "#60a5fa", fontWeight: 600 }}>{car.time}s</div>
 				{!done && (
 					<div style={{ fontSize: "0.7rem", color: S.faint, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-						{pct}% &middot; {trackPositionLabel(progress)}
+						{pct}% &middot; {trackPositionLabel(trackId, progress)}
 					</div>
 				)}
 			</div>
@@ -515,15 +603,16 @@ function CircuitCarInfo({ car, won, label, done, progress }) {
 	);
 }
 
-function CircuitTrackView({ my, opp, markers, iWon, done, progress }) {
+function CircuitTrackView({ my, opp, markers, iWon, done, progress, trackId }) {
+	const track = getTrack(trackId);
 	return (
 		<div style={{ marginBottom: "1.1rem" }}>
-			<svg viewBox={CIRCUIT_VIEWBOX} style={{ width: "100%", height: "auto", display: "block" }}>
-				<path d={CIRCUIT_PATH_D} fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
-				<path d={CIRCUIT_PATH_D} fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+			<svg viewBox={track.viewBox} style={{ width: "100%", height: "auto", display: "block" }}>
+				<path d={track.pathD} fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+				<path d={track.pathD} fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
 				<line
-					x1={CIRCUIT_START[0] - 9} y1={CIRCUIT_START[1] + 9}
-					x2={CIRCUIT_START[0] + 9} y2={CIRCUIT_START[1] - 9}
+					x1={track.start[0] - 9} y1={track.start[1] + 9}
+					x2={track.start[0] + 9} y2={track.start[1] - 9}
 					stroke="#fbbf24" strokeWidth="4"
 				/>
 				{markers.opp && (
@@ -533,9 +622,10 @@ function CircuitTrackView({ my, opp, markers, iWon, done, progress }) {
 					<circle cx={markers.my.x} cy={markers.my.y} r="9" fill={iWon ? "#22c55e" : "#3b82f6"} stroke="#0a0a14" strokeWidth="2" />
 				)}
 			</svg>
-			<div style={{ display: "flex", gap: "1rem", marginTop: "0.85rem" }}>
-				<CircuitCarInfo car={my}  won={iWon}  label="You"          done={done} progress={progress.my} />
-				<CircuitCarInfo car={opp} won={!iWon} label={opp.username} done={done} progress={progress.opp} />
+			<div style={{ textAlign: "center", fontSize: "0.72rem", color: S.faint, marginTop: "0.3rem" }}>{track.name}</div>
+			<div style={{ display: "flex", gap: "1rem", marginTop: "0.5rem" }}>
+				<CircuitCarInfo car={my}  won={iWon}  label="You"          done={done} progress={progress.my}  trackId={trackId} />
+				<CircuitCarInfo car={opp} won={!iWon} label={opp.username} done={done} progress={progress.opp} trackId={trackId} />
 			</div>
 		</div>
 	);
@@ -553,14 +643,15 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 	useEffect(() => { speedRef.current = speed; }, [speed]);
 
 	const isCircuit = result.distance === "circuit";
+	const trackId = result.track || DEFAULT_TRACK_ID;
 	// Detached (never mounted) SVG path used purely for getPointAtLength math —
 	// doesn't need to be in the DOM, path geometry methods work off the `d` alone.
 	const trackGeom = useMemo(() => {
 		if (!isCircuit) return null;
 		const el = document.createElementNS("http://www.w3.org/2000/svg", "path");
-		el.setAttribute("d", CIRCUIT_PATH_D);
+		el.setAttribute("d", getTrack(trackId).pathD);
 		return { el, len: el.getTotalLength() };
-	}, [isCircuit]);
+	}, [isCircuit, trackId]);
 
 	const iAmChallenger = result.challengerUserId === currentUserId;
 	const iWon          = result.winnerUserId     === currentUserId;
@@ -642,7 +733,7 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 				}}
 			>
 				<h3 style={{ margin: "0 0 1rem", color: "#e2e8f0", textAlign: "center", letterSpacing: "0.04em" }}>
-					{DISTANCE_LABELS[result.distance]} Race
+					{DISTANCE_LABELS[result.distance]} Race{isCircuit && ` — ${getTrack(trackId).name}`}
 				</h3>
 
 				{!done && (
@@ -666,7 +757,7 @@ function RaceAnimationModal({ result, currentUserId, onClose }) {
 				)}
 
 				{isCircuit ? (
-					<CircuitTrackView my={my} opp={opp} markers={markers} iWon={iWon} done={done} progress={progress} />
+					<CircuitTrackView my={my} opp={opp} markers={markers} iWon={iWon} done={done} progress={progress} trackId={trackId} />
 				) : (
 					<>
 						<RaceLane car={my}  progress={progress.my}  won={iWon}  label="You"          done={done} />
@@ -964,7 +1055,7 @@ function ChallengeCard({ challenge, currentUserId, myCars, friends, onAccept, on
 		}}>
 			<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.4rem", marginBottom: "0.5rem" }}>
 				<span style={{ fontWeight: 600, fontSize: "0.9rem" }}>
-					{raceModeLabel(challenge.distance)}
+					{raceModeLabel(challenge.distance, challenge.track)}
 				</span>
 				<span style={{
 					fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase",
@@ -1132,7 +1223,7 @@ export default function RacePage() {
 	const [users, setUsers] = useState([]);
 	const [challenges, setChallenges] = useState([]);
 
-	const [form, setForm] = useState({ opponentUserId: "", distance: "quarter", challengerGenerationId: "" });
+	const [form, setForm] = useState({ opponentUserId: "", distance: "quarter", track: DEFAULT_TRACK_ID, challengerGenerationId: "" });
 	const [submitError, setSubmitError] = useState("");
 	const [submitOk, setSubmitOk] = useState(false);
 	const [selectedRace, setSelectedRace] = useState(null);
@@ -1178,6 +1269,7 @@ export default function RacePage() {
 			await createChallenge({
 				opponentUserId:        Number(form.opponentUserId),
 				distance:              form.distance,
+				track:                 form.distance === "circuit" ? form.track : undefined,
 				challengerGenerationId: car.generationId,
 				challengerMake:        car.manufacturerName,
 				challengerModel:       car.modelName,
@@ -1359,6 +1451,39 @@ export default function RacePage() {
 									))}
 								</div>
 							</div>
+
+							{form.distance === "circuit" && (
+								<div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+									<span style={{ fontSize: "0.8rem", color: "#93c5fd", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>Track</span>
+									<div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+										{Object.entries(TRACKS).map(([id, track]) => (
+											<label
+												key={id}
+												style={{
+													display: "flex", alignItems: "center", gap: "0.4rem",
+													padding: "0.5rem 1rem", borderRadius: "8px", cursor: "pointer",
+													border: `1.5px solid ${form.track === id ? "#60a5fa" : "rgba(96,165,250,0.2)"}`,
+													background: form.track === id ? "rgba(96,165,250,0.18)" : "rgba(255,255,255,0.04)",
+													color: form.track === id ? "#93c5fd" : "#94a3b8",
+													fontWeight: form.track === id ? 700 : 400, fontSize: "0.88rem",
+													transition: "all 0.15s",
+												}}
+											>
+												<input
+													type="radio"
+													name="track"
+													value={id}
+													checked={form.track === id}
+													onChange={() => setForm((p) => ({ ...p, track: id }))}
+													style={{ display: "none" }}
+												/>
+												{track.name}
+												<span style={{ fontSize: "0.75rem", color: form.track === id ? "#60a5fa" : "rgba(148,163,184,0.6)" }}>{(track.lapM / 1000).toFixed(3)}km</span>
+											</label>
+										))}
+									</div>
+								</div>
+							)}
 
 							<div style={{ display: "flex", justifyContent: "flex-end" }}>
 								<button

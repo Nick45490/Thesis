@@ -4,6 +4,8 @@ const {
 	estimateCircuitTime,
 	computePointsAwarded,
 	RARITY_TIER,
+	CIRCUIT_TRACKS,
+	DEFAULT_TRACK,
 } = require("../performanceEngine");
 
 // applyVariance() applies ±4% via Math.random() — pin it at 0.5 so
@@ -105,6 +107,37 @@ describe("estimateCircuitTime", () => {
 		const awd = withoutVariance(() => estimateCircuitTime(300, 1500, 400, "AWD", "Subaru", "WRX"));
 		const fwd = withoutVariance(() => estimateCircuitTime(300, 1500, 400, "FWD", "Volkswagen", "Golf"));
 		expect(awd).toBeLessThanOrEqual(fwd);
+	});
+
+	test("defaults to silverstone when no track is given, matching an explicit 'silverstone' call", () => {
+		const implicit = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6"));
+		const explicit = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6", "silverstone"));
+		expect(implicit).toBe(explicit);
+	});
+
+	test("falls back to the default track's constants for an unknown track id", () => {
+		const unknown = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6", "nonexistent-track"));
+		const fallback = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6", DEFAULT_TRACK));
+		expect(unknown).toBe(fallback);
+	});
+
+	test("a different track with different straights/corner-sum constants produces a different time for the same car", () => {
+		const silverstone = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6", "silverstone"));
+		const hockenheim = withoutVariance(() => estimateCircuitTime(500, 1500, 500, "AWD", "Audi", "RS6", "hockenheimring"));
+		expect(silverstone).not.toBe(hockenheim);
+	});
+});
+
+describe("CIRCUIT_TRACKS", () => {
+	test("every registered track has positive straights and corner-sum constants", () => {
+		for (const [name, cfg] of Object.entries(CIRCUIT_TRACKS)) {
+			expect(cfg.straightsM).toBeGreaterThan(0);
+			expect(cfg.cornerSum).toBeGreaterThan(0);
+		}
+	});
+
+	test("DEFAULT_TRACK refers to a real entry in the registry", () => {
+		expect(CIRCUIT_TRACKS[DEFAULT_TRACK]).toBeDefined();
 	});
 });
 

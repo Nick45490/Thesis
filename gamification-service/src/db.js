@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 const { RACING_CATALOGUE, buildRacingCatalogue } = require("./engine/achievementChecker");
-const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity, RARITY_TIER } = require("./engine/performanceEngine");
+const { estimateDragTime, estimateCircuitTime, computePointsAwarded, getCarRarity, RARITY_TIER, DEFAULT_TRACK } = require("./engine/performanceEngine");
 const { getUsernamesByIds } = require("./clients/authClient");
 const { periodStart } = require("./leaderboardPeriod");
 
@@ -74,7 +74,8 @@ async function initDb() {
 			ADD COLUMN IF NOT EXISTS challenger_torque_nm INTEGER,
 			ADD COLUMN IF NOT EXISTS challenger_drivetrain VARCHAR(20),
 			ADD COLUMN IF NOT EXISTS opponent_torque_nm INTEGER,
-			ADD COLUMN IF NOT EXISTS opponent_drivetrain VARCHAR(20)
+			ADD COLUMN IF NOT EXISTS opponent_drivetrain VARCHAR(20),
+			ADD COLUMN IF NOT EXISTS track VARCHAR(30) NOT NULL DEFAULT '${DEFAULT_TRACK}'
 	`);
 
 	await pool.query(`
@@ -242,6 +243,7 @@ function mapChallengeRow(row) {
 		opponentUserId:         row.opponent_user_id,
 		opponentUsername:       null,
 		distance:               row.distance,
+		track:                  row.track,
 		challengerGenerationId: row.challenger_generation_id,
 		challengerMake:         row.challenger_make,
 		challengerModel:        row.challenger_model,
@@ -273,8 +275,9 @@ async function createChallenge(input) {
 		`INSERT INTO race_challenges
 		   (challenger_user_id, opponent_user_id, distance,
 		    challenger_generation_id, challenger_make, challenger_model, challenger_gen_code,
-		    challenger_horsepower, challenger_weight_kg, challenger_torque_nm, challenger_drivetrain)
-		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+		    challenger_horsepower, challenger_weight_kg, challenger_torque_nm, challenger_drivetrain,
+		    track)
+		 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
 		 RETURNING *`,
 		[
 			Number(input.challengerUserId),
@@ -288,6 +291,7 @@ async function createChallenge(input) {
 			input.challengerWeightKg   || null,
 			input.challengerTorqueNm   || null,
 			input.challengerDrivetrain || null,
+			input.track || DEFAULT_TRACK,
 		]
 	);
 	return mapChallengeRow(result.rows[0]);
@@ -356,7 +360,7 @@ async function acceptChallenge(id, opponentInput) {
 				? estimateCircuitTime(
 					existing.challengerHorsepower, existing.challengerWeightKg,
 					existing.challengerTorqueNm, existing.challengerDrivetrain,
-					existing.challengerMake, existing.challengerModel
+					existing.challengerMake, existing.challengerModel, existing.track
 				)
 				: estimateDragTime(
 					existing.challengerHorsepower, existing.challengerWeightKg,
@@ -366,7 +370,7 @@ async function acceptChallenge(id, opponentInput) {
 				? estimateCircuitTime(
 					opponentInput.opponentHorsepower, opponentInput.opponentWeightKg,
 					opponentInput.opponentTorqueNm, opponentInput.opponentDrivetrain,
-					opponentInput.opponentMake, opponentInput.opponentModel
+					opponentInput.opponentMake, opponentInput.opponentModel, existing.track
 				)
 				: estimateDragTime(
 					opponentInput.opponentHorsepower, opponentInput.opponentWeightKg,
