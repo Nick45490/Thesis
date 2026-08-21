@@ -26,6 +26,14 @@ audit (2026-08-17).
   catalogue/stock photos, but real scans are phone photos in the wild
   (varied lighting, angles, backgrounds). This gap between training and
   real-world distribution is the single biggest lever left for accuracy.
+  Checked real volume (2026-08-21) via new `collection-service/scripts/
+  check-real-scans.js` (real, reusable, keep this one — unlike the shelved
+  angle-audit tool): `user_collections.scan_photo` already persists every
+  real scan, but there are only 14 across 13 generations (out of 813), max
+  2 for any single generation, 0 with the >=3 that would plausibly help.
+  Not remotely enough yet — expected for a project without a real user base
+  so far. The mechanism already works; revisit this exact script once real
+  usage grows. Not actionable today.
 - Revisit `MIN_CONFIDENCE` (currently 0.04) now that the classifier's been
   retrained on the expanded dataset — trades off false "confident" IDs vs.
   false "unknown"s.
