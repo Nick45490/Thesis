@@ -19,7 +19,6 @@ import sys
 from pathlib import Path
 
 from fetch_generation_images import (
-    EMBEDDINGS_CACHE,
     IMAGES_DIR,
     IMAGES_PER_GEN,
     LABELS_PATH,
@@ -120,11 +119,8 @@ def main() -> None:
     if CHECKPOINT_PATH.exists():
         CHECKPOINT_PATH.unlink()
 
-    if EMBEDDINGS_CACHE.exists():
-        EMBEDDINGS_CACHE.unlink()
-        print("\nEmbeddings cache deleted - will recompute on next restart.")
-
-    print(f"\nDone. Restart the AI service to rebuild the FAISS index.")
+    print(f"\nDone. Restart the AI service — it will pick up the new/changed images "
+          f"incrementally (only they get embedded, not the whole reference set).")
 
 
 if __name__ == "__main__":

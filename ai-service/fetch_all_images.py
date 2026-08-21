@@ -18,7 +18,6 @@ from fetch_generation_images import (
     LABELS_PATH,
     IMAGES_DIR,
     OUT_PATH,
-    EMBEDDINGS_CACHE,
     IMAGES_PER_GEN,
     fetch_gen,
 )
@@ -85,12 +84,8 @@ def main() -> None:
         with open(OUT_PATH, "w", encoding="utf-8") as f:
             json.dump(mapping, f, indent="\t")
 
-    # Delete embeddings cache so service rebuilds on next restart
-    if EMBEDDINGS_CACHE.exists():
-        EMBEDDINGS_CACHE.unlink()
-        print("\nEmbeddings cache deleted - will recompute on next restart.")
-
-    print(f"\nAll done. Restart the AI service to rebuild the FAISS index.")
+    print(f"\nAll done. Restart the AI service — it will pick up the new/changed images "
+          f"incrementally (only they get embedded, not the whole reference set).")
 
 
 if __name__ == "__main__":

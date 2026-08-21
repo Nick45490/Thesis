@@ -246,32 +246,108 @@ class CarClassifier:
         if not entries:
             return
 
-        # Trust an existing cache built with the current augmentation scheme, even if
-        # its source image count doesn't exactly match what we'd compute right now
-        # (e.g. a cache built elsewhere, such as on Colab, against a slightly
-        # different snapshot of the reference image set). Delete the cache file
-        # to force a full rebuild.
+        # Trust an existing cache built with the current augmentation scheme, but
+        # incrementally reconcile it against the current reference set instead of
+        # blindly trusting it as-is or recomputing everything from scratch: embed
+        # only genuinely new/changed source images, and drop rows whose source
+        # image is no longer part of the current valid set (excluded via
+        # no_car_images.txt, deleted, or newly held out). This is what makes
+        # adding one new car's reference photos fast and local — previously any
+        # change required deleting the whole cache and recomputing every
+        # embedding (a CPU-only operation impractical without Colab's GPU).
+        cached = None
         if self._embeddings_cache.exists():
-            cached = torch.load(self._embeddings_cache, weights_only=False)
-            if cached.get("aug_version") == _AUG_VERSION and "source_ids" in cached:
-                keys = cached["keys"]
-                emb_matrix = cached["embeddings"]
-                self._index = faiss.IndexFlatIP(emb_matrix.shape[1])
-                self._index.add(emb_matrix)
-                self._index_keys = keys
-                cached_count = cached.get("source_count")
-                if cached_count != len(entries):
-                    logger.info(
-                        "Cache source count (%s) differs from current reference set (%d) — "
-                        "using cache as-is. Delete %s to force a rebuild.",
-                        cached_count, len(entries), self._embeddings_cache,
-                    )
-                logger.info("Loaded %d embeddings from cache.", len(keys))
+            loaded = torch.load(self._embeddings_cache, weights_only=False)
+            if loaded.get("aug_version") == _AUG_VERSION and "source_ids" in loaded:
+                cached = loaded
+
+        if cached is not None:
+            # Matched by filename, not full path — a cache built elsewhere (e.g.
+            # Colab, which stores paths like /content/reference_images/x.jpg)
+            # must still reconcile correctly against local paths. Filenames are
+            # unique per reference image by construction (make_model_gencode_
+            # index.jpg), same assumption the held-out-set matching above relies on.
+            entries_by_filename = {p.name: (key, p) for key, p in entries}
+            current_filenames = set(entries_by_filename.keys())
+            cached_keys = cached["keys"]
+            cached_embeddings = cached["embeddings"]
+            cached_source_ids = cached["source_ids"]
+            cached_filenames = [Path(s).name for s in cached_source_ids]
+
+            keep_mask = [f in current_filenames for f in cached_filenames]
+            new_filenames = current_filenames - set(cached_filenames)
+
+            if all(keep_mask) and not new_filenames:
+                self._index = faiss.IndexFlatIP(cached_embeddings.shape[1])
+                self._index.add(cached_embeddings)
+                self._index_keys = cached_keys
+                logger.info("Loaded %d embeddings from cache (up to date).", len(cached_keys))
                 return
 
-        # Compute embeddings with augmentation (_AUG_VERSION variants per source image),
-        # batched for CPU throughput
+            keep_idx = [i for i, m in enumerate(keep_mask) if m]
+            kept_keys = [cached_keys[i] for i in keep_idx]
+            kept_source_ids = [cached_source_ids[i] for i in keep_idx]
+            kept_embeddings = cached_embeddings[keep_idx]
+            if len(kept_keys) != len(cached_keys):
+                logger.info("Dropping %d stale embeddings (source image no longer in the reference set).",
+                            len(cached_keys) - len(kept_keys))
+
+            if new_filenames:
+                new_entries = [entries_by_filename[f] for f in new_filenames]
+                logger.info("Embedding %d new/changed reference image(s) incrementally …", len(new_entries))
+                new_keys, new_source_ids, new_vecs = self._embed_entries(new_entries)
+                if new_vecs:
+                    new_matrix = np.stack(new_vecs).astype(np.float32)
+                    merged_embeddings = np.concatenate([kept_embeddings, new_matrix], axis=0)
+                    merged_keys = kept_keys + new_keys
+                    merged_source_ids = kept_source_ids + new_source_ids
+                else:
+                    merged_embeddings, merged_keys, merged_source_ids = kept_embeddings, kept_keys, kept_source_ids
+            else:
+                merged_embeddings, merged_keys, merged_source_ids = kept_embeddings, kept_keys, kept_source_ids
+
+            if not merged_keys:
+                return
+
+            torch.save({
+                "keys": merged_keys,
+                "embeddings": merged_embeddings,
+                "source_ids": merged_source_ids,
+                "source_count": len(entries),
+                "aug_version": _AUG_VERSION,
+            }, self._embeddings_cache)
+            logger.info("Saved updated embedding cache (%d embeddings).", len(merged_keys))
+
+            self._index = faiss.IndexFlatIP(merged_embeddings.shape[1])
+            self._index.add(merged_embeddings)
+            self._index_keys = merged_keys
+            return
+
+        # No usable cache at all — full compute (e.g. first run, or aug_version changed).
         logger.info("Computing embeddings for %d reference images …", len(entries))
+        keys, source_ids, vecs = self._embed_entries(entries)
+
+        if not vecs:
+            return
+
+        emb_matrix = np.stack(vecs).astype(np.float32)   # (N, 512)
+        torch.save({
+            "keys": keys,
+            "embeddings": emb_matrix,
+            "source_ids": source_ids,
+            "source_count": len(entries),
+            "aug_version": _AUG_VERSION,
+        }, self._embeddings_cache)
+        logger.info("Saved embedding cache.")
+
+        self._index = faiss.IndexFlatIP(emb_matrix.shape[1])
+        self._index.add(emb_matrix)
+        self._index_keys = keys
+
+    def _embed_entries(self, entries: List[Tuple[str, Path]]) -> Tuple[List[str], List[str], List[np.ndarray]]:
+        """Crop + augment + CLIP-embed a list of (key, path) reference entries,
+        batched for CPU throughput. Shared by the full-rebuild and incremental
+        update paths in _build_index() so they can't drift apart."""
         keys: List[str] = []
         source_ids: List[str] = []
         vecs: List[np.ndarray] = []
@@ -309,22 +385,7 @@ class CarClassifier:
                 logger.info("  …%d/%d source images embedded", done, len(entries))
         _flush()
 
-        if not vecs:
-            return
-
-        emb_matrix = np.stack(vecs).astype(np.float32)   # (N, 512)
-        torch.save({
-            "keys": keys,
-            "embeddings": emb_matrix,
-            "source_ids": source_ids,
-            "source_count": len(entries),
-            "aug_version": _AUG_VERSION,
-        }, self._embeddings_cache)
-        logger.info("Saved embedding cache.")
-
-        self._index = faiss.IndexFlatIP(emb_matrix.shape[1])
-        self._index.add(emb_matrix)
-        self._index_keys = keys
+        return keys, source_ids, vecs
 
     # ── prediction ──────────────────────────────────────────────────────────────
 

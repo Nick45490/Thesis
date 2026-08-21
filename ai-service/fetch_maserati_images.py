@@ -15,7 +15,6 @@ BASE = Path(__file__).parent
 LABELS_PATH = BASE / "model" / "class_labels.json"
 IMAGES_DIR = BASE / "model" / "reference_images"
 OUT_PATH = BASE / "model" / "reference_images.json"
-EMBEDDINGS_CACHE = BASE / "model" / "reference_embeddings.pt"
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 WIKI_API = "https://en.wikipedia.org/w/api.php"
@@ -235,12 +234,8 @@ def main() -> None:
 
         print(f"downloaded {len(new_paths)} → {len(all_paths)} total")
 
-    # Delete embeddings cache so model_loader recomputes
-    if EMBEDDINGS_CACHE.exists():
-        EMBEDDINGS_CACHE.unlink()
-        print("\nEmbeddings cache deleted — will recompute on next service start.")
-
-    print("\nDone. Restart the AI service to rebuild the FAISS index.")
+    print("\nDone. Restart the AI service — it will pick up the new/changed images "
+          "incrementally (only they get embedded, not the whole reference set).")
 
 
 if __name__ == "__main__":

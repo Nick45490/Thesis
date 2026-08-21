@@ -39,6 +39,27 @@ audit (2026-08-17).
   false "unknown"s.
 - No mechanism to retrain periodically as real user scans accumulate — the
   reference set only grows when someone manually re-runs the fetch scripts.
+- ~~Adding a new car required a full embedding cache rebuild (~35hrs
+  locally, only practical via a Colab GPU round-trip) even for one new
+  generation's ~8 photos~~ — done (2026-08-21): `_build_index()`
+  (model_loader.py) now reconciles the cache incrementally instead of
+  trusting it wholesale or recomputing everything — diffs the current
+  reference set against the cache's `source_ids` (matched by **filename**,
+  not full path, since a Colab-built cache stores `/content/...` paths that
+  never match local ones), embeds only new/changed source images, and drops
+  stale rows for images no longer in the set. `fetch_generation_images.py`/
+  `fetch_low_count.py`/`fetch_all_images.py`/`fetch_maserati_images.py` no
+  longer delete the cache after fetching — the incremental path picks up
+  the change on next restart automatically. Live-tested end to end (all
+  three paths: drop-stale, add-new, and the unchanged fast path), including
+  catching and fixing a real bug the first test run surfaced (full-path
+  comparison treated the entire 62,694-embedding Colab-built cache as
+  stale, which would have silently triggered exactly the ~35hr recompute
+  this was meant to eliminate — caught by testing live rather than trusting
+  the code review). New car workflow is now: edit
+  catalogue-service/seed/generate.js → fetch photos → restart ai-service
+  (seconds, local) → retrain classifier (~1-2 min). Colab is now only
+  needed for occasional full-quality rebuilds, not per car.
 - ~~Deep-dive on what's actually driving the accuracy gap and whether the
   confirm-UX already covers it~~ — done (2026-08-20/21), `evaluate.py`
   permanently extended with two new diagnostics (not one-off scripts):

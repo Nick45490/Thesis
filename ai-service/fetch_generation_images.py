@@ -6,7 +6,10 @@ Usage:
     python fetch_generation_images.py "Volkswagen" "Golf"
 
 Downloads IMAGES_PER_GEN images per generation using generation-specific
-search queries, then deletes the embeddings cache so the service rebuilds.
+search queries. Leaves the embeddings cache alone — _build_index() (see
+src/model_loader.py) reconciles it incrementally on the next ai-service
+startup, embedding only the new/changed images rather than recomputing the
+whole reference set.
 """
 
 import json
@@ -26,7 +29,6 @@ BASE = Path(__file__).parent
 LABELS_PATH = BASE / "model" / "class_labels.json"
 IMAGES_DIR = BASE / "model" / "reference_images"
 OUT_PATH = BASE / "model" / "reference_images.json"
-EMBEDDINGS_CACHE = BASE / "model" / "reference_embeddings.pt"
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 WIKI_API = "https://en.wikipedia.org/w/api.php"
@@ -651,11 +653,8 @@ def main() -> None:
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(mapping, f, indent="\t")
 
-    if EMBEDDINGS_CACHE.exists():
-        EMBEDDINGS_CACHE.unlink()
-        print("\nEmbeddings cache deleted -will recompute on next restart.")
-
-    print(f"\nDone. Restart the AI service to rebuild the FAISS index.")
+    print(f"\nDone. Restart the AI service — it will pick up the new/changed images "
+          f"incrementally (only they get embedded, not the whole reference set).")
 
 
 if __name__ == "__main__":
