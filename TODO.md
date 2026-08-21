@@ -153,9 +153,14 @@ audit (2026-08-17).
 
 ## Frontend UX
 
-- Nothing tells existing users *why* their collection's rarity distribution
-  changed when it flipped from make-based to power-to-weight-based — a
-  returning user could be confused their "legendary" Ferrari is now "epic."
+- ~~Nothing tells existing users *why* their collection's rarity
+  distribution changed~~ — done (2026-08-21): dismissible info banner above
+  "Your Collection" on the Profile page explaining rarity is now
+  power-to-weight-based, not badge prestige. No per-item historical diffing
+  (rarity history isn't stored anywhere, would need a schema change) —
+  a general one-time explainer instead. Dismissal persists via
+  `localStorage` (first use of it in this codebase). Live-tested: appears,
+  dismisses, and stays dismissed across a refresh.
 - ~~The circuit track view shows a marker moving along Silverstone but no
   lap-progress indicator~~ — done (2026-08-20): each car now shows live
   %-complete and current corner name (e.g. "42% · Maggotts") during the

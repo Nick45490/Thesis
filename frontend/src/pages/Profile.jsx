@@ -14,6 +14,54 @@ const RARITY_STRIP_BG = {
 	common:    "#101012",
 };
 
+const RARITY_NOTICE_KEY = "streetscout_rarity_notice_dismissed";
+
+function RarityChangeNotice() {
+	const [dismissed, setDismissed] = useState(() => {
+		try {
+			return localStorage.getItem(RARITY_NOTICE_KEY) === "true";
+		} catch {
+			return false;
+		}
+	});
+
+	if (dismissed) return null;
+
+	function handleDismiss() {
+		setDismissed(true);
+		try {
+			localStorage.setItem(RARITY_NOTICE_KEY, "true");
+		} catch { /* ignore — worst case it shows again next visit */ }
+	}
+
+	return (
+		<div style={{
+			display: "flex", alignItems: "flex-start", gap: "0.75rem",
+			padding: "0.75rem 1rem", borderRadius: "8px", marginBottom: "0.85rem",
+			background: "rgba(96,165,250,0.08)", border: "1px solid rgba(96,165,250,0.25)",
+		}}>
+			<span style={{ fontSize: "1.1rem", flexShrink: 0 }}>ℹ️</span>
+			<div style={{ flex: 1, fontSize: "0.85rem", color: S.textSub, lineHeight: 1.5 }}>
+				<strong style={{ color: S.text }}>Rarity is based on real performance,</strong> not badge
+				prestige — a car's power-to-weight ratio decides its tier, so a genuinely fast car can
+				outrank a heavy luxury SUV regardless of manufacturer. If a car below looks like it
+				changed tier, that's why.
+			</div>
+			<button
+				type="button"
+				onClick={handleDismiss}
+				aria-label="Dismiss"
+				style={{
+					background: "transparent", border: "none", color: S.faint,
+					cursor: "pointer", fontSize: "1rem", padding: "0 0.25rem", flexShrink: 0, lineHeight: 1,
+				}}
+			>
+				×
+			</button>
+		</div>
+	);
+}
+
 function StatRow({ label, value }) {
 	return (
 		<div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "0.4rem" }}>
@@ -137,6 +185,7 @@ export default function ProfilePage() {
 			{/* Collection */}
 			<section>
 				<h2>Your Collection</h2>
+				<RarityChangeNotice />
 				<div className="grid two-col">
 					{items.map((item) => (
 						<CollectionCard key={`${item.generationId}-${item.discoveredAt}`} item={item} onRemove={removeItem} />
