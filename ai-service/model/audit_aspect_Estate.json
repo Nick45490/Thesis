@@ -1,0 +1,2844 @@
+{
+	"segments": [
+		"Estate"
+	],
+	"threshold": 1.45,
+	"totalImages": 320,
+	"noDetection": [],
+	"flagged": [
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_1.jpg",
+			"ratio": 1.259
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_6.jpg",
+			"ratio": 1.189
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_0.jpg",
+			"ratio": 1.369
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_2.jpg",
+			"ratio": 1.37
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_1.jpg",
+			"ratio": 1.303
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_15.jpg",
+			"ratio": 1.335
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_0.jpg",
+			"ratio": 1.248
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_3.jpg",
+			"ratio": 1.289
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_4.jpg",
+			"ratio": 1.439
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_5.jpg",
+			"ratio": 1.251
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_6.jpg",
+			"ratio": 1.223
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_8.jpg",
+			"ratio": 1.326
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_0.jpg",
+			"ratio": 1.222
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_5.jpg",
+			"ratio": 1.31
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_19.jpg",
+			"ratio": 1.305
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_7.jpg",
+			"ratio": 1.199
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_3.jpg",
+			"ratio": 1.241
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_0.jpg",
+			"ratio": 1.447
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_2.jpg",
+			"ratio": 1.375
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_19.jpg",
+			"ratio": 1.427
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_0.jpg",
+			"ratio": 1.196
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_2.jpg",
+			"ratio": 1.396
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_3.jpg",
+			"ratio": 1.368
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_1.jpg",
+			"ratio": 1.449
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_18.jpg",
+			"ratio": 1.379
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_19.jpg",
+			"ratio": 1.404
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_2.jpg",
+			"ratio": 1.433
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_0.jpg",
+			"ratio": 1.148
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_1.jpg",
+			"ratio": 1.098
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_8.jpg",
+			"ratio": 1.311
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_0.jpg",
+			"ratio": 1.233
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_0.jpg",
+			"ratio": 1.189
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_1.jpg",
+			"ratio": 1.297
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_5.jpg",
+			"ratio": 1.28
+		}
+	],
+	"all": [
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_1.jpg",
+			"ratio": 1.259
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_2.jpg",
+			"ratio": 1.947
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_3.jpg",
+			"ratio": 1.827
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_4.jpg",
+			"ratio": 1.688
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_5.jpg",
+			"ratio": 2.216
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_6.jpg",
+			"ratio": 1.189
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_7.jpg",
+			"ratio": 2.959
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_8.jpg",
+			"ratio": 2.411
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_9.jpg",
+			"ratio": 2.442
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_10.jpg",
+			"ratio": 1.816
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_11.jpg",
+			"ratio": 2.743
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_12.jpg",
+			"ratio": 1.767
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_13.jpg",
+			"ratio": 2.462
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_14.jpg",
+			"ratio": 2.815
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_15.jpg",
+			"ratio": 2.044
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_17.jpg",
+			"ratio": 1.634
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_18.jpg",
+			"ratio": 1.878
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk7",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk7",
+			"file": "Volkswagen_Golf_Variant_Mk7_19.jpg",
+			"ratio": 2.331
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_2.jpg",
+			"ratio": 2.768
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_12.jpg",
+			"ratio": 2.362
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_13.jpg",
+			"ratio": 2.485
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_14.jpg",
+			"ratio": 2.277
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_15.jpg",
+			"ratio": 2.076
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_16.jpg",
+			"ratio": 2.063
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_17.jpg",
+			"ratio": 2.398
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_18.jpg",
+			"ratio": 2.055
+		},
+		{
+			"key": "Volkswagen|Golf Variant|Mk8",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Golf Variant",
+			"generationCode": "Mk8",
+			"file": "Volkswagen_Golf_Variant_Mk8_19.jpg",
+			"ratio": 1.672
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_0.jpg",
+			"ratio": 1.369
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_2.jpg",
+			"ratio": 1.37
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_3.jpg",
+			"ratio": 1.886
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_4.jpg",
+			"ratio": 1.904
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_5.jpg",
+			"ratio": 2.096
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_6.jpg",
+			"ratio": 1.692
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_8.jpg",
+			"ratio": 1.498
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_9.jpg",
+			"ratio": 2.659
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_11.jpg",
+			"ratio": 1.669
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_12.jpg",
+			"ratio": 1.816
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_13.jpg",
+			"ratio": 1.653
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_14.jpg",
+			"ratio": 1.811
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_15.jpg",
+			"ratio": 1.673
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_17.jpg",
+			"ratio": 2.038
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_18.jpg",
+			"ratio": 1.847
+		},
+		{
+			"key": "Dacia|Logan MCV|II",
+			"manufacturerName": "Dacia",
+			"modelName": "Logan MCV",
+			"generationCode": "II",
+			"file": "Dacia_Logan_MCV_II_19.jpg",
+			"ratio": 1.49
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_1.jpg",
+			"ratio": 1.303
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_2.jpg",
+			"ratio": 2.723
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_4.jpg",
+			"ratio": 2.085
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_6.jpg",
+			"ratio": 2.178
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_9.jpg",
+			"ratio": 2.366
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_10.jpg",
+			"ratio": 2.262
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_11.jpg",
+			"ratio": 2.337
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_12.jpg",
+			"ratio": 2.453
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_13.jpg",
+			"ratio": 2.217
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_14.jpg",
+			"ratio": 2.52
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_15.jpg",
+			"ratio": 1.335
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_16.jpg",
+			"ratio": 2.515
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_17.jpg",
+			"ratio": 1.747
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_18.jpg",
+			"ratio": 2.195
+		},
+		{
+			"key": "Audi|RS6 Avant|C7",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C7",
+			"file": "Audi_RS6_Avant_C7_19.jpg",
+			"ratio": 1.854
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_1.jpg",
+			"ratio": 1.896
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_2.jpg",
+			"ratio": 1.502
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_3.jpg",
+			"ratio": 1.623
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_6.jpg",
+			"ratio": 2.085
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_8.jpg",
+			"ratio": 2.178
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_9.jpg",
+			"ratio": 2.122
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_14.jpg",
+			"ratio": 2.874
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_15.jpg",
+			"ratio": 1.995
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_16.jpg",
+			"ratio": 2.801
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_17.jpg",
+			"ratio": 1.766
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_18.jpg",
+			"ratio": 2.951
+		},
+		{
+			"key": "Audi|RS6 Avant|C8",
+			"manufacturerName": "Audi",
+			"modelName": "RS6 Avant",
+			"generationCode": "C8",
+			"file": "Audi_RS6_Avant_C8_19.jpg",
+			"ratio": 2.168
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_5.jpg",
+			"ratio": 1.818
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_6.jpg",
+			"ratio": 1.576
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_7.jpg",
+			"ratio": 1.847
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_8.jpg",
+			"ratio": 1.773
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_11.jpg",
+			"ratio": 1.764
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_12.jpg",
+			"ratio": 2.395
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_14.jpg",
+			"ratio": 1.871
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_17.jpg",
+			"ratio": 1.96
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_18.jpg",
+			"ratio": 2.521
+		},
+		{
+			"key": "Volvo|V60|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "I",
+			"file": "Volvo_V60_I_19.jpg",
+			"ratio": 2.003
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_0.jpg",
+			"ratio": 1.248
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_1.jpg",
+			"ratio": 2.161
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_2.jpg",
+			"ratio": 1.952
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_4.jpg",
+			"ratio": 1.777
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_5.jpg",
+			"ratio": 1.553
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_6.jpg",
+			"ratio": 3.045
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_7.jpg",
+			"ratio": 2.9
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_9.jpg",
+			"ratio": 2.331
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_10.jpg",
+			"ratio": 1.764
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_11.jpg",
+			"ratio": 2.031
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_14.jpg",
+			"ratio": 2.143
+		},
+		{
+			"key": "Volvo|V60|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V60",
+			"generationCode": "II",
+			"file": "Volvo_V60_II_16.jpg",
+			"ratio": 1.871
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_0.jpg",
+			"ratio": 1.947
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_1.jpg",
+			"ratio": 1.855
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_2.jpg",
+			"ratio": 2.882
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_3.jpg",
+			"ratio": 1.289
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_4.jpg",
+			"ratio": 1.439
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_5.jpg",
+			"ratio": 1.251
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_6.jpg",
+			"ratio": 1.223
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_7.jpg",
+			"ratio": 2.996
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_8.jpg",
+			"ratio": 1.326
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_10.jpg",
+			"ratio": 3.202
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_11.jpg",
+			"ratio": 3.195
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_13.jpg",
+			"ratio": 1.764
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_15.jpg",
+			"ratio": 2.827
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_16.jpg",
+			"ratio": 1.958
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_17.jpg",
+			"ratio": 2.604
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_18.jpg",
+			"ratio": 2.712
+		},
+		{
+			"key": "Volvo|V90|II",
+			"manufacturerName": "Volvo",
+			"modelName": "V90",
+			"generationCode": "II",
+			"file": "Volvo_V90_II_19.jpg",
+			"ratio": 1.922
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_0.jpg",
+			"ratio": 1.222
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_1.jpg",
+			"ratio": 1.593
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_2.jpg",
+			"ratio": 1.529
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_3.jpg",
+			"ratio": 1.863
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_5.jpg",
+			"ratio": 1.31
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_6.jpg",
+			"ratio": 2.985
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_7.jpg",
+			"ratio": 2.638
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_8.jpg",
+			"ratio": 2.249
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_9.jpg",
+			"ratio": 2.134
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_10.jpg",
+			"ratio": 2.05
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_11.jpg",
+			"ratio": 2.506
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_13.jpg",
+			"ratio": 2.043
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_15.jpg",
+			"ratio": 3.071
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_17.jpg",
+			"ratio": 2.752
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_18.jpg",
+			"ratio": 2.936
+		},
+		{
+			"key": "Volvo|V70|III",
+			"manufacturerName": "Volvo",
+			"modelName": "V70",
+			"generationCode": "III",
+			"file": "Volvo_V70_III_19.jpg",
+			"ratio": 1.305
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_1.jpg",
+			"ratio": 1.51
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_2.jpg",
+			"ratio": 1.715
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_3.jpg",
+			"ratio": 1.93
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_4.jpg",
+			"ratio": 1.571
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_5.jpg",
+			"ratio": 1.738
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_6.jpg",
+			"ratio": 2.492
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_7.jpg",
+			"ratio": 1.199
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_8.jpg",
+			"ratio": 2.023
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_9.jpg",
+			"ratio": 2.165
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_11.jpg",
+			"ratio": 1.586
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_12.jpg",
+			"ratio": 2.13
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_13.jpg",
+			"ratio": 1.742
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_14.jpg",
+			"ratio": 1.933
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_15.jpg",
+			"ratio": 1.996
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_16.jpg",
+			"ratio": 1.833
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_17.jpg",
+			"ratio": 1.799
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_18.jpg",
+			"ratio": 1.839
+		},
+		{
+			"key": "Volvo|V50|I",
+			"manufacturerName": "Volvo",
+			"modelName": "V50",
+			"generationCode": "I",
+			"file": "Volvo_V50_I_19.jpg",
+			"ratio": 1.673
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_3.jpg",
+			"ratio": 1.241
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_4.jpg",
+			"ratio": 1.568
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_5.jpg",
+			"ratio": 2.155
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_6.jpg",
+			"ratio": 1.769
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_7.jpg",
+			"ratio": 2.633
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_12.jpg",
+			"ratio": 1.903
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_13.jpg",
+			"ratio": 1.839
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_15.jpg",
+			"ratio": 2.067
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_16.jpg",
+			"ratio": 1.888
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_18.jpg",
+			"ratio": 1.728
+		},
+		{
+			"key": "Mini|Clubman|R55",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "R55",
+			"file": "Mini_Clubman_R55_19.jpg",
+			"ratio": 1.624
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_0.jpg",
+			"ratio": 1.447
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_1.jpg",
+			"ratio": 1.644
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_2.jpg",
+			"ratio": 1.375
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_10.jpg",
+			"ratio": 2.126
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_11.jpg",
+			"ratio": 2.163
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_12.jpg",
+			"ratio": 1.668
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_13.jpg",
+			"ratio": 1.939
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_14.jpg",
+			"ratio": 2.157
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_15.jpg",
+			"ratio": 2.224
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_16.jpg",
+			"ratio": 1.828
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_17.jpg",
+			"ratio": 2.749
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_18.jpg",
+			"ratio": 1.892
+		},
+		{
+			"key": "Mini|Clubman|F54",
+			"manufacturerName": "Mini",
+			"modelName": "Clubman",
+			"generationCode": "F54",
+			"file": "Mini_Clubman_F54_19.jpg",
+			"ratio": 1.427
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_0.jpg",
+			"ratio": 1.196
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_1.jpg",
+			"ratio": 1.867
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_2.jpg",
+			"ratio": 1.396
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_4.jpg",
+			"ratio": 2.181
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_6.jpg",
+			"ratio": 2.137
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_7.jpg",
+			"ratio": 2.009
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_8.jpg",
+			"ratio": 1.698
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_9.jpg",
+			"ratio": 1.54
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_11.jpg",
+			"ratio": 2.295
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_12.jpg",
+			"ratio": 2.052
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_14.jpg",
+			"ratio": 3.452
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_15.jpg",
+			"ratio": 2.078
+		},
+		{
+			"key": "MG|MG5|I",
+			"manufacturerName": "MG",
+			"modelName": "MG5",
+			"generationCode": "I",
+			"file": "MG_MG5_I_18.jpg",
+			"ratio": 1.751
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_0.jpg",
+			"ratio": 1.765
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_1.jpg",
+			"ratio": 1.846
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_2.jpg",
+			"ratio": 2.505
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_3.jpg",
+			"ratio": 1.712
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_4.jpg",
+			"ratio": 2.031
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_5.jpg",
+			"ratio": 2.008
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_6.jpg",
+			"ratio": 2.02
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_7.jpg",
+			"ratio": 2.54
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_10.jpg",
+			"ratio": 2.045
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_11.jpg",
+			"ratio": 3.036
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_12.jpg",
+			"ratio": 2.09
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_13.jpg",
+			"ratio": 2.452
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_14.jpg",
+			"ratio": 2.543
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_15.jpg",
+			"ratio": 1.993
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_16.jpg",
+			"ratio": 2.433
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_17.jpg",
+			"ratio": 2.255
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_18.jpg",
+			"ratio": 1.915
+		},
+		{
+			"key": "Kia|ProCeed|I",
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
+			"generationCode": "I",
+			"file": "Kia_ProCeed_I_19.jpg",
+			"ratio": 1.952
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_0.jpg",
+			"ratio": 2.419
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_3.jpg",
+			"ratio": 1.368
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_4.jpg",
+			"ratio": 1.913
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_6.jpg",
+			"ratio": 3.096
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_8.jpg",
+			"ratio": 3.184
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_12.jpg",
+			"ratio": 2.406
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_13.jpg",
+			"ratio": 2.41
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_15.jpg",
+			"ratio": 2.414
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_18.jpg",
+			"ratio": 2.309
+		},
+		{
+			"key": "Suzuki|Swace|I",
+			"manufacturerName": "Suzuki",
+			"modelName": "Swace",
+			"generationCode": "I",
+			"file": "Suzuki_Swace_I_19.jpg",
+			"ratio": 2.067
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_0.jpg",
+			"ratio": 1.847
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_1.jpg",
+			"ratio": 1.449
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_2.jpg",
+			"ratio": 1.734
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_3.jpg",
+			"ratio": 1.788
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_4.jpg",
+			"ratio": 1.824
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_5.jpg",
+			"ratio": 2.164
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_6.jpg",
+			"ratio": 1.617
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_8.jpg",
+			"ratio": 1.832
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_9.jpg",
+			"ratio": 2.054
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_10.jpg",
+			"ratio": 1.609
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_12.jpg",
+			"ratio": 1.783
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_13.jpg",
+			"ratio": 2.258
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_14.jpg",
+			"ratio": 2.233
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_16.jpg",
+			"ratio": 1.729
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_18.jpg",
+			"ratio": 1.379
+		},
+		{
+			"key": "Subaru|Outback|BP",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BP",
+			"file": "Subaru_Outback_BP_19.jpg",
+			"ratio": 1.404
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_0.jpg",
+			"ratio": 1.947
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_1.jpg",
+			"ratio": 1.842
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_2.jpg",
+			"ratio": 1.433
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_4.jpg",
+			"ratio": 2.398
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_5.jpg",
+			"ratio": 1.551
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_7.jpg",
+			"ratio": 1.68
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_8.jpg",
+			"ratio": 1.906
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_9.jpg",
+			"ratio": 1.785
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_10.jpg",
+			"ratio": 2.415
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_11.jpg",
+			"ratio": 2.121
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_12.jpg",
+			"ratio": 1.704
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_13.jpg",
+			"ratio": 1.868
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_14.jpg",
+			"ratio": 2.781
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_16.jpg",
+			"ratio": 1.77
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_17.jpg",
+			"ratio": 1.679
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_18.jpg",
+			"ratio": 1.741
+		},
+		{
+			"key": "Subaru|Outback|BR",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BR",
+			"file": "Subaru_Outback_BR_19.jpg",
+			"ratio": 2.047
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_0.jpg",
+			"ratio": 1.148
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_1.jpg",
+			"ratio": 1.098
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_2.jpg",
+			"ratio": 2.268
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_6.jpg",
+			"ratio": 2.746
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_7.jpg",
+			"ratio": 2.83
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_8.jpg",
+			"ratio": 1.311
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_9.jpg",
+			"ratio": 1.712
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_10.jpg",
+			"ratio": 1.778
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_11.jpg",
+			"ratio": 1.783
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_12.jpg",
+			"ratio": 2.0
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_13.jpg",
+			"ratio": 2.086
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_14.jpg",
+			"ratio": 1.583
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_15.jpg",
+			"ratio": 2.28
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_16.jpg",
+			"ratio": 1.819
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_17.jpg",
+			"ratio": 1.855
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_18.jpg",
+			"ratio": 1.884
+		},
+		{
+			"key": "Subaru|Outback|BS",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BS",
+			"file": "Subaru_Outback_BS_19.jpg",
+			"ratio": 2.121
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_0.jpg",
+			"ratio": 1.233
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_1.jpg",
+			"ratio": 1.615
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_2.jpg",
+			"ratio": 1.821
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_4.jpg",
+			"ratio": 2.086
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_5.jpg",
+			"ratio": 1.581
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_6.jpg",
+			"ratio": 2.704
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_7.jpg",
+			"ratio": 2.585
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_8.jpg",
+			"ratio": 1.821
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_9.jpg",
+			"ratio": 1.973
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_12.jpg",
+			"ratio": 2.25
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_13.jpg",
+			"ratio": 2.783
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_14.jpg",
+			"ratio": 1.99
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_15.jpg",
+			"ratio": 2.132
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_16.jpg",
+			"ratio": 2.344
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_17.jpg",
+			"ratio": 1.742
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_18.jpg",
+			"ratio": 2.084
+		},
+		{
+			"key": "Subaru|Outback|BT",
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"generationCode": "BT",
+			"file": "Subaru_Outback_BT_19.jpg",
+			"ratio": 2.266
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_0.jpg",
+			"ratio": 1.189
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_2.jpg",
+			"ratio": 1.887
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_4.jpg",
+			"ratio": 2.257
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_5.jpg",
+			"ratio": 2.002
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_6.jpg",
+			"ratio": 2.365
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_7.jpg",
+			"ratio": 2.544
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_8.jpg",
+			"ratio": 2.362
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_9.jpg",
+			"ratio": 2.003
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_11.jpg",
+			"ratio": 2.143
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_12.jpg",
+			"ratio": 2.116
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_13.jpg",
+			"ratio": 2.634
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_14.jpg",
+			"ratio": 2.228
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_15.jpg",
+			"ratio": 1.647
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_16.jpg",
+			"ratio": 2.276
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_17.jpg",
+			"ratio": 2.022
+		},
+		{
+			"key": "Subaru|Levorg|VM",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VM",
+			"file": "Subaru_Levorg_VM_19.jpg",
+			"ratio": 2.011
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_1.jpg",
+			"ratio": 1.297
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_2.jpg",
+			"ratio": 2.18
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_3.jpg",
+			"ratio": 2.215
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_7.jpg",
+			"ratio": 2.687
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_8.jpg",
+			"ratio": 2.172
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_9.jpg",
+			"ratio": 2.458
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_10.jpg",
+			"ratio": 2.028
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_12.jpg",
+			"ratio": 2.422
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_13.jpg",
+			"ratio": 2.647
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_14.jpg",
+			"ratio": 2.45
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_15.jpg",
+			"ratio": 2.016
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_16.jpg",
+			"ratio": 2.51
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_17.jpg",
+			"ratio": 2.292
+		},
+		{
+			"key": "Subaru|Levorg|VN",
+			"manufacturerName": "Subaru",
+			"modelName": "Levorg",
+			"generationCode": "VN",
+			"file": "Subaru_Levorg_VN_18.jpg",
+			"ratio": 1.835
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_0.jpg",
+			"ratio": 2.203
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_1.jpg",
+			"ratio": 1.977
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_2.jpg",
+			"ratio": 2.457
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_4.jpg",
+			"ratio": 1.897
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_5.jpg",
+			"ratio": 1.28
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_6.jpg",
+			"ratio": 3.246
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_7.jpg",
+			"ratio": 2.917
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_8.jpg",
+			"ratio": 3.354
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_9.jpg",
+			"ratio": 2.581
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_11.jpg",
+			"ratio": 2.218
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_13.jpg",
+			"ratio": 2.563
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_14.jpg",
+			"ratio": 2.344
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_17.jpg",
+			"ratio": 3.087
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_18.jpg",
+			"ratio": 2.675
+		},
+		{
+			"key": "Genesis|G70 Shooting Brake|I",
+			"manufacturerName": "Genesis",
+			"modelName": "G70 Shooting Brake",
+			"generationCode": "I",
+			"file": "Genesis_G70_Shooting_Brake_I_19.jpg",
+			"ratio": 3.243
+		}
+	]
+}

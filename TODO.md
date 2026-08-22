@@ -91,20 +91,41 @@ audit (2026-08-17).
   worthwhile, and leaves two live threads — angle-filtering reference
   photos for profile-defined segments (Estate/MPV/Crossover, untested) and
   domain-matched training data (still the biggest lever, still blocked).
-- Angle-filtering for Estate reference photos — attempted (2026-08-21),
-  shelved: built `audit_reference_angles.py` (uncommitted, in
-  ai-service/) using zero-shot CLIP (base model, 4 angle-prompt classes) to
-  flag dead-on front/rear reference photos, since one was visually
-  confirmed to hide a wagon's defining silhouette. The tool failed its own
-  sanity check — it classified that exact known dead-on-front image as
-  "three_quarter" (good), and every confidence score across the whole
-  320-image Estate run clustered tightly in a noise-level 0.17-0.24 range.
-  Zero-shot CLIP doesn't cleanly discriminate photographic angle the way it
-  discriminates car identity, at least not with these prompts. The reported
-  8.1% dead-on rate can't be trusted given that. Not pursued further for
-  now (better prompts, or manual human review of a sample, are the two
-  options if revisited) — reference-photo angle remains a plausible but
-  now-unconfirmed hypothesis, not a validated fix.
+- ~~Angle-filtering for Estate reference photos~~ — tried two approaches,
+  both documented, second one measured and reverted (2026-08-21/22):
+  1. Zero-shot CLIP (base model, 4 angle-prompt classes) — shelved, tool
+     itself was broken. It classified a known dead-on-front example as
+     "three_quarter" (good), and confidence scores across the whole
+     320-image Estate run clustered in a noise-level 0.17-0.24 range.
+     Zero-shot CLIP doesn't cleanly discriminate photographic angle the way
+     it discriminates car identity, at least not with these prompts.
+     (`audit_reference_angles.py`, left uncommitted deliberately.)
+  2. YOLO bounding-box aspect ratio (width/height) as a geometric proxy
+     instead — no CLIP, no semantic ambiguity. This one *passed* its sanity
+     check: the known dead-on-front example scored 1.26 (bottom ~8% of
+     Estate's real distribution), the known good three-quarter example
+     scored 1.83 (median). Same pattern held across SUV (14.9% flagged),
+     Crossover (15.3%), MPV (17.3%) at the same threshold (`audit_reference_
+     aspect_ratio.py`, kept — this one's a real, working tool, committed).
+     Piloted on Estate alone before scaling: excluded the 34 flagged images
+     (30 genuinely new, 5 already excluded from the earlier crop-cleanup)
+     via `no_car_images.txt`, re-embedded incrementally, retrained, ran the
+     real held-out eval. Result: Estate accuracy went 50.0% -> 45.5%
+     (n=22 — roughly 1 image's worth of noise, not a real regression, but
+     certainly not the hoped-for improvement either). Overall catalogue
+     numbers similarly flat (64.2% vs 64.5% top-1). **Reverted** — restored
+     the pre-pilot embeddings cache, classifier, held-out set, and
+     no_car_images.txt from backups, confirmed byte-for-byte back to
+     baseline (62,784 embeddings, 715 exclusions) before committing anything.
+     Third negative/flat result on a "clean the reference data" hypothesis
+     this session (after crop-cleanup and the CLIP tool) — the working
+     aspect-ratio *tool* is a real, reusable asset, but exclusion-based
+     angle-filtering itself doesn't appear to help generation-level
+     discrimination. Not extended to SUV/Crossover/MPV given the pilot's
+     purpose was exactly to avoid that 4x-larger commitment on an unproven
+     idea. Reference-photo angle quality remains a real, visually-confirmed
+     issue, just not one exclusion alone fixes — re-fetching replacements
+     (not just excluding) is the one variant still untried if revisited.
 
 ## Backend architecture
 
