@@ -389,9 +389,15 @@ class CarClassifier:
 
     # ── prediction ──────────────────────────────────────────────────────────────
 
-    # Minimum confidence to report a result (4% ≈ 33× random chance across 813 classes).
-    # Below this the car is treated as unknown / not in catalogue.
-    MIN_CONFIDENCE = 0.04
+    # Minimum confidence to report a result. Below this the car is treated as
+    # unknown / not in catalogue. Recalibrated (2026-08-23) on the 921-class
+    # held-out set via evaluate.py's MIN_CONFIDENCE floor sweep — the old
+    # 0.04 was inert (0.0% wrong caught, 0.0% right flagged: it never fired
+    # on real data). 0.09 has the best cost/benefit in the sweep: catches
+    # 10.2% of wrong top-1s as "unknown" instead of confidently wrong, at
+    # the cost of 1.2% of correct top-1s also becoming "unknown" (no picker
+    # fallback at this floor, unlike the separate confirm-UX threshold).
+    MIN_CONFIDENCE = 0.09
 
     # Minimum absolute cosine similarity to the single closest reference embedding
     # of ANY class — catches cars that don't resemble anything in the catalogue at

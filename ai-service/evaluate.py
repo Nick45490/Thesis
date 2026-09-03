@@ -270,10 +270,22 @@ def main() -> None:
     # Precision/recall sweep for an absolute-confidence floor: at each
     # candidate threshold, what fraction of WRONG top-1s get caught (flagged
     # for confirmation) vs what fraction of RIGHT top-1s get needlessly
-    # flagged too (friction cost).
+    # flagged too (friction cost). This range calibrates the confirm-UX's
+    # LOW_CONFIDENCE_FLOOR (Camera.jsx), not the backend's MIN_CONFIDENCE.
     print("\nAbsolute-confidence floor sweep (flag if top-1 confidence < threshold):")
     print(f"  {'threshold':>9}  {'wrong caught':>13}  {'right flagged':>14}")
     for threshold in [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]:
+        wrong_caught = sum(1 for c in incorrect_top1_conf if c < threshold) / len(incorrect_top1_conf)
+        right_flagged = sum(1 for c in correct_top1_conf if c < threshold) / len(correct_top1_conf)
+        print(f"  {threshold:>9.2f}  {wrong_caught:>12.1%}  {right_flagged:>13.1%}")
+
+    # Separate, finer-grained sweep for model_loader.py's MIN_CONFIDENCE — a
+    # much stricter floor than the confirm-UX's, meant only to catch "no real
+    # signal at all" cases (reported as fully unknown, not even a picker) so
+    # it must stay well below where genuine correct answers start appearing.
+    print("\nMIN_CONFIDENCE floor sweep (backend 'report as unknown' threshold, current 0.04):")
+    print(f"  {'threshold':>9}  {'wrong caught':>13}  {'right flagged':>14}")
+    for threshold in [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10]:
         wrong_caught = sum(1 for c in incorrect_top1_conf if c < threshold) / len(incorrect_top1_conf)
         right_flagged = sum(1 for c in correct_top1_conf if c < threshold) / len(correct_top1_conf)
         print(f"  {threshold:>9.2f}  {wrong_caught:>12.1%}  {right_flagged:>13.1%}")
