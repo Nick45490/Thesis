@@ -1,4 +1,4 @@
-# Street Scout — Future Improvements
++++++# Street Scout — Future Improvements
 
 A running list of possible next steps, compiled after the AI pipeline overhaul,
 rarity redesign, circuit race mode, and the two-pass backend security/quality
@@ -34,9 +34,19 @@ audit (2026-08-17).
   Not remotely enough yet — expected for a project without a real user base
   so far. The mechanism already works; revisit this exact script once real
   usage grows. Not actionable today.
-- Revisit `MIN_CONFIDENCE` (currently 0.04) now that the classifier's been
-  retrained on the expanded dataset — trades off false "confident" IDs vs.
-  false "unknown"s.
+- ~~Revisit `MIN_CONFIDENCE` (currently 0.04) now that the classifier's been
+  retrained on the expanded dataset~~ — done (2026-08-23): extended
+  `evaluate.py` with a permanent, finer-grained sweep specifically for this
+  threshold (the existing 0.10-0.50 sweep calibrates the confirm-UX's
+  separate `LOW_CONFIDENCE_FLOOR`, not this one). Result: 0.04 was
+  completely inert on the 921-class held-out set — 0.0% wrong caught, 0.0%
+  right flagged, it never fired on real data at all. Raised to 0.09 (best
+  cost/benefit in the sweep): catches 10.2% of wrong top-1s as "unknown"
+  instead of confidently wrong, at the cost of 1.2% of correct top-1s also
+  becoming "unknown" (no picker fallback at this floor, unlike the
+  confirm-UX's). Doesn't move the raw top-1 accuracy number itself (wrong
+  -> unknown still isn't correct by that metric) — the win is fewer
+  silently-confident wrong answers, an orthogonal quality axis.
 - No mechanism to retrain periodically as real user scans accumulate — the
   reference set only grows when someone manually re-runs the fetch scripts.
 - ~~Adding a new car required a full embedding cache rebuild (~35hrs
@@ -127,6 +137,41 @@ audit (2026-08-17).
      issue, just not one exclusion alone fixes — re-fetching replacements
      (not just excluding) is the one variant still untried if revisited.
 
+## Catalogue coverage
+
+- ~~Catalogue was frozen at whatever snapshot the original 813 generations
+  covered — no process existed to catch newer real-world releases~~ — done
+  (2026-08-22/23), two-pass expansion:
+  1. Memory-researched pass across all 54 manufacturers (7 batches, manual
+     automotive-knowledge review) found 48 genuine 2020+ gaps — added to
+     `generate.js`, engine data populated via the Claude API, reference
+     photos fetched (avg ~24/car), embeddings rebuilt incrementally,
+     classifier retrained. Held-out top-1 held steady (64.2% -> 63.8%,
+     well within noise for +48 classes).
+  2. Live web-search verification pass (4 parallel research agents, real
+     WebSearch not memory) against the now-861-generation catalogue found
+     74 further gaps the memory-based pass missed or that launched too
+     recently to be known — mostly genuine 2025/2026 releases. After
+     filtering out not-yet-shipping announcements (kept ultra-limited
+     specials like the Bentley Bacalar/Batur per explicit instruction), 60
+     were added the same way. Held-out top-1: 63.8% -> 63.8% (flat, zero
+     measurable regression from doubling the recent-model coverage).
+  Catalogue now: 813 -> 921 generations, 615 models, 54 manufacturers,
+  verified via real web research rather than trusting a point-in-time
+  memory snapshot. Two known-thin entries flagged for a future top-up:
+  Genesis GV80 Coupe (7 reference photos) and GV90 (12) — both below the
+  old 20-image baseline, everything else landed high-teens to low-30s.
+  Real bug caught mid-pipeline: the reference-image fetch script was being
+  run with the system Python (missing ultralytics/YOLO), which silently
+  deleted every downloaded image because the outlier filter's "no vehicle
+  detected" fallback fires identically whether YOLO is genuinely absent or
+  a real detection failure — fixed by using the ai-service venv; also
+  added a Commons-rate-limit circuit breaker (a tight burst of per-
+  generation category/query calls triggered a real 429 mid-run).
+- Splitting high-performance trims into separate catalogue entries (e.g.
+  base Mustang vs. GT500) was explicitly deferred as "post-production" —
+  still on the table. (Moved here from Features/gameplay — same theme.)
+
 ## Backend architecture
 
 - ~~catalogue-service reaches directly into ai-service's filesystem for car
@@ -185,9 +230,6 @@ audit (2026-08-17).
   archival needed — old leaders aren't erased, they just stop dominating the
   shorter views. New nav link, medal ranks, username resolution via the same
   authClient pattern as race challenges. Live-tested.
-- Splitting high-performance trims into separate catalogue entries (e.g.
-  base Mustang vs. GT500) was explicitly deferred as "post-production" —
-  still on the table.
 
 ## Frontend UX
 
@@ -217,6 +259,27 @@ audit (2026-08-17).
 
 ## Security / ops (lower priority)
 
+- ~~No dependency-vulnerability or CORS/rate-limit review had been done~~ —
+  done (2026-08-23), grounded in a real code-audit agent's findings (not
+  generic advice): bumped `http-proxy-middleware` 3.0.5 -> 3.0.7, fixing
+  two real CVEs (CRLF injection into proxied multipart bodies, a
+  host-header routing bypass) — the only High/Critical finding across
+  every service's `npm audit --production`. Locked CORS down on all 5 Node
+  services from wide-open `cors()` to a configurable `CORS_ORIGIN`
+  allowlist (defaults to `localhost:5173`). Gave `/recognize` its own
+  tighter rate limit (`AI_RATE_LIMIT_MAX`, default 30/15min) instead of
+  sharing the generic 300/15min ceiling despite triggering real YOLO+CLIP
+  inference per request. Hardened ai-service's multipart upload to read in
+  1MB chunks and reject oversized bodies before fully buffering them into
+  memory, and capped the base64 JSON endpoint's field length via Pydantic
+  so an oversized payload is rejected before it's even decoded. Confirmed
+  solid, no change needed: SQL is fully parameterized everywhere, passwords
+  use bcrypt correctly, JWT verification fails closed if the secret is
+  missing, and no real `.env` files are committed to git. All 4 Node
+  services' existing test suites (105 tests total) still pass. Left alone:
+  the remaining moderate `qs`/`body-parser` findings are pulled in
+  transitively by Express itself — fixing those needs a breaking Express
+  major-version bump, not attempted without dedicated testing.
 - `INTERNAL_SERVICE_SECRET`/`JWT_SECRET` have no rotation story — fine for a
   personal project, but worth knowing if this ever goes further.
 - Rate limiting is IP-based only — no additional per-user limiting on
