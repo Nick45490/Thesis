@@ -12,8 +12,10 @@ const { initDb } = require("./db");
 
 const app = express();
 
+const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
+
 app.use(helmet());
-app.use(cors());
+app.use(cors({ origin: corsOrigins }));
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("dev"));
 

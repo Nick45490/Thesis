@@ -8,8 +8,10 @@ const { registerGatewayRoutes } = require("./routes");
 
 const app = express();
 
+const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
+
 app.use(helmet());
-app.use(cors());
+app.use(cors({ origin: corsOrigins }));
 app.use(morgan("dev"));
 // Rate limiting is applied per-prefix inside registerGatewayRoutes (auth gets
 // its own stricter limiter, everything else gets a default one) — a second

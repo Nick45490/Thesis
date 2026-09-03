@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const { requireAuth } = require("./auth.middleware");
-const { authLimiter, createRateLimiter } = require("./rateLimit");
+const { authLimiter, aiLimiter, createRateLimiter } = require("./rateLimit");
 
 function sanitizePrefix(prefix) {
 	return prefix.replace(/\/+$/, "");
@@ -73,6 +73,7 @@ function registerGatewayRoutes(app) {
 			prefix: sanitizePrefix(process.env.AI_PREFIX || "/recognize"),
 			target: process.env.AI_SERVICE_URL || "http://ai-service:8000",
 			protected: true,
+			limiter: aiLimiter,
 			timeoutMs: 120000
 		}
 	];

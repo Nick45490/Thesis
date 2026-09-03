@@ -6,7 +6,7 @@ from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from .censor import censor_to_base64
 from .model_loader import CarClassifier, BASE_DIR, LABELS_PATH, REF_IMAGES_PATH
@@ -14,13 +14,17 @@ from .preprocess import decode_base64_image
 from .recognize import run_recognition
 
 
-class RecognizeBase64Request(BaseModel):
-    imageBase64: str
-
-
 # Matches collection-service's express.json({ limit: "10mb" }) convention —
 # nothing previously capped how large a payload could reach YOLO/CLIP here.
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
+# Base64 inflates size by ~4/3 — cap the string itself well above what a
+# genuine <=10MB image encodes to, so oversized payloads are rejected by
+# Pydantic before decode_base64_image ever allocates the raw bytes.
+MAX_BASE64_CHARS = int(MAX_IMAGE_BYTES * 4 / 3) + 1024
+
+
+class RecognizeBase64Request(BaseModel):
+    imageBase64: str = Field(max_length=MAX_BASE64_CHARS)
 
 
 def _build_image_index() -> tuple[dict[int, str], dict[str, list[str]]]:
@@ -112,11 +116,24 @@ def build_router(classifier: CarClassifier) -> APIRouter:
 
     @router.post("/")
     async def recognize_from_upload(file: UploadFile = File(...)) -> dict:
-        image_bytes = await file.read()
+        # Read in chunks and abort as soon as the limit is crossed, instead of
+        # buffering an arbitrarily large body into memory before checking its
+        # size — a client could otherwise stream gigabytes past this endpoint
+        # regardless of MAX_IMAGE_BYTES.
+        chunks: list[bytes] = []
+        total = 0
+        chunk_size = 1024 * 1024
+        while True:
+            chunk = await file.read(chunk_size)
+            if not chunk:
+                break
+            total += len(chunk)
+            if total > MAX_IMAGE_BYTES:
+                raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
+            chunks.append(chunk)
+        image_bytes = b"".join(chunks)
         if not image_bytes:
             raise HTTPException(status_code=400, detail="Uploaded file is empty")
-        if len(image_bytes) > MAX_IMAGE_BYTES:
-            raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
         return _recognize_and_censor(image_bytes, classifier)
 
     @router.post("/predict")

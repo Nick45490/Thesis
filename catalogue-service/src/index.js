@@ -10,8 +10,10 @@ const modelRoutes = require("./routes/models.routes");
 
 const app = express();
 
+const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
+
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
-app.use(cors());
+app.use(cors({ origin: corsOrigins }));
 app.use(express.json());
 app.use(morgan("dev"));
 
