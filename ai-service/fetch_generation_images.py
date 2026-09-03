@@ -15,6 +15,7 @@ whole reference set.
 import json
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -34,9 +35,9 @@ COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 UA = "StreetScoutThesis/1.0 (university thesis, contact: student)"
 
-IMAGES_PER_GEN = 20
-ANGLE_SLOTS = {"front": 3, "rear": 3, "side": 3, "three_quarter": 3}  # 12 guaranteed
-GENERAL_SLOTS = IMAGES_PER_GEN - sum(ANGLE_SLOTS.values())             # 8 from Commons + DDG fill
+IMAGES_PER_GEN = 35
+ANGLE_SLOTS = {"front": 6, "rear": 6, "side": 6, "three_quarter": 6}  # 24 guaranteed
+GENERAL_SLOTS = IMAGES_PER_GEN - sum(ANGLE_SLOTS.values())             # 11 from Commons + DDG fill
 
 _SKIP = {"logo", "flag", "icon", "map", "symbol", "coat", "seal",
          "emblem", "crest", "shield", "wordmark", "schematic",
@@ -46,11 +47,32 @@ _SKIP = {"logo", "flag", "icon", "map", "symbol", "coat", "seal",
 
 # -─ API helpers -───────────────────────────────────────────────────────────────
 
+_commons_blocked_until = 0.0
+
+
 def _get(base: str, params: dict) -> dict:
+    global _commons_blocked_until
+    if time.time() < _commons_blocked_until:
+        return {}
     url = base + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read())
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt == 0:
+                print("  Commons rate-limited (429), backing off 15s...", flush=True)
+                time.sleep(15)
+                continue
+            if e.code == 429:
+                # Still limited after one retry -- stop hammering it for a while
+                # and let the rest of this run fall back to DDG-only sourcing.
+                _commons_blocked_until = time.time() + 180
+                print("  Still rate-limited -- pausing Commons calls for 3 min.", flush=True)
+                return {}
+            raise
+    return {}
 
 
 def _is_photo(title: str) -> bool:

@@ -1,11 +1,11 @@
 {
-	"total": 812,
+	"total": 920,
 	"skipped": 0,
-	"top1Accuracy": 0.6453,
-	"top5Accuracy": 0.8559,
-	"top10Accuracy": 0.9089,
-	"makeModelAccuracy": 0.7081,
-	"makeModelTop5Accuracy": 0.8904,
+	"top1Accuracy": 0.638,
+	"top5Accuracy": 0.8457,
+	"top10Accuracy": 0.9076,
+	"makeModelAccuracy": 0.6924,
+	"makeModelTop5Accuracy": 0.8804,
 	"notInCandidates": [
 		{
 			"manufacturerName": "Volkswagen",
@@ -69,6 +69,11 @@
 		},
 		{
 			"manufacturerName": "Peugeot",
+			"modelName": "508",
+			"generationCode": "II"
+		},
+		{
+			"manufacturerName": "Peugeot",
 			"modelName": "2008",
 			"generationCode": "I"
 		},
@@ -76,11 +81,6 @@
 			"manufacturerName": "Peugeot",
 			"modelName": "3008",
 			"generationCode": "II"
-		},
-		{
-			"manufacturerName": "Peugeot",
-			"modelName": "RCZ",
-			"generationCode": "I"
 		},
 		{
 			"manufacturerName": "Dacia",
@@ -101,6 +101,16 @@
 			"manufacturerName": "Dacia",
 			"modelName": "Bigster",
 			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Octavia",
+			"generationCode": "IV"
+		},
+		{
+			"manufacturerName": "SEAT",
+			"modelName": "Leon",
+			"generationCode": "II"
 		},
 		{
 			"manufacturerName": "SEAT",
@@ -141,6 +151,11 @@
 			"manufacturerName": "Audi",
 			"modelName": "A6",
 			"generationCode": "C6"
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A6",
+			"generationCode": "C7"
 		},
 		{
 			"manufacturerName": "Audi",
@@ -188,11 +203,6 @@
 			"generationCode": "F4B"
 		},
 		{
-			"manufacturerName": "Alfa Romeo",
-			"modelName": "Tonale",
-			"generationCode": "I"
-		},
-		{
 			"manufacturerName": "Volvo",
 			"modelName": "V60",
 			"generationCode": "I"
@@ -209,18 +219,23 @@
 		},
 		{
 			"manufacturerName": "Volvo",
+			"modelName": "XC60",
+			"generationCode": "II"
+		},
+		{
+			"manufacturerName": "Volvo",
 			"modelName": "XC90",
 			"generationCode": "II"
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "C30",
+			"generationCode": "I"
 		},
 		{
 			"manufacturerName": "Porsche",
 			"modelName": "911",
 			"generationCode": "991"
-		},
-		{
-			"manufacturerName": "Porsche",
-			"modelName": "Cayenne",
-			"generationCode": "92A"
 		},
 		{
 			"manufacturerName": "Porsche",
@@ -240,6 +255,11 @@
 		{
 			"manufacturerName": "DS Automobiles",
 			"modelName": "DS7",
+			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Formentor",
 			"generationCode": "I"
 		},
 		{
@@ -266,6 +286,16 @@
 			"manufacturerName": "MG",
 			"modelName": "MG HS",
 			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Daewoo",
+			"modelName": "Lacetti",
+			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Yaris",
+			"generationCode": "XP210"
 		},
 		{
 			"manufacturerName": "Toyota",
@@ -299,17 +329,17 @@
 		},
 		{
 			"manufacturerName": "Kia",
-			"modelName": "Sorento",
-			"generationCode": "III"
-		},
-		{
-			"manufacturerName": "Kia",
 			"modelName": "Niro",
 			"generationCode": "II"
 		},
 		{
 			"manufacturerName": "Kia",
 			"modelName": "Stonic",
+			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "ProCeed",
 			"generationCode": "I"
 		},
 		{
@@ -320,6 +350,11 @@
 		{
 			"manufacturerName": "Suzuki",
 			"modelName": "SX4",
+			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Across",
 			"generationCode": "I"
 		},
 		{
@@ -343,11 +378,6 @@
 			"generationCode": "SK"
 		},
 		{
-			"manufacturerName": "Subaru",
-			"modelName": "XV",
-			"generationCode": "GP"
-		},
-		{
 			"manufacturerName": "Lexus",
 			"modelName": "RX",
 			"generationCode": "XU80"
@@ -363,6 +393,11 @@
 			"generationCode": "I"
 		},
 		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Lyriq",
+			"generationCode": "I"
+		},
+		{
 			"manufacturerName": "Genesis",
 			"modelName": "GV70",
 			"generationCode": "I"
@@ -373,493 +408,567 @@
 			"generationCode": "I"
 		},
 		{
-			"manufacturerName": "Honda",
-			"modelName": "e:Ny1",
+			"manufacturerName": "Lancia",
+			"modelName": "Ypsilon",
+			"generationCode": "IV"
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "K4",
+			"generationCode": "I"
+		},
+		{
+			"manufacturerName": "Subaru",
+			"modelName": "Forester",
+			"generationCode": "SL"
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "GX",
+			"generationCode": "J250"
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Wagoneer S",
 			"generationCode": "I"
 		}
 	],
 	"confidenceStats": {
 		"correctTop1": {
-			"count": 524,
-			"mean": 0.5298,
-			"median": 0.5273,
-			"p25": 0.3638,
-			"p75": 0.7047,
-			"min": 0.066,
-			"max": 0.9819
+			"count": 587,
+			"mean": 0.5228,
+			"median": 0.5247,
+			"p25": 0.3396,
+			"p75": 0.6954,
+			"min": 0.0624,
+			"max": 0.9869
 		},
 		"incorrectTop1": {
-			"count": 288,
-			"mean": 0.2576,
-			"median": 0.2315,
-			"p25": 0.1399,
-			"p75": 0.3478,
-			"min": 0.0325,
-			"max": 0.8761
+			"count": 333,
+			"mean": 0.2605,
+			"median": 0.2318,
+			"p25": 0.1379,
+			"p75": 0.3479,
+			"min": 0.0479,
+			"max": 0.8423
 		},
 		"correctTop2Ratio": {
-			"count": 524,
-			"mean": 0.2895,
-			"median": 0.2097,
-			"p25": 0.0955,
-			"p75": 0.4378,
-			"min": 0.0022,
-			"max": 0.994
+			"count": 587,
+			"mean": 0.2918,
+			"median": 0.2094,
+			"p25": 0.0932,
+			"p75": 0.4313,
+			"min": 0.0017,
+			"max": 0.9806
 		},
 		"incorrectTop2Ratio": {
-			"count": 288,
-			"mean": 0.6337,
-			"median": 0.6722,
-			"p25": 0.448,
-			"p75": 0.8403,
-			"min": 0.0428,
-			"max": 0.9979
+			"count": 333,
+			"mean": 0.6203,
+			"median": 0.6535,
+			"p25": 0.4014,
+			"p75": 0.8485,
+			"min": 0.0409,
+			"max": 0.9988
 		}
 	},
 	"rawSimilarityStats": {
 		"overall": {
-			"count": 812,
-			"mean": 0.9635,
-			"median": 0.964,
-			"p25": 0.9503,
+			"count": 920,
+			"mean": 0.9637,
+			"median": 0.9639,
+			"p25": 0.9505,
 			"p75": 0.9784,
 			"min": 0.8824,
-			"max": 0.9994
+			"max": 0.9996
 		},
 		"correct": {
-			"count": 524,
-			"mean": 0.965,
-			"median": 0.966,
-			"p25": 0.9537,
-			"p75": 0.9786,
+			"count": 587,
+			"mean": 0.9652,
+			"median": 0.9665,
+			"p25": 0.9538,
+			"p75": 0.9792,
 			"min": 0.8824,
-			"max": 0.9993
+			"max": 0.9996
 		},
 		"incorrect": {
-			"count": 288,
+			"count": 333,
 			"mean": 0.961,
 			"median": 0.9582,
-			"p25": 0.9436,
-			"p75": 0.9784,
-			"min": 0.9051,
+			"p25": 0.9442,
+			"p75": 0.9755,
+			"min": 0.8995,
 			"max": 0.9994
 		}
 	},
 	"confirmUxProtection": {
 		"sameBrandWrong": {
-			"total": 185,
-			"caughtByConfirmUx": 122,
-			"silentlyWrong": 63
+			"total": 216,
+			"caughtByConfirmUx": 146,
+			"silentlyWrong": 70
 		},
 		"diffBrandWrong": {
-			"total": 103,
-			"caughtByConfirmUx": 95,
-			"silentlyWrong": 8
+			"total": 117,
+			"caughtByConfirmUx": 103,
+			"silentlyWrong": 14
 		},
 		"silentlyWrongBreakdown": {
-			"trueAnswerInTop10": 65,
-			"trueAnswerMissing": 6
+			"trueAnswerInTop10": 75,
+			"trueAnswerMissing": 9
 		},
 		"silentRecoverableDetail": [
 			{
-				"trueRank": 4,
-				"top1Confidence": 0.4134,
-				"top2Ratio": 0.232,
+				"trueRank": 3,
+				"top1Confidence": 0.3721,
+				"top2Ratio": 0.4467,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4922,
+				"top2Ratio": 0.2767,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.5704,
-				"top2Ratio": 0.5184,
+				"top1Confidence": 0.5228,
+				"top2Ratio": 0.3015,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.5142,
-				"top2Ratio": 0.2909,
+				"top1Confidence": 0.3806,
+				"top2Ratio": 0.4398,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4959,
+				"top2Ratio": 0.2855,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4893,
+				"top2Ratio": 0.2741,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 8,
+				"top1Confidence": 0.4553,
+				"top2Ratio": 0.2174,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4728,
+				"top2Ratio": 0.3179,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4689,
+				"top2Ratio": 0.2489,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4059,
+				"top2Ratio": 0.5509,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.3213,
+				"top2Ratio": 0.4833,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.3185,
+				"top2Ratio": 0.5334,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.3865,
+				"top2Ratio": 0.1713,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4969,
+				"top2Ratio": 0.4949,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 6,
-				"top1Confidence": 0.312,
-				"top2Ratio": 0.5247,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.4632,
-				"top2Ratio": 0.2986,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.5255,
-				"top2Ratio": 0.2291,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.5122,
-				"top2Ratio": 0.3216,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.4576,
-				"top2Ratio": 0.4264,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3991,
-				"top2Ratio": 0.5299,
+				"top1Confidence": 0.3399,
+				"top2Ratio": 0.2377,
 				"sameBrand": false
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.4073,
-				"top2Ratio": 0.3732,
-				"sameBrand": false
-			},
-			{
-				"trueRank": 3,
-				"top1Confidence": 0.3732,
-				"top2Ratio": 0.2891,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.5404,
-				"top2Ratio": 0.3695,
+				"top1Confidence": 0.3266,
+				"top2Ratio": 0.3959,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 3,
-				"top1Confidence": 0.3593,
-				"top2Ratio": 0.4403,
+				"top1Confidence": 0.3941,
+				"top2Ratio": 0.3905,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 5,
+				"top1Confidence": 0.4146,
+				"top2Ratio": 0.1428,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 5,
+				"top1Confidence": 0.401,
+				"top2Ratio": 0.2292,
 				"sameBrand": true
 			},
 			{
-				"trueRank": 4,
-				"top1Confidence": 0.5774,
-				"top2Ratio": 0.3064,
+				"trueRank": 5,
+				"top1Confidence": 0.4651,
+				"top2Ratio": 0.0901,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.3148,
+				"top2Ratio": 0.3437,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4214,
+				"top2Ratio": 0.1996,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.6932,
+				"top2Ratio": 0.0749,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 3,
-				"top1Confidence": 0.3854,
-				"top2Ratio": 0.3988,
-				"sameBrand": false
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.3511,
-				"top2Ratio": 0.1937,
-				"sameBrand": false
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.3535,
-				"top2Ratio": 0.3315,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3563,
-				"top2Ratio": 0.4075,
-				"sameBrand": false
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3364,
-				"top2Ratio": 0.4013,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.564,
-				"top2Ratio": 0.2025,
+				"top1Confidence": 0.4757,
+				"top2Ratio": 0.2129,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 8,
-				"top1Confidence": 0.52,
-				"top2Ratio": 0.1242,
-				"sameBrand": true
+				"top1Confidence": 0.4075,
+				"top2Ratio": 0.1602,
+				"sameBrand": false
 			},
 			{
-				"trueRank": 4,
-				"top1Confidence": 0.7297,
-				"top2Ratio": 0.0651,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 8,
-				"top1Confidence": 0.4792,
-				"top2Ratio": 0.2517,
+				"trueRank": 3,
+				"top1Confidence": 0.3901,
+				"top2Ratio": 0.2997,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.3385,
-				"top2Ratio": 0.5418,
-				"sameBrand": false
+				"top1Confidence": 0.4537,
+				"top2Ratio": 0.2914,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 5,
+				"top1Confidence": 0.4286,
+				"top2Ratio": 0.3726,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.5084,
+				"top2Ratio": 0.2758,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 4,
+				"top1Confidence": 0.4031,
+				"top2Ratio": 0.4537,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4401,
+				"top2Ratio": 0.2958,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.8423,
+				"top2Ratio": 0.0747,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 8,
+				"top1Confidence": 0.6291,
+				"top2Ratio": 0.1049,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4883,
+				"top2Ratio": 0.2726,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 5,
+				"top1Confidence": 0.3756,
+				"top2Ratio": 0.3376,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 6,
+				"top1Confidence": 0.4706,
+				"top2Ratio": 0.4091,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4752,
+				"top2Ratio": 0.4266,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4553,
+				"top2Ratio": 0.2087,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4132,
+				"top2Ratio": 0.5404,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 4,
+				"top1Confidence": 0.382,
+				"top2Ratio": 0.2882,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.3787,
+				"top2Ratio": 0.4346,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.5338,
+				"top2Ratio": 0.2366,
+				"sameBrand": true
 			},
 			{
 				"trueRank": 7,
-				"top1Confidence": 0.3478,
-				"top2Ratio": 0.1984,
-				"sameBrand": false
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.5402,
-				"top2Ratio": 0.2616,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 5,
-				"top1Confidence": 0.4379,
-				"top2Ratio": 0.4544,
+				"top1Confidence": 0.3195,
+				"top2Ratio": 0.2795,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.444,
-				"top2Ratio": 0.2755,
+				"top1Confidence": 0.4293,
+				"top2Ratio": 0.3222,
 				"sameBrand": true
 			},
 			{
-				"trueRank": 5,
-				"top1Confidence": 0.4555,
-				"top2Ratio": 0.3297,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.4498,
-				"top2Ratio": 0.2701,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.3849,
-				"top2Ratio": 0.2453,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 5,
-				"top1Confidence": 0.4764,
-				"top2Ratio": 0.2202,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.8761,
-				"top2Ratio": 0.0428,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.6655,
-				"top2Ratio": 0.1542,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 3,
-				"top1Confidence": 0.4593,
-				"top2Ratio": 0.2835,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 5,
-				"top1Confidence": 0.339,
-				"top2Ratio": 0.4578,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 4,
-				"top1Confidence": 0.4177,
-				"top2Ratio": 0.3814,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 5,
-				"top1Confidence": 0.5568,
-				"top2Ratio": 0.2692,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.5007,
-				"top2Ratio": 0.4356,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 3,
-				"top1Confidence": 0.3641,
-				"top2Ratio": 0.3285,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.5962,
-				"top2Ratio": 0.1176,
+				"trueRank": 7,
+				"top1Confidence": 0.3147,
+				"top2Ratio": 0.2533,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 6,
-				"top1Confidence": 0.3471,
-				"top2Ratio": 0.191,
+				"top1Confidence": 0.3681,
+				"top2Ratio": 0.5322,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.4535,
-				"top2Ratio": 0.4159,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.6619,
-				"top2Ratio": 0.2313,
+				"top1Confidence": 0.5719,
+				"top2Ratio": 0.331,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 5,
-				"top1Confidence": 0.4637,
-				"top2Ratio": 0.5553,
+				"top1Confidence": 0.4921,
+				"top2Ratio": 0.5111,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
 				"top1Confidence": 0.6798,
-				"top2Ratio": 0.1692,
+				"top2Ratio": 0.158,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.5091,
+				"top2Ratio": 0.2915,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.3838,
+				"top2Ratio": 0.4521,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.3625,
+				"top2Ratio": 0.3181,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 4,
+				"top1Confidence": 0.7573,
+				"top2Ratio": 0.1107,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 8,
+				"top1Confidence": 0.3139,
+				"top2Ratio": 0.3488,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.5193,
+				"top2Ratio": 0.2563,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.4984,
+				"top2Ratio": 0.303,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.5634,
+				"top2Ratio": 0.1825,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.4983,
+				"top2Ratio": 0.4014,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.3605,
+				"top2Ratio": 0.5886,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 6,
-				"top1Confidence": 0.3931,
-				"top2Ratio": 0.4515,
+				"top1Confidence": 0.3502,
+				"top2Ratio": 0.3595,
 				"sameBrand": true
 			},
 			{
-				"trueRank": 3,
-				"top1Confidence": 0.3498,
-				"top2Ratio": 0.2839,
-				"sameBrand": true
+				"trueRank": 2,
+				"top1Confidence": 0.5737,
+				"top2Ratio": 0.29,
+				"sameBrand": false
 			},
 			{
 				"trueRank": 4,
-				"top1Confidence": 0.5824,
-				"top2Ratio": 0.2397,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 7,
-				"top1Confidence": 0.3646,
-				"top2Ratio": 0.3162,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 3,
-				"top1Confidence": 0.5533,
-				"top2Ratio": 0.2444,
+				"top1Confidence": 0.4948,
+				"top2Ratio": 0.246,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.4964,
-				"top2Ratio": 0.5056,
+				"top1Confidence": 0.493,
+				"top2Ratio": 0.2521,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.5125,
-				"top2Ratio": 0.1659,
-				"sameBrand": true
+				"top1Confidence": 0.494,
+				"top2Ratio": 0.3514,
+				"sameBrand": false
 			},
 			{
 				"trueRank": 3,
-				"top1Confidence": 0.5355,
-				"top2Ratio": 0.2893,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3986,
-				"top2Ratio": 0.4601,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 7,
-				"top1Confidence": 0.5833,
-				"top2Ratio": 0.1149,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 3,
-				"top1Confidence": 0.3046,
-				"top2Ratio": 0.3483,
+				"top1Confidence": 0.3933,
+				"top2Ratio": 0.4734,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 5,
-				"top1Confidence": 0.5393,
-				"top2Ratio": 0.2399,
+				"top1Confidence": 0.6397,
+				"top2Ratio": 0.123,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.5844,
+				"top2Ratio": 0.5099,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.6965,
+				"top2Ratio": 0.3014,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 3,
+				"top1Confidence": 0.3201,
+				"top2Ratio": 0.3933,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.3731,
+				"top2Ratio": 0.3155,
+				"sameBrand": true
+			},
+			{
+				"trueRank": 6,
+				"top1Confidence": 0.4025,
+				"top2Ratio": 0.5771,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 4,
-				"top1Confidence": 0.522,
-				"top2Ratio": 0.1837,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3937,
-				"top2Ratio": 0.5382,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.3108,
-				"top2Ratio": 0.5965,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.4775,
-				"top2Ratio": 0.2205,
+				"top1Confidence": 0.4462,
+				"top2Ratio": 0.1004,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 4,
-				"top1Confidence": 0.6704,
-				"top2Ratio": 0.1456,
+				"top1Confidence": 0.4018,
+				"top2Ratio": 0.2561,
+				"sameBrand": false
+			},
+			{
+				"trueRank": 2,
+				"top1Confidence": 0.5591,
+				"top2Ratio": 0.3162,
 				"sameBrand": true
 			},
 			{
 				"trueRank": 2,
-				"top1Confidence": 0.601,
-				"top2Ratio": 0.4952,
-				"sameBrand": true
-			},
-			{
-				"trueRank": 2,
-				"top1Confidence": 0.4067,
-				"top2Ratio": 0.3922,
+				"top1Confidence": 0.5513,
+				"top2Ratio": 0.4136,
 				"sameBrand": true
 			}
 		]
 	},
 	"perPair": [
-		{
-			"manufacturerName": "Volkswagen",
-			"modelName": "Arteon",
-			"count": 1,
-			"accuracy": 0.0
-		},
 		{
 			"manufacturerName": "Volkswagen",
 			"modelName": "ID.4",
@@ -868,19 +977,13 @@
 		},
 		{
 			"manufacturerName": "Volkswagen",
-			"modelName": "Taigo",
+			"modelName": "T-Cross",
 			"count": 1,
 			"accuracy": 0.0
 		},
 		{
 			"manufacturerName": "Volkswagen",
 			"modelName": "ID.5",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Volkswagen",
-			"modelName": "ID.7",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -899,13 +1002,19 @@
 		{
 			"manufacturerName": "Mercedes-Benz",
 			"modelName": "CLA",
+			"count": 3,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "CLS",
 			"count": 2,
 			"accuracy": 0.0
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
 			"modelName": "GLB",
-			"count": 1,
+			"count": 2,
 			"accuracy": 0.0
 		},
 		{
@@ -928,7 +1037,25 @@
 		},
 		{
 			"manufacturerName": "Opel",
+			"modelName": "Combo",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Opel",
 			"modelName": "Mokka-e",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Opel",
+			"modelName": "Frontera",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Puma",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -976,13 +1103,13 @@
 		},
 		{
 			"manufacturerName": "Peugeot",
-			"modelName": "207",
+			"modelName": "206",
 			"count": 1,
 			"accuracy": 0.0
 		},
 		{
 			"manufacturerName": "Peugeot",
-			"modelName": "307",
+			"modelName": "207",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1007,12 +1134,6 @@
 		{
 			"manufacturerName": "Citro\u00ebn",
 			"modelName": "C4 SpaceTourer",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Citro\u00ebn",
-			"modelName": "C5 X",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1120,6 +1241,12 @@
 		},
 		{
 			"manufacturerName": "Fiat",
+			"modelName": "500",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
 			"modelName": "Panda",
 			"count": 2,
 			"accuracy": 0.0
@@ -1132,8 +1259,20 @@
 		},
 		{
 			"manufacturerName": "Fiat",
+			"modelName": "500e",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Fiat",
 			"modelName": "600",
 			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A4",
+			"count": 3,
 			"accuracy": 0.0
 		},
 		{
@@ -1162,6 +1301,12 @@
 		},
 		{
 			"manufacturerName": "Audi",
+			"modelName": "e-tron",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
 			"modelName": "Q4 e-tron",
 			"count": 1,
 			"accuracy": 0.0
@@ -1180,13 +1325,7 @@
 		},
 		{
 			"manufacturerName": "Alfa Romeo",
-			"modelName": "Stelvio",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Alfa Romeo",
-			"modelName": "Tonale",
+			"modelName": "GT",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1228,6 +1367,12 @@
 		},
 		{
 			"manufacturerName": "Volvo",
+			"modelName": "C40",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Volvo",
 			"modelName": "S40",
 			"count": 1,
 			"accuracy": 0.0
@@ -1236,12 +1381,6 @@
 			"manufacturerName": "Volvo",
 			"modelName": "EX40",
 			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Mini",
-			"modelName": "Cooper",
-			"count": 2,
 			"accuracy": 0.0
 		},
 		{
@@ -1271,6 +1410,12 @@
 		{
 			"manufacturerName": "Jaguar",
 			"modelName": "XE",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Jaguar",
+			"modelName": "XJ",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1354,12 +1499,6 @@
 		},
 		{
 			"manufacturerName": "Ferrari",
-			"modelName": "F8 Tributo",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Ferrari",
 			"modelName": "Roma",
 			"count": 1,
 			"accuracy": 0.0
@@ -1377,12 +1516,6 @@
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Ferrari",
-			"modelName": "812 Superfast",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
 			"manufacturerName": "Lamborghini",
 			"modelName": "Aventador",
 			"count": 1,
@@ -1391,6 +1524,12 @@
 		{
 			"manufacturerName": "Lamborghini",
 			"modelName": "Urus",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Revuelto",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1443,8 +1582,20 @@
 			"accuracy": 0.0
 		},
 		{
+			"manufacturerName": "Lotus",
+			"modelName": "Eletre",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
 			"manufacturerName": "Polestar",
 			"modelName": "Polestar 2",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Polestar",
+			"modelName": "Polestar 3",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1491,8 +1642,26 @@
 			"accuracy": 0.0
 		},
 		{
+			"manufacturerName": "Rover",
+			"modelName": "45",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Supra",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
 			"manufacturerName": "Toyota",
 			"modelName": "bZ4X",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "GR Yaris",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1503,26 +1672,14 @@
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Hyundai",
-			"modelName": "i30",
-			"count": 3,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Hyundai",
-			"modelName": "i40",
+			"manufacturerName": "Honda",
+			"modelName": "ZR-V",
 			"count": 1,
 			"accuracy": 0.0
 		},
 		{
 			"manufacturerName": "Hyundai",
 			"modelName": "ix20",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Hyundai",
-			"modelName": "NEXO",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1551,6 +1708,12 @@
 			"accuracy": 0.0
 		},
 		{
+			"manufacturerName": "Nissan",
+			"modelName": "Pulsar",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
 			"manufacturerName": "Mazda",
 			"modelName": "Mazda6",
 			"count": 2,
@@ -1563,14 +1726,14 @@
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Mazda",
-			"modelName": "CX-9",
+			"manufacturerName": "Suzuki",
+			"modelName": "SX4",
 			"count": 1,
 			"accuracy": 0.0
 		},
 		{
 			"manufacturerName": "Suzuki",
-			"modelName": "SX4",
+			"modelName": "Across",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1605,12 +1768,6 @@
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Chrysler",
-			"modelName": "Voyager",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
 			"manufacturerName": "Cadillac",
 			"modelName": "CT5",
 			"count": 1,
@@ -1619,12 +1776,6 @@
 		{
 			"manufacturerName": "Cadillac",
 			"modelName": "Lyriq",
-			"count": 1,
-			"accuracy": 0.0
-		},
-		{
-			"manufacturerName": "Tesla",
-			"modelName": "Model Y",
 			"count": 1,
 			"accuracy": 0.0
 		},
@@ -1653,20 +1804,140 @@
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Honda",
-			"modelName": "e:Ny1",
+			"manufacturerName": "BMW",
+			"modelName": "i7",
 			"count": 1,
 			"accuracy": 0.0
 		},
 		{
-			"manufacturerName": "Volkswagen",
-			"modelName": "Golf",
+			"manufacturerName": "BMW",
+			"modelName": "iX2",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "XM",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Explorer (EV)",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "LBX",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "GR86",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Corolla Cross",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Land Cruiser Prado",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "iX3 (Neue Klasse)",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "Q9",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "MC20",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Valhalla",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "IM5",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Yaris Cross",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "K4",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "TX",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "GX",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Wagoneer S",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Equinox EV",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Silverado EV",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Vistiq",
+			"count": 1,
+			"accuracy": 0.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "5 Series",
 			"count": 3,
 			"accuracy": 0.333
 		},
 		{
-			"manufacturerName": "BMW",
-			"modelName": "X6",
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C3",
 			"count": 3,
 			"accuracy": 0.333
 		},
@@ -1695,8 +1966,8 @@
 			"accuracy": 0.333
 		},
 		{
-			"manufacturerName": "Audi",
-			"modelName": "A4",
+			"manufacturerName": "Mini",
+			"modelName": "Cooper",
 			"count": 3,
 			"accuracy": 0.333
 		},
@@ -1709,6 +1980,12 @@
 		{
 			"manufacturerName": "Porsche",
 			"modelName": "Cayman",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
+			"manufacturerName": "Lancia",
+			"modelName": "Ypsilon",
 			"count": 3,
 			"accuracy": 0.333
 		},
@@ -1731,8 +2008,14 @@
 			"accuracy": 0.333
 		},
 		{
+			"manufacturerName": "Toyota",
+			"modelName": "Camry",
+			"count": 3,
+			"accuracy": 0.333
+		},
+		{
 			"manufacturerName": "Hyundai",
-			"modelName": "Santa Fe",
+			"modelName": "i30",
 			"count": 3,
 			"accuracy": 0.333
 		},
@@ -1749,14 +2032,14 @@
 			"accuracy": 0.333
 		},
 		{
-			"manufacturerName": "BMW",
-			"modelName": "5 Series",
-			"count": 2,
-			"accuracy": 0.5
+			"manufacturerName": "Subaru",
+			"modelName": "Forester",
+			"count": 5,
+			"accuracy": 0.4
 		},
 		{
-			"manufacturerName": "BMW",
-			"modelName": "X3",
+			"manufacturerName": "Volkswagen",
+			"modelName": "Polo",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -1786,6 +2069,12 @@
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
+			"modelName": "A-Class",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
 			"modelName": "GLC",
 			"count": 2,
 			"accuracy": 0.5
@@ -1803,8 +2092,8 @@
 			"accuracy": 0.5
 		},
 		{
-			"manufacturerName": "Opel",
-			"modelName": "Mokka",
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLC Coupe",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -1823,6 +2112,12 @@
 		{
 			"manufacturerName": "Ford",
 			"modelName": "Galaxy",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Mustang",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -1853,18 +2148,6 @@
 		{
 			"manufacturerName": "Peugeot",
 			"modelName": "508",
-			"count": 2,
-			"accuracy": 0.5
-		},
-		{
-			"manufacturerName": "Peugeot",
-			"modelName": "3008",
-			"count": 2,
-			"accuracy": 0.5
-		},
-		{
-			"manufacturerName": "Citro\u00ebn",
-			"modelName": "C3",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -1913,12 +2196,6 @@
 		{
 			"manufacturerName": "Audi",
 			"modelName": "TT",
-			"count": 2,
-			"accuracy": 0.5
-		},
-		{
-			"manufacturerName": "Audi",
-			"modelName": "A7",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -2013,6 +2290,18 @@
 			"accuracy": 0.5
 		},
 		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Vantage",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DBS",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
 			"manufacturerName": "Toyota",
 			"modelName": "Land Cruiser",
 			"count": 2,
@@ -2038,6 +2327,12 @@
 		},
 		{
 			"manufacturerName": "Hyundai",
+			"modelName": "Santa Fe",
+			"count": 4,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Hyundai",
 			"modelName": "Sonata",
 			"count": 4,
 			"accuracy": 0.5
@@ -2049,6 +2344,12 @@
 			"accuracy": 0.5
 		},
 		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Veloster",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
 			"manufacturerName": "Kia",
 			"modelName": "Niro",
 			"count": 2,
@@ -2056,7 +2357,19 @@
 		},
 		{
 			"manufacturerName": "Nissan",
-			"modelName": "Note",
+			"modelName": "Juke",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Leaf",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Navara",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -2092,14 +2405,8 @@
 		},
 		{
 			"manufacturerName": "Subaru",
-			"modelName": "Forester",
-			"count": 4,
-			"accuracy": 0.5
-		},
-		{
-			"manufacturerName": "Subaru",
-			"modelName": "Outback",
-			"count": 4,
+			"modelName": "BRZ",
+			"count": 2,
 			"accuracy": 0.5
 		},
 		{
@@ -2116,25 +2423,31 @@
 		},
 		{
 			"manufacturerName": "Lexus",
+			"modelName": "ES",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Lexus",
 			"modelName": "RX",
 			"count": 4,
 			"accuracy": 0.5
 		},
 		{
 			"manufacturerName": "Lexus",
-			"modelName": "LS",
+			"modelName": "LX",
+			"count": 2,
+			"accuracy": 0.5
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Compass",
 			"count": 2,
 			"accuracy": 0.5
 		},
 		{
 			"manufacturerName": "Chevrolet",
 			"modelName": "Cruze",
-			"count": 2,
-			"accuracy": 0.5
-		},
-		{
-			"manufacturerName": "Chevrolet",
-			"modelName": "Aveo",
 			"count": 2,
 			"accuracy": 0.5
 		},
@@ -2152,13 +2465,55 @@
 		},
 		{
 			"manufacturerName": "Volkswagen",
+			"modelName": "Golf",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Volkswagen",
 			"modelName": "Caddy",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "1 Series",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X3",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "7 Series",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "X6",
 			"count": 3,
 			"accuracy": 0.667
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
 			"modelName": "S-Class",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLA",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "SL",
 			"count": 3,
 			"accuracy": 0.667
 		},
@@ -2193,6 +2548,12 @@
 			"accuracy": 0.667
 		},
 		{
+			"manufacturerName": "Peugeot",
+			"modelName": "3008",
+			"count": 3,
+			"accuracy": 0.667
+		},
+		{
 			"manufacturerName": "Porsche",
 			"modelName": "911",
 			"count": 3,
@@ -2213,12 +2574,6 @@
 		{
 			"manufacturerName": "Smart",
 			"modelName": "ForTwo",
-			"count": 3,
-			"accuracy": 0.667
-		},
-		{
-			"manufacturerName": "Toyota",
-			"modelName": "Camry",
 			"count": 3,
 			"accuracy": 0.667
 		},
@@ -2247,14 +2602,8 @@
 			"accuracy": 0.667
 		},
 		{
-			"manufacturerName": "Kia",
-			"modelName": "Ceed",
-			"count": 3,
-			"accuracy": 0.667
-		},
-		{
-			"manufacturerName": "Kia",
-			"modelName": "Sportage",
+			"manufacturerName": "Hyundai",
+			"modelName": "i10",
 			"count": 3,
 			"accuracy": 0.667
 		},
@@ -2313,15 +2662,15 @@
 			"accuracy": 0.75
 		},
 		{
-			"manufacturerName": "Volkswagen",
-			"modelName": "Passat",
-			"count": 3,
-			"accuracy": 1.0
+			"manufacturerName": "Subaru",
+			"modelName": "Outback",
+			"count": 4,
+			"accuracy": 0.75
 		},
 		{
 			"manufacturerName": "Volkswagen",
-			"modelName": "Polo",
-			"count": 2,
+			"modelName": "Passat",
+			"count": 3,
 			"accuracy": 1.0
 		},
 		{
@@ -2339,6 +2688,12 @@
 		{
 			"manufacturerName": "Volkswagen",
 			"modelName": "T-Roc",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Arteon",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -2362,7 +2717,13 @@
 		},
 		{
 			"manufacturerName": "Volkswagen",
-			"modelName": "T-Cross",
+			"modelName": "Taigo",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.7",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -2380,20 +2741,8 @@
 		},
 		{
 			"manufacturerName": "BMW",
-			"modelName": "1 Series",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "BMW",
 			"modelName": "M3",
 			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "BMW",
-			"modelName": "7 Series",
-			"count": 3,
 			"accuracy": 1.0
 		},
 		{
@@ -2488,31 +2837,13 @@
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
-			"modelName": "A-Class",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Mercedes-Benz",
 			"modelName": "GLE",
 			"count": 2,
 			"accuracy": 1.0
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
-			"modelName": "GLA",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Mercedes-Benz",
 			"modelName": "B-Class",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Mercedes-Benz",
-			"modelName": "CLS",
 			"count": 2,
 			"accuracy": 1.0
 		},
@@ -2536,12 +2867,6 @@
 		},
 		{
 			"manufacturerName": "Mercedes-Benz",
-			"modelName": "SL",
-			"count": 3,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Mercedes-Benz",
 			"modelName": "SLC",
 			"count": 1,
 			"accuracy": 1.0
@@ -2553,14 +2878,14 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Mercedes-Benz",
-			"modelName": "GLC Coupe",
+			"manufacturerName": "Opel",
+			"modelName": "Insignia",
 			"count": 2,
 			"accuracy": 1.0
 		},
 		{
 			"manufacturerName": "Opel",
-			"modelName": "Insignia",
+			"modelName": "Mokka",
 			"count": 2,
 			"accuracy": 1.0
 		},
@@ -2573,7 +2898,7 @@
 		{
 			"manufacturerName": "Opel",
 			"modelName": "Grandland",
-			"count": 1,
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -2601,18 +2926,6 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Opel",
-			"modelName": "Combo",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Opel",
-			"modelName": "Frontera",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
 			"manufacturerName": "Ford",
 			"modelName": "Fiesta",
 			"count": 2,
@@ -2626,20 +2939,8 @@
 		},
 		{
 			"manufacturerName": "Ford",
-			"modelName": "Puma",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Ford",
 			"modelName": "EcoSport",
 			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Ford",
-			"modelName": "Mustang",
-			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -2729,7 +3030,7 @@
 		{
 			"manufacturerName": "Peugeot",
 			"modelName": "5008",
-			"count": 2,
+			"count": 3,
 			"accuracy": 1.0
 		},
 		{
@@ -2758,7 +3059,7 @@
 		},
 		{
 			"manufacturerName": "Peugeot",
-			"modelName": "206",
+			"modelName": "307",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -2835,6 +3136,12 @@
 			"accuracy": 1.0
 		},
 		{
+			"manufacturerName": "Citro\u00ebn",
+			"modelName": "C5 X",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
 			"manufacturerName": "Dacia",
 			"modelName": "Sandero",
 			"count": 3,
@@ -2896,12 +3203,6 @@
 		},
 		{
 			"manufacturerName": "Fiat",
-			"modelName": "500",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Fiat",
 			"modelName": "Tipo",
 			"count": 1,
 			"accuracy": 1.0
@@ -2926,12 +3227,6 @@
 		},
 		{
 			"manufacturerName": "Fiat",
-			"modelName": "500e",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Fiat",
 			"modelName": "Croma",
 			"count": 1,
 			"accuracy": 1.0
@@ -2950,13 +3245,13 @@
 		},
 		{
 			"manufacturerName": "Audi",
-			"modelName": "Q8",
-			"count": 1,
+			"modelName": "A7",
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
 			"manufacturerName": "Audi",
-			"modelName": "e-tron",
+			"modelName": "Q8",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -2992,19 +3287,25 @@
 		},
 		{
 			"manufacturerName": "Alfa Romeo",
+			"modelName": "Stelvio",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Alfa Romeo",
 			"modelName": "MiTo",
 			"count": 1,
 			"accuracy": 1.0
 		},
 		{
 			"manufacturerName": "Alfa Romeo",
-			"modelName": "Spider",
+			"modelName": "Tonale",
 			"count": 1,
 			"accuracy": 1.0
 		},
 		{
 			"manufacturerName": "Alfa Romeo",
-			"modelName": "GT",
+			"modelName": "Spider",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3035,12 +3336,6 @@
 		{
 			"manufacturerName": "Volvo",
 			"modelName": "S90",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Volvo",
-			"modelName": "C40",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3171,12 +3466,6 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Jaguar",
-			"modelName": "XJ",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
 			"manufacturerName": "Smart",
 			"modelName": "Smart #3",
 			"count": 1,
@@ -3196,13 +3485,13 @@
 		},
 		{
 			"manufacturerName": "Lancia",
-			"modelName": "Ypsilon",
-			"count": 2,
+			"modelName": "Musa",
+			"count": 1,
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Lancia",
-			"modelName": "Musa",
+			"manufacturerName": "Ferrari",
+			"modelName": "F8 Tributo",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3225,6 +3514,12 @@
 			"accuracy": 1.0
 		},
 		{
+			"manufacturerName": "Ferrari",
+			"modelName": "812 Superfast",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
 			"manufacturerName": "Lamborghini",
 			"modelName": "Gallardo",
 			"count": 1,
@@ -3233,12 +3528,6 @@
 		{
 			"manufacturerName": "Lamborghini",
 			"modelName": "Huracan",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Lamborghini",
-			"modelName": "Revuelto",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3298,18 +3587,6 @@
 		},
 		{
 			"manufacturerName": "Aston Martin",
-			"modelName": "Vantage",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Aston Martin",
-			"modelName": "DBS",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Aston Martin",
 			"modelName": "Rapide",
 			"count": 1,
 			"accuracy": 1.0
@@ -3341,18 +3618,6 @@
 		{
 			"manufacturerName": "Lotus",
 			"modelName": "Emira",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Lotus",
-			"modelName": "Eletre",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Polestar",
-			"modelName": "Polestar 3",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3394,12 +3659,6 @@
 		},
 		{
 			"manufacturerName": "Rover",
-			"modelName": "45",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Rover",
 			"modelName": "25",
 			"count": 1,
 			"accuracy": 1.0
@@ -3424,12 +3683,6 @@
 		},
 		{
 			"manufacturerName": "Toyota",
-			"modelName": "Supra",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Toyota",
 			"modelName": "Avensis",
 			"count": 1,
 			"accuracy": 1.0
@@ -3443,12 +3696,6 @@
 		{
 			"manufacturerName": "Toyota",
 			"modelName": "Aygo X",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Toyota",
-			"modelName": "GR Yaris",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3478,12 +3725,6 @@
 		},
 		{
 			"manufacturerName": "Honda",
-			"modelName": "ZR-V",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Honda",
 			"modelName": "Legend",
 			"count": 1,
 			"accuracy": 1.0
@@ -3491,6 +3732,12 @@
 		{
 			"manufacturerName": "Honda",
 			"modelName": "Insight",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "i40",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3526,8 +3773,8 @@
 		},
 		{
 			"manufacturerName": "Hyundai",
-			"modelName": "Veloster",
-			"count": 2,
+			"modelName": "NEXO",
+			"count": 1,
 			"accuracy": 1.0
 		},
 		{
@@ -3543,8 +3790,14 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Hyundai",
-			"modelName": "i10",
+			"manufacturerName": "Kia",
+			"modelName": "Ceed",
+			"count": 3,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Sportage",
 			"count": 3,
 			"accuracy": 1.0
 		},
@@ -3592,19 +3845,7 @@
 		},
 		{
 			"manufacturerName": "Nissan",
-			"modelName": "Juke",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Nissan",
-			"modelName": "Leaf",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Nissan",
-			"modelName": "Navara",
+			"modelName": "Note",
 			"count": 2,
 			"accuracy": 1.0
 		},
@@ -3633,12 +3874,6 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Nissan",
-			"modelName": "Pulsar",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
 			"manufacturerName": "Mazda",
 			"modelName": "Mazda2",
 			"count": 2,
@@ -3664,6 +3899,12 @@
 		},
 		{
 			"manufacturerName": "Mazda",
+			"modelName": "CX-9",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
 			"modelName": "RX-8",
 			"count": 1,
 			"accuracy": 1.0
@@ -3671,7 +3912,7 @@
 		{
 			"manufacturerName": "Mitsubishi",
 			"modelName": "ASX",
-			"count": 1,
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -3689,7 +3930,7 @@
 		{
 			"manufacturerName": "Mitsubishi",
 			"modelName": "Colt",
-			"count": 1,
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -3725,7 +3966,7 @@
 		{
 			"manufacturerName": "Suzuki",
 			"modelName": "Swift",
-			"count": 3,
+			"count": 4,
 			"accuracy": 1.0
 		},
 		{
@@ -3759,26 +4000,8 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Suzuki",
-			"modelName": "Across",
-			"count": 1,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Subaru",
-			"modelName": "BRZ",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
 			"manufacturerName": "Lexus",
 			"modelName": "IS",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Lexus",
-			"modelName": "ES",
 			"count": 2,
 			"accuracy": 1.0
 		},
@@ -3792,6 +4015,12 @@
 			"manufacturerName": "Lexus",
 			"modelName": "UX",
 			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lexus",
+			"modelName": "LS",
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -3825,12 +4054,6 @@
 			"accuracy": 1.0
 		},
 		{
-			"manufacturerName": "Lexus",
-			"modelName": "LX",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
 			"manufacturerName": "Jeep",
 			"modelName": "Cherokee",
 			"count": 1,
@@ -3850,12 +4073,6 @@
 		},
 		{
 			"manufacturerName": "Jeep",
-			"modelName": "Compass",
-			"count": 2,
-			"accuracy": 1.0
-		},
-		{
-			"manufacturerName": "Jeep",
 			"modelName": "Wrangler",
 			"count": 2,
 			"accuracy": 1.0
@@ -3864,6 +4081,12 @@
 			"manufacturerName": "Jeep",
 			"modelName": "Gladiator",
 			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Aveo",
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -3905,7 +4128,7 @@
 		{
 			"manufacturerName": "Dodge",
 			"modelName": "Charger",
-			"count": 1,
+			"count": 2,
 			"accuracy": 1.0
 		},
 		{
@@ -3917,6 +4140,12 @@
 		{
 			"manufacturerName": "Chrysler",
 			"modelName": "300",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chrysler",
+			"modelName": "Voyager",
 			"count": 1,
 			"accuracy": 1.0
 		},
@@ -3976,6 +4205,12 @@
 		},
 		{
 			"manufacturerName": "Tesla",
+			"modelName": "Model Y",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Tesla",
 			"modelName": "Cybertruck",
 			"count": 1,
 			"accuracy": 1.0
@@ -3997,39 +4232,437 @@
 			"modelName": "G70 Shooting Brake",
 			"count": 1,
 			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "e:Ny1",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "i5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "ID.Buzz",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Amarok",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volkswagen",
+			"modelName": "Tayron",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "CLE",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ford",
+			"modelName": "Capri",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "5 E-Tech",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "Symbioz",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "EV3",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "EV5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Audi",
+			"modelName": "A6 e-tron",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-90",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Z",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Grande Panda",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Fiat",
+			"modelName": "Topolino",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "Smart #5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Ferrari",
+			"modelName": "12Cilindri",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lamborghini",
+			"modelName": "Temerario",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "DB12",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Vanquish",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Wagoneer",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Blazer EV",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Dodge",
+			"modelName": "Hornet",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Escalade IQ",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Optiq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "GR Corolla",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "BMW",
+			"modelName": "i3 (Neue Klasse)",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mercedes-Benz",
+			"modelName": "GLC with EQ Technology",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Renault",
+			"modelName": "4 E-Tech",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Skoda",
+			"modelName": "Epiq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "XC70",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Volvo",
+			"modelName": "ES90",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Porsche",
+			"modelName": "Cayenne Electric",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Smart",
+			"modelName": "Smart #6",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "DS Automobiles",
+			"modelName": "N\u00b08",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cupra",
+			"modelName": "Raval",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Maserati",
+			"modelName": "GranCabrio",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Bacalar",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Bentley",
+			"modelName": "Batur",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Aston Martin",
+			"modelName": "Valkyrie",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "Elva",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "Solus GT",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "McLaren",
+			"modelName": "W1",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Evija",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Lotus",
+			"modelName": "Emeya",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Polestar",
+			"modelName": "Polestar 5",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "MG7",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "MG",
+			"modelName": "IM6",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Crown",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Grand Highlander",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Toyota",
+			"modelName": "Century",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Elevate",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Honda",
+			"modelName": "Prelude",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Casper",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Hyundai",
+			"modelName": "Staria",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "EV4",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Kia",
+			"modelName": "Tasman",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Magnite",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Nissan",
+			"modelName": "Kicks",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-50",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mazda",
+			"modelName": "CX-80",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Mitsubishi",
+			"modelName": "Destinator",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "Fronx",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Suzuki",
+			"modelName": "eVitara",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Jeep",
+			"modelName": "Recon",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Chevrolet",
+			"modelName": "Trailblazer",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Cadillac",
+			"modelName": "Celestiq",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "GV80 Coupe",
+			"count": 1,
+			"accuracy": 1.0
+		},
+		{
+			"manufacturerName": "Genesis",
+			"modelName": "GV90",
+			"count": 1,
+			"accuracy": 1.0
 		}
 	],
 	"worstConfusion": [
 		{
 			"actual": {
-				"manufacturerName": "BMW",
-				"modelName": "X6"
+				"manufacturerName": "Porsche",
+				"modelName": "Cayenne"
 			},
 			"predicted": {
-				"manufacturerName": "BMW",
-				"modelName": "X4"
-			},
-			"count": 2
-		},
-		{
-			"actual": {
-				"manufacturerName": "Peugeot",
-				"modelName": "2008"
-			},
-			"predicted": {
-				"manufacturerName": "Peugeot",
-				"modelName": "2008"
-			},
-			"count": 2
-		},
-		{
-			"actual": {
-				"manufacturerName": "SEAT",
-				"modelName": "Leon"
-			},
-			"predicted": {
-				"manufacturerName": "SEAT",
-				"modelName": "Ibiza"
+				"manufacturerName": "Porsche",
+				"modelName": "Cayenne"
 			},
 			"count": 2
 		},
@@ -4063,28 +4696,6 @@
 			"predicted": {
 				"manufacturerName": "Kia",
 				"modelName": "Soul"
-			},
-			"count": 2
-		},
-		{
-			"actual": {
-				"manufacturerName": "Subaru",
-				"modelName": "Forester"
-			},
-			"predicted": {
-				"manufacturerName": "Suzuki",
-				"modelName": "Across"
-			},
-			"count": 2
-		},
-		{
-			"actual": {
-				"manufacturerName": "Chevrolet",
-				"modelName": "Camaro"
-			},
-			"predicted": {
-				"manufacturerName": "Chevrolet",
-				"modelName": "Camaro"
 			},
 			"count": 2
 		},
@@ -4102,22 +4713,11 @@
 		{
 			"actual": {
 				"manufacturerName": "Volkswagen",
-				"modelName": "Golf"
+				"modelName": "Polo"
 			},
 			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Golf Variant"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Arteon"
-			},
-			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Passat"
+				"manufacturerName": "Skoda",
+				"modelName": "Scala"
 			},
 			"count": 1
 		},
@@ -4135,11 +4735,11 @@
 		{
 			"actual": {
 				"manufacturerName": "Volkswagen",
-				"modelName": "Taigo"
+				"modelName": "T-Cross"
 			},
 			"predicted": {
-				"manufacturerName": "Skoda",
-				"modelName": "Enyaq"
+				"manufacturerName": "Volkswagen",
+				"modelName": "T-Roc"
 			},
 			"count": 1
 		},
@@ -4151,17 +4751,6 @@
 			"predicted": {
 				"manufacturerName": "Volkswagen",
 				"modelName": "ID.4"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "ID.7"
-			},
-			"predicted": {
-				"manufacturerName": "Kia",
-				"modelName": "EV6"
 			},
 			"count": 1
 		},
@@ -4201,11 +4790,22 @@
 		{
 			"actual": {
 				"manufacturerName": "BMW",
+				"modelName": "1 Series"
+			},
+			"predicted": {
+				"manufacturerName": "Opel",
+				"modelName": "Adam"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
 				"modelName": "X3"
 			},
 			"predicted": {
 				"manufacturerName": "Mercedes-Benz",
-				"modelName": "EQC"
+				"modelName": "GLC"
 			},
 			"count": 1
 		},
@@ -4215,8 +4815,19 @@
 				"modelName": "X5"
 			},
 			"predicted": {
-				"manufacturerName": "Mercedes-Benz",
-				"modelName": "EQB"
+				"manufacturerName": "Opel",
+				"modelName": "Grandland"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "7 Series"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "i7"
 			},
 			"count": 1
 		},
@@ -4245,6 +4856,17 @@
 		{
 			"actual": {
 				"manufacturerName": "BMW",
+				"modelName": "X6"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "X4"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
 				"modelName": "M2"
 			},
 			"predicted": {
@@ -4267,6 +4889,17 @@
 		{
 			"actual": {
 				"manufacturerName": "Mercedes-Benz",
+				"modelName": "A-Class"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLS"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
 				"modelName": "GLC"
 			},
 			"predicted": {
@@ -4282,7 +4915,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Mercedes-Benz",
-				"modelName": "E-Class"
+				"modelName": "C-Class"
 			},
 			"count": 1
 		},
@@ -4311,11 +4944,44 @@
 		{
 			"actual": {
 				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLA"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLA"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
 				"modelName": "GLS"
 			},
 			"predicted": {
 				"manufacturerName": "Mercedes-Benz",
 				"modelName": "GLS"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLS"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "S-Class"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLS"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLE"
 			},
 			"count": 1
 		},
@@ -4336,8 +5002,8 @@
 				"modelName": "EQE"
 			},
 			"predicted": {
-				"manufacturerName": "Tesla",
-				"modelName": "Model 3"
+				"manufacturerName": "Volvo",
+				"modelName": "ES90"
 			},
 			"count": 1
 		},
@@ -4355,11 +5021,33 @@
 		{
 			"actual": {
 				"manufacturerName": "Mercedes-Benz",
+				"modelName": "SL"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "S-Class"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
 				"modelName": "AMG GT"
 			},
 			"predicted": {
 				"manufacturerName": "Mercedes-Benz",
 				"modelName": "AMG GT"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLC Coupe"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLC"
 			},
 			"count": 1
 		},
@@ -4388,17 +5076,6 @@
 		{
 			"actual": {
 				"manufacturerName": "Opel",
-				"modelName": "Mokka"
-			},
-			"predicted": {
-				"manufacturerName": "Renault",
-				"modelName": "Arkana"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Opel",
 				"modelName": "Zafira"
 			},
 			"predicted": {
@@ -4413,8 +5090,19 @@
 				"modelName": "Crossland"
 			},
 			"predicted": {
-				"manufacturerName": "Peugeot",
-				"modelName": "2008"
+				"manufacturerName": "Renault",
+				"modelName": "Symbioz"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Opel",
+				"modelName": "Combo"
+			},
+			"predicted": {
+				"manufacturerName": "Citro\u00ebn",
+				"modelName": "Berlingo"
 			},
 			"count": 1
 		},
@@ -4424,8 +5112,19 @@
 				"modelName": "Mokka-e"
 			},
 			"predicted": {
-				"manufacturerName": "Renault",
-				"modelName": "Arkana"
+				"manufacturerName": "Opel",
+				"modelName": "Mokka"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Opel",
+				"modelName": "Frontera"
+			},
+			"predicted": {
+				"manufacturerName": "Skoda",
+				"modelName": "Epiq"
 			},
 			"count": 1
 		},
@@ -4454,6 +5153,17 @@
 		{
 			"actual": {
 				"manufacturerName": "Ford",
+				"modelName": "Puma"
+			},
+			"predicted": {
+				"manufacturerName": "Dacia",
+				"modelName": "Sandero"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Ford",
 				"modelName": "S-MAX"
 			},
 			"predicted": {
@@ -4476,11 +5186,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Ford",
+				"modelName": "Mustang"
+			},
+			"predicted": {
+				"manufacturerName": "Dodge",
+				"modelName": "Charger"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Ford",
 				"modelName": "Mustang Mach-E"
 			},
 			"predicted": {
-				"manufacturerName": "Audi",
-				"modelName": "e-tron"
+				"manufacturerName": "Cupra",
+				"modelName": "Raval"
 			},
 			"count": 1
 		},
@@ -4545,8 +5266,8 @@
 				"modelName": "Austral"
 			},
 			"predicted": {
-				"manufacturerName": "Kia",
-				"modelName": "Niro"
+				"manufacturerName": "Skoda",
+				"modelName": "Epiq"
 			},
 			"count": 1
 		},
@@ -4589,8 +5310,8 @@
 				"modelName": "Symbol"
 			},
 			"predicted": {
-				"manufacturerName": "Hyundai",
-				"modelName": "i30"
+				"manufacturerName": "Kia",
+				"modelName": "Ceed"
 			},
 			"count": 1
 		},
@@ -4600,8 +5321,8 @@
 				"modelName": "Megane E-Tech"
 			},
 			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "ID.3"
+				"manufacturerName": "Tesla",
+				"modelName": "Model Y"
 			},
 			"count": 1
 		},
@@ -4633,8 +5354,30 @@
 				"modelName": "508"
 			},
 			"predicted": {
-				"manufacturerName": "Mercedes-Benz",
-				"modelName": "B-Class"
+				"manufacturerName": "Peugeot",
+				"modelName": "508"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Peugeot",
+				"modelName": "2008"
+			},
+			"predicted": {
+				"manufacturerName": "Skoda",
+				"modelName": "Epiq"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Peugeot",
+				"modelName": "2008"
+			},
+			"predicted": {
+				"manufacturerName": "Peugeot",
+				"modelName": "2008"
 			},
 			"count": 1
 		},
@@ -4652,18 +5395,18 @@
 		{
 			"actual": {
 				"manufacturerName": "Peugeot",
-				"modelName": "207"
+				"modelName": "206"
 			},
 			"predicted": {
 				"manufacturerName": "Peugeot",
-				"modelName": "307"
+				"modelName": "107"
 			},
 			"count": 1
 		},
 		{
 			"actual": {
 				"manufacturerName": "Peugeot",
-				"modelName": "307"
+				"modelName": "207"
 			},
 			"predicted": {
 				"manufacturerName": "Peugeot",
@@ -4678,7 +5421,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Mercedes-Benz",
-				"modelName": "AMG GT"
+				"modelName": "CLE"
 			},
 			"count": 1
 		},
@@ -4733,18 +5476,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Citro\u00ebn",
-				"modelName": "C-Picasso"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Citro\u00ebn",
-				"modelName": "C5 X"
-			},
-			"predicted": {
-				"manufacturerName": "Cupra",
-				"modelName": "Tavascan"
+				"modelName": "Grand C-Picasso"
 			},
 			"count": 1
 		},
@@ -4776,8 +5508,8 @@
 				"modelName": "Lodgy"
 			},
 			"predicted": {
-				"manufacturerName": "Fiat",
-				"modelName": "Panda"
+				"manufacturerName": "Dacia",
+				"modelName": "Logan"
 			},
 			"count": 1
 		},
@@ -4832,7 +5564,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Toyota",
-				"modelName": "RAV4"
+				"modelName": "Yaris Cross"
 			},
 			"count": 1
 		},
@@ -4908,8 +5640,8 @@
 				"modelName": "Kodiaq"
 			},
 			"predicted": {
-				"manufacturerName": "Renault",
-				"modelName": "Arkana"
+				"manufacturerName": "Volkswagen",
+				"modelName": "Tayron"
 			},
 			"count": 1
 		},
@@ -4932,6 +5664,28 @@
 			"predicted": {
 				"manufacturerName": "Skoda",
 				"modelName": "Enyaq"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "SEAT",
+				"modelName": "Leon"
+			},
+			"predicted": {
+				"manufacturerName": "Opel",
+				"modelName": "Cascada"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "SEAT",
+				"modelName": "Leon"
+			},
+			"predicted": {
+				"manufacturerName": "SEAT",
+				"modelName": "Toledo"
 			},
 			"count": 1
 		},
@@ -5008,7 +5762,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "SEAT",
-				"modelName": "Ibiza"
+				"modelName": "Toledo"
 			},
 			"count": 1
 		},
@@ -5019,7 +5773,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "SEAT",
-				"modelName": "Ibiza"
+				"modelName": "Toledo"
 			},
 			"count": 1
 		},
@@ -5041,7 +5795,18 @@
 			},
 			"predicted": {
 				"manufacturerName": "Fiat",
-				"modelName": "500e"
+				"modelName": "Topolino"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Fiat",
+				"modelName": "500"
+			},
+			"predicted": {
+				"manufacturerName": "Fiat",
+				"modelName": "Tipo"
 			},
 			"count": 1
 		},
@@ -5092,11 +5857,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Fiat",
+				"modelName": "500e"
+			},
+			"predicted": {
+				"manufacturerName": "Fiat",
+				"modelName": "Punto"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Fiat",
 				"modelName": "600"
 			},
 			"predicted": {
 				"manufacturerName": "Fiat",
-				"modelName": "500e"
+				"modelName": "Topolino"
 			},
 			"count": 1
 		},
@@ -5107,7 +5883,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Audi",
-				"modelName": "Q3"
+				"modelName": "A1"
 			},
 			"count": 1
 		},
@@ -5128,8 +5904,8 @@
 				"modelName": "A4"
 			},
 			"predicted": {
-				"manufacturerName": "Volvo",
-				"modelName": "S80"
+				"manufacturerName": "Hyundai",
+				"modelName": "Sonata"
 			},
 			"count": 1
 		},
@@ -5139,8 +5915,19 @@
 				"modelName": "A4"
 			},
 			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Golf Variant"
+				"manufacturerName": "Volvo",
+				"modelName": "ES90"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Audi",
+				"modelName": "A4"
+			},
+			"predicted": {
+				"manufacturerName": "Audi",
+				"modelName": "A6"
 			},
 			"count": 1
 		},
@@ -5194,8 +5981,8 @@
 				"modelName": "Q3"
 			},
 			"predicted": {
-				"manufacturerName": "Volvo",
-				"modelName": "XC60"
+				"manufacturerName": "Skoda",
+				"modelName": "Kamiq"
 			},
 			"count": 1
 		},
@@ -5206,7 +5993,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Audi",
-				"modelName": "Q3"
+				"modelName": "A1"
 			},
 			"count": 1
 		},
@@ -5239,7 +6026,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Audi",
-				"modelName": "Q3"
+				"modelName": "A1"
 			},
 			"count": 1
 		},
@@ -5249,8 +6036,8 @@
 				"modelName": "A1"
 			},
 			"predicted": {
-				"manufacturerName": "Honda",
-				"modelName": "ZR-V"
+				"manufacturerName": "Nissan",
+				"modelName": "Kicks"
 			},
 			"count": 1
 		},
@@ -5279,22 +6066,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Audi",
-				"modelName": "A7"
+				"modelName": "A8"
 			},
 			"predicted": {
-				"manufacturerName": "Maserati",
-				"modelName": "Quattroporte"
+				"manufacturerName": "Audi",
+				"modelName": "A8"
 			},
 			"count": 1
 		},
 		{
 			"actual": {
 				"manufacturerName": "Audi",
-				"modelName": "A8"
+				"modelName": "e-tron"
 			},
 			"predicted": {
-				"manufacturerName": "Audi",
-				"modelName": "A8"
+				"manufacturerName": "BMW",
+				"modelName": "X3"
 			},
 			"count": 1
 		},
@@ -5305,7 +6092,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Audi",
-				"modelName": "Q3"
+				"modelName": "A1"
 			},
 			"count": 1
 		},
@@ -5315,8 +6102,8 @@
 				"modelName": "Q4 e-tron"
 			},
 			"predicted": {
-				"manufacturerName": "Mercedes-Benz",
-				"modelName": "EQA"
+				"manufacturerName": "Alfa Romeo",
+				"modelName": "Tonale"
 			},
 			"count": 1
 		},
@@ -5337,30 +6124,19 @@
 				"modelName": "159"
 			},
 			"predicted": {
-				"manufacturerName": "Alfa Romeo",
-				"modelName": "156"
+				"manufacturerName": "BMW",
+				"modelName": "2 Series"
 			},
 			"count": 1
 		},
 		{
 			"actual": {
 				"manufacturerName": "Alfa Romeo",
-				"modelName": "Stelvio"
+				"modelName": "GT"
 			},
 			"predicted": {
-				"manufacturerName": "Maserati",
-				"modelName": "Levante"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Alfa Romeo",
-				"modelName": "Tonale"
-			},
-			"predicted": {
-				"manufacturerName": "Hyundai",
-				"modelName": "Kona"
+				"manufacturerName": "BMW",
+				"modelName": "2 Series"
 			},
 			"count": 1
 		},
@@ -5393,7 +6169,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Volvo",
-				"modelName": "EX90"
+				"modelName": "ES90"
 			},
 			"count": 1
 		},
@@ -5404,7 +6180,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Volvo",
-				"modelName": "EX90"
+				"modelName": "ES90"
 			},
 			"count": 1
 		},
@@ -5437,7 +6213,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Volvo",
-				"modelName": "XC60"
+				"modelName": "EX30"
 			},
 			"count": 1
 		},
@@ -5466,6 +6242,17 @@
 		{
 			"actual": {
 				"manufacturerName": "Volvo",
+				"modelName": "C40"
+			},
+			"predicted": {
+				"manufacturerName": "Ford",
+				"modelName": "Puma"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Volvo",
 				"modelName": "S40"
 			},
 			"predicted": {
@@ -5481,7 +6268,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Volvo",
-				"modelName": "XC60"
+				"modelName": "EX30"
 			},
 			"count": 1
 		},
@@ -5546,30 +6333,8 @@
 				"modelName": "911"
 			},
 			"predicted": {
-				"manufacturerName": "Porsche",
-				"modelName": "911"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Porsche",
-				"modelName": "Cayenne"
-			},
-			"predicted": {
-				"manufacturerName": "Porsche",
-				"modelName": "Cayenne"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Porsche",
-				"modelName": "Cayenne"
-			},
-			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Passat"
+				"manufacturerName": "Toyota",
+				"modelName": "GR86"
 			},
 			"count": 1
 		},
@@ -5580,7 +6345,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Porsche",
-				"modelName": "Taycan"
+				"modelName": "Cayenne Electric"
 			},
 			"count": 1
 		},
@@ -5678,8 +6443,8 @@
 				"modelName": "XE"
 			},
 			"predicted": {
-				"manufacturerName": "Volvo",
-				"modelName": "S90"
+				"manufacturerName": "Audi",
+				"modelName": "A6 e-tron"
 			},
 			"count": 1
 		},
@@ -5687,6 +6452,17 @@
 			"actual": {
 				"manufacturerName": "Jaguar",
 				"modelName": "XF"
+			},
+			"predicted": {
+				"manufacturerName": "Jaguar",
+				"modelName": "XF"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Jaguar",
+				"modelName": "XJ"
 			},
 			"predicted": {
 				"manufacturerName": "Jaguar",
@@ -5701,7 +6477,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Smart",
-				"modelName": "ForFour"
+				"modelName": "Smart #3"
 			},
 			"count": 1
 		},
@@ -5712,7 +6488,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Smart",
-				"modelName": "ForFour"
+				"modelName": "Smart #3"
 			},
 			"count": 1
 		},
@@ -5723,7 +6499,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Smart",
-				"modelName": "ForFour"
+				"modelName": "Smart #3"
 			},
 			"count": 1
 		},
@@ -5734,7 +6510,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Maserati",
-				"modelName": "Levante"
+				"modelName": "Grecale"
 			},
 			"count": 1
 		},
@@ -5755,8 +6531,8 @@
 				"modelName": "DS7"
 			},
 			"predicted": {
-				"manufacturerName": "Kia",
-				"modelName": "ProCeed"
+				"manufacturerName": "Cadillac",
+				"modelName": "CT4"
 			},
 			"count": 1
 		},
@@ -5767,7 +6543,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Cupra",
-				"modelName": "Terramar"
+				"modelName": "Raval"
 			},
 			"count": 1
 		},
@@ -5851,11 +6627,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Lancia",
+				"modelName": "Ypsilon"
+			},
+			"predicted": {
+				"manufacturerName": "Opel",
+				"modelName": "Adam"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lancia",
 				"modelName": "Delta"
 			},
 			"predicted": {
-				"manufacturerName": "SEAT",
-				"modelName": "Altea"
+				"manufacturerName": "Fiat",
+				"modelName": "Tipo"
 			},
 			"count": 1
 		},
@@ -5878,17 +6665,6 @@
 			"predicted": {
 				"manufacturerName": "Ferrari",
 				"modelName": "458 Italia"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Ferrari",
-				"modelName": "F8 Tributo"
-			},
-			"predicted": {
-				"manufacturerName": "Ferrari",
-				"modelName": "SF90 Stradale"
 			},
 			"count": 1
 		},
@@ -5927,17 +6703,6 @@
 		},
 		{
 			"actual": {
-				"manufacturerName": "Ferrari",
-				"modelName": "812 Superfast"
-			},
-			"predicted": {
-				"manufacturerName": "Ferrari",
-				"modelName": "Portofino"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
 				"manufacturerName": "Lamborghini",
 				"modelName": "Aventador"
 			},
@@ -5960,6 +6725,17 @@
 		},
 		{
 			"actual": {
+				"manufacturerName": "Lamborghini",
+				"modelName": "Revuelto"
+			},
+			"predicted": {
+				"manufacturerName": "Lamborghini",
+				"modelName": "Huracan"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
 				"manufacturerName": "Maserati",
 				"modelName": "Ghibli"
 			},
@@ -5976,7 +6752,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Maserati",
-				"modelName": "GranTurismo"
+				"modelName": "Ghibli"
 			},
 			"count": 1
 		},
@@ -6048,6 +6824,28 @@
 		},
 		{
 			"actual": {
+				"manufacturerName": "Aston Martin",
+				"modelName": "Vantage"
+			},
+			"predicted": {
+				"manufacturerName": "Aston Martin",
+				"modelName": "DB12"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Aston Martin",
+				"modelName": "DBS"
+			},
+			"predicted": {
+				"manufacturerName": "Nissan",
+				"modelName": "Z"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
 				"manufacturerName": "McLaren",
 				"modelName": "720S"
 			},
@@ -6103,12 +6901,34 @@
 		},
 		{
 			"actual": {
+				"manufacturerName": "Lotus",
+				"modelName": "Eletre"
+			},
+			"predicted": {
+				"manufacturerName": "Lotus",
+				"modelName": "Emeya"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
 				"manufacturerName": "Polestar",
 				"modelName": "Polestar 2"
 			},
 			"predicted": {
 				"manufacturerName": "Volvo",
-				"modelName": "C40"
+				"modelName": "ES90"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Polestar",
+				"modelName": "Polestar 3"
+			},
+			"predicted": {
+				"manufacturerName": "Polestar",
+				"modelName": "Polestar 5"
 			},
 			"count": 1
 		},
@@ -6151,8 +6971,8 @@
 				"modelName": "MG HS"
 			},
 			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "ID.5"
+				"manufacturerName": "MG",
+				"modelName": "MG4"
 			},
 			"count": 1
 		},
@@ -6173,8 +6993,8 @@
 				"modelName": "Kalos"
 			},
 			"predicted": {
-				"manufacturerName": "Daewoo",
-				"modelName": "Matiz"
+				"manufacturerName": "Chevrolet",
+				"modelName": "Aveo"
 			},
 			"count": 1
 		},
@@ -6186,6 +7006,17 @@
 			"predicted": {
 				"manufacturerName": "Mazda",
 				"modelName": "Mazda3"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Rover",
+				"modelName": "45"
+			},
+			"predicted": {
+				"manufacturerName": "Saab",
+				"modelName": "9-3"
 			},
 			"count": 1
 		},
@@ -6228,8 +7059,8 @@
 				"modelName": "Yaris"
 			},
 			"predicted": {
-				"manufacturerName": "Mazda",
-				"modelName": "Mazda2"
+				"manufacturerName": "Hyundai",
+				"modelName": "Veloster"
 			},
 			"count": 1
 		},
@@ -6252,6 +7083,17 @@
 			"predicted": {
 				"manufacturerName": "Toyota",
 				"modelName": "RAV4"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "Camry"
+			},
+			"predicted": {
+				"manufacturerName": "Lexus",
+				"modelName": "GS"
 			},
 			"count": 1
 		},
@@ -6291,11 +7133,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Toyota",
-				"modelName": "Aygo"
+				"modelName": "Supra"
 			},
 			"predicted": {
 				"manufacturerName": "Toyota",
+				"modelName": "GR86"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
 				"modelName": "Aygo"
+			},
+			"predicted": {
+				"manufacturerName": "Peugeot",
+				"modelName": "107"
 			},
 			"count": 1
 		},
@@ -6307,6 +7160,17 @@
 			"predicted": {
 				"manufacturerName": "Toyota",
 				"modelName": "Prius"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "GR Yaris"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "GR Corolla"
 			},
 			"count": 1
 		},
@@ -6338,8 +7202,8 @@
 				"modelName": "Accord"
 			},
 			"predicted": {
-				"manufacturerName": "Audi",
-				"modelName": "A5"
+				"manufacturerName": "BMW",
+				"modelName": "8 Series"
 			},
 			"count": 1
 		},
@@ -6362,6 +7226,17 @@
 			"predicted": {
 				"manufacturerName": "Honda",
 				"modelName": "HR-V"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Honda",
+				"modelName": "ZR-V"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLC Coupe"
 			},
 			"count": 1
 		},
@@ -6393,30 +7268,8 @@
 				"modelName": "i30"
 			},
 			"predicted": {
-				"manufacturerName": "Kia",
-				"modelName": "Rio"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Hyundai",
-				"modelName": "i30"
-			},
-			"predicted": {
 				"manufacturerName": "Skoda",
 				"modelName": "Superb"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Hyundai",
-				"modelName": "i40"
-			},
-			"predicted": {
-				"manufacturerName": "Hyundai",
-				"modelName": "Sonata"
 			},
 			"count": 1
 		},
@@ -6478,33 +7331,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Hyundai",
-				"modelName": "NEXO"
+				"modelName": "Veloster"
 			},
 			"predicted": {
 				"manufacturerName": "Hyundai",
-				"modelName": "Kona"
+				"modelName": "Accent"
 			},
 			"count": 1
 		},
 		{
 			"actual": {
-				"manufacturerName": "Kia",
-				"modelName": "Ceed"
-			},
-			"predicted": {
-				"manufacturerName": "Opel",
-				"modelName": "Zafira"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Kia",
-				"modelName": "Sportage"
+				"manufacturerName": "Hyundai",
+				"modelName": "i10"
 			},
 			"predicted": {
 				"manufacturerName": "Hyundai",
-				"modelName": "Tucson"
+				"modelName": "i10"
 			},
 			"count": 1
 		},
@@ -6515,7 +7357,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Kia",
-				"modelName": "Carens"
+				"modelName": "Ceed"
 			},
 			"count": 1
 		},
@@ -6547,8 +7389,8 @@
 				"modelName": "Stonic"
 			},
 			"predicted": {
-				"manufacturerName": "unknown",
-				"modelName": "unknown"
+				"manufacturerName": "Opel",
+				"modelName": "Grandland"
 			},
 			"count": 1
 		},
@@ -6558,8 +7400,8 @@
 				"modelName": "ProCeed"
 			},
 			"predicted": {
-				"manufacturerName": "Mercedes-Benz",
-				"modelName": "B-Class"
+				"manufacturerName": "Volkswagen",
+				"modelName": "ID.3"
 			},
 			"count": 1
 		},
@@ -6588,11 +7430,11 @@
 		{
 			"actual": {
 				"manufacturerName": "Nissan",
-				"modelName": "Note"
+				"modelName": "Juke"
 			},
 			"predicted": {
-				"manufacturerName": "Toyota",
-				"modelName": "Corolla"
+				"manufacturerName": "Nissan",
+				"modelName": "Kicks"
 			},
 			"count": 1
 		},
@@ -6613,8 +7455,41 @@
 				"modelName": "X-Trail"
 			},
 			"predicted": {
-				"manufacturerName": "Mitsubishi",
-				"modelName": "Pajero"
+				"manufacturerName": "Subaru",
+				"modelName": "Forester"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Nissan",
+				"modelName": "Leaf"
+			},
+			"predicted": {
+				"manufacturerName": "Lancia",
+				"modelName": "Ypsilon"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Nissan",
+				"modelName": "Navara"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Hilux"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Nissan",
+				"modelName": "Pulsar"
+			},
+			"predicted": {
+				"manufacturerName": "Nissan",
+				"modelName": "Micra"
 			},
 			"count": 1
 		},
@@ -6635,8 +7510,8 @@
 				"modelName": "Mazda6"
 			},
 			"predicted": {
-				"manufacturerName": "SEAT",
-				"modelName": "Leon"
+				"manufacturerName": "Ford",
+				"modelName": "Focus"
 			},
 			"count": 1
 		},
@@ -6679,19 +7554,8 @@
 				"modelName": "MX-30"
 			},
 			"predicted": {
-				"manufacturerName": "BMW",
-				"modelName": "X3"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Mazda",
-				"modelName": "CX-9"
-			},
-			"predicted": {
-				"manufacturerName": "Mazda",
-				"modelName": "CX-5"
+				"manufacturerName": "Suzuki",
+				"modelName": "Swift"
 			},
 			"count": 1
 		},
@@ -6742,11 +7606,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Suzuki",
+				"modelName": "Across"
+			},
+			"predicted": {
+				"manufacturerName": "Nissan",
+				"modelName": "Kicks"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Suzuki",
 				"modelName": "Swace"
 			},
 			"predicted": {
-				"manufacturerName": "Chevrolet",
-				"modelName": "Cruze"
+				"manufacturerName": "Hyundai",
+				"modelName": "Accent"
 			},
 			"count": 1
 		},
@@ -6808,11 +7683,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Subaru",
-				"modelName": "Outback"
+				"modelName": "Forester"
 			},
 			"predicted": {
 				"manufacturerName": "Subaru",
-				"modelName": "Outback"
+				"modelName": "Forester"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Subaru",
+				"modelName": "Forester"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Grand Highlander"
 			},
 			"count": 1
 		},
@@ -6823,7 +7709,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Subaru",
-				"modelName": "XV"
+				"modelName": "Forester"
 			},
 			"count": 1
 		},
@@ -6846,6 +7732,17 @@
 			"predicted": {
 				"manufacturerName": "Subaru",
 				"modelName": "Outback"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Subaru",
+				"modelName": "BRZ"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "GR86"
 			},
 			"count": 1
 		},
@@ -6878,7 +7775,18 @@
 			},
 			"predicted": {
 				"manufacturerName": "Toyota",
-				"modelName": "RAV4"
+				"modelName": "Yaris Cross"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lexus",
+				"modelName": "ES"
+			},
+			"predicted": {
+				"manufacturerName": "Lexus",
+				"modelName": "RC"
 			},
 			"count": 1
 		},
@@ -6899,19 +7807,30 @@
 				"modelName": "RX"
 			},
 			"predicted": {
-				"manufacturerName": "MG",
-				"modelName": "MG4"
+				"manufacturerName": "Toyota",
+				"modelName": "Crown"
 			},
 			"count": 1
 		},
 		{
 			"actual": {
 				"manufacturerName": "Lexus",
-				"modelName": "LS"
+				"modelName": "LX"
 			},
 			"predicted": {
-				"manufacturerName": "Lexus",
-				"modelName": "GS"
+				"manufacturerName": "Toyota",
+				"modelName": "Grand Highlander"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Jeep",
+				"modelName": "Compass"
+			},
+			"predicted": {
+				"manufacturerName": "Skoda",
+				"modelName": "Epiq"
 			},
 			"count": 1
 		},
@@ -6922,7 +7841,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Jeep",
-				"modelName": "Renegade"
+				"modelName": "Wrangler"
 			},
 			"count": 1
 		},
@@ -6940,11 +7859,22 @@
 		{
 			"actual": {
 				"manufacturerName": "Chevrolet",
-				"modelName": "Aveo"
+				"modelName": "Camaro"
 			},
 			"predicted": {
-				"manufacturerName": "Fiat",
-				"modelName": "Linea"
+				"manufacturerName": "Dodge",
+				"modelName": "Charger"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Camaro"
+			},
+			"predicted": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Camaro"
 			},
 			"count": 1
 		},
@@ -6966,18 +7896,7 @@
 			},
 			"predicted": {
 				"manufacturerName": "Citro\u00ebn",
-				"modelName": "C-Picasso"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Chrysler",
-				"modelName": "Voyager"
-			},
-			"predicted": {
-				"manufacturerName": "Volkswagen",
-				"modelName": "Caddy"
+				"modelName": "C3"
 			},
 			"count": 1
 		},
@@ -6998,8 +7917,8 @@
 				"modelName": "Lyriq"
 			},
 			"predicted": {
-				"manufacturerName": "Mercedes-Benz",
-				"modelName": "EQC"
+				"manufacturerName": "Audi",
+				"modelName": "A6 e-tron"
 			},
 			"count": 1
 		},
@@ -7011,17 +7930,6 @@
 			"predicted": {
 				"manufacturerName": "Tesla",
 				"modelName": "Model X"
-			},
-			"count": 1
-		},
-		{
-			"actual": {
-				"manufacturerName": "Tesla",
-				"modelName": "Model Y"
-			},
-			"predicted": {
-				"manufacturerName": "Tesla",
-				"modelName": "Model S"
 			},
 			"count": 1
 		},
@@ -7042,8 +7950,8 @@
 				"modelName": "GV70"
 			},
 			"predicted": {
-				"manufacturerName": "Volvo",
-				"modelName": "V60"
+				"manufacturerName": "Genesis",
+				"modelName": "GV80 Coupe"
 			},
 			"count": 1
 		},
@@ -7071,12 +7979,298 @@
 		},
 		{
 			"actual": {
-				"manufacturerName": "Honda",
-				"modelName": "e:Ny1"
+				"manufacturerName": "BMW",
+				"modelName": "5 Series"
 			},
 			"predicted": {
-				"manufacturerName": "Opel",
-				"modelName": "Frontera"
+				"manufacturerName": "BMW",
+				"modelName": "6 Series GT"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "i7"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "i5"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "iX2"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "X2"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "XM"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "C-HR"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Ford",
+				"modelName": "Explorer (EV)"
+			},
+			"predicted": {
+				"manufacturerName": "Ford",
+				"modelName": "Explorer"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lexus",
+				"modelName": "LBX"
+			},
+			"predicted": {
+				"manufacturerName": "Peugeot",
+				"modelName": "3008"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Citro\u00ebn",
+				"modelName": "C3"
+			},
+			"predicted": {
+				"manufacturerName": "Citro\u00ebn",
+				"modelName": "C3 Aircross"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lancia",
+				"modelName": "Ypsilon"
+			},
+			"predicted": {
+				"manufacturerName": "Lancia",
+				"modelName": "Ypsilon"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "GR86"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Supra"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "Corolla Cross"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Yaris Cross"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "Land Cruiser Prado"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Land Cruiser"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "BMW",
+				"modelName": "iX3 (Neue Klasse)"
+			},
+			"predicted": {
+				"manufacturerName": "BMW",
+				"modelName": "i3 (Neue Klasse)"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLA"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "CLE"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "GLB"
+			},
+			"predicted": {
+				"manufacturerName": "Mercedes-Benz",
+				"modelName": "EQA"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Audi",
+				"modelName": "Q9"
+			},
+			"predicted": {
+				"manufacturerName": "Audi",
+				"modelName": "Q8"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Maserati",
+				"modelName": "MC20"
+			},
+			"predicted": {
+				"manufacturerName": "Maserati",
+				"modelName": "GranTurismo"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Aston Martin",
+				"modelName": "Valhalla"
+			},
+			"predicted": {
+				"manufacturerName": "Lotus",
+				"modelName": "Evija"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "MG",
+				"modelName": "IM5"
+			},
+			"predicted": {
+				"manufacturerName": "MG",
+				"modelName": "IM6"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Toyota",
+				"modelName": "Yaris Cross"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Grand Highlander"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Kia",
+				"modelName": "K4"
+			},
+			"predicted": {
+				"manufacturerName": "Skoda",
+				"modelName": "Enyaq"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Subaru",
+				"modelName": "Forester"
+			},
+			"predicted": {
+				"manufacturerName": "Nissan",
+				"modelName": "X-Trail"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lexus",
+				"modelName": "TX"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Grand Highlander"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Lexus",
+				"modelName": "GX"
+			},
+			"predicted": {
+				"manufacturerName": "Toyota",
+				"modelName": "Grand Highlander"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Jeep",
+				"modelName": "Wagoneer S"
+			},
+			"predicted": {
+				"manufacturerName": "Audi",
+				"modelName": "A6 e-tron"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Equinox EV"
+			},
+			"predicted": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Blazer EV"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Silverado EV"
+			},
+			"predicted": {
+				"manufacturerName": "Chevrolet",
+				"modelName": "Trax"
+			},
+			"count": 1
+		},
+		{
+			"actual": {
+				"manufacturerName": "Cadillac",
+				"modelName": "Vistiq"
+			},
+			"predicted": {
+				"manufacturerName": "Cadillac",
+				"modelName": "Escalade IQ"
 			},
 			"count": 1
 		}

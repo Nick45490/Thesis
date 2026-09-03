@@ -100,12 +100,15 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(1, "up!",          "Supermini"); gen(m,"AA",2011,null,"FWD"); }
 { const m = model(1, "Golf Variant", "Estate");    gen(m,"Mk7",2013,2020,"FWD/AWD"); gen(m,"Mk8",2020,null,"FWD/AWD"); }
 { const m = model(1, "Caddy",        "MPV");       gen(m,"III",2003,2015,"FWD/AWD"); gen(m,"IV",2015,2020,"FWD/AWD"); gen(m,"V",2020,null,"FWD/AWD"); }
+{ const m = model(1, "ID.Buzz",      "MPV");       gen(m,"I",2022,null,"RWD/AWD"); }
+{ const m = model(1, "Amarok",       "Pickup");    gen(m,"II",2022,null,"RWD/4WD"); }
+{ const m = model(1, "Tayron",       "SUV");       gen(m,"I",2024,null,"FWD/AWD"); }
 
 // ── BMW (2) ────────────────────────────────────────────────────────────────────
 { const m = model(2, "3 Series",    "Sedan");      gen(m,"F30",2011,2018,"RWD/AWD"); gen(m,"G20",2018,null,"RWD/AWD"); }
-{ const m = model(2, "5 Series",    "Sedan");      gen(m,"F10",2010,2016,"RWD/AWD"); gen(m,"G30",2016,null,"RWD/AWD"); }
-{ const m = model(2, "1 Series",    "Hatchback");  gen(m,"F20",2011,2019,"RWD"); gen(m,"F40",2019,null,"FWD/AWD"); }
-{ const m = model(2, "X3",          "SUV");        gen(m,"F25",2010,2017,"RWD/AWD"); gen(m,"G01",2017,null,"RWD/AWD"); }
+{ const m = model(2, "5 Series",    "Sedan");      gen(m,"F10",2010,2016,"RWD/AWD"); gen(m,"G30",2016,2023,"RWD/AWD"); gen(m,"G60",2023,null,"RWD/AWD"); }
+{ const m = model(2, "1 Series",    "Hatchback");  gen(m,"F20",2011,2019,"RWD"); gen(m,"F40",2019,2024,"FWD/AWD"); gen(m,"F70",2024,null,"FWD/AWD"); }
+{ const m = model(2, "X3",          "SUV");        gen(m,"F25",2010,2017,"RWD/AWD"); gen(m,"G01",2017,2024,"RWD/AWD"); gen(m,"G45",2024,null,"RWD/AWD"); }
 { const m = model(2, "X5",          "SUV");        gen(m,"F15",2013,2018,"RWD/AWD"); gen(m,"G05",2018,null,"RWD/AWD"); }
 { const m = model(2, "M3",          "Sedan");      gen(m,"F80",2014,2018,"RWD"); gen(m,"G80",2020,null,"RWD/AWD"); }
 { const m = model(2, "7 Series",    "Luxury");     gen(m,"F01",2008,2015,"RWD/AWD"); gen(m,"G11",2015,2022,"RWD/AWD"); gen(m,"G70",2022,null,"RWD/AWD"); }
@@ -127,6 +130,12 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(2, "6 Series GT", "Sedan");      gen(m,"G32",2017,2023,"RWD/AWD"); }
 { const m = model(2, "iX1",         "Crossover");  gen(m,"U11e",2022,null,"FWD/AWD"); }
 { const m = model(2, "iX3",         "SUV");        gen(m,"G08",2020,null,"RWD"); }
+{ const m = model(2, "i5",          "Sedan");      gen(m,"G60e",2023,null,"RWD/AWD"); }
+{ const m = model(2, "i7",          "Luxury");     gen(m,"G70e",2022,null,"RWD/AWD"); }
+{ const m = model(2, "iX2",         "Crossover");  gen(m,"U11e",2024,null,"FWD/AWD"); }
+{ const m = model(2, "XM",          "SUV");        gen(m,"G09",2022,null,"AWD"); }
+{ const m = model(2, "iX3 (Neue Klasse)", "SUV");   gen(m,"NA5",2025,null,"AWD"); }
+{ const m = model(2, "i3 (Neue Klasse)",  "Sedan"); gen(m,"NA0",2026,null,"RWD/AWD"); }
 
 // ── Mercedes-Benz (3) ──────────────────────────────────────────────────────────
 { const m = model(3, "C-Class",    "Sedan");     gen(m,"W204",2007,2014,"RWD/AWD"); gen(m,"W205",2014,2021,"RWD/AWD"); gen(m,"W206",2021,null,"RWD/AWD"); }
@@ -135,12 +144,12 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(3, "GLC",        "SUV");       gen(m,"X253",2015,2022,"RWD/AWD"); gen(m,"X254",2022,null,"RWD/AWD"); }
 { const m = model(3, "GLE",        "SUV");       gen(m,"W166",2015,2018,"RWD/AWD"); gen(m,"V167",2018,null,"RWD/AWD"); }
 { const m = model(3, "S-Class",    "Luxury");    gen(m,"W221",2005,2013,"RWD/AWD"); gen(m,"W222",2013,2020,"RWD/AWD"); gen(m,"W223",2020,null,"RWD/AWD"); }
-{ const m = model(3, "CLA",        "Coupe");     gen(m,"C117",2013,2019,"FWD/AWD"); gen(m,"C118",2019,null,"FWD/AWD"); }
-{ const m = model(3, "GLA",        "Crossover"); gen(m,"X156",2013,2019,"FWD/AWD"); gen(m,"H247",2020,null,"FWD/AWD"); }
+{ const m = model(3, "CLA",        "Coupe");     gen(m,"C117",2013,2019,"FWD/AWD"); gen(m,"C118",2019,2025,"FWD/AWD"); gen(m,"C299",2025,null,"FWD/AWD"); }
+{ const m = model(3, "GLA",        "Crossover"); gen(m,"X156",2013,2019,"FWD/AWD"); gen(m,"H247",2020,2026,"FWD/AWD"); gen(m,"H248",2026,null,"FWD/AWD"); }
 { const m = model(3, "B-Class",    "MPV");       gen(m,"W246",2011,2018,"FWD"); gen(m,"W247",2018,null,"FWD"); }
 { const m = model(3, "GLS",        "SUV");       gen(m,"X166",2016,2019,"RWD/AWD"); gen(m,"X167",2019,null,"RWD/AWD"); }
 { const m = model(3, "CLS",        "Coupe");     gen(m,"W218",2010,2018,"RWD/AWD"); gen(m,"C257",2018,null,"RWD/AWD"); }
-{ const m = model(3, "GLB",        "SUV");       gen(m,"X247",2019,null,"FWD/AWD"); }
+{ const m = model(3, "GLB",        "SUV");       gen(m,"X247",2019,2026,"FWD/AWD"); gen(m,"X248",2026,null,"FWD/AWD"); }
 { const m = model(3, "EQA",        "Crossover"); gen(m,"H243",2021,null,"FWD/AWD"); }
 { const m = model(3, "EQB",        "SUV");       gen(m,"X243",2021,null,"FWD/AWD"); }
 { const m = model(3, "EQC",        "SUV");       gen(m,"N293",2019,2023,"AWD"); }
@@ -151,6 +160,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(3, "AMG GT",     "Sports");    gen(m,"C190",2014,2023,"RWD/AWD"); gen(m,"X290",2023,null,"AWD"); }
 { const m = model(3, "GLK",        "Crossover"); gen(m,"X204",2008,2015,"RWD/AWD"); }
 { const m = model(3, "GLC Coupe",  "SUV");       gen(m,"C253",2016,2022,"RWD/AWD"); gen(m,"C254",2022,null,"RWD/AWD"); }
+{ const m = model(3, "CLE",        "Coupe");     gen(m,"C236",2023,null,"RWD/AWD"); }
+{ const m = model(3, "GLC with EQ Technology", "SUV"); gen(m,"X540",2026,null,"AWD"); }
 
 // ── Opel (4) ───────────────────────────────────────────────────────────────────
 { const m = model(4, "Astra",      "Hatchback"); gen(m,"H",2004,2009,"FWD"); gen(m,"J",2009,2015,"FWD"); gen(m,"K",2015,2021,"FWD"); gen(m,"L",2021,null,"FWD/AWD"); }
@@ -160,7 +171,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(4, "Zafira",     "MPV");       gen(m,"B",2005,2014,"FWD"); gen(m,"C",2011,2019,"FWD"); }
 { const m = model(4, "Vectra",     "Sedan");     gen(m,"C",2002,2008,"FWD/AWD"); }
 { const m = model(4, "Crossland",  "Crossover"); gen(m,"X",2017,null,"FWD"); }
-{ const m = model(4, "Grandland",  "SUV");       gen(m,"X",2017,null,"FWD/AWD"); }
+{ const m = model(4, "Grandland",  "SUV");       gen(m,"X",2017,2024,"FWD/AWD"); gen(m,"II",2024,null,"FWD/AWD"); }
 { const m = model(4, "Meriva",     "MPV");       gen(m,"A",2003,2010,"FWD"); gen(m,"B",2010,2017,"FWD"); }
 { const m = model(4, "Antara",     "Crossover"); gen(m,"I",2006,2015,"FWD/AWD"); }
 { const m = model(4, "Adam",       "Supermini"); gen(m,"I",2012,2019,"FWD"); }
@@ -186,6 +197,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(5, "Bronco",     "SUV");       gen(m,"VI",2021,null,"4WD"); }
 { const m = model(5, "Mustang Mach-E","SUV");    gen(m,"I",2020,null,"RWD/AWD"); }
 { const m = model(5, "Transit Custom","MPV");    gen(m,"I",2012,null,"FWD"); }
+{ const m = model(5, "Capri",          "Crossover"); gen(m,"I",2024,null,"RWD/AWD"); }
+{ const m = model(5, "Explorer (EV)",  "SUV");       gen(m,"I",2024,null,"RWD/AWD"); }
 
 // ── Renault (6) ────────────────────────────────────────────────────────────────
 { const m = model(6, "Clio",       "Supermini"); gen(m,"III",2005,2012,"FWD"); gen(m,"IV",2012,2019,"FWD"); gen(m,"V",2019,null,"FWD"); }
@@ -205,14 +218,17 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(6, "Fluence",    "Sedan");     gen(m,"I",2009,2016,"FWD"); }
 { const m = model(6, "Megane E-Tech","Hatchback");gen(m,"I",2021,null,"FWD"); }
 { const m = model(6, "Rafale",     "Crossover"); gen(m,"I",2023,null,"FWD/AWD"); }
+{ const m = model(6, "5 E-Tech",   "Supermini"); gen(m,"I",2024,null,"FWD"); }
+{ const m = model(6, "Symbioz",    "Crossover"); gen(m,"I",2024,null,"FWD/AWD"); }
+{ const m = model(6, "4 E-Tech",   "Crossover"); gen(m,"I",2025,null,"FWD"); }
 
 // ── Peugeot (7) ────────────────────────────────────────────────────────────────
 { const m = model(7, "208",        "Supermini"); gen(m,"I",2012,2019,"FWD"); gen(m,"II",2019,null,"FWD/AWD"); }
 { const m = model(7, "308",        "Hatchback"); gen(m,"II",2013,2021,"FWD"); gen(m,"III",2021,null,"FWD/AWD"); }
 { const m = model(7, "508",        "Sedan");     gen(m,"I",2011,2018,"FWD"); gen(m,"II",2018,null,"FWD/AWD"); }
 { const m = model(7, "2008",       "Crossover"); gen(m,"I",2013,2019,"FWD"); gen(m,"II",2019,null,"FWD/AWD"); }
-{ const m = model(7, "3008",       "SUV");       gen(m,"I",2009,2016,"FWD"); gen(m,"II",2016,null,"FWD/AWD"); }
-{ const m = model(7, "5008",       "SUV");       gen(m,"I",2009,2017,"FWD"); gen(m,"II",2017,null,"FWD/AWD"); }
+{ const m = model(7, "3008",       "SUV");       gen(m,"I",2009,2016,"FWD"); gen(m,"II",2016,2023,"FWD/AWD"); gen(m,"III",2023,null,"FWD/AWD"); }
+{ const m = model(7, "5008",       "SUV");       gen(m,"I",2009,2017,"FWD"); gen(m,"II",2017,2024,"FWD/AWD"); gen(m,"III",2024,null,"FWD/AWD"); }
 { const m = model(7, "407",        "Sedan");     gen(m,"I",2004,2010,"FWD"); }
 { const m = model(7, "107",        "Supermini"); gen(m,"I",2005,2014,"FWD"); }
 { const m = model(7, "108",        "Supermini"); gen(m,"I",2014,2022,"FWD"); }
@@ -226,7 +242,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(7, "4008",       "Crossover"); gen(m,"I",2012,2017,"FWD/AWD"); }
 
 // ── Citroën (8) ────────────────────────────────────────────────────────────────
-{ const m = model(8, "C3",              "Supermini"); gen(m,"II",2009,2016,"FWD"); gen(m,"III",2016,null,"FWD"); }
+{ const m = model(8, "C3",              "Supermini"); gen(m,"II",2009,2016,"FWD"); gen(m,"III",2016,2024,"FWD"); gen(m,"IV",2024,null,"FWD"); }
 { const m = model(8, "C4",              "Hatchback"); gen(m,"II",2010,2018,"FWD"); gen(m,"III",2020,null,"FWD/AWD"); }
 { const m = model(8, "C5",              "Sedan");     gen(m,"II",2007,2017,"FWD"); }
 { const m = model(8, "Berlingo",        "MPV");       gen(m,"II",2008,2018,"FWD"); gen(m,"III",2018,null,"FWD"); }
@@ -265,6 +281,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(10, "Kamiq",     "Crossover"); gen(m,"I",2019,null,"FWD"); }
 { const m = model(10, "Citigo",    "Supermini"); gen(m,"I",2011,2020,"FWD"); }
 { const m = model(10, "Elroq",     "SUV");       gen(m,"I",2024,null,"RWD/AWD"); }
+{ const m = model(10, "Epiq",      "Crossover"); gen(m,"I",2026,null,"FWD"); }
 
 // ── SEAT (11) ──────────────────────────────────────────────────────────────────
 { const m = model(11, "Leon",      "Hatchback"); gen(m,"II",2005,2012,"FWD"); gen(m,"III",2012,2020,"FWD/AWD"); gen(m,"IV",2020,null,"FWD/AWD"); }
@@ -294,6 +311,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(12, "Sedici",    "Crossover"); gen(m,"I",2006,2014,"FWD/AWD"); }
 { const m = model(12, "Linea",     "Sedan");     gen(m,"I",2007,2017,"FWD"); }
 { const m = model(12, "600",       "Crossover"); gen(m,"I",2023,null,"FWD/AWD"); }
+{ const m = model(12, "Grande Panda", "Crossover"); gen(m,"I",2024,null,"FWD"); }
+{ const m = model(12, "Topolino",  "Supermini"); gen(m,"I",2023,null,"FWD"); }
 
 // ── Audi (13) ──────────────────────────────────────────────────────────────────
 { const m = model(13, "A3",        "Hatchback"); gen(m,"8P",2003,2012,"FWD/AWD"); gen(m,"8V",2012,2020,"FWD/AWD"); gen(m,"8Y",2020,null,"FWD/AWD"); }
@@ -315,6 +334,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(13, "RS6 Avant", "Estate");    gen(m,"C7",2013,2018,"AWD"); gen(m,"C8",2019,null,"AWD"); }
 { const m = model(13, "Q4 e-tron", "Crossover"); gen(m,"F4B",2021,null,"RWD/AWD"); }
 { const m = model(13, "Q6 e-tron", "SUV");       gen(m,"F1e",2024,null,"AWD"); }
+{ const m = model(13, "A6 e-tron", "Sedan");     gen(m,"I",2024,null,"RWD/AWD"); }
+{ const m = model(13, "Q9",        "SUV");       gen(m,"I",2026,null,"AWD"); }
 
 // ── Alfa Romeo (14) ────────────────────────────────────────────────────────────
 { const m = model(14, "147",        "Hatchback");  gen(m,"I",2000,2010,"FWD"); }
@@ -349,9 +370,11 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(15, "EX30",       "Crossover"); gen(m,"I",2023,null,"RWD/AWD"); }
 { const m = model(15, "EX40",       "Crossover"); gen(m,"I",2023,null,"RWD/AWD"); }
 { const m = model(15, "EX90",       "SUV");       gen(m,"I",2024,null,"AWD"); }
+{ const m = model(15, "XC70",       "SUV");       gen(m,"I",2025,null,"AWD"); }
+{ const m = model(15, "ES90",       "Sedan");     gen(m,"I",2025,null,"RWD/AWD"); }
 
 // ── Mini (16) ──────────────────────────────────────────────────────────────────
-{ const m = model(16, "Cooper",      "Hatchback");   gen(m,"R56",2006,2013,"FWD"); gen(m,"F56",2014,null,"FWD/AWD"); }
+{ const m = model(16, "Cooper",      "Hatchback");   gen(m,"R56",2006,2013,"FWD"); gen(m,"F56",2014,2024,"FWD/AWD"); gen(m,"F66",2024,null,"FWD/AWD"); }
 { const m = model(16, "Countryman",  "Crossover");   gen(m,"R60",2010,2016,"FWD/AWD"); gen(m,"F60",2017,2023,"FWD/AWD"); gen(m,"U25",2023,null,"FWD/AWD"); }
 { const m = model(16, "Clubman",     "Estate");      gen(m,"R55",2007,2014,"FWD"); gen(m,"F54",2015,null,"FWD/AWD"); }
 { const m = model(16, "Paceman",     "Crossover");   gen(m,"R61",2012,2016,"FWD/AWD"); }
@@ -364,6 +387,7 @@ mfr(54, "Genesis",        "South Korea");
 // ── Porsche (17) ───────────────────────────────────────────────────────────────
 { const m = model(17, "911",         "Sports");  gen(m,"997",2004,2012,"RWD/AWD"); gen(m,"991",2011,2019,"RWD/AWD"); gen(m,"992",2018,null,"RWD/AWD"); }
 { const m = model(17, "Cayenne",     "SUV");     gen(m,"9PA",2002,2010,"AWD"); gen(m,"92A",2010,2017,"AWD"); gen(m,"9YA",2017,null,"AWD"); }
+{ const m = model(17, "Cayenne Electric", "SUV"); gen(m,"I",2026,null,"AWD"); }
 { const m = model(17, "Macan",       "SUV");     gen(m,"95B",2014,2024,"AWD"); gen(m,"J1",2024,null,"AWD"); }
 { const m = model(17, "Panamera",    "Luxury");  gen(m,"970",2009,2016,"RWD/AWD"); gen(m,"971",2016,null,"RWD/AWD"); }
 { const m = model(17, "Boxster",     "Sports");  gen(m,"987",2004,2012,"RWD"); gen(m,"981",2012,2016,"RWD"); gen(m,"718",2016,null,"RWD"); }
@@ -395,6 +419,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(20, "ForFour",   "Supermini"); gen(m,"W454",2004,2006,"RWD"); gen(m,"W453F",2014,null,"RWD/FWD"); }
 { const m = model(20, "Smart #1",  "Crossover"); gen(m,"HX11",2022,null,"RWD/AWD"); }
 { const m = model(20, "Smart #3",  "Crossover"); gen(m,"HX12",2023,null,"RWD/AWD"); }
+{ const m = model(20, "Smart #5",  "SUV");       gen(m,"HX21",2024,null,"RWD/AWD"); }
+{ const m = model(20, "Smart #6",  "Sedan");     gen(m,"I",2026,null,"FWD/AWD"); }
 
 // ── DS Automobiles (21) ────────────────────────────────────────────────────────
 { const m = model(21, "DS3",       "Supermini"); gen(m,"I",2010,2019,"FWD"); gen(m,"II",2019,null,"FWD/AWD"); }
@@ -402,6 +428,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(21, "DS5",       "Hatchback"); gen(m,"I",2011,2018,"FWD/AWD"); }
 { const m = model(21, "DS7",       "SUV");       gen(m,"I",2017,null,"FWD/AWD"); }
 { const m = model(21, "DS9",       "Sedan");     gen(m,"I",2021,null,"FWD/AWD"); }
+{ const m = model(21, "N°8",       "Crossover"); gen(m,"I",2025,null,"FWD/AWD"); }
 
 // ── Cupra (22) ─────────────────────────────────────────────────────────────────
 { const m = model(22, "Formentor", "Crossover"); gen(m,"I",2020,null,"FWD/AWD"); }
@@ -410,13 +437,14 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(22, "Leon",      "Hatchback"); gen(m,"I",2021,null,"FWD/AWD"); }
 { const m = model(22, "Terramar",  "SUV");       gen(m,"I",2024,null,"FWD/AWD"); }
 { const m = model(22, "Tavascan",  "Crossover"); gen(m,"I",2024,null,"RWD/AWD"); }
+{ const m = model(22, "Raval",     "Hatchback"); gen(m,"I",2026,null,"FWD"); }
 
 // ── Saab (23) ──────────────────────────────────────────────────────────────────
 { const m = model(23, "9-3",       "Sedan");     gen(m,"II",2002,2011,"FWD"); }
 { const m = model(23, "9-5",       "Sedan");     gen(m,"II",2010,2011,"FWD/AWD"); }
 
 // ── Lancia (24) ────────────────────────────────────────────────────────────────
-{ const m = model(24, "Ypsilon",   "Supermini"); gen(m,"II",2003,2011,"FWD"); gen(m,"III",2011,null,"FWD"); }
+{ const m = model(24, "Ypsilon",   "Supermini"); gen(m,"II",2003,2011,"FWD"); gen(m,"III",2011,2024,"FWD"); gen(m,"IV",2024,null,"FWD"); }
 { const m = model(24, "Delta",     "Hatchback"); gen(m,"III",2008,2014,"FWD"); }
 { const m = model(24, "Musa",      "MPV");       gen(m,"I",2004,2012,"FWD"); }
 
@@ -431,6 +459,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(25, "Purosangue",    "SUV");      gen(m,"I",2022,null,"AWD"); }
 { const m = model(25, "Portofino",     "Convertible");gen(m,"I",2017,null,"RWD"); }
 { const m = model(25, "812 Superfast", "Supercar"); gen(m,"I",2017,null,"RWD"); }
+{ const m = model(25, "12Cilindri",    "Supercar"); gen(m,"I",2024,null,"RWD"); }
 
 // ── Lamborghini (26) ───────────────────────────────────────────────────────────
 { const m = model(26, "Gallardo",  "Supercar"); gen(m,"I",2003,2013,"AWD"); }
@@ -438,6 +467,7 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(26, "Aventador", "Supercar"); gen(m,"I",2011,2022,"AWD"); }
 { const m = model(26, "Urus",      "SUV");      gen(m,"I",2018,null,"AWD"); }
 { const m = model(26, "Revuelto",  "Supercar"); gen(m,"I",2023,null,"AWD"); }
+{ const m = model(26, "Temerario", "Supercar"); gen(m,"I",2024,null,"AWD"); }
 
 // ── Maserati (27) ──────────────────────────────────────────────────────────────
 { const m = model(27, "Ghibli",        "Sedan");  gen(m,"III",2013,2022,"RWD/AWD"); }
@@ -445,12 +475,16 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(27, "Levante",       "SUV");     gen(m,"I",2016,null,"RWD/AWD"); }
 { const m = model(27, "GranTurismo",   "Coupe");   gen(m,"I",2007,2019,"RWD"); gen(m,"II",2022,null,"AWD"); }
 { const m = model(27, "Grecale",       "SUV");     gen(m,"I",2022,null,"RWD/AWD"); }
+{ const m = model(27, "MC20",          "Supercar"); gen(m,"I",2020,null,"RWD"); }
+{ const m = model(27, "GranCabrio",    "Convertible"); gen(m,"II",2024,null,"AWD"); }
 
 // ── Bentley (28) ───────────────────────────────────────────────────────────────
 { const m = model(28, "Continental GT", "Luxury"); gen(m,"II",2011,2017,"AWD"); gen(m,"III",2017,null,"AWD"); }
 { const m = model(28, "Flying Spur",    "Luxury"); gen(m,"II",2013,2019,"AWD"); gen(m,"III",2019,null,"AWD"); }
 { const m = model(28, "Bentayga",       "SUV");    gen(m,"I",2015,2020,"AWD"); gen(m,"II",2020,null,"AWD"); }
 { const m = model(28, "Mulsanne",       "Luxury"); gen(m,"III",2010,2020,"RWD"); }
+{ const m = model(28, "Bacalar",        "Coupe");  gen(m,"I",2020,null,"AWD"); }
+{ const m = model(28, "Batur",          "Coupe");  gen(m,"I",2023,null,"AWD"); }
 
 // ── Rolls-Royce (29) ───────────────────────────────────────────────────────────
 { const m = model(29, "Ghost",   "Luxury"); gen(m,"I",2009,2020,"RWD"); gen(m,"II",2020,null,"AWD"); }
@@ -467,6 +501,10 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(30, "DBS",     "Coupe");  gen(m,"II",2007,2012,"RWD"); gen(m,"III",2018,null,"RWD"); }
 { const m = model(30, "Rapide",  "Sedan");  gen(m,"I",2010,2020,"RWD"); }
 { const m = model(30, "DBX",     "SUV");    gen(m,"I",2020,null,"AWD"); }
+{ const m = model(30, "DB12",    "Coupe");  gen(m,"I",2023,null,"RWD"); }
+{ const m = model(30, "Vanquish","Coupe");  gen(m,"I",2024,null,"RWD"); }
+{ const m = model(30, "Valkyrie","Supercar"); gen(m,"I",2021,null,"RWD"); }
+{ const m = model(30, "Valhalla","Supercar"); gen(m,"I",2025,null,"AWD"); }
 
 // ── McLaren (31) ───────────────────────────────────────────────────────────────
 { const m = model(31, "720S",   "Supercar"); gen(m,"I",2017,null,"RWD"); }
@@ -474,6 +512,9 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(31, "GT",     "Sports");   gen(m,"I",2019,null,"RWD"); }
 { const m = model(31, "Artura", "Sports");   gen(m,"I",2021,null,"RWD"); }
 { const m = model(31, "750S",   "Supercar"); gen(m,"I",2023,null,"RWD"); }
+{ const m = model(31, "Elva",     "Sports");   gen(m,"I",2020,null,"RWD"); }
+{ const m = model(31, "Solus GT", "Supercar"); gen(m,"I",2022,null,"RWD"); }
+{ const m = model(31, "W1",       "Supercar"); gen(m,"I",2025,null,"RWD"); }
 
 // ── Lotus (32) ─────────────────────────────────────────────────────────────────
 { const m = model(32, "Elise",  "Sports"); gen(m,"S3",2010,2021,"RWD"); }
@@ -481,11 +522,14 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(32, "Exige",  "Sports"); gen(m,"S3",2011,2021,"RWD"); }
 { const m = model(32, "Emira",  "Sports"); gen(m,"I",2021,null,"RWD"); }
 { const m = model(32, "Eletre", "SUV");    gen(m,"I",2023,null,"AWD"); }
+{ const m = model(32, "Evija",  "Supercar"); gen(m,"I",2024,null,"AWD"); }
+{ const m = model(32, "Emeya",  "Sedan");  gen(m,"I",2024,null,"AWD"); }
 
 // ── Polestar (33) ──────────────────────────────────────────────────────────────
 { const m = model(33, "Polestar 2", "Sedan");     gen(m,"I",2020,null,"RWD/AWD"); }
 { const m = model(33, "Polestar 3", "SUV");       gen(m,"I",2022,null,"AWD"); }
 { const m = model(33, "Polestar 4", "Crossover"); gen(m,"I",2023,null,"AWD"); }
+{ const m = model(33, "Polestar 5", "Sedan");     gen(m,"I",2025,null,"AWD"); }
 
 // ── MG (34) ────────────────────────────────────────────────────────────────────
 { const m = model(34, "MG3",       "Supermini"); gen(m,"I",2013,null,"FWD"); }
@@ -495,6 +539,9 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(34, "MG4",       "Hatchback"); gen(m,"I",2022,null,"RWD/AWD"); }
 { const m = model(34, "MG Cyberster","Convertible");gen(m,"I",2023,null,"RWD/AWD"); }
 { const m = model(34, "MG EHS",    "SUV");       gen(m,"I",2020,null,"FWD/AWD"); }
+{ const m = model(34, "MG7",       "Sedan");     gen(m,"I",2023,null,"FWD"); }
+{ const m = model(34, "IM5",       "Sedan");     gen(m,"I",2025,null,"AWD"); }
+{ const m = model(34, "IM6",       "Crossover"); gen(m,"I",2025,null,"AWD"); }
 
 // ── Daewoo (35) ────────────────────────────────────────────────────────────────
 { const m = model(35, "Matiz",  "Supermini"); gen(m,"I",1998,2005,"FWD"); }
@@ -525,6 +572,14 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(37, "Aygo X",       "Crossover"); gen(m,"I",2021,null,"FWD"); }
 { const m = model(37, "GR Yaris",     "Hatchback"); gen(m,"I",2020,null,"AWD"); }
 { const m = model(37, "Proace City",  "MPV");       gen(m,"I",2019,null,"FWD"); }
+{ const m = model(37, "GR86",         "Coupe");     gen(m,"ZN8",2021,null,"RWD"); }
+{ const m = model(37, "GR Corolla",   "Hatchback"); gen(m,"I",2022,null,"AWD"); }
+{ const m = model(37, "Corolla Cross","Crossover"); gen(m,"I",2022,null,"FWD/AWD"); }
+{ const m = model(37, "Land Cruiser Prado","SUV");  gen(m,"J250",2023,null,"4WD"); }
+{ const m = model(37, "Yaris Cross",   "Crossover"); gen(m,"I",2020,null,"FWD/AWD"); }
+{ const m = model(37, "Crown",         "Sedan");    gen(m,"S20",2022,null,"FWD/AWD"); }
+{ const m = model(37, "Grand Highlander","SUV");    gen(m,"I",2023,null,"FWD/AWD"); }
+{ const m = model(37, "Century",       "SUV");      gen(m,"I",2023,null,"AWD"); }
 
 // ── Honda (38) ─────────────────────────────────────────────────────────────────
 { const m = model(38, "Civic",    "Hatchback"); gen(m,"VIII",2005,2011,"FWD"); gen(m,"IX",2011,2015,"FWD"); gen(m,"X",2015,2021,"FWD"); gen(m,"XI",2021,null,"FWD"); }
@@ -539,13 +594,15 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(38, "Legend",   "Luxury");    gen(m,"IV",2004,2012,"AWD"); }
 { const m = model(38, "Insight",  "Hatchback"); gen(m,"III",2018,2022,"FWD"); }
 { const m = model(38, "e:Ny1",    "Crossover"); gen(m,"I",2023,null,"FWD"); }
+{ const m = model(38, "Elevate",  "Crossover"); gen(m,"I",2023,null,"FWD"); }
+{ const m = model(38, "Prelude",  "Coupe");     gen(m,"VI",2025,null,"FWD"); }
 
 // ── Hyundai (39) ───────────────────────────────────────────────────────────────
 { const m = model(39, "i20",       "Supermini"); gen(m,"I",2008,2014,"FWD"); gen(m,"II",2014,2020,"FWD"); gen(m,"III",2020,null,"FWD"); }
 { const m = model(39, "i30",       "Hatchback"); gen(m,"I",2007,2011,"FWD"); gen(m,"II",2011,2017,"FWD"); gen(m,"III",2017,null,"FWD"); }
 { const m = model(39, "i40",       "Sedan");     gen(m,"I",2011,2019,"FWD"); }
 { const m = model(39, "Tucson",    "SUV");       gen(m,"II",2009,2015,"FWD/AWD"); gen(m,"III",2015,2020,"FWD/AWD"); gen(m,"IV",2020,null,"FWD/AWD"); }
-{ const m = model(39, "Santa Fe",  "SUV");       gen(m,"II",2006,2012,"FWD/AWD"); gen(m,"III",2012,2018,"FWD/AWD"); gen(m,"IV",2018,null,"FWD/AWD"); }
+{ const m = model(39, "Santa Fe",  "SUV");       gen(m,"II",2006,2012,"FWD/AWD"); gen(m,"III",2012,2018,"FWD/AWD"); gen(m,"IV",2018,2024,"FWD/AWD"); gen(m,"V",2024,null,"FWD/AWD"); }
 { const m = model(39, "Sonata",    "Sedan");     gen(m,"NF",2004,2010,"FWD"); gen(m,"YF",2010,2014,"FWD"); gen(m,"LF",2014,2019,"FWD"); gen(m,"DN8",2019,null,"FWD"); }
 { const m = model(39, "Accent",    "Sedan");     gen(m,"RB",2010,2017,"FWD"); gen(m,"HC",2017,null,"FWD"); }
 { const m = model(39, "Ioniq",     "Hatchback"); gen(m,"I",2016,2022,"FWD"); }
@@ -559,6 +616,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(39, "Ioniq 9",   "SUV");       gen(m,"I",2025,null,"RWD/AWD"); }
 { const m = model(39, "ix35",      "Crossover"); gen(m,"I",2009,2015,"FWD/AWD"); }
 { const m = model(39, "i10",       "Supermini"); gen(m,"I",2007,2013,"FWD"); gen(m,"II",2013,2019,"FWD"); gen(m,"III",2019,null,"FWD"); }
+{ const m = model(39, "Casper",    "Crossover"); gen(m,"I",2021,null,"FWD"); }
+{ const m = model(39, "Staria",    "MPV");       gen(m,"I",2021,null,"FWD/AWD"); }
 
 // ── Kia (40) ───────────────────────────────────────────────────────────────────
 { const m = model(40, "Ceed",      "Hatchback"); gen(m,"I",2006,2012,"FWD"); gen(m,"II",2012,2018,"FWD"); gen(m,"III",2018,null,"FWD"); }
@@ -576,6 +635,11 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(40, "ProCeed",   "Estate");    gen(m,"I",2018,null,"FWD"); }
 { const m = model(40, "Carens",    "MPV");       gen(m,"III",2013,2019,"FWD"); gen(m,"IV",2022,null,"FWD"); }
 { const m = model(40, "Venga",     "MPV");       gen(m,"I",2009,2019,"FWD"); }
+{ const m = model(40, "EV3",       "Crossover"); gen(m,"I",2024,null,"FWD/AWD"); }
+{ const m = model(40, "EV5",       "SUV");       gen(m,"I",2024,null,"FWD/AWD"); }
+{ const m = model(40, "EV4",       "Hatchback"); gen(m,"I",2025,null,"FWD"); }
+{ const m = model(40, "Tasman",    "Pickup");    gen(m,"I",2025,null,"RWD/4WD"); }
+{ const m = model(40, "K4",        "Sedan");     gen(m,"I",2024,null,"FWD"); }
 
 // ── Nissan (41) ────────────────────────────────────────────────────────────────
 { const m = model(41, "Micra",     "Supermini"); gen(m,"K12",2002,2010,"FWD"); gen(m,"K13",2010,2017,"FWD"); gen(m,"K14",2017,null,"FWD"); }
@@ -590,6 +654,9 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(41, "GT-R",      "Supercar");  gen(m,"R35",2007,null,"AWD"); }
 { const m = model(41, "Murano",    "SUV");       gen(m,"Z51",2008,2014,"AWD"); gen(m,"Z52",2014,null,"FWD/AWD"); }
 { const m = model(41, "Pulsar",    "Hatchback"); gen(m,"C13",2014,2018,"FWD"); }
+{ const m = model(41, "Z",         "Coupe");     gen(m,"RZ34",2023,null,"RWD"); }
+{ const m = model(41, "Magnite",   "Crossover"); gen(m,"I",2020,null,"FWD"); }
+{ const m = model(41, "Kicks",     "Crossover"); gen(m,"II",2024,null,"FWD/AWD"); }
 
 // ── Mazda (42) ─────────────────────────────────────────────────────────────────
 { const m = model(42, "Mazda2",    "Supermini"); gen(m,"DE",2007,2014,"FWD"); gen(m,"DJ",2014,null,"FWD"); }
@@ -601,23 +668,27 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(42, "MX-5",      "Sports");    gen(m,"NC",2005,2014,"RWD"); gen(m,"ND",2015,null,"RWD"); }
 { const m = model(42, "CX-60",     "SUV");       gen(m,"KH",2022,null,"FWD/AWD"); }
 { const m = model(42, "MX-30",     "Crossover"); gen(m,"DR",2020,null,"FWD"); }
-{ const m = model(42, "CX-9",      "SUV");       gen(m,"TC",2016,null,"AWD"); }
+{ const m = model(42, "CX-9",      "SUV");       gen(m,"TC",2016,2023,"AWD"); }
 { const m = model(42, "RX-8",      "Coupe");     gen(m,"SE3P",2002,2012,"RWD"); }
+{ const m = model(42, "CX-90",     "SUV");       gen(m,"I",2023,null,"AWD"); }
+{ const m = model(42, "CX-50",     "SUV");       gen(m,"I",2022,null,"FWD/AWD"); }
+{ const m = model(42, "CX-80",     "SUV");       gen(m,"I",2024,null,"AWD"); }
 
 // ── Mitsubishi (43) ────────────────────────────────────────────────────────────
 { const m = model(43, "Outlander",     "SUV");       gen(m,"II",2005,2012,"FWD/AWD"); gen(m,"III",2012,2021,"FWD/AWD"); gen(m,"IV",2021,null,"FWD/AWD"); }
-{ const m = model(43, "ASX",           "Crossover"); gen(m,"I",2010,null,"FWD/AWD"); }
+{ const m = model(43, "ASX",           "Crossover"); gen(m,"I",2010,2023,"FWD/AWD"); gen(m,"II",2023,null,"FWD"); }
 { const m = model(43, "Eclipse Cross", "Crossover"); gen(m,"I",2017,null,"FWD/AWD"); }
 { const m = model(43, "L200",          "Pickup");    gen(m,"IV",2005,2014,"4WD"); gen(m,"V",2014,null,"4WD"); }
-{ const m = model(43, "Colt",          "Hatchback"); gen(m,"VI",2004,2012,"FWD"); }
+{ const m = model(43, "Colt",          "Hatchback"); gen(m,"VI",2004,2012,"FWD"); gen(m,"VII",2023,null,"FWD"); }
 { const m = model(43, "Galant",        "Sedan");     gen(m,"IX",2003,2012,"FWD"); }
 { const m = model(43, "Grandis",       "MPV");       gen(m,"I",2003,2011,"FWD"); }
 { const m = model(43, "Pajero",        "SUV");       gen(m,"V80",2006,2021,"4WD"); }
 { const m = model(43, "Space Star",    "Supermini"); gen(m,"I",2012,null,"FWD"); }
 { const m = model(43, "i-MiEV",        "Hatchback"); gen(m,"I",2009,2021,"FWD"); }
+{ const m = model(43, "Destinator",    "SUV");       gen(m,"I",2025,null,"FWD/AWD"); }
 
 // ── Suzuki (44) ────────────────────────────────────────────────────────────────
-{ const m = model(44, "Swift",         "Supermini"); gen(m,"II",2004,2010,"FWD"); gen(m,"III",2010,2017,"FWD/AWD"); gen(m,"IV",2017,null,"FWD"); }
+{ const m = model(44, "Swift",         "Supermini"); gen(m,"II",2004,2010,"FWD"); gen(m,"III",2010,2017,"FWD/AWD"); gen(m,"IV",2017,2024,"FWD"); gen(m,"V",2024,null,"FWD"); }
 { const m = model(44, "Vitara",        "Crossover"); gen(m,"LY",2015,null,"FWD/AWD"); }
 { const m = model(44, "SX4",           "Hatchback"); gen(m,"I",2006,2013,"FWD/AWD"); }
 { const m = model(44, "Grand Vitara",  "SUV");       gen(m,"II",2005,2015,"FWD/AWD"); }
@@ -629,11 +700,13 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(44, "Across",        "SUV");       gen(m,"I",2020,null,"FWD/AWD"); }
 { const m = model(44, "Swace",         "Estate");    gen(m,"I",2020,null,"FWD"); }
 { const m = model(44, "SX4 S-Cross",   "Crossover"); gen(m,"I",2013,2021,"FWD/AWD"); }
+{ const m = model(44, "Fronx",         "Crossover"); gen(m,"I",2023,null,"FWD"); }
+{ const m = model(44, "eVitara",       "SUV");       gen(m,"I",2025,null,"FWD/AWD"); }
 
 // ── Subaru (45) ────────────────────────────────────────────────────────────────
 { const m = model(45, "Impreza",  "Sedan");     gen(m,"GD/GG",2000,2007,"AWD"); gen(m,"GE/GH",2007,2011,"AWD"); gen(m,"GP/GJ",2011,2016,"AWD"); gen(m,"GK/GT",2016,null,"AWD"); }
 { const m = model(45, "Legacy",   "Sedan");     gen(m,"BL/BP",2003,2009,"AWD"); gen(m,"BM/BR",2009,2014,"AWD"); gen(m,"BS/BN",2014,null,"AWD"); }
-{ const m = model(45, "Forester", "SUV");       gen(m,"SG",2002,2008,"AWD"); gen(m,"SH",2008,2012,"AWD"); gen(m,"SJ",2012,2018,"AWD"); gen(m,"SK",2018,null,"AWD"); }
+{ const m = model(45, "Forester", "SUV");       gen(m,"SG",2002,2008,"AWD"); gen(m,"SH",2008,2012,"AWD"); gen(m,"SJ",2012,2018,"AWD"); gen(m,"SK",2018,2024,"AWD"); gen(m,"SL",2024,null,"AWD"); }
 { const m = model(45, "Outback",  "Estate");    gen(m,"BP",2003,2009,"AWD"); gen(m,"BR",2009,2014,"AWD"); gen(m,"BS",2014,2020,"AWD"); gen(m,"BT",2020,null,"AWD"); }
 { const m = model(45, "XV",       "Crossover"); gen(m,"GP",2012,2017,"AWD"); gen(m,"GT",2017,2022,"AWD"); gen(m,"GU",2022,null,"AWD"); }
 { const m = model(45, "BRZ",      "Coupe");     gen(m,"ZC6",2012,2020,"RWD"); gen(m,"ZD8",2021,null,"RWD"); }
@@ -654,6 +727,9 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(46, "RC",        "Coupe");     gen(m,"XC10",2014,null,"RWD/AWD"); }
 { const m = model(46, "RZ",        "SUV");       gen(m,"XJ20",2022,null,"AWD"); }
 { const m = model(46, "LX",        "SUV");       gen(m,"J200",2007,2021,"4WD"); gen(m,"J300",2021,null,"4WD"); }
+{ const m = model(46, "LBX",       "Crossover"); gen(m,"J410",2023,null,"FWD/AWD"); }
+{ const m = model(46, "TX",        "SUV");       gen(m,"K1",2023,null,"FWD/AWD"); }
+{ const m = model(46, "GX",        "SUV");       gen(m,"J250",2023,null,"4WD"); }
 
 // ── Jeep (47) ──────────────────────────────────────────────────────────────────
 { const m = model(47, "Cherokee",       "SUV");       gen(m,"KL",2013,null,"FWD/AWD"); }
@@ -663,6 +739,9 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(47, "Wrangler",       "SUV");       gen(m,"JK",2006,2018,"4WD"); gen(m,"JL",2018,null,"4WD"); }
 { const m = model(47, "Avenger",        "Crossover"); gen(m,"I",2022,null,"FWD/AWD"); }
 { const m = model(47, "Gladiator",      "Pickup");    gen(m,"JT",2019,null,"4WD"); }
+{ const m = model(47, "Wagoneer",       "SUV");       gen(m,"I",2022,null,"4WD"); }
+{ const m = model(47, "Wagoneer S",     "SUV");       gen(m,"I",2024,null,"AWD"); }
+{ const m = model(47, "Recon",          "SUV");       gen(m,"I",2025,null,"AWD"); }
 
 // ── Chevrolet (48) ─────────────────────────────────────────────────────────────
 { const m = model(48, "Cruze",     "Sedan");     gen(m,"J300",2008,2015,"FWD"); gen(m,"J400",2015,2019,"FWD"); }
@@ -675,11 +754,17 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(48, "Spark",     "Supermini"); gen(m,"M300",2009,2016,"FWD"); gen(m,"M400",2016,null,"FWD"); }
 { const m = model(48, "Trax",      "Crossover"); gen(m,"I",2012,2022,"FWD/AWD"); gen(m,"II",2022,null,"FWD/AWD"); }
 { const m = model(48, "Equinox",   "SUV");       gen(m,"III",2017,2021,"FWD/AWD"); gen(m,"IV",2023,null,"FWD/AWD"); }
+{ const m = model(48, "Blazer EV", "SUV");       gen(m,"I",2023,null,"FWD/AWD"); }
+{ const m = model(48, "Trailblazer", "Crossover"); gen(m,"II",2021,null,"FWD/AWD"); }
+{ const m = model(48, "Equinox EV", "SUV");        gen(m,"I",2024,null,"FWD/AWD"); }
+{ const m = model(48, "Silverado EV", "Pickup");   gen(m,"I",2023,null,"4WD"); }
 
 // ── Dodge (49) ─────────────────────────────────────────────────────────────────
-{ const m = model(49, "Challenger", "Coupe"); gen(m,"III",2008,null,"RWD/AWD"); }
-{ const m = model(49, "Charger",    "Sedan"); gen(m,"VII",2011,null,"RWD/AWD"); }
+{ const m = model(49, "Challenger", "Coupe"); gen(m,"III",2008,2023,"RWD/AWD"); }
+// 2024 Charger (VIII) replaces both the Challenger coupe and Charger sedan under one nameplate; modeled here as a new Charger generation.
+{ const m = model(49, "Charger",    "Sedan"); gen(m,"VII",2011,2023,"RWD/AWD"); gen(m,"VIII",2024,null,"RWD/AWD"); }
 { const m = model(49, "Durango",    "SUV");   gen(m,"III",2011,null,"RWD/AWD"); }
+{ const m = model(49, "Hornet",     "Crossover"); gen(m,"I",2023,null,"FWD/AWD"); }
 
 // ── Chrysler (50) ──────────────────────────────────────────────────────────────
 { const m = model(50, "300",      "Sedan"); gen(m,"II",2011,null,"RWD/AWD"); }
@@ -697,6 +782,10 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(52, "CT4",      "Sedan"); gen(m,"I",2019,null,"RWD/AWD"); }
 { const m = model(52, "XT4",      "Crossover");gen(m,"I",2018,null,"FWD/AWD"); }
 { const m = model(52, "Lyriq",    "SUV");   gen(m,"I",2022,null,"RWD/AWD"); }
+{ const m = model(52, "Escalade IQ", "SUV"); gen(m,"I",2024,null,"AWD"); }
+{ const m = model(52, "Optiq",    "Crossover"); gen(m,"I",2024,null,"FWD/AWD"); }
+{ const m = model(52, "Vistiq",   "SUV");       gen(m,"I",2025,null,"AWD"); }
+{ const m = model(52, "Celestiq", "Luxury");    gen(m,"I",2024,null,"AWD"); }
 
 // ── Tesla (53) ─────────────────────────────────────────────────────────────────
 { const m = model(53, "Model S",    "Sedan");  gen(m,"I",2012,2021,"AWD"); gen(m,"Plaid",2021,null,"AWD"); }
@@ -713,6 +802,8 @@ mfr(54, "Genesis",        "South Korea");
 { const m = model(54, "GV80", "SUV");       gen(m,"I",2020,null,"RWD/AWD"); }
 { const m = model(54, "GV60", "Crossover"); gen(m,"I",2021,null,"RWD/AWD"); }
 { const m = model(54, "G70 Shooting Brake","Estate");gen(m,"I",2021,null,"RWD/AWD"); }
+{ const m = model(54, "GV80 Coupe", "SUV"); gen(m,"I",2023,null,"RWD/AWD"); }
+{ const m = model(54, "GV90",       "SUV"); gen(m,"I",2026,null,"AWD"); }
 
 // ── Write data.json ────────────────────────────────────────────────────────────
 const data = { manufacturers, models, generations };

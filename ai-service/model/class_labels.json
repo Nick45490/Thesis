@@ -239,8 +239,32 @@
 		"startYear": 2020,
 		"endYear": null
 	},
-	"BMW|3 Series|F30": {
+	"Volkswagen|ID.Buzz|I": {
 		"generationId": 10031,
+		"manufacturerName": "Volkswagen",
+		"modelName": "ID.Buzz",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Volkswagen|Amarok|II": {
+		"generationId": 10032,
+		"manufacturerName": "Volkswagen",
+		"modelName": "Amarok",
+		"generationCode": "II",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Volkswagen|Tayron|I": {
+		"generationId": 10033,
+		"manufacturerName": "Volkswagen",
+		"modelName": "Tayron",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"BMW|3 Series|F30": {
+		"generationId": 10034,
 		"manufacturerName": "BMW",
 		"modelName": "3 Series",
 		"generationCode": "F30",
@@ -248,7 +272,7 @@
 		"endYear": 2018
 	},
 	"BMW|3 Series|G20": {
-		"generationId": 10032,
+		"generationId": 10035,
 		"manufacturerName": "BMW",
 		"modelName": "3 Series",
 		"generationCode": "G20",
@@ -256,7 +280,7 @@
 		"endYear": null
 	},
 	"BMW|5 Series|F10": {
-		"generationId": 10033,
+		"generationId": 10036,
 		"manufacturerName": "BMW",
 		"modelName": "5 Series",
 		"generationCode": "F10",
@@ -264,15 +288,23 @@
 		"endYear": 2016
 	},
 	"BMW|5 Series|G30": {
-		"generationId": 10034,
+		"generationId": 10037,
 		"manufacturerName": "BMW",
 		"modelName": "5 Series",
 		"generationCode": "G30",
 		"startYear": 2016,
+		"endYear": 2023
+	},
+	"BMW|5 Series|G60": {
+		"generationId": 10038,
+		"manufacturerName": "BMW",
+		"modelName": "5 Series",
+		"generationCode": "G60",
+		"startYear": 2023,
 		"endYear": null
 	},
 	"BMW|1 Series|F20": {
-		"generationId": 10035,
+		"generationId": 10039,
 		"manufacturerName": "BMW",
 		"modelName": "1 Series",
 		"generationCode": "F20",
@@ -280,15 +312,23 @@
 		"endYear": 2019
 	},
 	"BMW|1 Series|F40": {
-		"generationId": 10036,
+		"generationId": 10040,
 		"manufacturerName": "BMW",
 		"modelName": "1 Series",
 		"generationCode": "F40",
 		"startYear": 2019,
+		"endYear": 2024
+	},
+	"BMW|1 Series|F70": {
+		"generationId": 10041,
+		"manufacturerName": "BMW",
+		"modelName": "1 Series",
+		"generationCode": "F70",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"BMW|X3|F25": {
-		"generationId": 10037,
+		"generationId": 10042,
 		"manufacturerName": "BMW",
 		"modelName": "X3",
 		"generationCode": "F25",
@@ -296,15 +336,23 @@
 		"endYear": 2017
 	},
 	"BMW|X3|G01": {
-		"generationId": 10038,
+		"generationId": 10043,
 		"manufacturerName": "BMW",
 		"modelName": "X3",
 		"generationCode": "G01",
 		"startYear": 2017,
+		"endYear": 2024
+	},
+	"BMW|X3|G45": {
+		"generationId": 10044,
+		"manufacturerName": "BMW",
+		"modelName": "X3",
+		"generationCode": "G45",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"BMW|X5|F15": {
-		"generationId": 10039,
+		"generationId": 10045,
 		"manufacturerName": "BMW",
 		"modelName": "X5",
 		"generationCode": "F15",
@@ -312,7 +360,7 @@
 		"endYear": 2018
 	},
 	"BMW|X5|G05": {
-		"generationId": 10040,
+		"generationId": 10046,
 		"manufacturerName": "BMW",
 		"modelName": "X5",
 		"generationCode": "G05",
@@ -320,7 +368,7 @@
 		"endYear": null
 	},
 	"BMW|M3|F80": {
-		"generationId": 10041,
+		"generationId": 10047,
 		"manufacturerName": "BMW",
 		"modelName": "M3",
 		"generationCode": "F80",
@@ -328,7 +376,7 @@
 		"endYear": 2018
 	},
 	"BMW|M3|G80": {
-		"generationId": 10042,
+		"generationId": 10048,
 		"manufacturerName": "BMW",
 		"modelName": "M3",
 		"generationCode": "G80",
@@ -336,7 +384,7 @@
 		"endYear": null
 	},
 	"BMW|7 Series|F01": {
-		"generationId": 10043,
+		"generationId": 10049,
 		"manufacturerName": "BMW",
 		"modelName": "7 Series",
 		"generationCode": "F01",
@@ -344,7 +392,7 @@
 		"endYear": 2015
 	},
 	"BMW|7 Series|G11": {
-		"generationId": 10044,
+		"generationId": 10050,
 		"manufacturerName": "BMW",
 		"modelName": "7 Series",
 		"generationCode": "G11",
@@ -352,7 +400,7 @@
 		"endYear": 2022
 	},
 	"BMW|7 Series|G70": {
-		"generationId": 10045,
+		"generationId": 10051,
 		"manufacturerName": "BMW",
 		"modelName": "7 Series",
 		"generationCode": "G70",
@@ -360,7 +408,7 @@
 		"endYear": null
 	},
 	"BMW|2 Series|F22": {
-		"generationId": 10046,
+		"generationId": 10052,
 		"manufacturerName": "BMW",
 		"modelName": "2 Series",
 		"generationCode": "F22",
@@ -368,7 +416,7 @@
 		"endYear": 2021
 	},
 	"BMW|2 Series|G42": {
-		"generationId": 10047,
+		"generationId": 10053,
 		"manufacturerName": "BMW",
 		"modelName": "2 Series",
 		"generationCode": "G42",
@@ -376,7 +424,7 @@
 		"endYear": null
 	},
 	"BMW|X1|F48": {
-		"generationId": 10048,
+		"generationId": 10054,
 		"manufacturerName": "BMW",
 		"modelName": "X1",
 		"generationCode": "F48",
@@ -384,7 +432,7 @@
 		"endYear": 2022
 	},
 	"BMW|X1|U11": {
-		"generationId": 10049,
+		"generationId": 10055,
 		"manufacturerName": "BMW",
 		"modelName": "X1",
 		"generationCode": "U11",
@@ -392,7 +440,7 @@
 		"endYear": null
 	},
 	"BMW|4 Series|G22": {
-		"generationId": 10050,
+		"generationId": 10056,
 		"manufacturerName": "BMW",
 		"modelName": "4 Series",
 		"generationCode": "G22",
@@ -400,7 +448,7 @@
 		"endYear": null
 	},
 	"BMW|X2|F39": {
-		"generationId": 10051,
+		"generationId": 10057,
 		"manufacturerName": "BMW",
 		"modelName": "X2",
 		"generationCode": "F39",
@@ -408,7 +456,7 @@
 		"endYear": 2023
 	},
 	"BMW|X2|U10": {
-		"generationId": 10052,
+		"generationId": 10058,
 		"manufacturerName": "BMW",
 		"modelName": "X2",
 		"generationCode": "U10",
@@ -416,7 +464,7 @@
 		"endYear": null
 	},
 	"BMW|X4|F26": {
-		"generationId": 10053,
+		"generationId": 10059,
 		"manufacturerName": "BMW",
 		"modelName": "X4",
 		"generationCode": "F26",
@@ -424,7 +472,7 @@
 		"endYear": 2018
 	},
 	"BMW|X4|G02": {
-		"generationId": 10054,
+		"generationId": 10060,
 		"manufacturerName": "BMW",
 		"modelName": "X4",
 		"generationCode": "G02",
@@ -432,7 +480,7 @@
 		"endYear": null
 	},
 	"BMW|X6|E71": {
-		"generationId": 10055,
+		"generationId": 10061,
 		"manufacturerName": "BMW",
 		"modelName": "X6",
 		"generationCode": "E71",
@@ -440,7 +488,7 @@
 		"endYear": 2014
 	},
 	"BMW|X6|F16": {
-		"generationId": 10056,
+		"generationId": 10062,
 		"manufacturerName": "BMW",
 		"modelName": "X6",
 		"generationCode": "F16",
@@ -448,7 +496,7 @@
 		"endYear": 2019
 	},
 	"BMW|X6|G06": {
-		"generationId": 10057,
+		"generationId": 10063,
 		"manufacturerName": "BMW",
 		"modelName": "X6",
 		"generationCode": "G06",
@@ -456,7 +504,7 @@
 		"endYear": null
 	},
 	"BMW|X7|G07": {
-		"generationId": 10058,
+		"generationId": 10064,
 		"manufacturerName": "BMW",
 		"modelName": "X7",
 		"generationCode": "G07",
@@ -464,7 +512,7 @@
 		"endYear": null
 	},
 	"BMW|M2|F87": {
-		"generationId": 10059,
+		"generationId": 10065,
 		"manufacturerName": "BMW",
 		"modelName": "M2",
 		"generationCode": "F87",
@@ -472,7 +520,7 @@
 		"endYear": 2021
 	},
 	"BMW|M2|G87": {
-		"generationId": 10060,
+		"generationId": 10066,
 		"manufacturerName": "BMW",
 		"modelName": "M2",
 		"generationCode": "G87",
@@ -480,7 +528,7 @@
 		"endYear": null
 	},
 	"BMW|M4|F82": {
-		"generationId": 10061,
+		"generationId": 10067,
 		"manufacturerName": "BMW",
 		"modelName": "M4",
 		"generationCode": "F82",
@@ -488,7 +536,7 @@
 		"endYear": 2020
 	},
 	"BMW|M4|G82": {
-		"generationId": 10062,
+		"generationId": 10068,
 		"manufacturerName": "BMW",
 		"modelName": "M4",
 		"generationCode": "G82",
@@ -496,7 +544,7 @@
 		"endYear": null
 	},
 	"BMW|M5|F90": {
-		"generationId": 10063,
+		"generationId": 10069,
 		"manufacturerName": "BMW",
 		"modelName": "M5",
 		"generationCode": "F90",
@@ -504,7 +552,7 @@
 		"endYear": 2024
 	},
 	"BMW|M5|G90": {
-		"generationId": 10064,
+		"generationId": 10070,
 		"manufacturerName": "BMW",
 		"modelName": "M5",
 		"generationCode": "G90",
@@ -512,7 +560,7 @@
 		"endYear": null
 	},
 	"BMW|Z4|E89": {
-		"generationId": 10065,
+		"generationId": 10071,
 		"manufacturerName": "BMW",
 		"modelName": "Z4",
 		"generationCode": "E89",
@@ -520,7 +568,7 @@
 		"endYear": 2016
 	},
 	"BMW|Z4|G29": {
-		"generationId": 10066,
+		"generationId": 10072,
 		"manufacturerName": "BMW",
 		"modelName": "Z4",
 		"generationCode": "G29",
@@ -528,7 +576,7 @@
 		"endYear": null
 	},
 	"BMW|i3|I01": {
-		"generationId": 10067,
+		"generationId": 10073,
 		"manufacturerName": "BMW",
 		"modelName": "i3",
 		"generationCode": "I01",
@@ -536,7 +584,7 @@
 		"endYear": 2022
 	},
 	"BMW|i4|G26": {
-		"generationId": 10068,
+		"generationId": 10074,
 		"manufacturerName": "BMW",
 		"modelName": "i4",
 		"generationCode": "G26",
@@ -544,7 +592,7 @@
 		"endYear": null
 	},
 	"BMW|iX|I20": {
-		"generationId": 10069,
+		"generationId": 10075,
 		"manufacturerName": "BMW",
 		"modelName": "iX",
 		"generationCode": "I20",
@@ -552,7 +600,7 @@
 		"endYear": null
 	},
 	"BMW|8 Series|G15": {
-		"generationId": 10070,
+		"generationId": 10076,
 		"manufacturerName": "BMW",
 		"modelName": "8 Series",
 		"generationCode": "G15",
@@ -560,7 +608,7 @@
 		"endYear": null
 	},
 	"BMW|6 Series GT|G32": {
-		"generationId": 10071,
+		"generationId": 10077,
 		"manufacturerName": "BMW",
 		"modelName": "6 Series GT",
 		"generationCode": "G32",
@@ -568,7 +616,7 @@
 		"endYear": 2023
 	},
 	"BMW|iX1|U11e": {
-		"generationId": 10072,
+		"generationId": 10078,
 		"manufacturerName": "BMW",
 		"modelName": "iX1",
 		"generationCode": "U11e",
@@ -576,15 +624,63 @@
 		"endYear": null
 	},
 	"BMW|iX3|G08": {
-		"generationId": 10073,
+		"generationId": 10079,
 		"manufacturerName": "BMW",
 		"modelName": "iX3",
 		"generationCode": "G08",
 		"startYear": 2020,
 		"endYear": null
 	},
+	"BMW|i5|G60e": {
+		"generationId": 10080,
+		"manufacturerName": "BMW",
+		"modelName": "i5",
+		"generationCode": "G60e",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"BMW|i7|G70e": {
+		"generationId": 10081,
+		"manufacturerName": "BMW",
+		"modelName": "i7",
+		"generationCode": "G70e",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"BMW|iX2|U11e": {
+		"generationId": 10082,
+		"manufacturerName": "BMW",
+		"modelName": "iX2",
+		"generationCode": "U11e",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"BMW|XM|G09": {
+		"generationId": 10083,
+		"manufacturerName": "BMW",
+		"modelName": "XM",
+		"generationCode": "G09",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"BMW|iX3 (Neue Klasse)|NA5": {
+		"generationId": 10084,
+		"manufacturerName": "BMW",
+		"modelName": "iX3 (Neue Klasse)",
+		"generationCode": "NA5",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"BMW|i3 (Neue Klasse)|NA0": {
+		"generationId": 10085,
+		"manufacturerName": "BMW",
+		"modelName": "i3 (Neue Klasse)",
+		"generationCode": "NA0",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"Mercedes-Benz|C-Class|W204": {
-		"generationId": 10074,
+		"generationId": 10086,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "C-Class",
 		"generationCode": "W204",
@@ -592,7 +688,7 @@
 		"endYear": 2014
 	},
 	"Mercedes-Benz|C-Class|W205": {
-		"generationId": 10075,
+		"generationId": 10087,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "C-Class",
 		"generationCode": "W205",
@@ -600,7 +696,7 @@
 		"endYear": 2021
 	},
 	"Mercedes-Benz|C-Class|W206": {
-		"generationId": 10076,
+		"generationId": 10088,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "C-Class",
 		"generationCode": "W206",
@@ -608,7 +704,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|E-Class|W212": {
-		"generationId": 10077,
+		"generationId": 10089,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "E-Class",
 		"generationCode": "W212",
@@ -616,7 +712,7 @@
 		"endYear": 2016
 	},
 	"Mercedes-Benz|E-Class|W213": {
-		"generationId": 10078,
+		"generationId": 10090,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "E-Class",
 		"generationCode": "W213",
@@ -624,7 +720,7 @@
 		"endYear": 2023
 	},
 	"Mercedes-Benz|E-Class|W214": {
-		"generationId": 10079,
+		"generationId": 10091,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "E-Class",
 		"generationCode": "W214",
@@ -632,7 +728,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|A-Class|W176": {
-		"generationId": 10080,
+		"generationId": 10092,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "A-Class",
 		"generationCode": "W176",
@@ -640,7 +736,7 @@
 		"endYear": 2018
 	},
 	"Mercedes-Benz|A-Class|W177": {
-		"generationId": 10081,
+		"generationId": 10093,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "A-Class",
 		"generationCode": "W177",
@@ -648,7 +744,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|GLC|X253": {
-		"generationId": 10082,
+		"generationId": 10094,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLC",
 		"generationCode": "X253",
@@ -656,7 +752,7 @@
 		"endYear": 2022
 	},
 	"Mercedes-Benz|GLC|X254": {
-		"generationId": 10083,
+		"generationId": 10095,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLC",
 		"generationCode": "X254",
@@ -664,7 +760,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|GLE|W166": {
-		"generationId": 10084,
+		"generationId": 10096,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLE",
 		"generationCode": "W166",
@@ -672,7 +768,7 @@
 		"endYear": 2018
 	},
 	"Mercedes-Benz|GLE|V167": {
-		"generationId": 10085,
+		"generationId": 10097,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLE",
 		"generationCode": "V167",
@@ -680,7 +776,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|S-Class|W221": {
-		"generationId": 10086,
+		"generationId": 10098,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "S-Class",
 		"generationCode": "W221",
@@ -688,7 +784,7 @@
 		"endYear": 2013
 	},
 	"Mercedes-Benz|S-Class|W222": {
-		"generationId": 10087,
+		"generationId": 10099,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "S-Class",
 		"generationCode": "W222",
@@ -696,7 +792,7 @@
 		"endYear": 2020
 	},
 	"Mercedes-Benz|S-Class|W223": {
-		"generationId": 10088,
+		"generationId": 10100,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "S-Class",
 		"generationCode": "W223",
@@ -704,7 +800,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|CLA|C117": {
-		"generationId": 10089,
+		"generationId": 10101,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "CLA",
 		"generationCode": "C117",
@@ -712,15 +808,23 @@
 		"endYear": 2019
 	},
 	"Mercedes-Benz|CLA|C118": {
-		"generationId": 10090,
+		"generationId": 10102,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "CLA",
 		"generationCode": "C118",
 		"startYear": 2019,
+		"endYear": 2025
+	},
+	"Mercedes-Benz|CLA|C299": {
+		"generationId": 10103,
+		"manufacturerName": "Mercedes-Benz",
+		"modelName": "CLA",
+		"generationCode": "C299",
+		"startYear": 2025,
 		"endYear": null
 	},
 	"Mercedes-Benz|GLA|X156": {
-		"generationId": 10091,
+		"generationId": 10104,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLA",
 		"generationCode": "X156",
@@ -728,15 +832,23 @@
 		"endYear": 2019
 	},
 	"Mercedes-Benz|GLA|H247": {
-		"generationId": 10092,
+		"generationId": 10105,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLA",
 		"generationCode": "H247",
 		"startYear": 2020,
+		"endYear": 2026
+	},
+	"Mercedes-Benz|GLA|H248": {
+		"generationId": 10106,
+		"manufacturerName": "Mercedes-Benz",
+		"modelName": "GLA",
+		"generationCode": "H248",
+		"startYear": 2026,
 		"endYear": null
 	},
 	"Mercedes-Benz|B-Class|W246": {
-		"generationId": 10093,
+		"generationId": 10107,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "B-Class",
 		"generationCode": "W246",
@@ -744,7 +856,7 @@
 		"endYear": 2018
 	},
 	"Mercedes-Benz|B-Class|W247": {
-		"generationId": 10094,
+		"generationId": 10108,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "B-Class",
 		"generationCode": "W247",
@@ -752,7 +864,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|GLS|X166": {
-		"generationId": 10095,
+		"generationId": 10109,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLS",
 		"generationCode": "X166",
@@ -760,7 +872,7 @@
 		"endYear": 2019
 	},
 	"Mercedes-Benz|GLS|X167": {
-		"generationId": 10096,
+		"generationId": 10110,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLS",
 		"generationCode": "X167",
@@ -768,7 +880,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|CLS|W218": {
-		"generationId": 10097,
+		"generationId": 10111,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "CLS",
 		"generationCode": "W218",
@@ -776,7 +888,7 @@
 		"endYear": 2018
 	},
 	"Mercedes-Benz|CLS|C257": {
-		"generationId": 10098,
+		"generationId": 10112,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "CLS",
 		"generationCode": "C257",
@@ -784,15 +896,23 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|GLB|X247": {
-		"generationId": 10099,
+		"generationId": 10113,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLB",
 		"generationCode": "X247",
 		"startYear": 2019,
+		"endYear": 2026
+	},
+	"Mercedes-Benz|GLB|X248": {
+		"generationId": 10114,
+		"manufacturerName": "Mercedes-Benz",
+		"modelName": "GLB",
+		"generationCode": "X248",
+		"startYear": 2026,
 		"endYear": null
 	},
 	"Mercedes-Benz|EQA|H243": {
-		"generationId": 10100,
+		"generationId": 10115,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "EQA",
 		"generationCode": "H243",
@@ -800,7 +920,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|EQB|X243": {
-		"generationId": 10101,
+		"generationId": 10116,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "EQB",
 		"generationCode": "X243",
@@ -808,7 +928,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|EQC|N293": {
-		"generationId": 10102,
+		"generationId": 10117,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "EQC",
 		"generationCode": "N293",
@@ -816,7 +936,7 @@
 		"endYear": 2023
 	},
 	"Mercedes-Benz|EQE|V295": {
-		"generationId": 10103,
+		"generationId": 10118,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "EQE",
 		"generationCode": "V295",
@@ -824,7 +944,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|EQS|V297": {
-		"generationId": 10104,
+		"generationId": 10119,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "EQS",
 		"generationCode": "V297",
@@ -832,7 +952,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|SL|R230": {
-		"generationId": 10105,
+		"generationId": 10120,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "SL",
 		"generationCode": "R230",
@@ -840,7 +960,7 @@
 		"endYear": 2012
 	},
 	"Mercedes-Benz|SL|R231": {
-		"generationId": 10106,
+		"generationId": 10121,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "SL",
 		"generationCode": "R231",
@@ -848,7 +968,7 @@
 		"endYear": 2021
 	},
 	"Mercedes-Benz|SL|R232": {
-		"generationId": 10107,
+		"generationId": 10122,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "SL",
 		"generationCode": "R232",
@@ -856,7 +976,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|SLC|R172": {
-		"generationId": 10108,
+		"generationId": 10123,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "SLC",
 		"generationCode": "R172",
@@ -864,7 +984,7 @@
 		"endYear": 2020
 	},
 	"Mercedes-Benz|AMG GT|C190": {
-		"generationId": 10109,
+		"generationId": 10124,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "AMG GT",
 		"generationCode": "C190",
@@ -872,7 +992,7 @@
 		"endYear": 2023
 	},
 	"Mercedes-Benz|AMG GT|X290": {
-		"generationId": 10110,
+		"generationId": 10125,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "AMG GT",
 		"generationCode": "X290",
@@ -880,7 +1000,7 @@
 		"endYear": null
 	},
 	"Mercedes-Benz|GLK|X204": {
-		"generationId": 10111,
+		"generationId": 10126,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLK",
 		"generationCode": "X204",
@@ -888,7 +1008,7 @@
 		"endYear": 2015
 	},
 	"Mercedes-Benz|GLC Coupe|C253": {
-		"generationId": 10112,
+		"generationId": 10127,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLC Coupe",
 		"generationCode": "C253",
@@ -896,15 +1016,31 @@
 		"endYear": 2022
 	},
 	"Mercedes-Benz|GLC Coupe|C254": {
-		"generationId": 10113,
+		"generationId": 10128,
 		"manufacturerName": "Mercedes-Benz",
 		"modelName": "GLC Coupe",
 		"generationCode": "C254",
 		"startYear": 2022,
 		"endYear": null
 	},
+	"Mercedes-Benz|CLE|C236": {
+		"generationId": 10129,
+		"manufacturerName": "Mercedes-Benz",
+		"modelName": "CLE",
+		"generationCode": "C236",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Mercedes-Benz|GLC with EQ Technology|X540": {
+		"generationId": 10130,
+		"manufacturerName": "Mercedes-Benz",
+		"modelName": "GLC with EQ Technology",
+		"generationCode": "X540",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"Opel|Astra|H": {
-		"generationId": 10114,
+		"generationId": 10131,
 		"manufacturerName": "Opel",
 		"modelName": "Astra",
 		"generationCode": "H",
@@ -912,7 +1048,7 @@
 		"endYear": 2009
 	},
 	"Opel|Astra|J": {
-		"generationId": 10115,
+		"generationId": 10132,
 		"manufacturerName": "Opel",
 		"modelName": "Astra",
 		"generationCode": "J",
@@ -920,7 +1056,7 @@
 		"endYear": 2015
 	},
 	"Opel|Astra|K": {
-		"generationId": 10116,
+		"generationId": 10133,
 		"manufacturerName": "Opel",
 		"modelName": "Astra",
 		"generationCode": "K",
@@ -928,7 +1064,7 @@
 		"endYear": 2021
 	},
 	"Opel|Astra|L": {
-		"generationId": 10117,
+		"generationId": 10134,
 		"manufacturerName": "Opel",
 		"modelName": "Astra",
 		"generationCode": "L",
@@ -936,7 +1072,7 @@
 		"endYear": null
 	},
 	"Opel|Corsa|D": {
-		"generationId": 10118,
+		"generationId": 10135,
 		"manufacturerName": "Opel",
 		"modelName": "Corsa",
 		"generationCode": "D",
@@ -944,7 +1080,7 @@
 		"endYear": 2014
 	},
 	"Opel|Corsa|E": {
-		"generationId": 10119,
+		"generationId": 10136,
 		"manufacturerName": "Opel",
 		"modelName": "Corsa",
 		"generationCode": "E",
@@ -952,7 +1088,7 @@
 		"endYear": 2019
 	},
 	"Opel|Corsa|F": {
-		"generationId": 10120,
+		"generationId": 10137,
 		"manufacturerName": "Opel",
 		"modelName": "Corsa",
 		"generationCode": "F",
@@ -960,7 +1096,7 @@
 		"endYear": null
 	},
 	"Opel|Insignia|A": {
-		"generationId": 10121,
+		"generationId": 10138,
 		"manufacturerName": "Opel",
 		"modelName": "Insignia",
 		"generationCode": "A",
@@ -968,7 +1104,7 @@
 		"endYear": 2017
 	},
 	"Opel|Insignia|B": {
-		"generationId": 10122,
+		"generationId": 10139,
 		"manufacturerName": "Opel",
 		"modelName": "Insignia",
 		"generationCode": "B",
@@ -976,7 +1112,7 @@
 		"endYear": null
 	},
 	"Opel|Mokka|A": {
-		"generationId": 10123,
+		"generationId": 10140,
 		"manufacturerName": "Opel",
 		"modelName": "Mokka",
 		"generationCode": "A",
@@ -984,7 +1120,7 @@
 		"endYear": 2019
 	},
 	"Opel|Mokka|B": {
-		"generationId": 10124,
+		"generationId": 10141,
 		"manufacturerName": "Opel",
 		"modelName": "Mokka",
 		"generationCode": "B",
@@ -992,7 +1128,7 @@
 		"endYear": null
 	},
 	"Opel|Zafira|B": {
-		"generationId": 10125,
+		"generationId": 10142,
 		"manufacturerName": "Opel",
 		"modelName": "Zafira",
 		"generationCode": "B",
@@ -1000,7 +1136,7 @@
 		"endYear": 2014
 	},
 	"Opel|Zafira|C": {
-		"generationId": 10126,
+		"generationId": 10143,
 		"manufacturerName": "Opel",
 		"modelName": "Zafira",
 		"generationCode": "C",
@@ -1008,7 +1144,7 @@
 		"endYear": 2019
 	},
 	"Opel|Vectra|C": {
-		"generationId": 10127,
+		"generationId": 10144,
 		"manufacturerName": "Opel",
 		"modelName": "Vectra",
 		"generationCode": "C",
@@ -1016,7 +1152,7 @@
 		"endYear": 2008
 	},
 	"Opel|Crossland|X": {
-		"generationId": 10128,
+		"generationId": 10145,
 		"manufacturerName": "Opel",
 		"modelName": "Crossland",
 		"generationCode": "X",
@@ -1024,15 +1160,23 @@
 		"endYear": null
 	},
 	"Opel|Grandland|X": {
-		"generationId": 10129,
+		"generationId": 10146,
 		"manufacturerName": "Opel",
 		"modelName": "Grandland",
 		"generationCode": "X",
 		"startYear": 2017,
+		"endYear": 2024
+	},
+	"Opel|Grandland|II": {
+		"generationId": 10147,
+		"manufacturerName": "Opel",
+		"modelName": "Grandland",
+		"generationCode": "II",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Opel|Meriva|A": {
-		"generationId": 10130,
+		"generationId": 10148,
 		"manufacturerName": "Opel",
 		"modelName": "Meriva",
 		"generationCode": "A",
@@ -1040,7 +1184,7 @@
 		"endYear": 2010
 	},
 	"Opel|Meriva|B": {
-		"generationId": 10131,
+		"generationId": 10149,
 		"manufacturerName": "Opel",
 		"modelName": "Meriva",
 		"generationCode": "B",
@@ -1048,7 +1192,7 @@
 		"endYear": 2017
 	},
 	"Opel|Antara|I": {
-		"generationId": 10132,
+		"generationId": 10150,
 		"manufacturerName": "Opel",
 		"modelName": "Antara",
 		"generationCode": "I",
@@ -1056,7 +1200,7 @@
 		"endYear": 2015
 	},
 	"Opel|Adam|I": {
-		"generationId": 10133,
+		"generationId": 10151,
 		"manufacturerName": "Opel",
 		"modelName": "Adam",
 		"generationCode": "I",
@@ -1064,7 +1208,7 @@
 		"endYear": 2019
 	},
 	"Opel|Cascada|I": {
-		"generationId": 10134,
+		"generationId": 10152,
 		"manufacturerName": "Opel",
 		"modelName": "Cascada",
 		"generationCode": "I",
@@ -1072,7 +1216,7 @@
 		"endYear": 2019
 	},
 	"Opel|Combo|D": {
-		"generationId": 10135,
+		"generationId": 10153,
 		"manufacturerName": "Opel",
 		"modelName": "Combo",
 		"generationCode": "D",
@@ -1080,7 +1224,7 @@
 		"endYear": null
 	},
 	"Opel|Mokka-e|B": {
-		"generationId": 10136,
+		"generationId": 10154,
 		"manufacturerName": "Opel",
 		"modelName": "Mokka-e",
 		"generationCode": "B",
@@ -1088,7 +1232,7 @@
 		"endYear": null
 	},
 	"Opel|Frontera|I": {
-		"generationId": 10137,
+		"generationId": 10155,
 		"manufacturerName": "Opel",
 		"modelName": "Frontera",
 		"generationCode": "I",
@@ -1096,7 +1240,7 @@
 		"endYear": null
 	},
 	"Ford|Focus|Mk2": {
-		"generationId": 10138,
+		"generationId": 10156,
 		"manufacturerName": "Ford",
 		"modelName": "Focus",
 		"generationCode": "Mk2",
@@ -1104,7 +1248,7 @@
 		"endYear": 2011
 	},
 	"Ford|Focus|Mk3": {
-		"generationId": 10139,
+		"generationId": 10157,
 		"manufacturerName": "Ford",
 		"modelName": "Focus",
 		"generationCode": "Mk3",
@@ -1112,7 +1256,7 @@
 		"endYear": 2018
 	},
 	"Ford|Focus|Mk4": {
-		"generationId": 10140,
+		"generationId": 10158,
 		"manufacturerName": "Ford",
 		"modelName": "Focus",
 		"generationCode": "Mk4",
@@ -1120,7 +1264,7 @@
 		"endYear": null
 	},
 	"Ford|Fiesta|Mk6": {
-		"generationId": 10141,
+		"generationId": 10159,
 		"manufacturerName": "Ford",
 		"modelName": "Fiesta",
 		"generationCode": "Mk6",
@@ -1128,7 +1272,7 @@
 		"endYear": 2017
 	},
 	"Ford|Fiesta|Mk7": {
-		"generationId": 10142,
+		"generationId": 10160,
 		"manufacturerName": "Ford",
 		"modelName": "Fiesta",
 		"generationCode": "Mk7",
@@ -1136,7 +1280,7 @@
 		"endYear": 2023
 	},
 	"Ford|Mondeo|Mk4": {
-		"generationId": 10143,
+		"generationId": 10161,
 		"manufacturerName": "Ford",
 		"modelName": "Mondeo",
 		"generationCode": "Mk4",
@@ -1144,7 +1288,7 @@
 		"endYear": 2014
 	},
 	"Ford|Mondeo|Mk5": {
-		"generationId": 10144,
+		"generationId": 10162,
 		"manufacturerName": "Ford",
 		"modelName": "Mondeo",
 		"generationCode": "Mk5",
@@ -1152,7 +1296,7 @@
 		"endYear": 2022
 	},
 	"Ford|Kuga|Mk1": {
-		"generationId": 10145,
+		"generationId": 10163,
 		"manufacturerName": "Ford",
 		"modelName": "Kuga",
 		"generationCode": "Mk1",
@@ -1160,7 +1304,7 @@
 		"endYear": 2012
 	},
 	"Ford|Kuga|Mk2": {
-		"generationId": 10146,
+		"generationId": 10164,
 		"manufacturerName": "Ford",
 		"modelName": "Kuga",
 		"generationCode": "Mk2",
@@ -1168,7 +1312,7 @@
 		"endYear": 2019
 	},
 	"Ford|Kuga|Mk3": {
-		"generationId": 10147,
+		"generationId": 10165,
 		"manufacturerName": "Ford",
 		"modelName": "Kuga",
 		"generationCode": "Mk3",
@@ -1176,7 +1320,7 @@
 		"endYear": null
 	},
 	"Ford|Puma|Mk2": {
-		"generationId": 10148,
+		"generationId": 10166,
 		"manufacturerName": "Ford",
 		"modelName": "Puma",
 		"generationCode": "Mk2",
@@ -1184,7 +1328,7 @@
 		"endYear": null
 	},
 	"Ford|EcoSport|Mk2": {
-		"generationId": 10149,
+		"generationId": 10167,
 		"manufacturerName": "Ford",
 		"modelName": "EcoSport",
 		"generationCode": "Mk2",
@@ -1192,7 +1336,7 @@
 		"endYear": 2022
 	},
 	"Ford|S-MAX|Mk1": {
-		"generationId": 10150,
+		"generationId": 10168,
 		"manufacturerName": "Ford",
 		"modelName": "S-MAX",
 		"generationCode": "Mk1",
@@ -1200,7 +1344,7 @@
 		"endYear": 2015
 	},
 	"Ford|S-MAX|Mk2": {
-		"generationId": 10151,
+		"generationId": 10169,
 		"manufacturerName": "Ford",
 		"modelName": "S-MAX",
 		"generationCode": "Mk2",
@@ -1208,7 +1352,7 @@
 		"endYear": null
 	},
 	"Ford|Galaxy|Mk3": {
-		"generationId": 10152,
+		"generationId": 10170,
 		"manufacturerName": "Ford",
 		"modelName": "Galaxy",
 		"generationCode": "Mk3",
@@ -1216,7 +1360,7 @@
 		"endYear": 2015
 	},
 	"Ford|Galaxy|Mk4": {
-		"generationId": 10153,
+		"generationId": 10171,
 		"manufacturerName": "Ford",
 		"modelName": "Galaxy",
 		"generationCode": "Mk4",
@@ -1224,7 +1368,7 @@
 		"endYear": null
 	},
 	"Ford|Mustang|S550": {
-		"generationId": 10154,
+		"generationId": 10172,
 		"manufacturerName": "Ford",
 		"modelName": "Mustang",
 		"generationCode": "S550",
@@ -1232,7 +1376,7 @@
 		"endYear": 2023
 	},
 	"Ford|Mustang|S650": {
-		"generationId": 10155,
+		"generationId": 10173,
 		"manufacturerName": "Ford",
 		"modelName": "Mustang",
 		"generationCode": "S650",
@@ -1240,7 +1384,7 @@
 		"endYear": null
 	},
 	"Ford|Ranger|T6": {
-		"generationId": 10156,
+		"generationId": 10174,
 		"manufacturerName": "Ford",
 		"modelName": "Ranger",
 		"generationCode": "T6",
@@ -1248,7 +1392,7 @@
 		"endYear": 2022
 	},
 	"Ford|Ranger|T7": {
-		"generationId": 10157,
+		"generationId": 10175,
 		"manufacturerName": "Ford",
 		"modelName": "Ranger",
 		"generationCode": "T7",
@@ -1256,7 +1400,7 @@
 		"endYear": null
 	},
 	"Ford|C-MAX|Mk1": {
-		"generationId": 10158,
+		"generationId": 10176,
 		"manufacturerName": "Ford",
 		"modelName": "C-MAX",
 		"generationCode": "Mk1",
@@ -1264,7 +1408,7 @@
 		"endYear": 2010
 	},
 	"Ford|C-MAX|Mk2": {
-		"generationId": 10159,
+		"generationId": 10177,
 		"manufacturerName": "Ford",
 		"modelName": "C-MAX",
 		"generationCode": "Mk2",
@@ -1272,7 +1416,7 @@
 		"endYear": 2019
 	},
 	"Ford|Edge|Mk1": {
-		"generationId": 10160,
+		"generationId": 10178,
 		"manufacturerName": "Ford",
 		"modelName": "Edge",
 		"generationCode": "Mk1",
@@ -1280,7 +1424,7 @@
 		"endYear": 2014
 	},
 	"Ford|Edge|Mk2": {
-		"generationId": 10161,
+		"generationId": 10179,
 		"manufacturerName": "Ford",
 		"modelName": "Edge",
 		"generationCode": "Mk2",
@@ -1288,7 +1432,7 @@
 		"endYear": null
 	},
 	"Ford|Explorer|U502": {
-		"generationId": 10162,
+		"generationId": 10180,
 		"manufacturerName": "Ford",
 		"modelName": "Explorer",
 		"generationCode": "U502",
@@ -1296,7 +1440,7 @@
 		"endYear": 2019
 	},
 	"Ford|Explorer|U625": {
-		"generationId": 10163,
+		"generationId": 10181,
 		"manufacturerName": "Ford",
 		"modelName": "Explorer",
 		"generationCode": "U625",
@@ -1304,7 +1448,7 @@
 		"endYear": null
 	},
 	"Ford|Bronco|VI": {
-		"generationId": 10164,
+		"generationId": 10182,
 		"manufacturerName": "Ford",
 		"modelName": "Bronco",
 		"generationCode": "VI",
@@ -1312,7 +1456,7 @@
 		"endYear": null
 	},
 	"Ford|Mustang Mach-E|I": {
-		"generationId": 10165,
+		"generationId": 10183,
 		"manufacturerName": "Ford",
 		"modelName": "Mustang Mach-E",
 		"generationCode": "I",
@@ -1320,15 +1464,31 @@
 		"endYear": null
 	},
 	"Ford|Transit Custom|I": {
-		"generationId": 10166,
+		"generationId": 10184,
 		"manufacturerName": "Ford",
 		"modelName": "Transit Custom",
 		"generationCode": "I",
 		"startYear": 2012,
 		"endYear": null
 	},
+	"Ford|Capri|I": {
+		"generationId": 10185,
+		"manufacturerName": "Ford",
+		"modelName": "Capri",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Ford|Explorer (EV)|I": {
+		"generationId": 10186,
+		"manufacturerName": "Ford",
+		"modelName": "Explorer (EV)",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Renault|Clio|III": {
-		"generationId": 10167,
+		"generationId": 10187,
 		"manufacturerName": "Renault",
 		"modelName": "Clio",
 		"generationCode": "III",
@@ -1336,7 +1496,7 @@
 		"endYear": 2012
 	},
 	"Renault|Clio|IV": {
-		"generationId": 10168,
+		"generationId": 10188,
 		"manufacturerName": "Renault",
 		"modelName": "Clio",
 		"generationCode": "IV",
@@ -1344,7 +1504,7 @@
 		"endYear": 2019
 	},
 	"Renault|Clio|V": {
-		"generationId": 10169,
+		"generationId": 10189,
 		"manufacturerName": "Renault",
 		"modelName": "Clio",
 		"generationCode": "V",
@@ -1352,7 +1512,7 @@
 		"endYear": null
 	},
 	"Renault|Megane|III": {
-		"generationId": 10170,
+		"generationId": 10190,
 		"manufacturerName": "Renault",
 		"modelName": "Megane",
 		"generationCode": "III",
@@ -1360,7 +1520,7 @@
 		"endYear": 2015
 	},
 	"Renault|Megane|IV": {
-		"generationId": 10171,
+		"generationId": 10191,
 		"manufacturerName": "Renault",
 		"modelName": "Megane",
 		"generationCode": "IV",
@@ -1368,7 +1528,7 @@
 		"endYear": null
 	},
 	"Renault|Captur|I": {
-		"generationId": 10172,
+		"generationId": 10192,
 		"manufacturerName": "Renault",
 		"modelName": "Captur",
 		"generationCode": "I",
@@ -1376,7 +1536,7 @@
 		"endYear": 2019
 	},
 	"Renault|Captur|II": {
-		"generationId": 10173,
+		"generationId": 10193,
 		"manufacturerName": "Renault",
 		"modelName": "Captur",
 		"generationCode": "II",
@@ -1384,7 +1544,7 @@
 		"endYear": null
 	},
 	"Renault|Kadjar|I": {
-		"generationId": 10174,
+		"generationId": 10194,
 		"manufacturerName": "Renault",
 		"modelName": "Kadjar",
 		"generationCode": "I",
@@ -1392,7 +1552,7 @@
 		"endYear": 2022
 	},
 	"Renault|Koleos|I": {
-		"generationId": 10175,
+		"generationId": 10195,
 		"manufacturerName": "Renault",
 		"modelName": "Koleos",
 		"generationCode": "I",
@@ -1400,7 +1560,7 @@
 		"endYear": 2017
 	},
 	"Renault|Koleos|II": {
-		"generationId": 10176,
+		"generationId": 10196,
 		"manufacturerName": "Renault",
 		"modelName": "Koleos",
 		"generationCode": "II",
@@ -1408,7 +1568,7 @@
 		"endYear": null
 	},
 	"Renault|Zoe|I": {
-		"generationId": 10177,
+		"generationId": 10197,
 		"manufacturerName": "Renault",
 		"modelName": "Zoe",
 		"generationCode": "I",
@@ -1416,7 +1576,7 @@
 		"endYear": 2019
 	},
 	"Renault|Zoe|II": {
-		"generationId": 10178,
+		"generationId": 10198,
 		"manufacturerName": "Renault",
 		"modelName": "Zoe",
 		"generationCode": "II",
@@ -1424,7 +1584,7 @@
 		"endYear": null
 	},
 	"Renault|Talisman|I": {
-		"generationId": 10179,
+		"generationId": 10199,
 		"manufacturerName": "Renault",
 		"modelName": "Talisman",
 		"generationCode": "I",
@@ -1432,7 +1592,7 @@
 		"endYear": 2022
 	},
 	"Renault|Scenic|III": {
-		"generationId": 10180,
+		"generationId": 10200,
 		"manufacturerName": "Renault",
 		"modelName": "Scenic",
 		"generationCode": "III",
@@ -1440,7 +1600,7 @@
 		"endYear": 2016
 	},
 	"Renault|Scenic|IV": {
-		"generationId": 10181,
+		"generationId": 10201,
 		"manufacturerName": "Renault",
 		"modelName": "Scenic",
 		"generationCode": "IV",
@@ -1448,7 +1608,7 @@
 		"endYear": 2022
 	},
 	"Renault|Scenic|V": {
-		"generationId": 10182,
+		"generationId": 10202,
 		"manufacturerName": "Renault",
 		"modelName": "Scenic",
 		"generationCode": "V",
@@ -1456,7 +1616,7 @@
 		"endYear": null
 	},
 	"Renault|Twingo|III": {
-		"generationId": 10183,
+		"generationId": 10203,
 		"manufacturerName": "Renault",
 		"modelName": "Twingo",
 		"generationCode": "III",
@@ -1464,7 +1624,7 @@
 		"endYear": null
 	},
 	"Renault|Kangoo|II": {
-		"generationId": 10184,
+		"generationId": 10204,
 		"manufacturerName": "Renault",
 		"modelName": "Kangoo",
 		"generationCode": "II",
@@ -1472,7 +1632,7 @@
 		"endYear": 2021
 	},
 	"Renault|Kangoo|III": {
-		"generationId": 10185,
+		"generationId": 10205,
 		"manufacturerName": "Renault",
 		"modelName": "Kangoo",
 		"generationCode": "III",
@@ -1480,7 +1640,7 @@
 		"endYear": null
 	},
 	"Renault|Austral|I": {
-		"generationId": 10186,
+		"generationId": 10206,
 		"manufacturerName": "Renault",
 		"modelName": "Austral",
 		"generationCode": "I",
@@ -1488,7 +1648,7 @@
 		"endYear": null
 	},
 	"Renault|Arkana|I": {
-		"generationId": 10187,
+		"generationId": 10207,
 		"manufacturerName": "Renault",
 		"modelName": "Arkana",
 		"generationCode": "I",
@@ -1496,7 +1656,7 @@
 		"endYear": null
 	},
 	"Renault|Espace|IV": {
-		"generationId": 10188,
+		"generationId": 10208,
 		"manufacturerName": "Renault",
 		"modelName": "Espace",
 		"generationCode": "IV",
@@ -1504,7 +1664,7 @@
 		"endYear": 2022
 	},
 	"Renault|Espace|V": {
-		"generationId": 10189,
+		"generationId": 10209,
 		"manufacturerName": "Renault",
 		"modelName": "Espace",
 		"generationCode": "V",
@@ -1512,7 +1672,7 @@
 		"endYear": null
 	},
 	"Renault|Symbol|II": {
-		"generationId": 10190,
+		"generationId": 10210,
 		"manufacturerName": "Renault",
 		"modelName": "Symbol",
 		"generationCode": "II",
@@ -1520,7 +1680,7 @@
 		"endYear": 2016
 	},
 	"Renault|Symbol|III": {
-		"generationId": 10191,
+		"generationId": 10211,
 		"manufacturerName": "Renault",
 		"modelName": "Symbol",
 		"generationCode": "III",
@@ -1528,7 +1688,7 @@
 		"endYear": null
 	},
 	"Renault|Fluence|I": {
-		"generationId": 10192,
+		"generationId": 10212,
 		"manufacturerName": "Renault",
 		"modelName": "Fluence",
 		"generationCode": "I",
@@ -1536,7 +1696,7 @@
 		"endYear": 2016
 	},
 	"Renault|Megane E-Tech|I": {
-		"generationId": 10193,
+		"generationId": 10213,
 		"manufacturerName": "Renault",
 		"modelName": "Megane E-Tech",
 		"generationCode": "I",
@@ -1544,15 +1704,39 @@
 		"endYear": null
 	},
 	"Renault|Rafale|I": {
-		"generationId": 10194,
+		"generationId": 10214,
 		"manufacturerName": "Renault",
 		"modelName": "Rafale",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Renault|5 E-Tech|I": {
+		"generationId": 10215,
+		"manufacturerName": "Renault",
+		"modelName": "5 E-Tech",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Renault|Symbioz|I": {
+		"generationId": 10216,
+		"manufacturerName": "Renault",
+		"modelName": "Symbioz",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Renault|4 E-Tech|I": {
+		"generationId": 10217,
+		"manufacturerName": "Renault",
+		"modelName": "4 E-Tech",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Peugeot|208|I": {
-		"generationId": 10195,
+		"generationId": 10218,
 		"manufacturerName": "Peugeot",
 		"modelName": "208",
 		"generationCode": "I",
@@ -1560,7 +1744,7 @@
 		"endYear": 2019
 	},
 	"Peugeot|208|II": {
-		"generationId": 10196,
+		"generationId": 10219,
 		"manufacturerName": "Peugeot",
 		"modelName": "208",
 		"generationCode": "II",
@@ -1568,7 +1752,7 @@
 		"endYear": null
 	},
 	"Peugeot|308|II": {
-		"generationId": 10197,
+		"generationId": 10220,
 		"manufacturerName": "Peugeot",
 		"modelName": "308",
 		"generationCode": "II",
@@ -1576,7 +1760,7 @@
 		"endYear": 2021
 	},
 	"Peugeot|308|III": {
-		"generationId": 10198,
+		"generationId": 10221,
 		"manufacturerName": "Peugeot",
 		"modelName": "308",
 		"generationCode": "III",
@@ -1584,7 +1768,7 @@
 		"endYear": null
 	},
 	"Peugeot|508|I": {
-		"generationId": 10199,
+		"generationId": 10222,
 		"manufacturerName": "Peugeot",
 		"modelName": "508",
 		"generationCode": "I",
@@ -1592,7 +1776,7 @@
 		"endYear": 2018
 	},
 	"Peugeot|508|II": {
-		"generationId": 10200,
+		"generationId": 10223,
 		"manufacturerName": "Peugeot",
 		"modelName": "508",
 		"generationCode": "II",
@@ -1600,7 +1784,7 @@
 		"endYear": null
 	},
 	"Peugeot|2008|I": {
-		"generationId": 10201,
+		"generationId": 10224,
 		"manufacturerName": "Peugeot",
 		"modelName": "2008",
 		"generationCode": "I",
@@ -1608,7 +1792,7 @@
 		"endYear": 2019
 	},
 	"Peugeot|2008|II": {
-		"generationId": 10202,
+		"generationId": 10225,
 		"manufacturerName": "Peugeot",
 		"modelName": "2008",
 		"generationCode": "II",
@@ -1616,7 +1800,7 @@
 		"endYear": null
 	},
 	"Peugeot|3008|I": {
-		"generationId": 10203,
+		"generationId": 10226,
 		"manufacturerName": "Peugeot",
 		"modelName": "3008",
 		"generationCode": "I",
@@ -1624,15 +1808,23 @@
 		"endYear": 2016
 	},
 	"Peugeot|3008|II": {
-		"generationId": 10204,
+		"generationId": 10227,
 		"manufacturerName": "Peugeot",
 		"modelName": "3008",
 		"generationCode": "II",
 		"startYear": 2016,
+		"endYear": 2023
+	},
+	"Peugeot|3008|III": {
+		"generationId": 10228,
+		"manufacturerName": "Peugeot",
+		"modelName": "3008",
+		"generationCode": "III",
+		"startYear": 2023,
 		"endYear": null
 	},
 	"Peugeot|5008|I": {
-		"generationId": 10205,
+		"generationId": 10229,
 		"manufacturerName": "Peugeot",
 		"modelName": "5008",
 		"generationCode": "I",
@@ -1640,15 +1832,23 @@
 		"endYear": 2017
 	},
 	"Peugeot|5008|II": {
-		"generationId": 10206,
+		"generationId": 10230,
 		"manufacturerName": "Peugeot",
 		"modelName": "5008",
 		"generationCode": "II",
 		"startYear": 2017,
+		"endYear": 2024
+	},
+	"Peugeot|5008|III": {
+		"generationId": 10231,
+		"manufacturerName": "Peugeot",
+		"modelName": "5008",
+		"generationCode": "III",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Peugeot|407|I": {
-		"generationId": 10207,
+		"generationId": 10232,
 		"manufacturerName": "Peugeot",
 		"modelName": "407",
 		"generationCode": "I",
@@ -1656,7 +1856,7 @@
 		"endYear": 2010
 	},
 	"Peugeot|107|I": {
-		"generationId": 10208,
+		"generationId": 10233,
 		"manufacturerName": "Peugeot",
 		"modelName": "107",
 		"generationCode": "I",
@@ -1664,7 +1864,7 @@
 		"endYear": 2014
 	},
 	"Peugeot|108|I": {
-		"generationId": 10209,
+		"generationId": 10234,
 		"manufacturerName": "Peugeot",
 		"modelName": "108",
 		"generationCode": "I",
@@ -1672,7 +1872,7 @@
 		"endYear": 2022
 	},
 	"Peugeot|Partner|II": {
-		"generationId": 10210,
+		"generationId": 10235,
 		"manufacturerName": "Peugeot",
 		"modelName": "Partner",
 		"generationCode": "II",
@@ -1680,7 +1880,7 @@
 		"endYear": 2018
 	},
 	"Peugeot|Partner|III": {
-		"generationId": 10211,
+		"generationId": 10236,
 		"manufacturerName": "Peugeot",
 		"modelName": "Partner",
 		"generationCode": "III",
@@ -1688,7 +1888,7 @@
 		"endYear": null
 	},
 	"Peugeot|206|I": {
-		"generationId": 10212,
+		"generationId": 10237,
 		"manufacturerName": "Peugeot",
 		"modelName": "206",
 		"generationCode": "I",
@@ -1696,7 +1896,7 @@
 		"endYear": 2009
 	},
 	"Peugeot|207|I": {
-		"generationId": 10213,
+		"generationId": 10238,
 		"manufacturerName": "Peugeot",
 		"modelName": "207",
 		"generationCode": "I",
@@ -1704,7 +1904,7 @@
 		"endYear": 2012
 	},
 	"Peugeot|307|I": {
-		"generationId": 10214,
+		"generationId": 10239,
 		"manufacturerName": "Peugeot",
 		"modelName": "307",
 		"generationCode": "I",
@@ -1712,7 +1912,7 @@
 		"endYear": 2008
 	},
 	"Peugeot|408|I": {
-		"generationId": 10215,
+		"generationId": 10240,
 		"manufacturerName": "Peugeot",
 		"modelName": "408",
 		"generationCode": "I",
@@ -1720,7 +1920,7 @@
 		"endYear": null
 	},
 	"Peugeot|RCZ|I": {
-		"generationId": 10216,
+		"generationId": 10241,
 		"manufacturerName": "Peugeot",
 		"modelName": "RCZ",
 		"generationCode": "I",
@@ -1728,7 +1928,7 @@
 		"endYear": 2015
 	},
 	"Peugeot|Rifter|I": {
-		"generationId": 10217,
+		"generationId": 10242,
 		"manufacturerName": "Peugeot",
 		"modelName": "Rifter",
 		"generationCode": "I",
@@ -1736,7 +1936,7 @@
 		"endYear": null
 	},
 	"Peugeot|4008|I": {
-		"generationId": 10218,
+		"generationId": 10243,
 		"manufacturerName": "Peugeot",
 		"modelName": "4008",
 		"generationCode": "I",
@@ -1744,7 +1944,7 @@
 		"endYear": 2017
 	},
 	"Citroën|C3|II": {
-		"generationId": 10219,
+		"generationId": 10244,
 		"manufacturerName": "Citroën",
 		"modelName": "C3",
 		"generationCode": "II",
@@ -1752,15 +1952,23 @@
 		"endYear": 2016
 	},
 	"Citroën|C3|III": {
-		"generationId": 10220,
+		"generationId": 10245,
 		"manufacturerName": "Citroën",
 		"modelName": "C3",
 		"generationCode": "III",
 		"startYear": 2016,
+		"endYear": 2024
+	},
+	"Citroën|C3|IV": {
+		"generationId": 10246,
+		"manufacturerName": "Citroën",
+		"modelName": "C3",
+		"generationCode": "IV",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Citroën|C4|II": {
-		"generationId": 10221,
+		"generationId": 10247,
 		"manufacturerName": "Citroën",
 		"modelName": "C4",
 		"generationCode": "II",
@@ -1768,7 +1976,7 @@
 		"endYear": 2018
 	},
 	"Citroën|C4|III": {
-		"generationId": 10222,
+		"generationId": 10248,
 		"manufacturerName": "Citroën",
 		"modelName": "C4",
 		"generationCode": "III",
@@ -1776,7 +1984,7 @@
 		"endYear": null
 	},
 	"Citroën|C5|II": {
-		"generationId": 10223,
+		"generationId": 10249,
 		"manufacturerName": "Citroën",
 		"modelName": "C5",
 		"generationCode": "II",
@@ -1784,7 +1992,7 @@
 		"endYear": 2017
 	},
 	"Citroën|Berlingo|II": {
-		"generationId": 10224,
+		"generationId": 10250,
 		"manufacturerName": "Citroën",
 		"modelName": "Berlingo",
 		"generationCode": "II",
@@ -1792,7 +2000,7 @@
 		"endYear": 2018
 	},
 	"Citroën|Berlingo|III": {
-		"generationId": 10225,
+		"generationId": 10251,
 		"manufacturerName": "Citroën",
 		"modelName": "Berlingo",
 		"generationCode": "III",
@@ -1800,7 +2008,7 @@
 		"endYear": null
 	},
 	"Citroën|C5 Aircross|I": {
-		"generationId": 10226,
+		"generationId": 10252,
 		"manufacturerName": "Citroën",
 		"modelName": "C5 Aircross",
 		"generationCode": "I",
@@ -1808,7 +2016,7 @@
 		"endYear": null
 	},
 	"Citroën|C3 Aircross|I": {
-		"generationId": 10227,
+		"generationId": 10253,
 		"manufacturerName": "Citroën",
 		"modelName": "C3 Aircross",
 		"generationCode": "I",
@@ -1816,7 +2024,7 @@
 		"endYear": null
 	},
 	"Citroën|C-Picasso|II": {
-		"generationId": 10228,
+		"generationId": 10254,
 		"manufacturerName": "Citroën",
 		"modelName": "C-Picasso",
 		"generationCode": "II",
@@ -1824,7 +2032,7 @@
 		"endYear": 2016
 	},
 	"Citroën|Grand C-Picasso|II": {
-		"generationId": 10229,
+		"generationId": 10255,
 		"manufacturerName": "Citroën",
 		"modelName": "Grand C-Picasso",
 		"generationCode": "II",
@@ -1832,7 +2040,7 @@
 		"endYear": 2016
 	},
 	"Citroën|C-Elysée|I": {
-		"generationId": 10230,
+		"generationId": 10256,
 		"manufacturerName": "Citroën",
 		"modelName": "C-Elysée",
 		"generationCode": "I",
@@ -1840,7 +2048,7 @@
 		"endYear": null
 	},
 	"Citroën|C1|II": {
-		"generationId": 10231,
+		"generationId": 10257,
 		"manufacturerName": "Citroën",
 		"modelName": "C1",
 		"generationCode": "II",
@@ -1848,7 +2056,7 @@
 		"endYear": 2022
 	},
 	"Citroën|C4 Cactus|I": {
-		"generationId": 10232,
+		"generationId": 10258,
 		"manufacturerName": "Citroën",
 		"modelName": "C4 Cactus",
 		"generationCode": "I",
@@ -1856,7 +2064,7 @@
 		"endYear": 2018
 	},
 	"Citroën|C2|I": {
-		"generationId": 10233,
+		"generationId": 10259,
 		"manufacturerName": "Citroën",
 		"modelName": "C2",
 		"generationCode": "I",
@@ -1864,7 +2072,7 @@
 		"endYear": 2009
 	},
 	"Citroën|C4 SpaceTourer|I": {
-		"generationId": 10234,
+		"generationId": 10260,
 		"manufacturerName": "Citroën",
 		"modelName": "C4 SpaceTourer",
 		"generationCode": "I",
@@ -1872,7 +2080,7 @@
 		"endYear": 2021
 	},
 	"Citroën|C5 X|I": {
-		"generationId": 10235,
+		"generationId": 10261,
 		"manufacturerName": "Citroën",
 		"modelName": "C5 X",
 		"generationCode": "I",
@@ -1880,7 +2088,7 @@
 		"endYear": null
 	},
 	"Dacia|Logan|I": {
-		"generationId": 10236,
+		"generationId": 10262,
 		"manufacturerName": "Dacia",
 		"modelName": "Logan",
 		"generationCode": "I",
@@ -1888,7 +2096,7 @@
 		"endYear": 2012
 	},
 	"Dacia|Logan|II": {
-		"generationId": 10237,
+		"generationId": 10263,
 		"manufacturerName": "Dacia",
 		"modelName": "Logan",
 		"generationCode": "II",
@@ -1896,7 +2104,7 @@
 		"endYear": 2020
 	},
 	"Dacia|Logan|III": {
-		"generationId": 10238,
+		"generationId": 10264,
 		"manufacturerName": "Dacia",
 		"modelName": "Logan",
 		"generationCode": "III",
@@ -1904,7 +2112,7 @@
 		"endYear": null
 	},
 	"Dacia|Sandero|I": {
-		"generationId": 10239,
+		"generationId": 10265,
 		"manufacturerName": "Dacia",
 		"modelName": "Sandero",
 		"generationCode": "I",
@@ -1912,7 +2120,7 @@
 		"endYear": 2012
 	},
 	"Dacia|Sandero|II": {
-		"generationId": 10240,
+		"generationId": 10266,
 		"manufacturerName": "Dacia",
 		"modelName": "Sandero",
 		"generationCode": "II",
@@ -1920,7 +2128,7 @@
 		"endYear": 2020
 	},
 	"Dacia|Sandero|III": {
-		"generationId": 10241,
+		"generationId": 10267,
 		"manufacturerName": "Dacia",
 		"modelName": "Sandero",
 		"generationCode": "III",
@@ -1928,7 +2136,7 @@
 		"endYear": null
 	},
 	"Dacia|Duster|I": {
-		"generationId": 10242,
+		"generationId": 10268,
 		"manufacturerName": "Dacia",
 		"modelName": "Duster",
 		"generationCode": "I",
@@ -1936,7 +2144,7 @@
 		"endYear": 2017
 	},
 	"Dacia|Duster|II": {
-		"generationId": 10243,
+		"generationId": 10269,
 		"manufacturerName": "Dacia",
 		"modelName": "Duster",
 		"generationCode": "II",
@@ -1944,7 +2152,7 @@
 		"endYear": null
 	},
 	"Dacia|Lodgy|I": {
-		"generationId": 10244,
+		"generationId": 10270,
 		"manufacturerName": "Dacia",
 		"modelName": "Lodgy",
 		"generationCode": "I",
@@ -1952,7 +2160,7 @@
 		"endYear": null
 	},
 	"Dacia|Dokker|I": {
-		"generationId": 10245,
+		"generationId": 10271,
 		"manufacturerName": "Dacia",
 		"modelName": "Dokker",
 		"generationCode": "I",
@@ -1960,7 +2168,7 @@
 		"endYear": null
 	},
 	"Dacia|Logan MCV|II": {
-		"generationId": 10246,
+		"generationId": 10272,
 		"manufacturerName": "Dacia",
 		"modelName": "Logan MCV",
 		"generationCode": "II",
@@ -1968,7 +2176,7 @@
 		"endYear": 2020
 	},
 	"Dacia|Jogger|I": {
-		"generationId": 10247,
+		"generationId": 10273,
 		"manufacturerName": "Dacia",
 		"modelName": "Jogger",
 		"generationCode": "I",
@@ -1976,7 +2184,7 @@
 		"endYear": null
 	},
 	"Dacia|Spring|I": {
-		"generationId": 10248,
+		"generationId": 10274,
 		"manufacturerName": "Dacia",
 		"modelName": "Spring",
 		"generationCode": "I",
@@ -1984,7 +2192,7 @@
 		"endYear": null
 	},
 	"Dacia|Bigster|I": {
-		"generationId": 10249,
+		"generationId": 10275,
 		"manufacturerName": "Dacia",
 		"modelName": "Bigster",
 		"generationCode": "I",
@@ -1992,7 +2200,7 @@
 		"endYear": null
 	},
 	"Skoda|Octavia|II": {
-		"generationId": 10250,
+		"generationId": 10276,
 		"manufacturerName": "Skoda",
 		"modelName": "Octavia",
 		"generationCode": "II",
@@ -2000,7 +2208,7 @@
 		"endYear": 2013
 	},
 	"Skoda|Octavia|III": {
-		"generationId": 10251,
+		"generationId": 10277,
 		"manufacturerName": "Skoda",
 		"modelName": "Octavia",
 		"generationCode": "III",
@@ -2008,7 +2216,7 @@
 		"endYear": 2020
 	},
 	"Skoda|Octavia|IV": {
-		"generationId": 10252,
+		"generationId": 10278,
 		"manufacturerName": "Skoda",
 		"modelName": "Octavia",
 		"generationCode": "IV",
@@ -2016,7 +2224,7 @@
 		"endYear": null
 	},
 	"Skoda|Fabia|II": {
-		"generationId": 10253,
+		"generationId": 10279,
 		"manufacturerName": "Skoda",
 		"modelName": "Fabia",
 		"generationCode": "II",
@@ -2024,7 +2232,7 @@
 		"endYear": 2014
 	},
 	"Skoda|Fabia|III": {
-		"generationId": 10254,
+		"generationId": 10280,
 		"manufacturerName": "Skoda",
 		"modelName": "Fabia",
 		"generationCode": "III",
@@ -2032,7 +2240,7 @@
 		"endYear": 2021
 	},
 	"Skoda|Fabia|IV": {
-		"generationId": 10255,
+		"generationId": 10281,
 		"manufacturerName": "Skoda",
 		"modelName": "Fabia",
 		"generationCode": "IV",
@@ -2040,7 +2248,7 @@
 		"endYear": null
 	},
 	"Skoda|Superb|II": {
-		"generationId": 10256,
+		"generationId": 10282,
 		"manufacturerName": "Skoda",
 		"modelName": "Superb",
 		"generationCode": "II",
@@ -2048,7 +2256,7 @@
 		"endYear": 2015
 	},
 	"Skoda|Superb|III": {
-		"generationId": 10257,
+		"generationId": 10283,
 		"manufacturerName": "Skoda",
 		"modelName": "Superb",
 		"generationCode": "III",
@@ -2056,7 +2264,7 @@
 		"endYear": null
 	},
 	"Skoda|Kodiaq|I": {
-		"generationId": 10258,
+		"generationId": 10284,
 		"manufacturerName": "Skoda",
 		"modelName": "Kodiaq",
 		"generationCode": "I",
@@ -2064,7 +2272,7 @@
 		"endYear": 2023
 	},
 	"Skoda|Kodiaq|II": {
-		"generationId": 10259,
+		"generationId": 10285,
 		"manufacturerName": "Skoda",
 		"modelName": "Kodiaq",
 		"generationCode": "II",
@@ -2072,7 +2280,7 @@
 		"endYear": null
 	},
 	"Skoda|Karoq|I": {
-		"generationId": 10260,
+		"generationId": 10286,
 		"manufacturerName": "Skoda",
 		"modelName": "Karoq",
 		"generationCode": "I",
@@ -2080,7 +2288,7 @@
 		"endYear": null
 	},
 	"Skoda|Yeti|I": {
-		"generationId": 10261,
+		"generationId": 10287,
 		"manufacturerName": "Skoda",
 		"modelName": "Yeti",
 		"generationCode": "I",
@@ -2088,7 +2296,7 @@
 		"endYear": 2017
 	},
 	"Skoda|Rapid|I": {
-		"generationId": 10262,
+		"generationId": 10288,
 		"manufacturerName": "Skoda",
 		"modelName": "Rapid",
 		"generationCode": "I",
@@ -2096,7 +2304,7 @@
 		"endYear": 2019
 	},
 	"Skoda|Scala|I": {
-		"generationId": 10263,
+		"generationId": 10289,
 		"manufacturerName": "Skoda",
 		"modelName": "Scala",
 		"generationCode": "I",
@@ -2104,7 +2312,7 @@
 		"endYear": null
 	},
 	"Skoda|Enyaq|I": {
-		"generationId": 10264,
+		"generationId": 10290,
 		"manufacturerName": "Skoda",
 		"modelName": "Enyaq",
 		"generationCode": "I",
@@ -2112,7 +2320,7 @@
 		"endYear": null
 	},
 	"Skoda|Kamiq|I": {
-		"generationId": 10265,
+		"generationId": 10291,
 		"manufacturerName": "Skoda",
 		"modelName": "Kamiq",
 		"generationCode": "I",
@@ -2120,7 +2328,7 @@
 		"endYear": null
 	},
 	"Skoda|Citigo|I": {
-		"generationId": 10266,
+		"generationId": 10292,
 		"manufacturerName": "Skoda",
 		"modelName": "Citigo",
 		"generationCode": "I",
@@ -2128,15 +2336,23 @@
 		"endYear": 2020
 	},
 	"Skoda|Elroq|I": {
-		"generationId": 10267,
+		"generationId": 10293,
 		"manufacturerName": "Skoda",
 		"modelName": "Elroq",
 		"generationCode": "I",
 		"startYear": 2024,
 		"endYear": null
 	},
+	"Skoda|Epiq|I": {
+		"generationId": 10294,
+		"manufacturerName": "Skoda",
+		"modelName": "Epiq",
+		"generationCode": "I",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"SEAT|Leon|II": {
-		"generationId": 10268,
+		"generationId": 10295,
 		"manufacturerName": "SEAT",
 		"modelName": "Leon",
 		"generationCode": "II",
@@ -2144,7 +2360,7 @@
 		"endYear": 2012
 	},
 	"SEAT|Leon|III": {
-		"generationId": 10269,
+		"generationId": 10296,
 		"manufacturerName": "SEAT",
 		"modelName": "Leon",
 		"generationCode": "III",
@@ -2152,7 +2368,7 @@
 		"endYear": 2020
 	},
 	"SEAT|Leon|IV": {
-		"generationId": 10270,
+		"generationId": 10297,
 		"manufacturerName": "SEAT",
 		"modelName": "Leon",
 		"generationCode": "IV",
@@ -2160,7 +2376,7 @@
 		"endYear": null
 	},
 	"SEAT|Ibiza|IV": {
-		"generationId": 10271,
+		"generationId": 10298,
 		"manufacturerName": "SEAT",
 		"modelName": "Ibiza",
 		"generationCode": "IV",
@@ -2168,7 +2384,7 @@
 		"endYear": 2017
 	},
 	"SEAT|Ibiza|V": {
-		"generationId": 10272,
+		"generationId": 10299,
 		"manufacturerName": "SEAT",
 		"modelName": "Ibiza",
 		"generationCode": "V",
@@ -2176,7 +2392,7 @@
 		"endYear": null
 	},
 	"SEAT|Ateca|I": {
-		"generationId": 10273,
+		"generationId": 10300,
 		"manufacturerName": "SEAT",
 		"modelName": "Ateca",
 		"generationCode": "I",
@@ -2184,7 +2400,7 @@
 		"endYear": null
 	},
 	"SEAT|Arona|I": {
-		"generationId": 10274,
+		"generationId": 10301,
 		"manufacturerName": "SEAT",
 		"modelName": "Arona",
 		"generationCode": "I",
@@ -2192,7 +2408,7 @@
 		"endYear": null
 	},
 	"SEAT|Tarraco|I": {
-		"generationId": 10275,
+		"generationId": 10302,
 		"manufacturerName": "SEAT",
 		"modelName": "Tarraco",
 		"generationCode": "I",
@@ -2200,7 +2416,7 @@
 		"endYear": null
 	},
 	"SEAT|Toledo|III": {
-		"generationId": 10276,
+		"generationId": 10303,
 		"manufacturerName": "SEAT",
 		"modelName": "Toledo",
 		"generationCode": "III",
@@ -2208,7 +2424,7 @@
 		"endYear": 2009
 	},
 	"SEAT|Toledo|IV": {
-		"generationId": 10277,
+		"generationId": 10304,
 		"manufacturerName": "SEAT",
 		"modelName": "Toledo",
 		"generationCode": "IV",
@@ -2216,7 +2432,7 @@
 		"endYear": 2019
 	},
 	"SEAT|Altea|I": {
-		"generationId": 10278,
+		"generationId": 10305,
 		"manufacturerName": "SEAT",
 		"modelName": "Altea",
 		"generationCode": "I",
@@ -2224,7 +2440,7 @@
 		"endYear": 2015
 	},
 	"SEAT|Mii|I": {
-		"generationId": 10279,
+		"generationId": 10306,
 		"manufacturerName": "SEAT",
 		"modelName": "Mii",
 		"generationCode": "I",
@@ -2232,7 +2448,7 @@
 		"endYear": 2019
 	},
 	"SEAT|Alhambra|II": {
-		"generationId": 10280,
+		"generationId": 10307,
 		"manufacturerName": "SEAT",
 		"modelName": "Alhambra",
 		"generationCode": "II",
@@ -2240,7 +2456,7 @@
 		"endYear": 2022
 	},
 	"SEAT|Exeo|I": {
-		"generationId": 10281,
+		"generationId": 10308,
 		"manufacturerName": "SEAT",
 		"modelName": "Exeo",
 		"generationCode": "I",
@@ -2248,7 +2464,7 @@
 		"endYear": 2013
 	},
 	"Fiat|Punto|Grande": {
-		"generationId": 10282,
+		"generationId": 10309,
 		"manufacturerName": "Fiat",
 		"modelName": "Punto",
 		"generationCode": "Grande",
@@ -2256,7 +2472,7 @@
 		"endYear": 2018
 	},
 	"Fiat|Bravo|II": {
-		"generationId": 10283,
+		"generationId": 10310,
 		"manufacturerName": "Fiat",
 		"modelName": "Bravo",
 		"generationCode": "II",
@@ -2264,7 +2480,7 @@
 		"endYear": 2014
 	},
 	"Fiat|500|III": {
-		"generationId": 10284,
+		"generationId": 10311,
 		"manufacturerName": "Fiat",
 		"modelName": "500",
 		"generationCode": "III",
@@ -2272,7 +2488,7 @@
 		"endYear": null
 	},
 	"Fiat|Panda|II": {
-		"generationId": 10285,
+		"generationId": 10312,
 		"manufacturerName": "Fiat",
 		"modelName": "Panda",
 		"generationCode": "II",
@@ -2280,7 +2496,7 @@
 		"endYear": 2011
 	},
 	"Fiat|Panda|III": {
-		"generationId": 10286,
+		"generationId": 10313,
 		"manufacturerName": "Fiat",
 		"modelName": "Panda",
 		"generationCode": "III",
@@ -2288,7 +2504,7 @@
 		"endYear": null
 	},
 	"Fiat|Tipo|II": {
-		"generationId": 10287,
+		"generationId": 10314,
 		"manufacturerName": "Fiat",
 		"modelName": "Tipo",
 		"generationCode": "II",
@@ -2296,7 +2512,7 @@
 		"endYear": null
 	},
 	"Fiat|500X|I": {
-		"generationId": 10288,
+		"generationId": 10315,
 		"manufacturerName": "Fiat",
 		"modelName": "500X",
 		"generationCode": "I",
@@ -2304,7 +2520,7 @@
 		"endYear": null
 	},
 	"Fiat|Doblo|II": {
-		"generationId": 10289,
+		"generationId": 10316,
 		"manufacturerName": "Fiat",
 		"modelName": "Doblo",
 		"generationCode": "II",
@@ -2312,7 +2528,7 @@
 		"endYear": 2021
 	},
 	"Fiat|Doblo|III": {
-		"generationId": 10290,
+		"generationId": 10317,
 		"manufacturerName": "Fiat",
 		"modelName": "Doblo",
 		"generationCode": "III",
@@ -2320,7 +2536,7 @@
 		"endYear": null
 	},
 	"Fiat|Stilo|I": {
-		"generationId": 10291,
+		"generationId": 10318,
 		"manufacturerName": "Fiat",
 		"modelName": "Stilo",
 		"generationCode": "I",
@@ -2328,7 +2544,7 @@
 		"endYear": 2007
 	},
 	"Fiat|500L|I": {
-		"generationId": 10292,
+		"generationId": 10319,
 		"manufacturerName": "Fiat",
 		"modelName": "500L",
 		"generationCode": "I",
@@ -2336,7 +2552,7 @@
 		"endYear": null
 	},
 	"Fiat|Freemont|I": {
-		"generationId": 10293,
+		"generationId": 10320,
 		"manufacturerName": "Fiat",
 		"modelName": "Freemont",
 		"generationCode": "I",
@@ -2344,7 +2560,7 @@
 		"endYear": 2016
 	},
 	"Fiat|500e|IV": {
-		"generationId": 10294,
+		"generationId": 10321,
 		"manufacturerName": "Fiat",
 		"modelName": "500e",
 		"generationCode": "IV",
@@ -2352,7 +2568,7 @@
 		"endYear": null
 	},
 	"Fiat|Croma|II": {
-		"generationId": 10295,
+		"generationId": 10322,
 		"manufacturerName": "Fiat",
 		"modelName": "Croma",
 		"generationCode": "II",
@@ -2360,7 +2576,7 @@
 		"endYear": 2011
 	},
 	"Fiat|Sedici|I": {
-		"generationId": 10296,
+		"generationId": 10323,
 		"manufacturerName": "Fiat",
 		"modelName": "Sedici",
 		"generationCode": "I",
@@ -2368,7 +2584,7 @@
 		"endYear": 2014
 	},
 	"Fiat|Linea|I": {
-		"generationId": 10297,
+		"generationId": 10324,
 		"manufacturerName": "Fiat",
 		"modelName": "Linea",
 		"generationCode": "I",
@@ -2376,15 +2592,31 @@
 		"endYear": 2017
 	},
 	"Fiat|600|I": {
-		"generationId": 10298,
+		"generationId": 10325,
 		"manufacturerName": "Fiat",
 		"modelName": "600",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Fiat|Grande Panda|I": {
+		"generationId": 10326,
+		"manufacturerName": "Fiat",
+		"modelName": "Grande Panda",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Fiat|Topolino|I": {
+		"generationId": 10327,
+		"manufacturerName": "Fiat",
+		"modelName": "Topolino",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Audi|A3|8P": {
-		"generationId": 10299,
+		"generationId": 10328,
 		"manufacturerName": "Audi",
 		"modelName": "A3",
 		"generationCode": "8P",
@@ -2392,7 +2624,7 @@
 		"endYear": 2012
 	},
 	"Audi|A3|8V": {
-		"generationId": 10300,
+		"generationId": 10329,
 		"manufacturerName": "Audi",
 		"modelName": "A3",
 		"generationCode": "8V",
@@ -2400,7 +2632,7 @@
 		"endYear": 2020
 	},
 	"Audi|A3|8Y": {
-		"generationId": 10301,
+		"generationId": 10330,
 		"manufacturerName": "Audi",
 		"modelName": "A3",
 		"generationCode": "8Y",
@@ -2408,7 +2640,7 @@
 		"endYear": null
 	},
 	"Audi|A4|B7": {
-		"generationId": 10302,
+		"generationId": 10331,
 		"manufacturerName": "Audi",
 		"modelName": "A4",
 		"generationCode": "B7",
@@ -2416,7 +2648,7 @@
 		"endYear": 2008
 	},
 	"Audi|A4|B8": {
-		"generationId": 10303,
+		"generationId": 10332,
 		"manufacturerName": "Audi",
 		"modelName": "A4",
 		"generationCode": "B8",
@@ -2424,7 +2656,7 @@
 		"endYear": 2015
 	},
 	"Audi|A4|B9": {
-		"generationId": 10304,
+		"generationId": 10333,
 		"manufacturerName": "Audi",
 		"modelName": "A4",
 		"generationCode": "B9",
@@ -2432,7 +2664,7 @@
 		"endYear": null
 	},
 	"Audi|A6|C6": {
-		"generationId": 10305,
+		"generationId": 10334,
 		"manufacturerName": "Audi",
 		"modelName": "A6",
 		"generationCode": "C6",
@@ -2440,7 +2672,7 @@
 		"endYear": 2011
 	},
 	"Audi|A6|C7": {
-		"generationId": 10306,
+		"generationId": 10335,
 		"manufacturerName": "Audi",
 		"modelName": "A6",
 		"generationCode": "C7",
@@ -2448,7 +2680,7 @@
 		"endYear": 2018
 	},
 	"Audi|A6|C8": {
-		"generationId": 10307,
+		"generationId": 10336,
 		"manufacturerName": "Audi",
 		"modelName": "A6",
 		"generationCode": "C8",
@@ -2456,7 +2688,7 @@
 		"endYear": null
 	},
 	"Audi|Q3|8U": {
-		"generationId": 10308,
+		"generationId": 10337,
 		"manufacturerName": "Audi",
 		"modelName": "Q3",
 		"generationCode": "8U",
@@ -2464,7 +2696,7 @@
 		"endYear": 2018
 	},
 	"Audi|Q3|F3": {
-		"generationId": 10309,
+		"generationId": 10338,
 		"manufacturerName": "Audi",
 		"modelName": "Q3",
 		"generationCode": "F3",
@@ -2472,7 +2704,7 @@
 		"endYear": null
 	},
 	"Audi|Q5|8R": {
-		"generationId": 10310,
+		"generationId": 10339,
 		"manufacturerName": "Audi",
 		"modelName": "Q5",
 		"generationCode": "8R",
@@ -2480,7 +2712,7 @@
 		"endYear": 2016
 	},
 	"Audi|Q5|FY": {
-		"generationId": 10311,
+		"generationId": 10340,
 		"manufacturerName": "Audi",
 		"modelName": "Q5",
 		"generationCode": "FY",
@@ -2488,7 +2720,7 @@
 		"endYear": null
 	},
 	"Audi|A5|8T": {
-		"generationId": 10312,
+		"generationId": 10341,
 		"manufacturerName": "Audi",
 		"modelName": "A5",
 		"generationCode": "8T",
@@ -2496,7 +2728,7 @@
 		"endYear": 2016
 	},
 	"Audi|A5|F5": {
-		"generationId": 10313,
+		"generationId": 10342,
 		"manufacturerName": "Audi",
 		"modelName": "A5",
 		"generationCode": "F5",
@@ -2504,7 +2736,7 @@
 		"endYear": null
 	},
 	"Audi|Q7|4L": {
-		"generationId": 10314,
+		"generationId": 10343,
 		"manufacturerName": "Audi",
 		"modelName": "Q7",
 		"generationCode": "4L",
@@ -2512,7 +2744,7 @@
 		"endYear": 2015
 	},
 	"Audi|Q7|4M": {
-		"generationId": 10315,
+		"generationId": 10344,
 		"manufacturerName": "Audi",
 		"modelName": "Q7",
 		"generationCode": "4M",
@@ -2520,7 +2752,7 @@
 		"endYear": null
 	},
 	"Audi|A1|8X": {
-		"generationId": 10316,
+		"generationId": 10345,
 		"manufacturerName": "Audi",
 		"modelName": "A1",
 		"generationCode": "8X",
@@ -2528,7 +2760,7 @@
 		"endYear": 2018
 	},
 	"Audi|A1|GB": {
-		"generationId": 10317,
+		"generationId": 10346,
 		"manufacturerName": "Audi",
 		"modelName": "A1",
 		"generationCode": "GB",
@@ -2536,7 +2768,7 @@
 		"endYear": null
 	},
 	"Audi|TT|8J": {
-		"generationId": 10318,
+		"generationId": 10347,
 		"manufacturerName": "Audi",
 		"modelName": "TT",
 		"generationCode": "8J",
@@ -2544,7 +2776,7 @@
 		"endYear": 2014
 	},
 	"Audi|TT|8S": {
-		"generationId": 10319,
+		"generationId": 10348,
 		"manufacturerName": "Audi",
 		"modelName": "TT",
 		"generationCode": "8S",
@@ -2552,7 +2784,7 @@
 		"endYear": 2023
 	},
 	"Audi|Q2|GA": {
-		"generationId": 10320,
+		"generationId": 10349,
 		"manufacturerName": "Audi",
 		"modelName": "Q2",
 		"generationCode": "GA",
@@ -2560,7 +2792,7 @@
 		"endYear": null
 	},
 	"Audi|A7|4G": {
-		"generationId": 10321,
+		"generationId": 10350,
 		"manufacturerName": "Audi",
 		"modelName": "A7",
 		"generationCode": "4G",
@@ -2568,7 +2800,7 @@
 		"endYear": 2018
 	},
 	"Audi|A7|4K": {
-		"generationId": 10322,
+		"generationId": 10351,
 		"manufacturerName": "Audi",
 		"modelName": "A7",
 		"generationCode": "4K",
@@ -2576,7 +2808,7 @@
 		"endYear": null
 	},
 	"Audi|A8|D4": {
-		"generationId": 10323,
+		"generationId": 10352,
 		"manufacturerName": "Audi",
 		"modelName": "A8",
 		"generationCode": "D4",
@@ -2584,7 +2816,7 @@
 		"endYear": 2017
 	},
 	"Audi|A8|D5": {
-		"generationId": 10324,
+		"generationId": 10353,
 		"manufacturerName": "Audi",
 		"modelName": "A8",
 		"generationCode": "D5",
@@ -2592,7 +2824,7 @@
 		"endYear": null
 	},
 	"Audi|Q8|F1": {
-		"generationId": 10325,
+		"generationId": 10354,
 		"manufacturerName": "Audi",
 		"modelName": "Q8",
 		"generationCode": "F1",
@@ -2600,7 +2832,7 @@
 		"endYear": null
 	},
 	"Audi|e-tron|GE": {
-		"generationId": 10326,
+		"generationId": 10355,
 		"manufacturerName": "Audi",
 		"modelName": "e-tron",
 		"generationCode": "GE",
@@ -2608,7 +2840,7 @@
 		"endYear": 2023
 	},
 	"Audi|e-tron GT|F8": {
-		"generationId": 10327,
+		"generationId": 10356,
 		"manufacturerName": "Audi",
 		"modelName": "e-tron GT",
 		"generationCode": "F8",
@@ -2616,7 +2848,7 @@
 		"endYear": null
 	},
 	"Audi|R8|42": {
-		"generationId": 10328,
+		"generationId": 10357,
 		"manufacturerName": "Audi",
 		"modelName": "R8",
 		"generationCode": "42",
@@ -2624,7 +2856,7 @@
 		"endYear": 2015
 	},
 	"Audi|R8|4S": {
-		"generationId": 10329,
+		"generationId": 10358,
 		"manufacturerName": "Audi",
 		"modelName": "R8",
 		"generationCode": "4S",
@@ -2632,7 +2864,7 @@
 		"endYear": 2023
 	},
 	"Audi|RS6 Avant|C7": {
-		"generationId": 10330,
+		"generationId": 10359,
 		"manufacturerName": "Audi",
 		"modelName": "RS6 Avant",
 		"generationCode": "C7",
@@ -2640,7 +2872,7 @@
 		"endYear": 2018
 	},
 	"Audi|RS6 Avant|C8": {
-		"generationId": 10331,
+		"generationId": 10360,
 		"manufacturerName": "Audi",
 		"modelName": "RS6 Avant",
 		"generationCode": "C8",
@@ -2648,7 +2880,7 @@
 		"endYear": null
 	},
 	"Audi|Q4 e-tron|F4B": {
-		"generationId": 10332,
+		"generationId": 10361,
 		"manufacturerName": "Audi",
 		"modelName": "Q4 e-tron",
 		"generationCode": "F4B",
@@ -2656,15 +2888,31 @@
 		"endYear": null
 	},
 	"Audi|Q6 e-tron|F1e": {
-		"generationId": 10333,
+		"generationId": 10362,
 		"manufacturerName": "Audi",
 		"modelName": "Q6 e-tron",
 		"generationCode": "F1e",
 		"startYear": 2024,
 		"endYear": null
 	},
+	"Audi|A6 e-tron|I": {
+		"generationId": 10363,
+		"manufacturerName": "Audi",
+		"modelName": "A6 e-tron",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Audi|Q9|I": {
+		"generationId": 10364,
+		"manufacturerName": "Audi",
+		"modelName": "Q9",
+		"generationCode": "I",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"Alfa Romeo|147|I": {
-		"generationId": 10334,
+		"generationId": 10365,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "147",
 		"generationCode": "I",
@@ -2672,7 +2920,7 @@
 		"endYear": 2010
 	},
 	"Alfa Romeo|156|I": {
-		"generationId": 10335,
+		"generationId": 10366,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "156",
 		"generationCode": "I",
@@ -2680,7 +2928,7 @@
 		"endYear": 2007
 	},
 	"Alfa Romeo|159|I": {
-		"generationId": 10336,
+		"generationId": 10367,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "159",
 		"generationCode": "I",
@@ -2688,7 +2936,7 @@
 		"endYear": 2011
 	},
 	"Alfa Romeo|Giulietta|I": {
-		"generationId": 10337,
+		"generationId": 10368,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Giulietta",
 		"generationCode": "I",
@@ -2696,7 +2944,7 @@
 		"endYear": 2020
 	},
 	"Alfa Romeo|Giulia|I": {
-		"generationId": 10338,
+		"generationId": 10369,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Giulia",
 		"generationCode": "I",
@@ -2704,7 +2952,7 @@
 		"endYear": null
 	},
 	"Alfa Romeo|Stelvio|I": {
-		"generationId": 10339,
+		"generationId": 10370,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Stelvio",
 		"generationCode": "I",
@@ -2712,7 +2960,7 @@
 		"endYear": null
 	},
 	"Alfa Romeo|MiTo|I": {
-		"generationId": 10340,
+		"generationId": 10371,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "MiTo",
 		"generationCode": "I",
@@ -2720,7 +2968,7 @@
 		"endYear": 2018
 	},
 	"Alfa Romeo|Tonale|I": {
-		"generationId": 10341,
+		"generationId": 10372,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Tonale",
 		"generationCode": "I",
@@ -2728,7 +2976,7 @@
 		"endYear": null
 	},
 	"Alfa Romeo|Spider|939": {
-		"generationId": 10342,
+		"generationId": 10373,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Spider",
 		"generationCode": "939",
@@ -2736,7 +2984,7 @@
 		"endYear": 2010
 	},
 	"Alfa Romeo|GT|I": {
-		"generationId": 10343,
+		"generationId": 10374,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "GT",
 		"generationCode": "I",
@@ -2744,7 +2992,7 @@
 		"endYear": 2010
 	},
 	"Alfa Romeo|Brera|I": {
-		"generationId": 10344,
+		"generationId": 10375,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Brera",
 		"generationCode": "I",
@@ -2752,7 +3000,7 @@
 		"endYear": 2010
 	},
 	"Alfa Romeo|4C|I": {
-		"generationId": 10345,
+		"generationId": 10376,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "4C",
 		"generationCode": "I",
@@ -2760,7 +3008,7 @@
 		"endYear": 2020
 	},
 	"Alfa Romeo|Junior|I": {
-		"generationId": 10346,
+		"generationId": 10377,
 		"manufacturerName": "Alfa Romeo",
 		"modelName": "Junior",
 		"generationCode": "I",
@@ -2768,7 +3016,7 @@
 		"endYear": null
 	},
 	"Volvo|V40|II": {
-		"generationId": 10347,
+		"generationId": 10378,
 		"manufacturerName": "Volvo",
 		"modelName": "V40",
 		"generationCode": "II",
@@ -2776,7 +3024,7 @@
 		"endYear": 2019
 	},
 	"Volvo|V60|I": {
-		"generationId": 10348,
+		"generationId": 10379,
 		"manufacturerName": "Volvo",
 		"modelName": "V60",
 		"generationCode": "I",
@@ -2784,7 +3032,7 @@
 		"endYear": 2018
 	},
 	"Volvo|V60|II": {
-		"generationId": 10349,
+		"generationId": 10380,
 		"manufacturerName": "Volvo",
 		"modelName": "V60",
 		"generationCode": "II",
@@ -2792,7 +3040,7 @@
 		"endYear": null
 	},
 	"Volvo|V90|II": {
-		"generationId": 10350,
+		"generationId": 10381,
 		"manufacturerName": "Volvo",
 		"modelName": "V90",
 		"generationCode": "II",
@@ -2800,7 +3048,7 @@
 		"endYear": null
 	},
 	"Volvo|XC40|I": {
-		"generationId": 10351,
+		"generationId": 10382,
 		"manufacturerName": "Volvo",
 		"modelName": "XC40",
 		"generationCode": "I",
@@ -2808,7 +3056,7 @@
 		"endYear": null
 	},
 	"Volvo|XC60|I": {
-		"generationId": 10352,
+		"generationId": 10383,
 		"manufacturerName": "Volvo",
 		"modelName": "XC60",
 		"generationCode": "I",
@@ -2816,7 +3064,7 @@
 		"endYear": 2017
 	},
 	"Volvo|XC60|II": {
-		"generationId": 10353,
+		"generationId": 10384,
 		"manufacturerName": "Volvo",
 		"modelName": "XC60",
 		"generationCode": "II",
@@ -2824,7 +3072,7 @@
 		"endYear": null
 	},
 	"Volvo|XC90|II": {
-		"generationId": 10354,
+		"generationId": 10385,
 		"manufacturerName": "Volvo",
 		"modelName": "XC90",
 		"generationCode": "II",
@@ -2832,7 +3080,7 @@
 		"endYear": null
 	},
 	"Volvo|S60|II": {
-		"generationId": 10355,
+		"generationId": 10386,
 		"manufacturerName": "Volvo",
 		"modelName": "S60",
 		"generationCode": "II",
@@ -2840,7 +3088,7 @@
 		"endYear": 2018
 	},
 	"Volvo|S60|III": {
-		"generationId": 10356,
+		"generationId": 10387,
 		"manufacturerName": "Volvo",
 		"modelName": "S60",
 		"generationCode": "III",
@@ -2848,7 +3096,7 @@
 		"endYear": null
 	},
 	"Volvo|S90|II": {
-		"generationId": 10357,
+		"generationId": 10388,
 		"manufacturerName": "Volvo",
 		"modelName": "S90",
 		"generationCode": "II",
@@ -2856,7 +3104,7 @@
 		"endYear": null
 	},
 	"Volvo|C30|I": {
-		"generationId": 10358,
+		"generationId": 10389,
 		"manufacturerName": "Volvo",
 		"modelName": "C30",
 		"generationCode": "I",
@@ -2864,7 +3112,7 @@
 		"endYear": 2013
 	},
 	"Volvo|C40|I": {
-		"generationId": 10359,
+		"generationId": 10390,
 		"manufacturerName": "Volvo",
 		"modelName": "C40",
 		"generationCode": "I",
@@ -2872,7 +3120,7 @@
 		"endYear": null
 	},
 	"Volvo|V70|III": {
-		"generationId": 10360,
+		"generationId": 10391,
 		"manufacturerName": "Volvo",
 		"modelName": "V70",
 		"generationCode": "III",
@@ -2880,7 +3128,7 @@
 		"endYear": 2016
 	},
 	"Volvo|S80|II": {
-		"generationId": 10361,
+		"generationId": 10392,
 		"manufacturerName": "Volvo",
 		"modelName": "S80",
 		"generationCode": "II",
@@ -2888,7 +3136,7 @@
 		"endYear": 2016
 	},
 	"Volvo|S40|II": {
-		"generationId": 10362,
+		"generationId": 10393,
 		"manufacturerName": "Volvo",
 		"modelName": "S40",
 		"generationCode": "II",
@@ -2896,7 +3144,7 @@
 		"endYear": 2012
 	},
 	"Volvo|V50|I": {
-		"generationId": 10363,
+		"generationId": 10394,
 		"manufacturerName": "Volvo",
 		"modelName": "V50",
 		"generationCode": "I",
@@ -2904,7 +3152,7 @@
 		"endYear": 2012
 	},
 	"Volvo|EX30|I": {
-		"generationId": 10364,
+		"generationId": 10395,
 		"manufacturerName": "Volvo",
 		"modelName": "EX30",
 		"generationCode": "I",
@@ -2912,7 +3160,7 @@
 		"endYear": null
 	},
 	"Volvo|EX40|I": {
-		"generationId": 10365,
+		"generationId": 10396,
 		"manufacturerName": "Volvo",
 		"modelName": "EX40",
 		"generationCode": "I",
@@ -2920,15 +3168,31 @@
 		"endYear": null
 	},
 	"Volvo|EX90|I": {
-		"generationId": 10366,
+		"generationId": 10397,
 		"manufacturerName": "Volvo",
 		"modelName": "EX90",
 		"generationCode": "I",
 		"startYear": 2024,
 		"endYear": null
 	},
+	"Volvo|XC70|I": {
+		"generationId": 10398,
+		"manufacturerName": "Volvo",
+		"modelName": "XC70",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"Volvo|ES90|I": {
+		"generationId": 10399,
+		"manufacturerName": "Volvo",
+		"modelName": "ES90",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Mini|Cooper|R56": {
-		"generationId": 10367,
+		"generationId": 10400,
 		"manufacturerName": "Mini",
 		"modelName": "Cooper",
 		"generationCode": "R56",
@@ -2936,15 +3200,23 @@
 		"endYear": 2013
 	},
 	"Mini|Cooper|F56": {
-		"generationId": 10368,
+		"generationId": 10401,
 		"manufacturerName": "Mini",
 		"modelName": "Cooper",
 		"generationCode": "F56",
 		"startYear": 2014,
+		"endYear": 2024
+	},
+	"Mini|Cooper|F66": {
+		"generationId": 10402,
+		"manufacturerName": "Mini",
+		"modelName": "Cooper",
+		"generationCode": "F66",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Mini|Countryman|R60": {
-		"generationId": 10369,
+		"generationId": 10403,
 		"manufacturerName": "Mini",
 		"modelName": "Countryman",
 		"generationCode": "R60",
@@ -2952,7 +3224,7 @@
 		"endYear": 2016
 	},
 	"Mini|Countryman|F60": {
-		"generationId": 10370,
+		"generationId": 10404,
 		"manufacturerName": "Mini",
 		"modelName": "Countryman",
 		"generationCode": "F60",
@@ -2960,7 +3232,7 @@
 		"endYear": 2023
 	},
 	"Mini|Countryman|U25": {
-		"generationId": 10371,
+		"generationId": 10405,
 		"manufacturerName": "Mini",
 		"modelName": "Countryman",
 		"generationCode": "U25",
@@ -2968,7 +3240,7 @@
 		"endYear": null
 	},
 	"Mini|Clubman|R55": {
-		"generationId": 10372,
+		"generationId": 10406,
 		"manufacturerName": "Mini",
 		"modelName": "Clubman",
 		"generationCode": "R55",
@@ -2976,7 +3248,7 @@
 		"endYear": 2014
 	},
 	"Mini|Clubman|F54": {
-		"generationId": 10373,
+		"generationId": 10407,
 		"manufacturerName": "Mini",
 		"modelName": "Clubman",
 		"generationCode": "F54",
@@ -2984,7 +3256,7 @@
 		"endYear": null
 	},
 	"Mini|Paceman|R61": {
-		"generationId": 10374,
+		"generationId": 10408,
 		"manufacturerName": "Mini",
 		"modelName": "Paceman",
 		"generationCode": "R61",
@@ -2992,7 +3264,7 @@
 		"endYear": 2016
 	},
 	"Mini|Convertible|R57": {
-		"generationId": 10375,
+		"generationId": 10409,
 		"manufacturerName": "Mini",
 		"modelName": "Convertible",
 		"generationCode": "R57",
@@ -3000,7 +3272,7 @@
 		"endYear": 2015
 	},
 	"Mini|Convertible|F57": {
-		"generationId": 10376,
+		"generationId": 10410,
 		"manufacturerName": "Mini",
 		"modelName": "Convertible",
 		"generationCode": "F57",
@@ -3008,7 +3280,7 @@
 		"endYear": null
 	},
 	"Mini|Coupe|R58": {
-		"generationId": 10377,
+		"generationId": 10411,
 		"manufacturerName": "Mini",
 		"modelName": "Coupe",
 		"generationCode": "R58",
@@ -3016,7 +3288,7 @@
 		"endYear": 2015
 	},
 	"Mini|Roadster|R59": {
-		"generationId": 10378,
+		"generationId": 10412,
 		"manufacturerName": "Mini",
 		"modelName": "Roadster",
 		"generationCode": "R59",
@@ -3024,7 +3296,7 @@
 		"endYear": 2015
 	},
 	"Mini|Hatch 5dr|F55": {
-		"generationId": 10379,
+		"generationId": 10413,
 		"manufacturerName": "Mini",
 		"modelName": "Hatch 5dr",
 		"generationCode": "F55",
@@ -3032,7 +3304,7 @@
 		"endYear": null
 	},
 	"Mini|Aceman|J05": {
-		"generationId": 10380,
+		"generationId": 10414,
 		"manufacturerName": "Mini",
 		"modelName": "Aceman",
 		"generationCode": "J05",
@@ -3040,7 +3312,7 @@
 		"endYear": null
 	},
 	"Porsche|911|997": {
-		"generationId": 10381,
+		"generationId": 10415,
 		"manufacturerName": "Porsche",
 		"modelName": "911",
 		"generationCode": "997",
@@ -3048,7 +3320,7 @@
 		"endYear": 2012
 	},
 	"Porsche|911|991": {
-		"generationId": 10382,
+		"generationId": 10416,
 		"manufacturerName": "Porsche",
 		"modelName": "911",
 		"generationCode": "991",
@@ -3056,7 +3328,7 @@
 		"endYear": 2019
 	},
 	"Porsche|911|992": {
-		"generationId": 10383,
+		"generationId": 10417,
 		"manufacturerName": "Porsche",
 		"modelName": "911",
 		"generationCode": "992",
@@ -3064,7 +3336,7 @@
 		"endYear": null
 	},
 	"Porsche|Cayenne|9PA": {
-		"generationId": 10384,
+		"generationId": 10418,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayenne",
 		"generationCode": "9PA",
@@ -3072,7 +3344,7 @@
 		"endYear": 2010
 	},
 	"Porsche|Cayenne|92A": {
-		"generationId": 10385,
+		"generationId": 10419,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayenne",
 		"generationCode": "92A",
@@ -3080,15 +3352,23 @@
 		"endYear": 2017
 	},
 	"Porsche|Cayenne|9YA": {
-		"generationId": 10386,
+		"generationId": 10420,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayenne",
 		"generationCode": "9YA",
 		"startYear": 2017,
 		"endYear": null
 	},
+	"Porsche|Cayenne Electric|I": {
+		"generationId": 10421,
+		"manufacturerName": "Porsche",
+		"modelName": "Cayenne Electric",
+		"generationCode": "I",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"Porsche|Macan|95B": {
-		"generationId": 10387,
+		"generationId": 10422,
 		"manufacturerName": "Porsche",
 		"modelName": "Macan",
 		"generationCode": "95B",
@@ -3096,7 +3376,7 @@
 		"endYear": 2024
 	},
 	"Porsche|Macan|J1": {
-		"generationId": 10388,
+		"generationId": 10423,
 		"manufacturerName": "Porsche",
 		"modelName": "Macan",
 		"generationCode": "J1",
@@ -3104,7 +3384,7 @@
 		"endYear": null
 	},
 	"Porsche|Panamera|970": {
-		"generationId": 10389,
+		"generationId": 10424,
 		"manufacturerName": "Porsche",
 		"modelName": "Panamera",
 		"generationCode": "970",
@@ -3112,7 +3392,7 @@
 		"endYear": 2016
 	},
 	"Porsche|Panamera|971": {
-		"generationId": 10390,
+		"generationId": 10425,
 		"manufacturerName": "Porsche",
 		"modelName": "Panamera",
 		"generationCode": "971",
@@ -3120,7 +3400,7 @@
 		"endYear": null
 	},
 	"Porsche|Boxster|987": {
-		"generationId": 10391,
+		"generationId": 10426,
 		"manufacturerName": "Porsche",
 		"modelName": "Boxster",
 		"generationCode": "987",
@@ -3128,7 +3408,7 @@
 		"endYear": 2012
 	},
 	"Porsche|Boxster|981": {
-		"generationId": 10392,
+		"generationId": 10427,
 		"manufacturerName": "Porsche",
 		"modelName": "Boxster",
 		"generationCode": "981",
@@ -3136,7 +3416,7 @@
 		"endYear": 2016
 	},
 	"Porsche|Boxster|718": {
-		"generationId": 10393,
+		"generationId": 10428,
 		"manufacturerName": "Porsche",
 		"modelName": "Boxster",
 		"generationCode": "718",
@@ -3144,7 +3424,7 @@
 		"endYear": null
 	},
 	"Porsche|Cayman|987C": {
-		"generationId": 10394,
+		"generationId": 10429,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayman",
 		"generationCode": "987C",
@@ -3152,7 +3432,7 @@
 		"endYear": 2012
 	},
 	"Porsche|Cayman|981C": {
-		"generationId": 10395,
+		"generationId": 10430,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayman",
 		"generationCode": "981C",
@@ -3160,7 +3440,7 @@
 		"endYear": 2016
 	},
 	"Porsche|Cayman|718C": {
-		"generationId": 10396,
+		"generationId": 10431,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayman",
 		"generationCode": "718C",
@@ -3168,7 +3448,7 @@
 		"endYear": null
 	},
 	"Porsche|Taycan|I": {
-		"generationId": 10397,
+		"generationId": 10432,
 		"manufacturerName": "Porsche",
 		"modelName": "Taycan",
 		"generationCode": "I",
@@ -3176,7 +3456,7 @@
 		"endYear": null
 	},
 	"Porsche|Cayenne Coupe|9YB": {
-		"generationId": 10398,
+		"generationId": 10433,
 		"manufacturerName": "Porsche",
 		"modelName": "Cayenne Coupe",
 		"generationCode": "9YB",
@@ -3184,7 +3464,7 @@
 		"endYear": null
 	},
 	"Land Rover|Defender|L316": {
-		"generationId": 10399,
+		"generationId": 10434,
 		"manufacturerName": "Land Rover",
 		"modelName": "Defender",
 		"generationCode": "L316",
@@ -3192,7 +3472,7 @@
 		"endYear": 2016
 	},
 	"Land Rover|Defender|L663": {
-		"generationId": 10400,
+		"generationId": 10435,
 		"manufacturerName": "Land Rover",
 		"modelName": "Defender",
 		"generationCode": "L663",
@@ -3200,7 +3480,7 @@
 		"endYear": null
 	},
 	"Land Rover|Discovery|L319": {
-		"generationId": 10401,
+		"generationId": 10436,
 		"manufacturerName": "Land Rover",
 		"modelName": "Discovery",
 		"generationCode": "L319",
@@ -3208,7 +3488,7 @@
 		"endYear": 2017
 	},
 	"Land Rover|Discovery|L462": {
-		"generationId": 10402,
+		"generationId": 10437,
 		"manufacturerName": "Land Rover",
 		"modelName": "Discovery",
 		"generationCode": "L462",
@@ -3216,7 +3496,7 @@
 		"endYear": null
 	},
 	"Land Rover|Range Rover|L322": {
-		"generationId": 10403,
+		"generationId": 10438,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover",
 		"generationCode": "L322",
@@ -3224,7 +3504,7 @@
 		"endYear": 2012
 	},
 	"Land Rover|Range Rover|L405": {
-		"generationId": 10404,
+		"generationId": 10439,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover",
 		"generationCode": "L405",
@@ -3232,7 +3512,7 @@
 		"endYear": 2021
 	},
 	"Land Rover|Range Rover|L460": {
-		"generationId": 10405,
+		"generationId": 10440,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover",
 		"generationCode": "L460",
@@ -3240,7 +3520,7 @@
 		"endYear": null
 	},
 	"Land Rover|Freelander|L359": {
-		"generationId": 10406,
+		"generationId": 10441,
 		"manufacturerName": "Land Rover",
 		"modelName": "Freelander",
 		"generationCode": "L359",
@@ -3248,7 +3528,7 @@
 		"endYear": 2015
 	},
 	"Land Rover|Discovery Sport|L550": {
-		"generationId": 10407,
+		"generationId": 10442,
 		"manufacturerName": "Land Rover",
 		"modelName": "Discovery Sport",
 		"generationCode": "L550",
@@ -3256,7 +3536,7 @@
 		"endYear": null
 	},
 	"Land Rover|Range Rover Sport|L320": {
-		"generationId": 10408,
+		"generationId": 10443,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover Sport",
 		"generationCode": "L320",
@@ -3264,7 +3544,7 @@
 		"endYear": 2013
 	},
 	"Land Rover|Range Rover Sport|L494": {
-		"generationId": 10409,
+		"generationId": 10444,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover Sport",
 		"generationCode": "L494",
@@ -3272,7 +3552,7 @@
 		"endYear": 2022
 	},
 	"Land Rover|Range Rover Sport|L461": {
-		"generationId": 10410,
+		"generationId": 10445,
 		"manufacturerName": "Land Rover",
 		"modelName": "Range Rover Sport",
 		"generationCode": "L461",
@@ -3280,7 +3560,7 @@
 		"endYear": null
 	},
 	"Land Rover|Evoque|L538": {
-		"generationId": 10411,
+		"generationId": 10446,
 		"manufacturerName": "Land Rover",
 		"modelName": "Evoque",
 		"generationCode": "L538",
@@ -3288,7 +3568,7 @@
 		"endYear": 2018
 	},
 	"Land Rover|Evoque|L551": {
-		"generationId": 10412,
+		"generationId": 10447,
 		"manufacturerName": "Land Rover",
 		"modelName": "Evoque",
 		"generationCode": "L551",
@@ -3296,7 +3576,7 @@
 		"endYear": null
 	},
 	"Land Rover|Velar|L560": {
-		"generationId": 10413,
+		"generationId": 10448,
 		"manufacturerName": "Land Rover",
 		"modelName": "Velar",
 		"generationCode": "L560",
@@ -3304,7 +3584,7 @@
 		"endYear": null
 	},
 	"Jaguar|XE|X760": {
-		"generationId": 10414,
+		"generationId": 10449,
 		"manufacturerName": "Jaguar",
 		"modelName": "XE",
 		"generationCode": "X760",
@@ -3312,7 +3592,7 @@
 		"endYear": null
 	},
 	"Jaguar|XF|X250": {
-		"generationId": 10415,
+		"generationId": 10450,
 		"manufacturerName": "Jaguar",
 		"modelName": "XF",
 		"generationCode": "X250",
@@ -3320,7 +3600,7 @@
 		"endYear": 2015
 	},
 	"Jaguar|XF|X260": {
-		"generationId": 10416,
+		"generationId": 10451,
 		"manufacturerName": "Jaguar",
 		"modelName": "XF",
 		"generationCode": "X260",
@@ -3328,7 +3608,7 @@
 		"endYear": null
 	},
 	"Jaguar|F-Pace|X761": {
-		"generationId": 10417,
+		"generationId": 10452,
 		"manufacturerName": "Jaguar",
 		"modelName": "F-Pace",
 		"generationCode": "X761",
@@ -3336,7 +3616,7 @@
 		"endYear": null
 	},
 	"Jaguar|E-Pace|X540": {
-		"generationId": 10418,
+		"generationId": 10453,
 		"manufacturerName": "Jaguar",
 		"modelName": "E-Pace",
 		"generationCode": "X540",
@@ -3344,7 +3624,7 @@
 		"endYear": null
 	},
 	"Jaguar|I-Pace|X590": {
-		"generationId": 10419,
+		"generationId": 10454,
 		"manufacturerName": "Jaguar",
 		"modelName": "I-Pace",
 		"generationCode": "X590",
@@ -3352,7 +3632,7 @@
 		"endYear": null
 	},
 	"Jaguar|F-Type|X152": {
-		"generationId": 10420,
+		"generationId": 10455,
 		"manufacturerName": "Jaguar",
 		"modelName": "F-Type",
 		"generationCode": "X152",
@@ -3360,7 +3640,7 @@
 		"endYear": null
 	},
 	"Jaguar|XJ|X351": {
-		"generationId": 10421,
+		"generationId": 10456,
 		"manufacturerName": "Jaguar",
 		"modelName": "XJ",
 		"generationCode": "X351",
@@ -3368,7 +3648,7 @@
 		"endYear": 2019
 	},
 	"Smart|ForTwo|W450": {
-		"generationId": 10422,
+		"generationId": 10457,
 		"manufacturerName": "Smart",
 		"modelName": "ForTwo",
 		"generationCode": "W450",
@@ -3376,7 +3656,7 @@
 		"endYear": 2007
 	},
 	"Smart|ForTwo|W451": {
-		"generationId": 10423,
+		"generationId": 10458,
 		"manufacturerName": "Smart",
 		"modelName": "ForTwo",
 		"generationCode": "W451",
@@ -3384,7 +3664,7 @@
 		"endYear": 2014
 	},
 	"Smart|ForTwo|W453": {
-		"generationId": 10424,
+		"generationId": 10459,
 		"manufacturerName": "Smart",
 		"modelName": "ForTwo",
 		"generationCode": "W453",
@@ -3392,7 +3672,7 @@
 		"endYear": null
 	},
 	"Smart|ForFour|W454": {
-		"generationId": 10425,
+		"generationId": 10460,
 		"manufacturerName": "Smart",
 		"modelName": "ForFour",
 		"generationCode": "W454",
@@ -3400,7 +3680,7 @@
 		"endYear": 2006
 	},
 	"Smart|ForFour|W453F": {
-		"generationId": 10426,
+		"generationId": 10461,
 		"manufacturerName": "Smart",
 		"modelName": "ForFour",
 		"generationCode": "W453F",
@@ -3408,7 +3688,7 @@
 		"endYear": null
 	},
 	"Smart|Smart #1|HX11": {
-		"generationId": 10427,
+		"generationId": 10462,
 		"manufacturerName": "Smart",
 		"modelName": "Smart #1",
 		"generationCode": "HX11",
@@ -3416,15 +3696,31 @@
 		"endYear": null
 	},
 	"Smart|Smart #3|HX12": {
-		"generationId": 10428,
+		"generationId": 10463,
 		"manufacturerName": "Smart",
 		"modelName": "Smart #3",
 		"generationCode": "HX12",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Smart|Smart #5|HX21": {
+		"generationId": 10464,
+		"manufacturerName": "Smart",
+		"modelName": "Smart #5",
+		"generationCode": "HX21",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Smart|Smart #6|I": {
+		"generationId": 10465,
+		"manufacturerName": "Smart",
+		"modelName": "Smart #6",
+		"generationCode": "I",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"DS Automobiles|DS3|I": {
-		"generationId": 10429,
+		"generationId": 10466,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS3",
 		"generationCode": "I",
@@ -3432,7 +3728,7 @@
 		"endYear": 2019
 	},
 	"DS Automobiles|DS3|II": {
-		"generationId": 10430,
+		"generationId": 10467,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS3",
 		"generationCode": "II",
@@ -3440,7 +3736,7 @@
 		"endYear": null
 	},
 	"DS Automobiles|DS4|I": {
-		"generationId": 10431,
+		"generationId": 10468,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS4",
 		"generationCode": "I",
@@ -3448,7 +3744,7 @@
 		"endYear": 2015
 	},
 	"DS Automobiles|DS4|II": {
-		"generationId": 10432,
+		"generationId": 10469,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS4",
 		"generationCode": "II",
@@ -3456,7 +3752,7 @@
 		"endYear": null
 	},
 	"DS Automobiles|DS5|I": {
-		"generationId": 10433,
+		"generationId": 10470,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS5",
 		"generationCode": "I",
@@ -3464,7 +3760,7 @@
 		"endYear": 2018
 	},
 	"DS Automobiles|DS7|I": {
-		"generationId": 10434,
+		"generationId": 10471,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS7",
 		"generationCode": "I",
@@ -3472,15 +3768,23 @@
 		"endYear": null
 	},
 	"DS Automobiles|DS9|I": {
-		"generationId": 10435,
+		"generationId": 10472,
 		"manufacturerName": "DS Automobiles",
 		"modelName": "DS9",
 		"generationCode": "I",
 		"startYear": 2021,
 		"endYear": null
 	},
+	"DS Automobiles|N°8|I": {
+		"generationId": 10473,
+		"manufacturerName": "DS Automobiles",
+		"modelName": "N°8",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Cupra|Formentor|I": {
-		"generationId": 10436,
+		"generationId": 10474,
 		"manufacturerName": "Cupra",
 		"modelName": "Formentor",
 		"generationCode": "I",
@@ -3488,7 +3792,7 @@
 		"endYear": null
 	},
 	"Cupra|Born|I": {
-		"generationId": 10437,
+		"generationId": 10475,
 		"manufacturerName": "Cupra",
 		"modelName": "Born",
 		"generationCode": "I",
@@ -3496,7 +3800,7 @@
 		"endYear": null
 	},
 	"Cupra|Ateca|I": {
-		"generationId": 10438,
+		"generationId": 10476,
 		"manufacturerName": "Cupra",
 		"modelName": "Ateca",
 		"generationCode": "I",
@@ -3504,7 +3808,7 @@
 		"endYear": null
 	},
 	"Cupra|Leon|I": {
-		"generationId": 10439,
+		"generationId": 10477,
 		"manufacturerName": "Cupra",
 		"modelName": "Leon",
 		"generationCode": "I",
@@ -3512,7 +3816,7 @@
 		"endYear": null
 	},
 	"Cupra|Terramar|I": {
-		"generationId": 10440,
+		"generationId": 10478,
 		"manufacturerName": "Cupra",
 		"modelName": "Terramar",
 		"generationCode": "I",
@@ -3520,15 +3824,23 @@
 		"endYear": null
 	},
 	"Cupra|Tavascan|I": {
-		"generationId": 10441,
+		"generationId": 10479,
 		"manufacturerName": "Cupra",
 		"modelName": "Tavascan",
 		"generationCode": "I",
 		"startYear": 2024,
 		"endYear": null
 	},
+	"Cupra|Raval|I": {
+		"generationId": 10480,
+		"manufacturerName": "Cupra",
+		"modelName": "Raval",
+		"generationCode": "I",
+		"startYear": 2026,
+		"endYear": null
+	},
 	"Saab|9-3|II": {
-		"generationId": 10442,
+		"generationId": 10481,
 		"manufacturerName": "Saab",
 		"modelName": "9-3",
 		"generationCode": "II",
@@ -3536,7 +3848,7 @@
 		"endYear": 2011
 	},
 	"Saab|9-5|II": {
-		"generationId": 10443,
+		"generationId": 10482,
 		"manufacturerName": "Saab",
 		"modelName": "9-5",
 		"generationCode": "II",
@@ -3544,7 +3856,7 @@
 		"endYear": 2011
 	},
 	"Lancia|Ypsilon|II": {
-		"generationId": 10444,
+		"generationId": 10483,
 		"manufacturerName": "Lancia",
 		"modelName": "Ypsilon",
 		"generationCode": "II",
@@ -3552,15 +3864,23 @@
 		"endYear": 2011
 	},
 	"Lancia|Ypsilon|III": {
-		"generationId": 10445,
+		"generationId": 10484,
 		"manufacturerName": "Lancia",
 		"modelName": "Ypsilon",
 		"generationCode": "III",
 		"startYear": 2011,
+		"endYear": 2024
+	},
+	"Lancia|Ypsilon|IV": {
+		"generationId": 10485,
+		"manufacturerName": "Lancia",
+		"modelName": "Ypsilon",
+		"generationCode": "IV",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Lancia|Delta|III": {
-		"generationId": 10446,
+		"generationId": 10486,
 		"manufacturerName": "Lancia",
 		"modelName": "Delta",
 		"generationCode": "III",
@@ -3568,7 +3888,7 @@
 		"endYear": 2014
 	},
 	"Lancia|Musa|I": {
-		"generationId": 10447,
+		"generationId": 10487,
 		"manufacturerName": "Lancia",
 		"modelName": "Musa",
 		"generationCode": "I",
@@ -3576,7 +3896,7 @@
 		"endYear": 2012
 	},
 	"Ferrari|458 Italia|I": {
-		"generationId": 10448,
+		"generationId": 10488,
 		"manufacturerName": "Ferrari",
 		"modelName": "458 Italia",
 		"generationCode": "I",
@@ -3584,7 +3904,7 @@
 		"endYear": 2015
 	},
 	"Ferrari|488|I": {
-		"generationId": 10449,
+		"generationId": 10489,
 		"manufacturerName": "Ferrari",
 		"modelName": "488",
 		"generationCode": "I",
@@ -3592,7 +3912,7 @@
 		"endYear": 2019
 	},
 	"Ferrari|F8 Tributo|I": {
-		"generationId": 10450,
+		"generationId": 10490,
 		"manufacturerName": "Ferrari",
 		"modelName": "F8 Tributo",
 		"generationCode": "I",
@@ -3600,7 +3920,7 @@
 		"endYear": null
 	},
 	"Ferrari|Roma|I": {
-		"generationId": 10451,
+		"generationId": 10491,
 		"manufacturerName": "Ferrari",
 		"modelName": "Roma",
 		"generationCode": "I",
@@ -3608,7 +3928,7 @@
 		"endYear": null
 	},
 	"Ferrari|California|I": {
-		"generationId": 10452,
+		"generationId": 10492,
 		"manufacturerName": "Ferrari",
 		"modelName": "California",
 		"generationCode": "I",
@@ -3616,7 +3936,7 @@
 		"endYear": 2017
 	},
 	"Ferrari|296 GTB|I": {
-		"generationId": 10453,
+		"generationId": 10493,
 		"manufacturerName": "Ferrari",
 		"modelName": "296 GTB",
 		"generationCode": "I",
@@ -3624,7 +3944,7 @@
 		"endYear": null
 	},
 	"Ferrari|SF90 Stradale|I": {
-		"generationId": 10454,
+		"generationId": 10494,
 		"manufacturerName": "Ferrari",
 		"modelName": "SF90 Stradale",
 		"generationCode": "I",
@@ -3632,7 +3952,7 @@
 		"endYear": null
 	},
 	"Ferrari|Purosangue|I": {
-		"generationId": 10455,
+		"generationId": 10495,
 		"manufacturerName": "Ferrari",
 		"modelName": "Purosangue",
 		"generationCode": "I",
@@ -3640,7 +3960,7 @@
 		"endYear": null
 	},
 	"Ferrari|Portofino|I": {
-		"generationId": 10456,
+		"generationId": 10496,
 		"manufacturerName": "Ferrari",
 		"modelName": "Portofino",
 		"generationCode": "I",
@@ -3648,15 +3968,23 @@
 		"endYear": null
 	},
 	"Ferrari|812 Superfast|I": {
-		"generationId": 10457,
+		"generationId": 10497,
 		"manufacturerName": "Ferrari",
 		"modelName": "812 Superfast",
 		"generationCode": "I",
 		"startYear": 2017,
 		"endYear": null
 	},
+	"Ferrari|12Cilindri|I": {
+		"generationId": 10498,
+		"manufacturerName": "Ferrari",
+		"modelName": "12Cilindri",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Lamborghini|Gallardo|I": {
-		"generationId": 10458,
+		"generationId": 10499,
 		"manufacturerName": "Lamborghini",
 		"modelName": "Gallardo",
 		"generationCode": "I",
@@ -3664,7 +3992,7 @@
 		"endYear": 2013
 	},
 	"Lamborghini|Huracan|I": {
-		"generationId": 10459,
+		"generationId": 10500,
 		"manufacturerName": "Lamborghini",
 		"modelName": "Huracan",
 		"generationCode": "I",
@@ -3672,7 +4000,7 @@
 		"endYear": null
 	},
 	"Lamborghini|Aventador|I": {
-		"generationId": 10460,
+		"generationId": 10501,
 		"manufacturerName": "Lamborghini",
 		"modelName": "Aventador",
 		"generationCode": "I",
@@ -3680,7 +4008,7 @@
 		"endYear": 2022
 	},
 	"Lamborghini|Urus|I": {
-		"generationId": 10461,
+		"generationId": 10502,
 		"manufacturerName": "Lamborghini",
 		"modelName": "Urus",
 		"generationCode": "I",
@@ -3688,15 +4016,23 @@
 		"endYear": null
 	},
 	"Lamborghini|Revuelto|I": {
-		"generationId": 10462,
+		"generationId": 10503,
 		"manufacturerName": "Lamborghini",
 		"modelName": "Revuelto",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Lamborghini|Temerario|I": {
+		"generationId": 10504,
+		"manufacturerName": "Lamborghini",
+		"modelName": "Temerario",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Maserati|Ghibli|III": {
-		"generationId": 10463,
+		"generationId": 10505,
 		"manufacturerName": "Maserati",
 		"modelName": "Ghibli",
 		"generationCode": "III",
@@ -3704,7 +4040,7 @@
 		"endYear": 2022
 	},
 	"Maserati|Quattroporte|VI": {
-		"generationId": 10464,
+		"generationId": 10506,
 		"manufacturerName": "Maserati",
 		"modelName": "Quattroporte",
 		"generationCode": "VI",
@@ -3712,7 +4048,7 @@
 		"endYear": 2022
 	},
 	"Maserati|Levante|I": {
-		"generationId": 10465,
+		"generationId": 10507,
 		"manufacturerName": "Maserati",
 		"modelName": "Levante",
 		"generationCode": "I",
@@ -3720,7 +4056,7 @@
 		"endYear": null
 	},
 	"Maserati|GranTurismo|I": {
-		"generationId": 10466,
+		"generationId": 10508,
 		"manufacturerName": "Maserati",
 		"modelName": "GranTurismo",
 		"generationCode": "I",
@@ -3728,7 +4064,7 @@
 		"endYear": 2019
 	},
 	"Maserati|GranTurismo|II": {
-		"generationId": 10467,
+		"generationId": 10509,
 		"manufacturerName": "Maserati",
 		"modelName": "GranTurismo",
 		"generationCode": "II",
@@ -3736,15 +4072,31 @@
 		"endYear": null
 	},
 	"Maserati|Grecale|I": {
-		"generationId": 10468,
+		"generationId": 10510,
 		"manufacturerName": "Maserati",
 		"modelName": "Grecale",
 		"generationCode": "I",
 		"startYear": 2022,
 		"endYear": null
 	},
+	"Maserati|MC20|I": {
+		"generationId": 10511,
+		"manufacturerName": "Maserati",
+		"modelName": "MC20",
+		"generationCode": "I",
+		"startYear": 2020,
+		"endYear": null
+	},
+	"Maserati|GranCabrio|II": {
+		"generationId": 10512,
+		"manufacturerName": "Maserati",
+		"modelName": "GranCabrio",
+		"generationCode": "II",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Bentley|Continental GT|II": {
-		"generationId": 10469,
+		"generationId": 10513,
 		"manufacturerName": "Bentley",
 		"modelName": "Continental GT",
 		"generationCode": "II",
@@ -3752,7 +4104,7 @@
 		"endYear": 2017
 	},
 	"Bentley|Continental GT|III": {
-		"generationId": 10470,
+		"generationId": 10514,
 		"manufacturerName": "Bentley",
 		"modelName": "Continental GT",
 		"generationCode": "III",
@@ -3760,7 +4112,7 @@
 		"endYear": null
 	},
 	"Bentley|Flying Spur|II": {
-		"generationId": 10471,
+		"generationId": 10515,
 		"manufacturerName": "Bentley",
 		"modelName": "Flying Spur",
 		"generationCode": "II",
@@ -3768,7 +4120,7 @@
 		"endYear": 2019
 	},
 	"Bentley|Flying Spur|III": {
-		"generationId": 10472,
+		"generationId": 10516,
 		"manufacturerName": "Bentley",
 		"modelName": "Flying Spur",
 		"generationCode": "III",
@@ -3776,7 +4128,7 @@
 		"endYear": null
 	},
 	"Bentley|Bentayga|I": {
-		"generationId": 10473,
+		"generationId": 10517,
 		"manufacturerName": "Bentley",
 		"modelName": "Bentayga",
 		"generationCode": "I",
@@ -3784,7 +4136,7 @@
 		"endYear": 2020
 	},
 	"Bentley|Bentayga|II": {
-		"generationId": 10474,
+		"generationId": 10518,
 		"manufacturerName": "Bentley",
 		"modelName": "Bentayga",
 		"generationCode": "II",
@@ -3792,15 +4144,31 @@
 		"endYear": null
 	},
 	"Bentley|Mulsanne|III": {
-		"generationId": 10475,
+		"generationId": 10519,
 		"manufacturerName": "Bentley",
 		"modelName": "Mulsanne",
 		"generationCode": "III",
 		"startYear": 2010,
 		"endYear": 2020
 	},
+	"Bentley|Bacalar|I": {
+		"generationId": 10520,
+		"manufacturerName": "Bentley",
+		"modelName": "Bacalar",
+		"generationCode": "I",
+		"startYear": 2020,
+		"endYear": null
+	},
+	"Bentley|Batur|I": {
+		"generationId": 10521,
+		"manufacturerName": "Bentley",
+		"modelName": "Batur",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Rolls-Royce|Ghost|I": {
-		"generationId": 10476,
+		"generationId": 10522,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Ghost",
 		"generationCode": "I",
@@ -3808,7 +4176,7 @@
 		"endYear": 2020
 	},
 	"Rolls-Royce|Ghost|II": {
-		"generationId": 10477,
+		"generationId": 10523,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Ghost",
 		"generationCode": "II",
@@ -3816,7 +4184,7 @@
 		"endYear": null
 	},
 	"Rolls-Royce|Phantom|VII": {
-		"generationId": 10478,
+		"generationId": 10524,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Phantom",
 		"generationCode": "VII",
@@ -3824,7 +4192,7 @@
 		"endYear": 2017
 	},
 	"Rolls-Royce|Phantom|VIII": {
-		"generationId": 10479,
+		"generationId": 10525,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Phantom",
 		"generationCode": "VIII",
@@ -3832,7 +4200,7 @@
 		"endYear": null
 	},
 	"Rolls-Royce|Wraith|I": {
-		"generationId": 10480,
+		"generationId": 10526,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Wraith",
 		"generationCode": "I",
@@ -3840,7 +4208,7 @@
 		"endYear": 2023
 	},
 	"Rolls-Royce|Cullinan|I": {
-		"generationId": 10481,
+		"generationId": 10527,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Cullinan",
 		"generationCode": "I",
@@ -3848,7 +4216,7 @@
 		"endYear": null
 	},
 	"Rolls-Royce|Spectre|I": {
-		"generationId": 10482,
+		"generationId": 10528,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Spectre",
 		"generationCode": "I",
@@ -3856,7 +4224,7 @@
 		"endYear": null
 	},
 	"Rolls-Royce|Dawn|I": {
-		"generationId": 10483,
+		"generationId": 10529,
 		"manufacturerName": "Rolls-Royce",
 		"modelName": "Dawn",
 		"generationCode": "I",
@@ -3864,7 +4232,7 @@
 		"endYear": 2023
 	},
 	"Aston Martin|DB9|I": {
-		"generationId": 10484,
+		"generationId": 10530,
 		"manufacturerName": "Aston Martin",
 		"modelName": "DB9",
 		"generationCode": "I",
@@ -3872,7 +4240,7 @@
 		"endYear": 2016
 	},
 	"Aston Martin|DB11|I": {
-		"generationId": 10485,
+		"generationId": 10531,
 		"manufacturerName": "Aston Martin",
 		"modelName": "DB11",
 		"generationCode": "I",
@@ -3880,7 +4248,7 @@
 		"endYear": null
 	},
 	"Aston Martin|Vantage|II": {
-		"generationId": 10486,
+		"generationId": 10532,
 		"manufacturerName": "Aston Martin",
 		"modelName": "Vantage",
 		"generationCode": "II",
@@ -3888,7 +4256,7 @@
 		"endYear": 2018
 	},
 	"Aston Martin|Vantage|III": {
-		"generationId": 10487,
+		"generationId": 10533,
 		"manufacturerName": "Aston Martin",
 		"modelName": "Vantage",
 		"generationCode": "III",
@@ -3896,7 +4264,7 @@
 		"endYear": null
 	},
 	"Aston Martin|DBS|II": {
-		"generationId": 10488,
+		"generationId": 10534,
 		"manufacturerName": "Aston Martin",
 		"modelName": "DBS",
 		"generationCode": "II",
@@ -3904,7 +4272,7 @@
 		"endYear": 2012
 	},
 	"Aston Martin|DBS|III": {
-		"generationId": 10489,
+		"generationId": 10535,
 		"manufacturerName": "Aston Martin",
 		"modelName": "DBS",
 		"generationCode": "III",
@@ -3912,7 +4280,7 @@
 		"endYear": null
 	},
 	"Aston Martin|Rapide|I": {
-		"generationId": 10490,
+		"generationId": 10536,
 		"manufacturerName": "Aston Martin",
 		"modelName": "Rapide",
 		"generationCode": "I",
@@ -3920,15 +4288,47 @@
 		"endYear": 2020
 	},
 	"Aston Martin|DBX|I": {
-		"generationId": 10491,
+		"generationId": 10537,
 		"manufacturerName": "Aston Martin",
 		"modelName": "DBX",
 		"generationCode": "I",
 		"startYear": 2020,
 		"endYear": null
 	},
+	"Aston Martin|DB12|I": {
+		"generationId": 10538,
+		"manufacturerName": "Aston Martin",
+		"modelName": "DB12",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Aston Martin|Vanquish|I": {
+		"generationId": 10539,
+		"manufacturerName": "Aston Martin",
+		"modelName": "Vanquish",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Aston Martin|Valkyrie|I": {
+		"generationId": 10540,
+		"manufacturerName": "Aston Martin",
+		"modelName": "Valkyrie",
+		"generationCode": "I",
+		"startYear": 2021,
+		"endYear": null
+	},
+	"Aston Martin|Valhalla|I": {
+		"generationId": 10541,
+		"manufacturerName": "Aston Martin",
+		"modelName": "Valhalla",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"McLaren|720S|I": {
-		"generationId": 10492,
+		"generationId": 10542,
 		"manufacturerName": "McLaren",
 		"modelName": "720S",
 		"generationCode": "I",
@@ -3936,7 +4336,7 @@
 		"endYear": null
 	},
 	"McLaren|570S|I": {
-		"generationId": 10493,
+		"generationId": 10543,
 		"manufacturerName": "McLaren",
 		"modelName": "570S",
 		"generationCode": "I",
@@ -3944,7 +4344,7 @@
 		"endYear": 2021
 	},
 	"McLaren|GT|I": {
-		"generationId": 10494,
+		"generationId": 10544,
 		"manufacturerName": "McLaren",
 		"modelName": "GT",
 		"generationCode": "I",
@@ -3952,7 +4352,7 @@
 		"endYear": null
 	},
 	"McLaren|Artura|I": {
-		"generationId": 10495,
+		"generationId": 10545,
 		"manufacturerName": "McLaren",
 		"modelName": "Artura",
 		"generationCode": "I",
@@ -3960,15 +4360,39 @@
 		"endYear": null
 	},
 	"McLaren|750S|I": {
-		"generationId": 10496,
+		"generationId": 10546,
 		"manufacturerName": "McLaren",
 		"modelName": "750S",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"McLaren|Elva|I": {
+		"generationId": 10547,
+		"manufacturerName": "McLaren",
+		"modelName": "Elva",
+		"generationCode": "I",
+		"startYear": 2020,
+		"endYear": null
+	},
+	"McLaren|Solus GT|I": {
+		"generationId": 10548,
+		"manufacturerName": "McLaren",
+		"modelName": "Solus GT",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"McLaren|W1|I": {
+		"generationId": 10549,
+		"manufacturerName": "McLaren",
+		"modelName": "W1",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Lotus|Elise|S3": {
-		"generationId": 10497,
+		"generationId": 10550,
 		"manufacturerName": "Lotus",
 		"modelName": "Elise",
 		"generationCode": "S3",
@@ -3976,7 +4400,7 @@
 		"endYear": 2021
 	},
 	"Lotus|Evora|I": {
-		"generationId": 10498,
+		"generationId": 10551,
 		"manufacturerName": "Lotus",
 		"modelName": "Evora",
 		"generationCode": "I",
@@ -3984,7 +4408,7 @@
 		"endYear": 2021
 	},
 	"Lotus|Exige|S3": {
-		"generationId": 10499,
+		"generationId": 10552,
 		"manufacturerName": "Lotus",
 		"modelName": "Exige",
 		"generationCode": "S3",
@@ -3992,7 +4416,7 @@
 		"endYear": 2021
 	},
 	"Lotus|Emira|I": {
-		"generationId": 10500,
+		"generationId": 10553,
 		"manufacturerName": "Lotus",
 		"modelName": "Emira",
 		"generationCode": "I",
@@ -4000,15 +4424,31 @@
 		"endYear": null
 	},
 	"Lotus|Eletre|I": {
-		"generationId": 10501,
+		"generationId": 10554,
 		"manufacturerName": "Lotus",
 		"modelName": "Eletre",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Lotus|Evija|I": {
+		"generationId": 10555,
+		"manufacturerName": "Lotus",
+		"modelName": "Evija",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Lotus|Emeya|I": {
+		"generationId": 10556,
+		"manufacturerName": "Lotus",
+		"modelName": "Emeya",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Polestar|Polestar 2|I": {
-		"generationId": 10502,
+		"generationId": 10557,
 		"manufacturerName": "Polestar",
 		"modelName": "Polestar 2",
 		"generationCode": "I",
@@ -4016,7 +4456,7 @@
 		"endYear": null
 	},
 	"Polestar|Polestar 3|I": {
-		"generationId": 10503,
+		"generationId": 10558,
 		"manufacturerName": "Polestar",
 		"modelName": "Polestar 3",
 		"generationCode": "I",
@@ -4024,15 +4464,23 @@
 		"endYear": null
 	},
 	"Polestar|Polestar 4|I": {
-		"generationId": 10504,
+		"generationId": 10559,
 		"manufacturerName": "Polestar",
 		"modelName": "Polestar 4",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Polestar|Polestar 5|I": {
+		"generationId": 10560,
+		"manufacturerName": "Polestar",
+		"modelName": "Polestar 5",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"MG|MG3|I": {
-		"generationId": 10505,
+		"generationId": 10561,
 		"manufacturerName": "MG",
 		"modelName": "MG3",
 		"generationCode": "I",
@@ -4040,7 +4488,7 @@
 		"endYear": null
 	},
 	"MG|MG5|I": {
-		"generationId": 10506,
+		"generationId": 10562,
 		"manufacturerName": "MG",
 		"modelName": "MG5",
 		"generationCode": "I",
@@ -4048,7 +4496,7 @@
 		"endYear": null
 	},
 	"MG|MG ZS|I": {
-		"generationId": 10507,
+		"generationId": 10563,
 		"manufacturerName": "MG",
 		"modelName": "MG ZS",
 		"generationCode": "I",
@@ -4056,7 +4504,7 @@
 		"endYear": null
 	},
 	"MG|MG HS|I": {
-		"generationId": 10508,
+		"generationId": 10564,
 		"manufacturerName": "MG",
 		"modelName": "MG HS",
 		"generationCode": "I",
@@ -4064,7 +4512,7 @@
 		"endYear": null
 	},
 	"MG|MG4|I": {
-		"generationId": 10509,
+		"generationId": 10565,
 		"manufacturerName": "MG",
 		"modelName": "MG4",
 		"generationCode": "I",
@@ -4072,7 +4520,7 @@
 		"endYear": null
 	},
 	"MG|MG Cyberster|I": {
-		"generationId": 10510,
+		"generationId": 10566,
 		"manufacturerName": "MG",
 		"modelName": "MG Cyberster",
 		"generationCode": "I",
@@ -4080,15 +4528,39 @@
 		"endYear": null
 	},
 	"MG|MG EHS|I": {
-		"generationId": 10511,
+		"generationId": 10567,
 		"manufacturerName": "MG",
 		"modelName": "MG EHS",
 		"generationCode": "I",
 		"startYear": 2020,
 		"endYear": null
 	},
+	"MG|MG7|I": {
+		"generationId": 10568,
+		"manufacturerName": "MG",
+		"modelName": "MG7",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"MG|IM5|I": {
+		"generationId": 10569,
+		"manufacturerName": "MG",
+		"modelName": "IM5",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"MG|IM6|I": {
+		"generationId": 10570,
+		"manufacturerName": "MG",
+		"modelName": "IM6",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Daewoo|Matiz|I": {
-		"generationId": 10512,
+		"generationId": 10571,
 		"manufacturerName": "Daewoo",
 		"modelName": "Matiz",
 		"generationCode": "I",
@@ -4096,7 +4568,7 @@
 		"endYear": 2005
 	},
 	"Daewoo|Kalos|I": {
-		"generationId": 10513,
+		"generationId": 10572,
 		"manufacturerName": "Daewoo",
 		"modelName": "Kalos",
 		"generationCode": "I",
@@ -4104,7 +4576,7 @@
 		"endYear": 2008
 	},
 	"Daewoo|Lacetti|I": {
-		"generationId": 10514,
+		"generationId": 10573,
 		"manufacturerName": "Daewoo",
 		"modelName": "Lacetti",
 		"generationCode": "I",
@@ -4112,7 +4584,7 @@
 		"endYear": 2008
 	},
 	"Daewoo|Nubira|II": {
-		"generationId": 10515,
+		"generationId": 10574,
 		"manufacturerName": "Daewoo",
 		"modelName": "Nubira",
 		"generationCode": "II",
@@ -4120,7 +4592,7 @@
 		"endYear": 2004
 	},
 	"Rover|75|I": {
-		"generationId": 10516,
+		"generationId": 10575,
 		"manufacturerName": "Rover",
 		"modelName": "75",
 		"generationCode": "I",
@@ -4128,7 +4600,7 @@
 		"endYear": 2005
 	},
 	"Rover|45|I": {
-		"generationId": 10517,
+		"generationId": 10576,
 		"manufacturerName": "Rover",
 		"modelName": "45",
 		"generationCode": "I",
@@ -4136,7 +4608,7 @@
 		"endYear": 2005
 	},
 	"Rover|25|I": {
-		"generationId": 10518,
+		"generationId": 10577,
 		"manufacturerName": "Rover",
 		"modelName": "25",
 		"generationCode": "I",
@@ -4144,7 +4616,7 @@
 		"endYear": 2005
 	},
 	"Toyota|Corolla|E150": {
-		"generationId": 10519,
+		"generationId": 10578,
 		"manufacturerName": "Toyota",
 		"modelName": "Corolla",
 		"generationCode": "E150",
@@ -4152,7 +4624,7 @@
 		"endYear": 2013
 	},
 	"Toyota|Corolla|E180": {
-		"generationId": 10520,
+		"generationId": 10579,
 		"manufacturerName": "Toyota",
 		"modelName": "Corolla",
 		"generationCode": "E180",
@@ -4160,7 +4632,7 @@
 		"endYear": 2018
 	},
 	"Toyota|Corolla|E210": {
-		"generationId": 10521,
+		"generationId": 10580,
 		"manufacturerName": "Toyota",
 		"modelName": "Corolla",
 		"generationCode": "E210",
@@ -4168,7 +4640,7 @@
 		"endYear": null
 	},
 	"Toyota|Yaris|XP90": {
-		"generationId": 10522,
+		"generationId": 10581,
 		"manufacturerName": "Toyota",
 		"modelName": "Yaris",
 		"generationCode": "XP90",
@@ -4176,7 +4648,7 @@
 		"endYear": 2011
 	},
 	"Toyota|Yaris|XP130": {
-		"generationId": 10523,
+		"generationId": 10582,
 		"manufacturerName": "Toyota",
 		"modelName": "Yaris",
 		"generationCode": "XP130",
@@ -4184,7 +4656,7 @@
 		"endYear": 2020
 	},
 	"Toyota|Yaris|XP210": {
-		"generationId": 10524,
+		"generationId": 10583,
 		"manufacturerName": "Toyota",
 		"modelName": "Yaris",
 		"generationCode": "XP210",
@@ -4192,7 +4664,7 @@
 		"endYear": null
 	},
 	"Toyota|RAV4|XA30": {
-		"generationId": 10525,
+		"generationId": 10584,
 		"manufacturerName": "Toyota",
 		"modelName": "RAV4",
 		"generationCode": "XA30",
@@ -4200,7 +4672,7 @@
 		"endYear": 2012
 	},
 	"Toyota|RAV4|XA40": {
-		"generationId": 10526,
+		"generationId": 10585,
 		"manufacturerName": "Toyota",
 		"modelName": "RAV4",
 		"generationCode": "XA40",
@@ -4208,7 +4680,7 @@
 		"endYear": 2018
 	},
 	"Toyota|RAV4|XA50": {
-		"generationId": 10527,
+		"generationId": 10586,
 		"manufacturerName": "Toyota",
 		"modelName": "RAV4",
 		"generationCode": "XA50",
@@ -4216,7 +4688,7 @@
 		"endYear": null
 	},
 	"Toyota|Camry|XV40": {
-		"generationId": 10528,
+		"generationId": 10587,
 		"manufacturerName": "Toyota",
 		"modelName": "Camry",
 		"generationCode": "XV40",
@@ -4224,7 +4696,7 @@
 		"endYear": 2011
 	},
 	"Toyota|Camry|XV50": {
-		"generationId": 10529,
+		"generationId": 10588,
 		"manufacturerName": "Toyota",
 		"modelName": "Camry",
 		"generationCode": "XV50",
@@ -4232,7 +4704,7 @@
 		"endYear": 2017
 	},
 	"Toyota|Camry|XV70": {
-		"generationId": 10530,
+		"generationId": 10589,
 		"manufacturerName": "Toyota",
 		"modelName": "Camry",
 		"generationCode": "XV70",
@@ -4240,7 +4712,7 @@
 		"endYear": null
 	},
 	"Toyota|Land Cruiser|J200": {
-		"generationId": 10531,
+		"generationId": 10590,
 		"manufacturerName": "Toyota",
 		"modelName": "Land Cruiser",
 		"generationCode": "J200",
@@ -4248,7 +4720,7 @@
 		"endYear": 2021
 	},
 	"Toyota|Land Cruiser|J300": {
-		"generationId": 10532,
+		"generationId": 10591,
 		"manufacturerName": "Toyota",
 		"modelName": "Land Cruiser",
 		"generationCode": "J300",
@@ -4256,7 +4728,7 @@
 		"endYear": null
 	},
 	"Toyota|Auris|E150": {
-		"generationId": 10533,
+		"generationId": 10592,
 		"manufacturerName": "Toyota",
 		"modelName": "Auris",
 		"generationCode": "E150",
@@ -4264,7 +4736,7 @@
 		"endYear": 2012
 	},
 	"Toyota|Auris|E180": {
-		"generationId": 10534,
+		"generationId": 10593,
 		"manufacturerName": "Toyota",
 		"modelName": "Auris",
 		"generationCode": "E180",
@@ -4272,7 +4744,7 @@
 		"endYear": 2018
 	},
 	"Toyota|C-HR|I": {
-		"generationId": 10535,
+		"generationId": 10594,
 		"manufacturerName": "Toyota",
 		"modelName": "C-HR",
 		"generationCode": "I",
@@ -4280,7 +4752,7 @@
 		"endYear": 2023
 	},
 	"Toyota|C-HR|II": {
-		"generationId": 10536,
+		"generationId": 10595,
 		"manufacturerName": "Toyota",
 		"modelName": "C-HR",
 		"generationCode": "II",
@@ -4288,7 +4760,7 @@
 		"endYear": null
 	},
 	"Toyota|Prius|XW30": {
-		"generationId": 10537,
+		"generationId": 10596,
 		"manufacturerName": "Toyota",
 		"modelName": "Prius",
 		"generationCode": "XW30",
@@ -4296,7 +4768,7 @@
 		"endYear": 2015
 	},
 	"Toyota|Prius|XW50": {
-		"generationId": 10538,
+		"generationId": 10597,
 		"manufacturerName": "Toyota",
 		"modelName": "Prius",
 		"generationCode": "XW50",
@@ -4304,7 +4776,7 @@
 		"endYear": 2022
 	},
 	"Toyota|Prius|XW60": {
-		"generationId": 10539,
+		"generationId": 10598,
 		"manufacturerName": "Toyota",
 		"modelName": "Prius",
 		"generationCode": "XW60",
@@ -4312,7 +4784,7 @@
 		"endYear": null
 	},
 	"Toyota|Hilux|AN120": {
-		"generationId": 10540,
+		"generationId": 10599,
 		"manufacturerName": "Toyota",
 		"modelName": "Hilux",
 		"generationCode": "AN120",
@@ -4320,7 +4792,7 @@
 		"endYear": null
 	},
 	"Toyota|Supra|A90": {
-		"generationId": 10541,
+		"generationId": 10600,
 		"manufacturerName": "Toyota",
 		"modelName": "Supra",
 		"generationCode": "A90",
@@ -4328,7 +4800,7 @@
 		"endYear": null
 	},
 	"Toyota|Aygo|I": {
-		"generationId": 10542,
+		"generationId": 10601,
 		"manufacturerName": "Toyota",
 		"modelName": "Aygo",
 		"generationCode": "I",
@@ -4336,7 +4808,7 @@
 		"endYear": 2014
 	},
 	"Toyota|Aygo|II": {
-		"generationId": 10543,
+		"generationId": 10602,
 		"manufacturerName": "Toyota",
 		"modelName": "Aygo",
 		"generationCode": "II",
@@ -4344,7 +4816,7 @@
 		"endYear": 2021
 	},
 	"Toyota|Avensis|III": {
-		"generationId": 10544,
+		"generationId": 10603,
 		"manufacturerName": "Toyota",
 		"modelName": "Avensis",
 		"generationCode": "III",
@@ -4352,7 +4824,7 @@
 		"endYear": 2018
 	},
 	"Toyota|bZ4X|I": {
-		"generationId": 10545,
+		"generationId": 10604,
 		"manufacturerName": "Toyota",
 		"modelName": "bZ4X",
 		"generationCode": "I",
@@ -4360,7 +4832,7 @@
 		"endYear": null
 	},
 	"Toyota|Verso|I": {
-		"generationId": 10546,
+		"generationId": 10605,
 		"manufacturerName": "Toyota",
 		"modelName": "Verso",
 		"generationCode": "I",
@@ -4368,7 +4840,7 @@
 		"endYear": 2018
 	},
 	"Toyota|Aygo X|I": {
-		"generationId": 10547,
+		"generationId": 10606,
 		"manufacturerName": "Toyota",
 		"modelName": "Aygo X",
 		"generationCode": "I",
@@ -4376,7 +4848,7 @@
 		"endYear": null
 	},
 	"Toyota|GR Yaris|I": {
-		"generationId": 10548,
+		"generationId": 10607,
 		"manufacturerName": "Toyota",
 		"modelName": "GR Yaris",
 		"generationCode": "I",
@@ -4384,15 +4856,79 @@
 		"endYear": null
 	},
 	"Toyota|Proace City|I": {
-		"generationId": 10549,
+		"generationId": 10608,
 		"manufacturerName": "Toyota",
 		"modelName": "Proace City",
 		"generationCode": "I",
 		"startYear": 2019,
 		"endYear": null
 	},
+	"Toyota|GR86|ZN8": {
+		"generationId": 10609,
+		"manufacturerName": "Toyota",
+		"modelName": "GR86",
+		"generationCode": "ZN8",
+		"startYear": 2021,
+		"endYear": null
+	},
+	"Toyota|GR Corolla|I": {
+		"generationId": 10610,
+		"manufacturerName": "Toyota",
+		"modelName": "GR Corolla",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Toyota|Corolla Cross|I": {
+		"generationId": 10611,
+		"manufacturerName": "Toyota",
+		"modelName": "Corolla Cross",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Toyota|Land Cruiser Prado|J250": {
+		"generationId": 10612,
+		"manufacturerName": "Toyota",
+		"modelName": "Land Cruiser Prado",
+		"generationCode": "J250",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Toyota|Yaris Cross|I": {
+		"generationId": 10613,
+		"manufacturerName": "Toyota",
+		"modelName": "Yaris Cross",
+		"generationCode": "I",
+		"startYear": 2020,
+		"endYear": null
+	},
+	"Toyota|Crown|S20": {
+		"generationId": 10614,
+		"manufacturerName": "Toyota",
+		"modelName": "Crown",
+		"generationCode": "S20",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Toyota|Grand Highlander|I": {
+		"generationId": 10615,
+		"manufacturerName": "Toyota",
+		"modelName": "Grand Highlander",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Toyota|Century|I": {
+		"generationId": 10616,
+		"manufacturerName": "Toyota",
+		"modelName": "Century",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Honda|Civic|VIII": {
-		"generationId": 10550,
+		"generationId": 10617,
 		"manufacturerName": "Honda",
 		"modelName": "Civic",
 		"generationCode": "VIII",
@@ -4400,7 +4936,7 @@
 		"endYear": 2011
 	},
 	"Honda|Civic|IX": {
-		"generationId": 10551,
+		"generationId": 10618,
 		"manufacturerName": "Honda",
 		"modelName": "Civic",
 		"generationCode": "IX",
@@ -4408,7 +4944,7 @@
 		"endYear": 2015
 	},
 	"Honda|Civic|X": {
-		"generationId": 10552,
+		"generationId": 10619,
 		"manufacturerName": "Honda",
 		"modelName": "Civic",
 		"generationCode": "X",
@@ -4416,7 +4952,7 @@
 		"endYear": 2021
 	},
 	"Honda|Civic|XI": {
-		"generationId": 10553,
+		"generationId": 10620,
 		"manufacturerName": "Honda",
 		"modelName": "Civic",
 		"generationCode": "XI",
@@ -4424,7 +4960,7 @@
 		"endYear": null
 	},
 	"Honda|CR-V|III": {
-		"generationId": 10554,
+		"generationId": 10621,
 		"manufacturerName": "Honda",
 		"modelName": "CR-V",
 		"generationCode": "III",
@@ -4432,7 +4968,7 @@
 		"endYear": 2011
 	},
 	"Honda|CR-V|IV": {
-		"generationId": 10555,
+		"generationId": 10622,
 		"manufacturerName": "Honda",
 		"modelName": "CR-V",
 		"generationCode": "IV",
@@ -4440,7 +4976,7 @@
 		"endYear": 2016
 	},
 	"Honda|CR-V|V": {
-		"generationId": 10556,
+		"generationId": 10623,
 		"manufacturerName": "Honda",
 		"modelName": "CR-V",
 		"generationCode": "V",
@@ -4448,7 +4984,7 @@
 		"endYear": 2022
 	},
 	"Honda|CR-V|VI": {
-		"generationId": 10557,
+		"generationId": 10624,
 		"manufacturerName": "Honda",
 		"modelName": "CR-V",
 		"generationCode": "VI",
@@ -4456,7 +4992,7 @@
 		"endYear": null
 	},
 	"Honda|Jazz|III": {
-		"generationId": 10558,
+		"generationId": 10625,
 		"manufacturerName": "Honda",
 		"modelName": "Jazz",
 		"generationCode": "III",
@@ -4464,7 +5000,7 @@
 		"endYear": 2014
 	},
 	"Honda|Jazz|IV": {
-		"generationId": 10559,
+		"generationId": 10626,
 		"manufacturerName": "Honda",
 		"modelName": "Jazz",
 		"generationCode": "IV",
@@ -4472,7 +5008,7 @@
 		"endYear": 2020
 	},
 	"Honda|Jazz|V": {
-		"generationId": 10560,
+		"generationId": 10627,
 		"manufacturerName": "Honda",
 		"modelName": "Jazz",
 		"generationCode": "V",
@@ -4480,7 +5016,7 @@
 		"endYear": null
 	},
 	"Honda|Accord|VIII": {
-		"generationId": 10561,
+		"generationId": 10628,
 		"manufacturerName": "Honda",
 		"modelName": "Accord",
 		"generationCode": "VIII",
@@ -4488,7 +5024,7 @@
 		"endYear": 2012
 	},
 	"Honda|Accord|IX": {
-		"generationId": 10562,
+		"generationId": 10629,
 		"manufacturerName": "Honda",
 		"modelName": "Accord",
 		"generationCode": "IX",
@@ -4496,7 +5032,7 @@
 		"endYear": 2017
 	},
 	"Honda|HR-V|II": {
-		"generationId": 10563,
+		"generationId": 10630,
 		"manufacturerName": "Honda",
 		"modelName": "HR-V",
 		"generationCode": "II",
@@ -4504,7 +5040,7 @@
 		"endYear": 2021
 	},
 	"Honda|HR-V|III": {
-		"generationId": 10564,
+		"generationId": 10631,
 		"manufacturerName": "Honda",
 		"modelName": "HR-V",
 		"generationCode": "III",
@@ -4512,7 +5048,7 @@
 		"endYear": null
 	},
 	"Honda|FR-V|I": {
-		"generationId": 10565,
+		"generationId": 10632,
 		"manufacturerName": "Honda",
 		"modelName": "FR-V",
 		"generationCode": "I",
@@ -4520,7 +5056,7 @@
 		"endYear": 2009
 	},
 	"Honda|Stream|II": {
-		"generationId": 10566,
+		"generationId": 10633,
 		"manufacturerName": "Honda",
 		"modelName": "Stream",
 		"generationCode": "II",
@@ -4528,7 +5064,7 @@
 		"endYear": 2014
 	},
 	"Honda|Honda e|I": {
-		"generationId": 10567,
+		"generationId": 10634,
 		"manufacturerName": "Honda",
 		"modelName": "Honda e",
 		"generationCode": "I",
@@ -4536,7 +5072,7 @@
 		"endYear": 2023
 	},
 	"Honda|ZR-V|I": {
-		"generationId": 10568,
+		"generationId": 10635,
 		"manufacturerName": "Honda",
 		"modelName": "ZR-V",
 		"generationCode": "I",
@@ -4544,7 +5080,7 @@
 		"endYear": null
 	},
 	"Honda|Legend|IV": {
-		"generationId": 10569,
+		"generationId": 10636,
 		"manufacturerName": "Honda",
 		"modelName": "Legend",
 		"generationCode": "IV",
@@ -4552,7 +5088,7 @@
 		"endYear": 2012
 	},
 	"Honda|Insight|III": {
-		"generationId": 10570,
+		"generationId": 10637,
 		"manufacturerName": "Honda",
 		"modelName": "Insight",
 		"generationCode": "III",
@@ -4560,15 +5096,31 @@
 		"endYear": 2022
 	},
 	"Honda|e:Ny1|I": {
-		"generationId": 10571,
+		"generationId": 10638,
 		"manufacturerName": "Honda",
 		"modelName": "e:Ny1",
 		"generationCode": "I",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Honda|Elevate|I": {
+		"generationId": 10639,
+		"manufacturerName": "Honda",
+		"modelName": "Elevate",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Honda|Prelude|VI": {
+		"generationId": 10640,
+		"manufacturerName": "Honda",
+		"modelName": "Prelude",
+		"generationCode": "VI",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Hyundai|i20|I": {
-		"generationId": 10572,
+		"generationId": 10641,
 		"manufacturerName": "Hyundai",
 		"modelName": "i20",
 		"generationCode": "I",
@@ -4576,7 +5128,7 @@
 		"endYear": 2014
 	},
 	"Hyundai|i20|II": {
-		"generationId": 10573,
+		"generationId": 10642,
 		"manufacturerName": "Hyundai",
 		"modelName": "i20",
 		"generationCode": "II",
@@ -4584,7 +5136,7 @@
 		"endYear": 2020
 	},
 	"Hyundai|i20|III": {
-		"generationId": 10574,
+		"generationId": 10643,
 		"manufacturerName": "Hyundai",
 		"modelName": "i20",
 		"generationCode": "III",
@@ -4592,7 +5144,7 @@
 		"endYear": null
 	},
 	"Hyundai|i30|I": {
-		"generationId": 10575,
+		"generationId": 10644,
 		"manufacturerName": "Hyundai",
 		"modelName": "i30",
 		"generationCode": "I",
@@ -4600,7 +5152,7 @@
 		"endYear": 2011
 	},
 	"Hyundai|i30|II": {
-		"generationId": 10576,
+		"generationId": 10645,
 		"manufacturerName": "Hyundai",
 		"modelName": "i30",
 		"generationCode": "II",
@@ -4608,7 +5160,7 @@
 		"endYear": 2017
 	},
 	"Hyundai|i30|III": {
-		"generationId": 10577,
+		"generationId": 10646,
 		"manufacturerName": "Hyundai",
 		"modelName": "i30",
 		"generationCode": "III",
@@ -4616,7 +5168,7 @@
 		"endYear": null
 	},
 	"Hyundai|i40|I": {
-		"generationId": 10578,
+		"generationId": 10647,
 		"manufacturerName": "Hyundai",
 		"modelName": "i40",
 		"generationCode": "I",
@@ -4624,7 +5176,7 @@
 		"endYear": 2019
 	},
 	"Hyundai|Tucson|II": {
-		"generationId": 10579,
+		"generationId": 10648,
 		"manufacturerName": "Hyundai",
 		"modelName": "Tucson",
 		"generationCode": "II",
@@ -4632,7 +5184,7 @@
 		"endYear": 2015
 	},
 	"Hyundai|Tucson|III": {
-		"generationId": 10580,
+		"generationId": 10649,
 		"manufacturerName": "Hyundai",
 		"modelName": "Tucson",
 		"generationCode": "III",
@@ -4640,7 +5192,7 @@
 		"endYear": 2020
 	},
 	"Hyundai|Tucson|IV": {
-		"generationId": 10581,
+		"generationId": 10650,
 		"manufacturerName": "Hyundai",
 		"modelName": "Tucson",
 		"generationCode": "IV",
@@ -4648,7 +5200,7 @@
 		"endYear": null
 	},
 	"Hyundai|Santa Fe|II": {
-		"generationId": 10582,
+		"generationId": 10651,
 		"manufacturerName": "Hyundai",
 		"modelName": "Santa Fe",
 		"generationCode": "II",
@@ -4656,7 +5208,7 @@
 		"endYear": 2012
 	},
 	"Hyundai|Santa Fe|III": {
-		"generationId": 10583,
+		"generationId": 10652,
 		"manufacturerName": "Hyundai",
 		"modelName": "Santa Fe",
 		"generationCode": "III",
@@ -4664,15 +5216,23 @@
 		"endYear": 2018
 	},
 	"Hyundai|Santa Fe|IV": {
-		"generationId": 10584,
+		"generationId": 10653,
 		"manufacturerName": "Hyundai",
 		"modelName": "Santa Fe",
 		"generationCode": "IV",
 		"startYear": 2018,
+		"endYear": 2024
+	},
+	"Hyundai|Santa Fe|V": {
+		"generationId": 10654,
+		"manufacturerName": "Hyundai",
+		"modelName": "Santa Fe",
+		"generationCode": "V",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Hyundai|Sonata|NF": {
-		"generationId": 10585,
+		"generationId": 10655,
 		"manufacturerName": "Hyundai",
 		"modelName": "Sonata",
 		"generationCode": "NF",
@@ -4680,7 +5240,7 @@
 		"endYear": 2010
 	},
 	"Hyundai|Sonata|YF": {
-		"generationId": 10586,
+		"generationId": 10656,
 		"manufacturerName": "Hyundai",
 		"modelName": "Sonata",
 		"generationCode": "YF",
@@ -4688,7 +5248,7 @@
 		"endYear": 2014
 	},
 	"Hyundai|Sonata|LF": {
-		"generationId": 10587,
+		"generationId": 10657,
 		"manufacturerName": "Hyundai",
 		"modelName": "Sonata",
 		"generationCode": "LF",
@@ -4696,7 +5256,7 @@
 		"endYear": 2019
 	},
 	"Hyundai|Sonata|DN8": {
-		"generationId": 10588,
+		"generationId": 10658,
 		"manufacturerName": "Hyundai",
 		"modelName": "Sonata",
 		"generationCode": "DN8",
@@ -4704,7 +5264,7 @@
 		"endYear": null
 	},
 	"Hyundai|Accent|RB": {
-		"generationId": 10589,
+		"generationId": 10659,
 		"manufacturerName": "Hyundai",
 		"modelName": "Accent",
 		"generationCode": "RB",
@@ -4712,7 +5272,7 @@
 		"endYear": 2017
 	},
 	"Hyundai|Accent|HC": {
-		"generationId": 10590,
+		"generationId": 10660,
 		"manufacturerName": "Hyundai",
 		"modelName": "Accent",
 		"generationCode": "HC",
@@ -4720,7 +5280,7 @@
 		"endYear": null
 	},
 	"Hyundai|Ioniq|I": {
-		"generationId": 10591,
+		"generationId": 10661,
 		"manufacturerName": "Hyundai",
 		"modelName": "Ioniq",
 		"generationCode": "I",
@@ -4728,7 +5288,7 @@
 		"endYear": 2022
 	},
 	"Hyundai|Kona|I": {
-		"generationId": 10592,
+		"generationId": 10662,
 		"manufacturerName": "Hyundai",
 		"modelName": "Kona",
 		"generationCode": "I",
@@ -4736,7 +5296,7 @@
 		"endYear": 2023
 	},
 	"Hyundai|Kona|II": {
-		"generationId": 10593,
+		"generationId": 10663,
 		"manufacturerName": "Hyundai",
 		"modelName": "Kona",
 		"generationCode": "II",
@@ -4744,7 +5304,7 @@
 		"endYear": null
 	},
 	"Hyundai|Ioniq 5|I": {
-		"generationId": 10594,
+		"generationId": 10664,
 		"manufacturerName": "Hyundai",
 		"modelName": "Ioniq 5",
 		"generationCode": "I",
@@ -4752,7 +5312,7 @@
 		"endYear": null
 	},
 	"Hyundai|Ioniq 6|I": {
-		"generationId": 10595,
+		"generationId": 10665,
 		"manufacturerName": "Hyundai",
 		"modelName": "Ioniq 6",
 		"generationCode": "I",
@@ -4760,7 +5320,7 @@
 		"endYear": null
 	},
 	"Hyundai|Bayon|I": {
-		"generationId": 10596,
+		"generationId": 10666,
 		"manufacturerName": "Hyundai",
 		"modelName": "Bayon",
 		"generationCode": "I",
@@ -4768,7 +5328,7 @@
 		"endYear": null
 	},
 	"Hyundai|ix20|I": {
-		"generationId": 10597,
+		"generationId": 10667,
 		"manufacturerName": "Hyundai",
 		"modelName": "ix20",
 		"generationCode": "I",
@@ -4776,7 +5336,7 @@
 		"endYear": 2019
 	},
 	"Hyundai|Veloster|I": {
-		"generationId": 10598,
+		"generationId": 10668,
 		"manufacturerName": "Hyundai",
 		"modelName": "Veloster",
 		"generationCode": "I",
@@ -4784,7 +5344,7 @@
 		"endYear": 2017
 	},
 	"Hyundai|Veloster|II": {
-		"generationId": 10599,
+		"generationId": 10669,
 		"manufacturerName": "Hyundai",
 		"modelName": "Veloster",
 		"generationCode": "II",
@@ -4792,7 +5352,7 @@
 		"endYear": 2022
 	},
 	"Hyundai|NEXO|I": {
-		"generationId": 10600,
+		"generationId": 10670,
 		"manufacturerName": "Hyundai",
 		"modelName": "NEXO",
 		"generationCode": "I",
@@ -4800,7 +5360,7 @@
 		"endYear": null
 	},
 	"Hyundai|Ioniq 9|I": {
-		"generationId": 10601,
+		"generationId": 10671,
 		"manufacturerName": "Hyundai",
 		"modelName": "Ioniq 9",
 		"generationCode": "I",
@@ -4808,7 +5368,7 @@
 		"endYear": null
 	},
 	"Hyundai|ix35|I": {
-		"generationId": 10602,
+		"generationId": 10672,
 		"manufacturerName": "Hyundai",
 		"modelName": "ix35",
 		"generationCode": "I",
@@ -4816,7 +5376,7 @@
 		"endYear": 2015
 	},
 	"Hyundai|i10|I": {
-		"generationId": 10603,
+		"generationId": 10673,
 		"manufacturerName": "Hyundai",
 		"modelName": "i10",
 		"generationCode": "I",
@@ -4824,7 +5384,7 @@
 		"endYear": 2013
 	},
 	"Hyundai|i10|II": {
-		"generationId": 10604,
+		"generationId": 10674,
 		"manufacturerName": "Hyundai",
 		"modelName": "i10",
 		"generationCode": "II",
@@ -4832,15 +5392,31 @@
 		"endYear": 2019
 	},
 	"Hyundai|i10|III": {
-		"generationId": 10605,
+		"generationId": 10675,
 		"manufacturerName": "Hyundai",
 		"modelName": "i10",
 		"generationCode": "III",
 		"startYear": 2019,
 		"endYear": null
 	},
+	"Hyundai|Casper|I": {
+		"generationId": 10676,
+		"manufacturerName": "Hyundai",
+		"modelName": "Casper",
+		"generationCode": "I",
+		"startYear": 2021,
+		"endYear": null
+	},
+	"Hyundai|Staria|I": {
+		"generationId": 10677,
+		"manufacturerName": "Hyundai",
+		"modelName": "Staria",
+		"generationCode": "I",
+		"startYear": 2021,
+		"endYear": null
+	},
 	"Kia|Ceed|I": {
-		"generationId": 10606,
+		"generationId": 10678,
 		"manufacturerName": "Kia",
 		"modelName": "Ceed",
 		"generationCode": "I",
@@ -4848,7 +5424,7 @@
 		"endYear": 2012
 	},
 	"Kia|Ceed|II": {
-		"generationId": 10607,
+		"generationId": 10679,
 		"manufacturerName": "Kia",
 		"modelName": "Ceed",
 		"generationCode": "II",
@@ -4856,7 +5432,7 @@
 		"endYear": 2018
 	},
 	"Kia|Ceed|III": {
-		"generationId": 10608,
+		"generationId": 10680,
 		"manufacturerName": "Kia",
 		"modelName": "Ceed",
 		"generationCode": "III",
@@ -4864,7 +5440,7 @@
 		"endYear": null
 	},
 	"Kia|Sportage|III": {
-		"generationId": 10609,
+		"generationId": 10681,
 		"manufacturerName": "Kia",
 		"modelName": "Sportage",
 		"generationCode": "III",
@@ -4872,7 +5448,7 @@
 		"endYear": 2015
 	},
 	"Kia|Sportage|IV": {
-		"generationId": 10610,
+		"generationId": 10682,
 		"manufacturerName": "Kia",
 		"modelName": "Sportage",
 		"generationCode": "IV",
@@ -4880,7 +5456,7 @@
 		"endYear": 2021
 	},
 	"Kia|Sportage|V": {
-		"generationId": 10611,
+		"generationId": 10683,
 		"manufacturerName": "Kia",
 		"modelName": "Sportage",
 		"generationCode": "V",
@@ -4888,7 +5464,7 @@
 		"endYear": null
 	},
 	"Kia|Sorento|II": {
-		"generationId": 10612,
+		"generationId": 10684,
 		"manufacturerName": "Kia",
 		"modelName": "Sorento",
 		"generationCode": "II",
@@ -4896,7 +5472,7 @@
 		"endYear": 2014
 	},
 	"Kia|Sorento|III": {
-		"generationId": 10613,
+		"generationId": 10685,
 		"manufacturerName": "Kia",
 		"modelName": "Sorento",
 		"generationCode": "III",
@@ -4904,7 +5480,7 @@
 		"endYear": 2020
 	},
 	"Kia|Sorento|IV": {
-		"generationId": 10614,
+		"generationId": 10686,
 		"manufacturerName": "Kia",
 		"modelName": "Sorento",
 		"generationCode": "IV",
@@ -4912,7 +5488,7 @@
 		"endYear": null
 	},
 	"Kia|Rio|III": {
-		"generationId": 10615,
+		"generationId": 10687,
 		"manufacturerName": "Kia",
 		"modelName": "Rio",
 		"generationCode": "III",
@@ -4920,7 +5496,7 @@
 		"endYear": 2017
 	},
 	"Kia|Rio|IV": {
-		"generationId": 10616,
+		"generationId": 10688,
 		"manufacturerName": "Kia",
 		"modelName": "Rio",
 		"generationCode": "IV",
@@ -4928,7 +5504,7 @@
 		"endYear": null
 	},
 	"Kia|Stinger|I": {
-		"generationId": 10617,
+		"generationId": 10689,
 		"manufacturerName": "Kia",
 		"modelName": "Stinger",
 		"generationCode": "I",
@@ -4936,7 +5512,7 @@
 		"endYear": null
 	},
 	"Kia|Niro|I": {
-		"generationId": 10618,
+		"generationId": 10690,
 		"manufacturerName": "Kia",
 		"modelName": "Niro",
 		"generationCode": "I",
@@ -4944,7 +5520,7 @@
 		"endYear": 2022
 	},
 	"Kia|Niro|II": {
-		"generationId": 10619,
+		"generationId": 10691,
 		"manufacturerName": "Kia",
 		"modelName": "Niro",
 		"generationCode": "II",
@@ -4952,7 +5528,7 @@
 		"endYear": null
 	},
 	"Kia|Soul|I": {
-		"generationId": 10620,
+		"generationId": 10692,
 		"manufacturerName": "Kia",
 		"modelName": "Soul",
 		"generationCode": "I",
@@ -4960,7 +5536,7 @@
 		"endYear": 2014
 	},
 	"Kia|Soul|II": {
-		"generationId": 10621,
+		"generationId": 10693,
 		"manufacturerName": "Kia",
 		"modelName": "Soul",
 		"generationCode": "II",
@@ -4968,7 +5544,7 @@
 		"endYear": 2019
 	},
 	"Kia|Soul|III": {
-		"generationId": 10622,
+		"generationId": 10694,
 		"manufacturerName": "Kia",
 		"modelName": "Soul",
 		"generationCode": "III",
@@ -4976,7 +5552,7 @@
 		"endYear": null
 	},
 	"Kia|EV6|I": {
-		"generationId": 10623,
+		"generationId": 10695,
 		"manufacturerName": "Kia",
 		"modelName": "EV6",
 		"generationCode": "I",
@@ -4984,7 +5560,7 @@
 		"endYear": null
 	},
 	"Kia|Picanto|I": {
-		"generationId": 10624,
+		"generationId": 10696,
 		"manufacturerName": "Kia",
 		"modelName": "Picanto",
 		"generationCode": "I",
@@ -4992,7 +5568,7 @@
 		"endYear": 2011
 	},
 	"Kia|Picanto|II": {
-		"generationId": 10625,
+		"generationId": 10697,
 		"manufacturerName": "Kia",
 		"modelName": "Picanto",
 		"generationCode": "II",
@@ -5000,7 +5576,7 @@
 		"endYear": 2017
 	},
 	"Kia|Picanto|III": {
-		"generationId": 10626,
+		"generationId": 10698,
 		"manufacturerName": "Kia",
 		"modelName": "Picanto",
 		"generationCode": "III",
@@ -5008,7 +5584,7 @@
 		"endYear": null
 	},
 	"Kia|Stonic|I": {
-		"generationId": 10627,
+		"generationId": 10699,
 		"manufacturerName": "Kia",
 		"modelName": "Stonic",
 		"generationCode": "I",
@@ -5016,7 +5592,7 @@
 		"endYear": null
 	},
 	"Kia|Xceed|I": {
-		"generationId": 10628,
+		"generationId": 10700,
 		"manufacturerName": "Kia",
 		"modelName": "Xceed",
 		"generationCode": "I",
@@ -5024,7 +5600,7 @@
 		"endYear": null
 	},
 	"Kia|EV9|I": {
-		"generationId": 10629,
+		"generationId": 10701,
 		"manufacturerName": "Kia",
 		"modelName": "EV9",
 		"generationCode": "I",
@@ -5032,7 +5608,7 @@
 		"endYear": null
 	},
 	"Kia|ProCeed|I": {
-		"generationId": 10630,
+		"generationId": 10702,
 		"manufacturerName": "Kia",
 		"modelName": "ProCeed",
 		"generationCode": "I",
@@ -5040,7 +5616,7 @@
 		"endYear": null
 	},
 	"Kia|Carens|III": {
-		"generationId": 10631,
+		"generationId": 10703,
 		"manufacturerName": "Kia",
 		"modelName": "Carens",
 		"generationCode": "III",
@@ -5048,7 +5624,7 @@
 		"endYear": 2019
 	},
 	"Kia|Carens|IV": {
-		"generationId": 10632,
+		"generationId": 10704,
 		"manufacturerName": "Kia",
 		"modelName": "Carens",
 		"generationCode": "IV",
@@ -5056,15 +5632,55 @@
 		"endYear": null
 	},
 	"Kia|Venga|I": {
-		"generationId": 10633,
+		"generationId": 10705,
 		"manufacturerName": "Kia",
 		"modelName": "Venga",
 		"generationCode": "I",
 		"startYear": 2009,
 		"endYear": 2019
 	},
+	"Kia|EV3|I": {
+		"generationId": 10706,
+		"manufacturerName": "Kia",
+		"modelName": "EV3",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Kia|EV5|I": {
+		"generationId": 10707,
+		"manufacturerName": "Kia",
+		"modelName": "EV5",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Kia|EV4|I": {
+		"generationId": 10708,
+		"manufacturerName": "Kia",
+		"modelName": "EV4",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"Kia|Tasman|I": {
+		"generationId": 10709,
+		"manufacturerName": "Kia",
+		"modelName": "Tasman",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"Kia|K4|I": {
+		"generationId": 10710,
+		"manufacturerName": "Kia",
+		"modelName": "K4",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Nissan|Micra|K12": {
-		"generationId": 10634,
+		"generationId": 10711,
 		"manufacturerName": "Nissan",
 		"modelName": "Micra",
 		"generationCode": "K12",
@@ -5072,7 +5688,7 @@
 		"endYear": 2010
 	},
 	"Nissan|Micra|K13": {
-		"generationId": 10635,
+		"generationId": 10712,
 		"manufacturerName": "Nissan",
 		"modelName": "Micra",
 		"generationCode": "K13",
@@ -5080,7 +5696,7 @@
 		"endYear": 2017
 	},
 	"Nissan|Micra|K14": {
-		"generationId": 10636,
+		"generationId": 10713,
 		"manufacturerName": "Nissan",
 		"modelName": "Micra",
 		"generationCode": "K14",
@@ -5088,7 +5704,7 @@
 		"endYear": null
 	},
 	"Nissan|Note|E11": {
-		"generationId": 10637,
+		"generationId": 10714,
 		"manufacturerName": "Nissan",
 		"modelName": "Note",
 		"generationCode": "E11",
@@ -5096,7 +5712,7 @@
 		"endYear": 2013
 	},
 	"Nissan|Note|E12": {
-		"generationId": 10638,
+		"generationId": 10715,
 		"manufacturerName": "Nissan",
 		"modelName": "Note",
 		"generationCode": "E12",
@@ -5104,7 +5720,7 @@
 		"endYear": 2020
 	},
 	"Nissan|Juke|F15": {
-		"generationId": 10639,
+		"generationId": 10716,
 		"manufacturerName": "Nissan",
 		"modelName": "Juke",
 		"generationCode": "F15",
@@ -5112,7 +5728,7 @@
 		"endYear": 2019
 	},
 	"Nissan|Juke|F16": {
-		"generationId": 10640,
+		"generationId": 10717,
 		"manufacturerName": "Nissan",
 		"modelName": "Juke",
 		"generationCode": "F16",
@@ -5120,7 +5736,7 @@
 		"endYear": null
 	},
 	"Nissan|Qashqai|J10": {
-		"generationId": 10641,
+		"generationId": 10718,
 		"manufacturerName": "Nissan",
 		"modelName": "Qashqai",
 		"generationCode": "J10",
@@ -5128,7 +5744,7 @@
 		"endYear": 2013
 	},
 	"Nissan|Qashqai|J11": {
-		"generationId": 10642,
+		"generationId": 10719,
 		"manufacturerName": "Nissan",
 		"modelName": "Qashqai",
 		"generationCode": "J11",
@@ -5136,7 +5752,7 @@
 		"endYear": 2021
 	},
 	"Nissan|Qashqai|J12": {
-		"generationId": 10643,
+		"generationId": 10720,
 		"manufacturerName": "Nissan",
 		"modelName": "Qashqai",
 		"generationCode": "J12",
@@ -5144,7 +5760,7 @@
 		"endYear": null
 	},
 	"Nissan|X-Trail|T31": {
-		"generationId": 10644,
+		"generationId": 10721,
 		"manufacturerName": "Nissan",
 		"modelName": "X-Trail",
 		"generationCode": "T31",
@@ -5152,7 +5768,7 @@
 		"endYear": 2014
 	},
 	"Nissan|X-Trail|T32": {
-		"generationId": 10645,
+		"generationId": 10722,
 		"manufacturerName": "Nissan",
 		"modelName": "X-Trail",
 		"generationCode": "T32",
@@ -5160,7 +5776,7 @@
 		"endYear": 2021
 	},
 	"Nissan|X-Trail|T33": {
-		"generationId": 10646,
+		"generationId": 10723,
 		"manufacturerName": "Nissan",
 		"modelName": "X-Trail",
 		"generationCode": "T33",
@@ -5168,7 +5784,7 @@
 		"endYear": null
 	},
 	"Nissan|Leaf|ZE0": {
-		"generationId": 10647,
+		"generationId": 10724,
 		"manufacturerName": "Nissan",
 		"modelName": "Leaf",
 		"generationCode": "ZE0",
@@ -5176,7 +5792,7 @@
 		"endYear": 2017
 	},
 	"Nissan|Leaf|ZE1": {
-		"generationId": 10648,
+		"generationId": 10725,
 		"manufacturerName": "Nissan",
 		"modelName": "Leaf",
 		"generationCode": "ZE1",
@@ -5184,7 +5800,7 @@
 		"endYear": null
 	},
 	"Nissan|Navara|D40": {
-		"generationId": 10649,
+		"generationId": 10726,
 		"manufacturerName": "Nissan",
 		"modelName": "Navara",
 		"generationCode": "D40",
@@ -5192,7 +5808,7 @@
 		"endYear": 2015
 	},
 	"Nissan|Navara|D23": {
-		"generationId": 10650,
+		"generationId": 10727,
 		"manufacturerName": "Nissan",
 		"modelName": "Navara",
 		"generationCode": "D23",
@@ -5200,7 +5816,7 @@
 		"endYear": null
 	},
 	"Nissan|370Z|Z34": {
-		"generationId": 10651,
+		"generationId": 10728,
 		"manufacturerName": "Nissan",
 		"modelName": "370Z",
 		"generationCode": "Z34",
@@ -5208,7 +5824,7 @@
 		"endYear": 2020
 	},
 	"Nissan|Ariya|I": {
-		"generationId": 10652,
+		"generationId": 10729,
 		"manufacturerName": "Nissan",
 		"modelName": "Ariya",
 		"generationCode": "I",
@@ -5216,7 +5832,7 @@
 		"endYear": null
 	},
 	"Nissan|GT-R|R35": {
-		"generationId": 10653,
+		"generationId": 10730,
 		"manufacturerName": "Nissan",
 		"modelName": "GT-R",
 		"generationCode": "R35",
@@ -5224,7 +5840,7 @@
 		"endYear": null
 	},
 	"Nissan|Murano|Z51": {
-		"generationId": 10654,
+		"generationId": 10731,
 		"manufacturerName": "Nissan",
 		"modelName": "Murano",
 		"generationCode": "Z51",
@@ -5232,7 +5848,7 @@
 		"endYear": 2014
 	},
 	"Nissan|Murano|Z52": {
-		"generationId": 10655,
+		"generationId": 10732,
 		"manufacturerName": "Nissan",
 		"modelName": "Murano",
 		"generationCode": "Z52",
@@ -5240,15 +5856,39 @@
 		"endYear": null
 	},
 	"Nissan|Pulsar|C13": {
-		"generationId": 10656,
+		"generationId": 10733,
 		"manufacturerName": "Nissan",
 		"modelName": "Pulsar",
 		"generationCode": "C13",
 		"startYear": 2014,
 		"endYear": 2018
 	},
+	"Nissan|Z|RZ34": {
+		"generationId": 10734,
+		"manufacturerName": "Nissan",
+		"modelName": "Z",
+		"generationCode": "RZ34",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Nissan|Magnite|I": {
+		"generationId": 10735,
+		"manufacturerName": "Nissan",
+		"modelName": "Magnite",
+		"generationCode": "I",
+		"startYear": 2020,
+		"endYear": null
+	},
+	"Nissan|Kicks|II": {
+		"generationId": 10736,
+		"manufacturerName": "Nissan",
+		"modelName": "Kicks",
+		"generationCode": "II",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Mazda|Mazda2|DE": {
-		"generationId": 10657,
+		"generationId": 10737,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda2",
 		"generationCode": "DE",
@@ -5256,7 +5896,7 @@
 		"endYear": 2014
 	},
 	"Mazda|Mazda2|DJ": {
-		"generationId": 10658,
+		"generationId": 10738,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda2",
 		"generationCode": "DJ",
@@ -5264,7 +5904,7 @@
 		"endYear": null
 	},
 	"Mazda|Mazda3|BL": {
-		"generationId": 10659,
+		"generationId": 10739,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda3",
 		"generationCode": "BL",
@@ -5272,7 +5912,7 @@
 		"endYear": 2013
 	},
 	"Mazda|Mazda3|BM": {
-		"generationId": 10660,
+		"generationId": 10740,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda3",
 		"generationCode": "BM",
@@ -5280,7 +5920,7 @@
 		"endYear": 2018
 	},
 	"Mazda|Mazda3|BP": {
-		"generationId": 10661,
+		"generationId": 10741,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda3",
 		"generationCode": "BP",
@@ -5288,7 +5928,7 @@
 		"endYear": null
 	},
 	"Mazda|Mazda6|GH": {
-		"generationId": 10662,
+		"generationId": 10742,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda6",
 		"generationCode": "GH",
@@ -5296,7 +5936,7 @@
 		"endYear": 2012
 	},
 	"Mazda|Mazda6|GJ": {
-		"generationId": 10663,
+		"generationId": 10743,
 		"manufacturerName": "Mazda",
 		"modelName": "Mazda6",
 		"generationCode": "GJ",
@@ -5304,7 +5944,7 @@
 		"endYear": null
 	},
 	"Mazda|CX-3|DK": {
-		"generationId": 10664,
+		"generationId": 10744,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-3",
 		"generationCode": "DK",
@@ -5312,7 +5952,7 @@
 		"endYear": null
 	},
 	"Mazda|CX-5|KE": {
-		"generationId": 10665,
+		"generationId": 10745,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-5",
 		"generationCode": "KE",
@@ -5320,7 +5960,7 @@
 		"endYear": 2017
 	},
 	"Mazda|CX-5|KF": {
-		"generationId": 10666,
+		"generationId": 10746,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-5",
 		"generationCode": "KF",
@@ -5328,7 +5968,7 @@
 		"endYear": null
 	},
 	"Mazda|CX-30|DM": {
-		"generationId": 10667,
+		"generationId": 10747,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-30",
 		"generationCode": "DM",
@@ -5336,7 +5976,7 @@
 		"endYear": null
 	},
 	"Mazda|MX-5|NC": {
-		"generationId": 10668,
+		"generationId": 10748,
 		"manufacturerName": "Mazda",
 		"modelName": "MX-5",
 		"generationCode": "NC",
@@ -5344,7 +5984,7 @@
 		"endYear": 2014
 	},
 	"Mazda|MX-5|ND": {
-		"generationId": 10669,
+		"generationId": 10749,
 		"manufacturerName": "Mazda",
 		"modelName": "MX-5",
 		"generationCode": "ND",
@@ -5352,7 +5992,7 @@
 		"endYear": null
 	},
 	"Mazda|CX-60|KH": {
-		"generationId": 10670,
+		"generationId": 10750,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-60",
 		"generationCode": "KH",
@@ -5360,7 +6000,7 @@
 		"endYear": null
 	},
 	"Mazda|MX-30|DR": {
-		"generationId": 10671,
+		"generationId": 10751,
 		"manufacturerName": "Mazda",
 		"modelName": "MX-30",
 		"generationCode": "DR",
@@ -5368,23 +6008,47 @@
 		"endYear": null
 	},
 	"Mazda|CX-9|TC": {
-		"generationId": 10672,
+		"generationId": 10752,
 		"manufacturerName": "Mazda",
 		"modelName": "CX-9",
 		"generationCode": "TC",
 		"startYear": 2016,
-		"endYear": null
+		"endYear": 2023
 	},
 	"Mazda|RX-8|SE3P": {
-		"generationId": 10673,
+		"generationId": 10753,
 		"manufacturerName": "Mazda",
 		"modelName": "RX-8",
 		"generationCode": "SE3P",
 		"startYear": 2002,
 		"endYear": 2012
 	},
+	"Mazda|CX-90|I": {
+		"generationId": 10754,
+		"manufacturerName": "Mazda",
+		"modelName": "CX-90",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Mazda|CX-50|I": {
+		"generationId": 10755,
+		"manufacturerName": "Mazda",
+		"modelName": "CX-50",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Mazda|CX-80|I": {
+		"generationId": 10756,
+		"manufacturerName": "Mazda",
+		"modelName": "CX-80",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Mitsubishi|Outlander|II": {
-		"generationId": 10674,
+		"generationId": 10757,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Outlander",
 		"generationCode": "II",
@@ -5392,7 +6056,7 @@
 		"endYear": 2012
 	},
 	"Mitsubishi|Outlander|III": {
-		"generationId": 10675,
+		"generationId": 10758,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Outlander",
 		"generationCode": "III",
@@ -5400,7 +6064,7 @@
 		"endYear": 2021
 	},
 	"Mitsubishi|Outlander|IV": {
-		"generationId": 10676,
+		"generationId": 10759,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Outlander",
 		"generationCode": "IV",
@@ -5408,15 +6072,23 @@
 		"endYear": null
 	},
 	"Mitsubishi|ASX|I": {
-		"generationId": 10677,
+		"generationId": 10760,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "ASX",
 		"generationCode": "I",
 		"startYear": 2010,
+		"endYear": 2023
+	},
+	"Mitsubishi|ASX|II": {
+		"generationId": 10761,
+		"manufacturerName": "Mitsubishi",
+		"modelName": "ASX",
+		"generationCode": "II",
+		"startYear": 2023,
 		"endYear": null
 	},
 	"Mitsubishi|Eclipse Cross|I": {
-		"generationId": 10678,
+		"generationId": 10762,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Eclipse Cross",
 		"generationCode": "I",
@@ -5424,7 +6096,7 @@
 		"endYear": null
 	},
 	"Mitsubishi|L200|IV": {
-		"generationId": 10679,
+		"generationId": 10763,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "L200",
 		"generationCode": "IV",
@@ -5432,7 +6104,7 @@
 		"endYear": 2014
 	},
 	"Mitsubishi|L200|V": {
-		"generationId": 10680,
+		"generationId": 10764,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "L200",
 		"generationCode": "V",
@@ -5440,15 +6112,23 @@
 		"endYear": null
 	},
 	"Mitsubishi|Colt|VI": {
-		"generationId": 10681,
+		"generationId": 10765,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Colt",
 		"generationCode": "VI",
 		"startYear": 2004,
 		"endYear": 2012
 	},
+	"Mitsubishi|Colt|VII": {
+		"generationId": 10766,
+		"manufacturerName": "Mitsubishi",
+		"modelName": "Colt",
+		"generationCode": "VII",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Mitsubishi|Galant|IX": {
-		"generationId": 10682,
+		"generationId": 10767,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Galant",
 		"generationCode": "IX",
@@ -5456,7 +6136,7 @@
 		"endYear": 2012
 	},
 	"Mitsubishi|Grandis|I": {
-		"generationId": 10683,
+		"generationId": 10768,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Grandis",
 		"generationCode": "I",
@@ -5464,7 +6144,7 @@
 		"endYear": 2011
 	},
 	"Mitsubishi|Pajero|V80": {
-		"generationId": 10684,
+		"generationId": 10769,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Pajero",
 		"generationCode": "V80",
@@ -5472,7 +6152,7 @@
 		"endYear": 2021
 	},
 	"Mitsubishi|Space Star|I": {
-		"generationId": 10685,
+		"generationId": 10770,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "Space Star",
 		"generationCode": "I",
@@ -5480,15 +6160,23 @@
 		"endYear": null
 	},
 	"Mitsubishi|i-MiEV|I": {
-		"generationId": 10686,
+		"generationId": 10771,
 		"manufacturerName": "Mitsubishi",
 		"modelName": "i-MiEV",
 		"generationCode": "I",
 		"startYear": 2009,
 		"endYear": 2021
 	},
+	"Mitsubishi|Destinator|I": {
+		"generationId": 10772,
+		"manufacturerName": "Mitsubishi",
+		"modelName": "Destinator",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Suzuki|Swift|II": {
-		"generationId": 10687,
+		"generationId": 10773,
 		"manufacturerName": "Suzuki",
 		"modelName": "Swift",
 		"generationCode": "II",
@@ -5496,7 +6184,7 @@
 		"endYear": 2010
 	},
 	"Suzuki|Swift|III": {
-		"generationId": 10688,
+		"generationId": 10774,
 		"manufacturerName": "Suzuki",
 		"modelName": "Swift",
 		"generationCode": "III",
@@ -5504,15 +6192,23 @@
 		"endYear": 2017
 	},
 	"Suzuki|Swift|IV": {
-		"generationId": 10689,
+		"generationId": 10775,
 		"manufacturerName": "Suzuki",
 		"modelName": "Swift",
 		"generationCode": "IV",
 		"startYear": 2017,
+		"endYear": 2024
+	},
+	"Suzuki|Swift|V": {
+		"generationId": 10776,
+		"manufacturerName": "Suzuki",
+		"modelName": "Swift",
+		"generationCode": "V",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Suzuki|Vitara|LY": {
-		"generationId": 10690,
+		"generationId": 10777,
 		"manufacturerName": "Suzuki",
 		"modelName": "Vitara",
 		"generationCode": "LY",
@@ -5520,7 +6216,7 @@
 		"endYear": null
 	},
 	"Suzuki|SX4|I": {
-		"generationId": 10691,
+		"generationId": 10778,
 		"manufacturerName": "Suzuki",
 		"modelName": "SX4",
 		"generationCode": "I",
@@ -5528,7 +6224,7 @@
 		"endYear": 2013
 	},
 	"Suzuki|Grand Vitara|II": {
-		"generationId": 10692,
+		"generationId": 10779,
 		"manufacturerName": "Suzuki",
 		"modelName": "Grand Vitara",
 		"generationCode": "II",
@@ -5536,7 +6232,7 @@
 		"endYear": 2015
 	},
 	"Suzuki|Jimny|III": {
-		"generationId": 10693,
+		"generationId": 10780,
 		"manufacturerName": "Suzuki",
 		"modelName": "Jimny",
 		"generationCode": "III",
@@ -5544,7 +6240,7 @@
 		"endYear": 2018
 	},
 	"Suzuki|Jimny|IV": {
-		"generationId": 10694,
+		"generationId": 10781,
 		"manufacturerName": "Suzuki",
 		"modelName": "Jimny",
 		"generationCode": "IV",
@@ -5552,7 +6248,7 @@
 		"endYear": null
 	},
 	"Suzuki|S-Cross|I": {
-		"generationId": 10695,
+		"generationId": 10782,
 		"manufacturerName": "Suzuki",
 		"modelName": "S-Cross",
 		"generationCode": "I",
@@ -5560,7 +6256,7 @@
 		"endYear": 2021
 	},
 	"Suzuki|S-Cross|II": {
-		"generationId": 10696,
+		"generationId": 10783,
 		"manufacturerName": "Suzuki",
 		"modelName": "S-Cross",
 		"generationCode": "II",
@@ -5568,7 +6264,7 @@
 		"endYear": null
 	},
 	"Suzuki|Ignis|I": {
-		"generationId": 10697,
+		"generationId": 10784,
 		"manufacturerName": "Suzuki",
 		"modelName": "Ignis",
 		"generationCode": "I",
@@ -5576,7 +6272,7 @@
 		"endYear": null
 	},
 	"Suzuki|Baleno|II": {
-		"generationId": 10698,
+		"generationId": 10785,
 		"manufacturerName": "Suzuki",
 		"modelName": "Baleno",
 		"generationCode": "II",
@@ -5584,7 +6280,7 @@
 		"endYear": 2022
 	},
 	"Suzuki|Baleno|III": {
-		"generationId": 10699,
+		"generationId": 10786,
 		"manufacturerName": "Suzuki",
 		"modelName": "Baleno",
 		"generationCode": "III",
@@ -5592,7 +6288,7 @@
 		"endYear": null
 	},
 	"Suzuki|Celerio|I": {
-		"generationId": 10700,
+		"generationId": 10787,
 		"manufacturerName": "Suzuki",
 		"modelName": "Celerio",
 		"generationCode": "I",
@@ -5600,7 +6296,7 @@
 		"endYear": null
 	},
 	"Suzuki|Across|I": {
-		"generationId": 10701,
+		"generationId": 10788,
 		"manufacturerName": "Suzuki",
 		"modelName": "Across",
 		"generationCode": "I",
@@ -5608,7 +6304,7 @@
 		"endYear": null
 	},
 	"Suzuki|Swace|I": {
-		"generationId": 10702,
+		"generationId": 10789,
 		"manufacturerName": "Suzuki",
 		"modelName": "Swace",
 		"generationCode": "I",
@@ -5616,15 +6312,31 @@
 		"endYear": null
 	},
 	"Suzuki|SX4 S-Cross|I": {
-		"generationId": 10703,
+		"generationId": 10790,
 		"manufacturerName": "Suzuki",
 		"modelName": "SX4 S-Cross",
 		"generationCode": "I",
 		"startYear": 2013,
 		"endYear": 2021
 	},
+	"Suzuki|Fronx|I": {
+		"generationId": 10791,
+		"manufacturerName": "Suzuki",
+		"modelName": "Fronx",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Suzuki|eVitara|I": {
+		"generationId": 10792,
+		"manufacturerName": "Suzuki",
+		"modelName": "eVitara",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Subaru|Impreza|GD/GG": {
-		"generationId": 10704,
+		"generationId": 10793,
 		"manufacturerName": "Subaru",
 		"modelName": "Impreza",
 		"generationCode": "GD/GG",
@@ -5632,7 +6344,7 @@
 		"endYear": 2007
 	},
 	"Subaru|Impreza|GE/GH": {
-		"generationId": 10705,
+		"generationId": 10794,
 		"manufacturerName": "Subaru",
 		"modelName": "Impreza",
 		"generationCode": "GE/GH",
@@ -5640,7 +6352,7 @@
 		"endYear": 2011
 	},
 	"Subaru|Impreza|GP/GJ": {
-		"generationId": 10706,
+		"generationId": 10795,
 		"manufacturerName": "Subaru",
 		"modelName": "Impreza",
 		"generationCode": "GP/GJ",
@@ -5648,7 +6360,7 @@
 		"endYear": 2016
 	},
 	"Subaru|Impreza|GK/GT": {
-		"generationId": 10707,
+		"generationId": 10796,
 		"manufacturerName": "Subaru",
 		"modelName": "Impreza",
 		"generationCode": "GK/GT",
@@ -5656,7 +6368,7 @@
 		"endYear": null
 	},
 	"Subaru|Legacy|BL/BP": {
-		"generationId": 10708,
+		"generationId": 10797,
 		"manufacturerName": "Subaru",
 		"modelName": "Legacy",
 		"generationCode": "BL/BP",
@@ -5664,7 +6376,7 @@
 		"endYear": 2009
 	},
 	"Subaru|Legacy|BM/BR": {
-		"generationId": 10709,
+		"generationId": 10798,
 		"manufacturerName": "Subaru",
 		"modelName": "Legacy",
 		"generationCode": "BM/BR",
@@ -5672,7 +6384,7 @@
 		"endYear": 2014
 	},
 	"Subaru|Legacy|BS/BN": {
-		"generationId": 10710,
+		"generationId": 10799,
 		"manufacturerName": "Subaru",
 		"modelName": "Legacy",
 		"generationCode": "BS/BN",
@@ -5680,7 +6392,7 @@
 		"endYear": null
 	},
 	"Subaru|Forester|SG": {
-		"generationId": 10711,
+		"generationId": 10800,
 		"manufacturerName": "Subaru",
 		"modelName": "Forester",
 		"generationCode": "SG",
@@ -5688,7 +6400,7 @@
 		"endYear": 2008
 	},
 	"Subaru|Forester|SH": {
-		"generationId": 10712,
+		"generationId": 10801,
 		"manufacturerName": "Subaru",
 		"modelName": "Forester",
 		"generationCode": "SH",
@@ -5696,7 +6408,7 @@
 		"endYear": 2012
 	},
 	"Subaru|Forester|SJ": {
-		"generationId": 10713,
+		"generationId": 10802,
 		"manufacturerName": "Subaru",
 		"modelName": "Forester",
 		"generationCode": "SJ",
@@ -5704,15 +6416,23 @@
 		"endYear": 2018
 	},
 	"Subaru|Forester|SK": {
-		"generationId": 10714,
+		"generationId": 10803,
 		"manufacturerName": "Subaru",
 		"modelName": "Forester",
 		"generationCode": "SK",
 		"startYear": 2018,
+		"endYear": 2024
+	},
+	"Subaru|Forester|SL": {
+		"generationId": 10804,
+		"manufacturerName": "Subaru",
+		"modelName": "Forester",
+		"generationCode": "SL",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Subaru|Outback|BP": {
-		"generationId": 10715,
+		"generationId": 10805,
 		"manufacturerName": "Subaru",
 		"modelName": "Outback",
 		"generationCode": "BP",
@@ -5720,7 +6440,7 @@
 		"endYear": 2009
 	},
 	"Subaru|Outback|BR": {
-		"generationId": 10716,
+		"generationId": 10806,
 		"manufacturerName": "Subaru",
 		"modelName": "Outback",
 		"generationCode": "BR",
@@ -5728,7 +6448,7 @@
 		"endYear": 2014
 	},
 	"Subaru|Outback|BS": {
-		"generationId": 10717,
+		"generationId": 10807,
 		"manufacturerName": "Subaru",
 		"modelName": "Outback",
 		"generationCode": "BS",
@@ -5736,7 +6456,7 @@
 		"endYear": 2020
 	},
 	"Subaru|Outback|BT": {
-		"generationId": 10718,
+		"generationId": 10808,
 		"manufacturerName": "Subaru",
 		"modelName": "Outback",
 		"generationCode": "BT",
@@ -5744,7 +6464,7 @@
 		"endYear": null
 	},
 	"Subaru|XV|GP": {
-		"generationId": 10719,
+		"generationId": 10809,
 		"manufacturerName": "Subaru",
 		"modelName": "XV",
 		"generationCode": "GP",
@@ -5752,7 +6472,7 @@
 		"endYear": 2017
 	},
 	"Subaru|XV|GT": {
-		"generationId": 10720,
+		"generationId": 10810,
 		"manufacturerName": "Subaru",
 		"modelName": "XV",
 		"generationCode": "GT",
@@ -5760,7 +6480,7 @@
 		"endYear": 2022
 	},
 	"Subaru|XV|GU": {
-		"generationId": 10721,
+		"generationId": 10811,
 		"manufacturerName": "Subaru",
 		"modelName": "XV",
 		"generationCode": "GU",
@@ -5768,7 +6488,7 @@
 		"endYear": null
 	},
 	"Subaru|BRZ|ZC6": {
-		"generationId": 10722,
+		"generationId": 10812,
 		"manufacturerName": "Subaru",
 		"modelName": "BRZ",
 		"generationCode": "ZC6",
@@ -5776,7 +6496,7 @@
 		"endYear": 2020
 	},
 	"Subaru|BRZ|ZD8": {
-		"generationId": 10723,
+		"generationId": 10813,
 		"manufacturerName": "Subaru",
 		"modelName": "BRZ",
 		"generationCode": "ZD8",
@@ -5784,7 +6504,7 @@
 		"endYear": null
 	},
 	"Subaru|WRX|VA": {
-		"generationId": 10724,
+		"generationId": 10814,
 		"manufacturerName": "Subaru",
 		"modelName": "WRX",
 		"generationCode": "VA",
@@ -5792,7 +6512,7 @@
 		"endYear": 2021
 	},
 	"Subaru|WRX|VB": {
-		"generationId": 10725,
+		"generationId": 10815,
 		"manufacturerName": "Subaru",
 		"modelName": "WRX",
 		"generationCode": "VB",
@@ -5800,7 +6520,7 @@
 		"endYear": null
 	},
 	"Subaru|Levorg|VM": {
-		"generationId": 10726,
+		"generationId": 10816,
 		"manufacturerName": "Subaru",
 		"modelName": "Levorg",
 		"generationCode": "VM",
@@ -5808,7 +6528,7 @@
 		"endYear": 2020
 	},
 	"Subaru|Levorg|VN": {
-		"generationId": 10727,
+		"generationId": 10817,
 		"manufacturerName": "Subaru",
 		"modelName": "Levorg",
 		"generationCode": "VN",
@@ -5816,7 +6536,7 @@
 		"endYear": null
 	},
 	"Subaru|Solterra|I": {
-		"generationId": 10728,
+		"generationId": 10818,
 		"manufacturerName": "Subaru",
 		"modelName": "Solterra",
 		"generationCode": "I",
@@ -5824,7 +6544,7 @@
 		"endYear": null
 	},
 	"Lexus|IS|XE20": {
-		"generationId": 10729,
+		"generationId": 10819,
 		"manufacturerName": "Lexus",
 		"modelName": "IS",
 		"generationCode": "XE20",
@@ -5832,7 +6552,7 @@
 		"endYear": 2013
 	},
 	"Lexus|IS|XE30": {
-		"generationId": 10730,
+		"generationId": 10820,
 		"manufacturerName": "Lexus",
 		"modelName": "IS",
 		"generationCode": "XE30",
@@ -5840,7 +6560,7 @@
 		"endYear": null
 	},
 	"Lexus|ES|XV60": {
-		"generationId": 10731,
+		"generationId": 10821,
 		"manufacturerName": "Lexus",
 		"modelName": "ES",
 		"generationCode": "XV60",
@@ -5848,7 +6568,7 @@
 		"endYear": 2018
 	},
 	"Lexus|ES|XV70": {
-		"generationId": 10732,
+		"generationId": 10822,
 		"manufacturerName": "Lexus",
 		"modelName": "ES",
 		"generationCode": "XV70",
@@ -5856,7 +6576,7 @@
 		"endYear": null
 	},
 	"Lexus|RX|XU30": {
-		"generationId": 10733,
+		"generationId": 10823,
 		"manufacturerName": "Lexus",
 		"modelName": "RX",
 		"generationCode": "XU30",
@@ -5864,7 +6584,7 @@
 		"endYear": 2009
 	},
 	"Lexus|RX|XU40": {
-		"generationId": 10734,
+		"generationId": 10824,
 		"manufacturerName": "Lexus",
 		"modelName": "RX",
 		"generationCode": "XU40",
@@ -5872,7 +6592,7 @@
 		"endYear": 2015
 	},
 	"Lexus|RX|XU50": {
-		"generationId": 10735,
+		"generationId": 10825,
 		"manufacturerName": "Lexus",
 		"modelName": "RX",
 		"generationCode": "XU50",
@@ -5880,7 +6600,7 @@
 		"endYear": 2022
 	},
 	"Lexus|RX|XU80": {
-		"generationId": 10736,
+		"generationId": 10826,
 		"manufacturerName": "Lexus",
 		"modelName": "RX",
 		"generationCode": "XU80",
@@ -5888,7 +6608,7 @@
 		"endYear": null
 	},
 	"Lexus|NX|AZ10": {
-		"generationId": 10737,
+		"generationId": 10827,
 		"manufacturerName": "Lexus",
 		"modelName": "NX",
 		"generationCode": "AZ10",
@@ -5896,7 +6616,7 @@
 		"endYear": 2021
 	},
 	"Lexus|NX|AZ20": {
-		"generationId": 10738,
+		"generationId": 10828,
 		"manufacturerName": "Lexus",
 		"modelName": "NX",
 		"generationCode": "AZ20",
@@ -5904,7 +6624,7 @@
 		"endYear": null
 	},
 	"Lexus|UX|ZA10": {
-		"generationId": 10739,
+		"generationId": 10829,
 		"manufacturerName": "Lexus",
 		"modelName": "UX",
 		"generationCode": "ZA10",
@@ -5912,7 +6632,7 @@
 		"endYear": null
 	},
 	"Lexus|LS|F40": {
-		"generationId": 10740,
+		"generationId": 10830,
 		"manufacturerName": "Lexus",
 		"modelName": "LS",
 		"generationCode": "F40",
@@ -5920,7 +6640,7 @@
 		"endYear": 2017
 	},
 	"Lexus|LS|F50": {
-		"generationId": 10741,
+		"generationId": 10831,
 		"manufacturerName": "Lexus",
 		"modelName": "LS",
 		"generationCode": "F50",
@@ -5928,7 +6648,7 @@
 		"endYear": null
 	},
 	"Lexus|GS|L10": {
-		"generationId": 10742,
+		"generationId": 10832,
 		"manufacturerName": "Lexus",
 		"modelName": "GS",
 		"generationCode": "L10",
@@ -5936,7 +6656,7 @@
 		"endYear": 2011
 	},
 	"Lexus|GS|L10FL": {
-		"generationId": 10743,
+		"generationId": 10833,
 		"manufacturerName": "Lexus",
 		"modelName": "GS",
 		"generationCode": "L10FL",
@@ -5944,7 +6664,7 @@
 		"endYear": 2020
 	},
 	"Lexus|CT|ZWA10": {
-		"generationId": 10744,
+		"generationId": 10834,
 		"manufacturerName": "Lexus",
 		"modelName": "CT",
 		"generationCode": "ZWA10",
@@ -5952,7 +6672,7 @@
 		"endYear": 2022
 	},
 	"Lexus|LC|Z100": {
-		"generationId": 10745,
+		"generationId": 10835,
 		"manufacturerName": "Lexus",
 		"modelName": "LC",
 		"generationCode": "Z100",
@@ -5960,7 +6680,7 @@
 		"endYear": null
 	},
 	"Lexus|RC|XC10": {
-		"generationId": 10746,
+		"generationId": 10836,
 		"manufacturerName": "Lexus",
 		"modelName": "RC",
 		"generationCode": "XC10",
@@ -5968,7 +6688,7 @@
 		"endYear": null
 	},
 	"Lexus|RZ|XJ20": {
-		"generationId": 10747,
+		"generationId": 10837,
 		"manufacturerName": "Lexus",
 		"modelName": "RZ",
 		"generationCode": "XJ20",
@@ -5976,7 +6696,7 @@
 		"endYear": null
 	},
 	"Lexus|LX|J200": {
-		"generationId": 10748,
+		"generationId": 10838,
 		"manufacturerName": "Lexus",
 		"modelName": "LX",
 		"generationCode": "J200",
@@ -5984,15 +6704,39 @@
 		"endYear": 2021
 	},
 	"Lexus|LX|J300": {
-		"generationId": 10749,
+		"generationId": 10839,
 		"manufacturerName": "Lexus",
 		"modelName": "LX",
 		"generationCode": "J300",
 		"startYear": 2021,
 		"endYear": null
 	},
+	"Lexus|LBX|J410": {
+		"generationId": 10840,
+		"manufacturerName": "Lexus",
+		"modelName": "LBX",
+		"generationCode": "J410",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Lexus|TX|K1": {
+		"generationId": 10841,
+		"manufacturerName": "Lexus",
+		"modelName": "TX",
+		"generationCode": "K1",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Lexus|GX|J250": {
+		"generationId": 10842,
+		"manufacturerName": "Lexus",
+		"modelName": "GX",
+		"generationCode": "J250",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Jeep|Cherokee|KL": {
-		"generationId": 10750,
+		"generationId": 10843,
 		"manufacturerName": "Jeep",
 		"modelName": "Cherokee",
 		"generationCode": "KL",
@@ -6000,7 +6744,7 @@
 		"endYear": null
 	},
 	"Jeep|Grand Cherokee|WK": {
-		"generationId": 10751,
+		"generationId": 10844,
 		"manufacturerName": "Jeep",
 		"modelName": "Grand Cherokee",
 		"generationCode": "WK",
@@ -6008,7 +6752,7 @@
 		"endYear": 2010
 	},
 	"Jeep|Grand Cherokee|WK2": {
-		"generationId": 10752,
+		"generationId": 10845,
 		"manufacturerName": "Jeep",
 		"modelName": "Grand Cherokee",
 		"generationCode": "WK2",
@@ -6016,7 +6760,7 @@
 		"endYear": 2021
 	},
 	"Jeep|Grand Cherokee|WL": {
-		"generationId": 10753,
+		"generationId": 10846,
 		"manufacturerName": "Jeep",
 		"modelName": "Grand Cherokee",
 		"generationCode": "WL",
@@ -6024,7 +6768,7 @@
 		"endYear": null
 	},
 	"Jeep|Renegade|BU": {
-		"generationId": 10754,
+		"generationId": 10847,
 		"manufacturerName": "Jeep",
 		"modelName": "Renegade",
 		"generationCode": "BU",
@@ -6032,7 +6776,7 @@
 		"endYear": null
 	},
 	"Jeep|Compass|MK49": {
-		"generationId": 10755,
+		"generationId": 10848,
 		"manufacturerName": "Jeep",
 		"modelName": "Compass",
 		"generationCode": "MK49",
@@ -6040,7 +6784,7 @@
 		"endYear": 2010
 	},
 	"Jeep|Compass|M6": {
-		"generationId": 10756,
+		"generationId": 10849,
 		"manufacturerName": "Jeep",
 		"modelName": "Compass",
 		"generationCode": "M6",
@@ -6048,7 +6792,7 @@
 		"endYear": null
 	},
 	"Jeep|Wrangler|JK": {
-		"generationId": 10757,
+		"generationId": 10850,
 		"manufacturerName": "Jeep",
 		"modelName": "Wrangler",
 		"generationCode": "JK",
@@ -6056,7 +6800,7 @@
 		"endYear": 2018
 	},
 	"Jeep|Wrangler|JL": {
-		"generationId": 10758,
+		"generationId": 10851,
 		"manufacturerName": "Jeep",
 		"modelName": "Wrangler",
 		"generationCode": "JL",
@@ -6064,7 +6808,7 @@
 		"endYear": null
 	},
 	"Jeep|Avenger|I": {
-		"generationId": 10759,
+		"generationId": 10852,
 		"manufacturerName": "Jeep",
 		"modelName": "Avenger",
 		"generationCode": "I",
@@ -6072,15 +6816,39 @@
 		"endYear": null
 	},
 	"Jeep|Gladiator|JT": {
-		"generationId": 10760,
+		"generationId": 10853,
 		"manufacturerName": "Jeep",
 		"modelName": "Gladiator",
 		"generationCode": "JT",
 		"startYear": 2019,
 		"endYear": null
 	},
+	"Jeep|Wagoneer|I": {
+		"generationId": 10854,
+		"manufacturerName": "Jeep",
+		"modelName": "Wagoneer",
+		"generationCode": "I",
+		"startYear": 2022,
+		"endYear": null
+	},
+	"Jeep|Wagoneer S|I": {
+		"generationId": 10855,
+		"manufacturerName": "Jeep",
+		"modelName": "Wagoneer S",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Jeep|Recon|I": {
+		"generationId": 10856,
+		"manufacturerName": "Jeep",
+		"modelName": "Recon",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
 	"Chevrolet|Cruze|J300": {
-		"generationId": 10761,
+		"generationId": 10857,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Cruze",
 		"generationCode": "J300",
@@ -6088,7 +6856,7 @@
 		"endYear": 2015
 	},
 	"Chevrolet|Cruze|J400": {
-		"generationId": 10762,
+		"generationId": 10858,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Cruze",
 		"generationCode": "J400",
@@ -6096,7 +6864,7 @@
 		"endYear": 2019
 	},
 	"Chevrolet|Aveo|T200": {
-		"generationId": 10763,
+		"generationId": 10859,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Aveo",
 		"generationCode": "T200",
@@ -6104,7 +6872,7 @@
 		"endYear": 2011
 	},
 	"Chevrolet|Aveo|T300": {
-		"generationId": 10764,
+		"generationId": 10860,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Aveo",
 		"generationCode": "T300",
@@ -6112,7 +6880,7 @@
 		"endYear": 2018
 	},
 	"Chevrolet|Captiva|C100": {
-		"generationId": 10765,
+		"generationId": 10861,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Captiva",
 		"generationCode": "C100",
@@ -6120,7 +6888,7 @@
 		"endYear": 2018
 	},
 	"Chevrolet|Orlando|I": {
-		"generationId": 10766,
+		"generationId": 10862,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Orlando",
 		"generationCode": "I",
@@ -6128,7 +6896,7 @@
 		"endYear": 2019
 	},
 	"Chevrolet|Malibu|VII": {
-		"generationId": 10767,
+		"generationId": 10863,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Malibu",
 		"generationCode": "VII",
@@ -6136,7 +6904,7 @@
 		"endYear": 2016
 	},
 	"Chevrolet|Malibu|VIII": {
-		"generationId": 10768,
+		"generationId": 10864,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Malibu",
 		"generationCode": "VIII",
@@ -6144,7 +6912,7 @@
 		"endYear": null
 	},
 	"Chevrolet|Camaro|V": {
-		"generationId": 10769,
+		"generationId": 10865,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Camaro",
 		"generationCode": "V",
@@ -6152,7 +6920,7 @@
 		"endYear": 2015
 	},
 	"Chevrolet|Camaro|VI": {
-		"generationId": 10770,
+		"generationId": 10866,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Camaro",
 		"generationCode": "VI",
@@ -6160,7 +6928,7 @@
 		"endYear": null
 	},
 	"Chevrolet|Tahoe|III": {
-		"generationId": 10771,
+		"generationId": 10867,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Tahoe",
 		"generationCode": "III",
@@ -6168,7 +6936,7 @@
 		"endYear": 2014
 	},
 	"Chevrolet|Tahoe|IV": {
-		"generationId": 10772,
+		"generationId": 10868,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Tahoe",
 		"generationCode": "IV",
@@ -6176,7 +6944,7 @@
 		"endYear": 2020
 	},
 	"Chevrolet|Tahoe|V": {
-		"generationId": 10773,
+		"generationId": 10869,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Tahoe",
 		"generationCode": "V",
@@ -6184,7 +6952,7 @@
 		"endYear": null
 	},
 	"Chevrolet|Spark|M300": {
-		"generationId": 10774,
+		"generationId": 10870,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Spark",
 		"generationCode": "M300",
@@ -6192,7 +6960,7 @@
 		"endYear": 2016
 	},
 	"Chevrolet|Spark|M400": {
-		"generationId": 10775,
+		"generationId": 10871,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Spark",
 		"generationCode": "M400",
@@ -6200,7 +6968,7 @@
 		"endYear": null
 	},
 	"Chevrolet|Trax|I": {
-		"generationId": 10776,
+		"generationId": 10872,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Trax",
 		"generationCode": "I",
@@ -6208,7 +6976,7 @@
 		"endYear": 2022
 	},
 	"Chevrolet|Trax|II": {
-		"generationId": 10777,
+		"generationId": 10873,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Trax",
 		"generationCode": "II",
@@ -6216,7 +6984,7 @@
 		"endYear": null
 	},
 	"Chevrolet|Equinox|III": {
-		"generationId": 10778,
+		"generationId": 10874,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Equinox",
 		"generationCode": "III",
@@ -6224,39 +6992,87 @@
 		"endYear": 2021
 	},
 	"Chevrolet|Equinox|IV": {
-		"generationId": 10779,
+		"generationId": 10875,
 		"manufacturerName": "Chevrolet",
 		"modelName": "Equinox",
 		"generationCode": "IV",
 		"startYear": 2023,
 		"endYear": null
 	},
+	"Chevrolet|Blazer EV|I": {
+		"generationId": 10876,
+		"manufacturerName": "Chevrolet",
+		"modelName": "Blazer EV",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Chevrolet|Trailblazer|II": {
+		"generationId": 10877,
+		"manufacturerName": "Chevrolet",
+		"modelName": "Trailblazer",
+		"generationCode": "II",
+		"startYear": 2021,
+		"endYear": null
+	},
+	"Chevrolet|Equinox EV|I": {
+		"generationId": 10878,
+		"manufacturerName": "Chevrolet",
+		"modelName": "Equinox EV",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Chevrolet|Silverado EV|I": {
+		"generationId": 10879,
+		"manufacturerName": "Chevrolet",
+		"modelName": "Silverado EV",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Dodge|Challenger|III": {
-		"generationId": 10780,
+		"generationId": 10880,
 		"manufacturerName": "Dodge",
 		"modelName": "Challenger",
 		"generationCode": "III",
 		"startYear": 2008,
-		"endYear": null
+		"endYear": 2023
 	},
 	"Dodge|Charger|VII": {
-		"generationId": 10781,
+		"generationId": 10881,
 		"manufacturerName": "Dodge",
 		"modelName": "Charger",
 		"generationCode": "VII",
 		"startYear": 2011,
+		"endYear": 2023
+	},
+	"Dodge|Charger|VIII": {
+		"generationId": 10882,
+		"manufacturerName": "Dodge",
+		"modelName": "Charger",
+		"generationCode": "VIII",
+		"startYear": 2024,
 		"endYear": null
 	},
 	"Dodge|Durango|III": {
-		"generationId": 10782,
+		"generationId": 10883,
 		"manufacturerName": "Dodge",
 		"modelName": "Durango",
 		"generationCode": "III",
 		"startYear": 2011,
 		"endYear": null
 	},
+	"Dodge|Hornet|I": {
+		"generationId": 10884,
+		"manufacturerName": "Dodge",
+		"modelName": "Hornet",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
 	"Chrysler|300|II": {
-		"generationId": 10783,
+		"generationId": 10885,
 		"manufacturerName": "Chrysler",
 		"modelName": "300",
 		"generationCode": "II",
@@ -6264,7 +7080,7 @@
 		"endYear": null
 	},
 	"Chrysler|Voyager|V": {
-		"generationId": 10784,
+		"generationId": 10886,
 		"manufacturerName": "Chrysler",
 		"modelName": "Voyager",
 		"generationCode": "V",
@@ -6272,7 +7088,7 @@
 		"endYear": 2016
 	},
 	"Chrysler|Pacifica|I": {
-		"generationId": 10785,
+		"generationId": 10887,
 		"manufacturerName": "Chrysler",
 		"modelName": "Pacifica",
 		"generationCode": "I",
@@ -6280,7 +7096,7 @@
 		"endYear": null
 	},
 	"RAM|1500|DS": {
-		"generationId": 10786,
+		"generationId": 10888,
 		"manufacturerName": "RAM",
 		"modelName": "1500",
 		"generationCode": "DS",
@@ -6288,7 +7104,7 @@
 		"endYear": 2018
 	},
 	"RAM|1500|DT": {
-		"generationId": 10787,
+		"generationId": 10889,
 		"manufacturerName": "RAM",
 		"modelName": "1500",
 		"generationCode": "DT",
@@ -6296,7 +7112,7 @@
 		"endYear": null
 	},
 	"RAM|ProMaster|I": {
-		"generationId": 10788,
+		"generationId": 10890,
 		"manufacturerName": "RAM",
 		"modelName": "ProMaster",
 		"generationCode": "I",
@@ -6304,7 +7120,7 @@
 		"endYear": null
 	},
 	"Cadillac|CT5|I": {
-		"generationId": 10789,
+		"generationId": 10891,
 		"manufacturerName": "Cadillac",
 		"modelName": "CT5",
 		"generationCode": "I",
@@ -6312,7 +7128,7 @@
 		"endYear": null
 	},
 	"Cadillac|Escalade|III": {
-		"generationId": 10790,
+		"generationId": 10892,
 		"manufacturerName": "Cadillac",
 		"modelName": "Escalade",
 		"generationCode": "III",
@@ -6320,7 +7136,7 @@
 		"endYear": 2014
 	},
 	"Cadillac|Escalade|IV": {
-		"generationId": 10791,
+		"generationId": 10893,
 		"manufacturerName": "Cadillac",
 		"modelName": "Escalade",
 		"generationCode": "IV",
@@ -6328,7 +7144,7 @@
 		"endYear": 2020
 	},
 	"Cadillac|Escalade|V": {
-		"generationId": 10792,
+		"generationId": 10894,
 		"manufacturerName": "Cadillac",
 		"modelName": "Escalade",
 		"generationCode": "V",
@@ -6336,7 +7152,7 @@
 		"endYear": null
 	},
 	"Cadillac|XT5|I": {
-		"generationId": 10793,
+		"generationId": 10895,
 		"manufacturerName": "Cadillac",
 		"modelName": "XT5",
 		"generationCode": "I",
@@ -6344,7 +7160,7 @@
 		"endYear": null
 	},
 	"Cadillac|CT4|I": {
-		"generationId": 10794,
+		"generationId": 10896,
 		"manufacturerName": "Cadillac",
 		"modelName": "CT4",
 		"generationCode": "I",
@@ -6352,7 +7168,7 @@
 		"endYear": null
 	},
 	"Cadillac|XT4|I": {
-		"generationId": 10795,
+		"generationId": 10897,
 		"manufacturerName": "Cadillac",
 		"modelName": "XT4",
 		"generationCode": "I",
@@ -6360,15 +7176,47 @@
 		"endYear": null
 	},
 	"Cadillac|Lyriq|I": {
-		"generationId": 10796,
+		"generationId": 10898,
 		"manufacturerName": "Cadillac",
 		"modelName": "Lyriq",
 		"generationCode": "I",
 		"startYear": 2022,
 		"endYear": null
 	},
+	"Cadillac|Escalade IQ|I": {
+		"generationId": 10899,
+		"manufacturerName": "Cadillac",
+		"modelName": "Escalade IQ",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Cadillac|Optiq|I": {
+		"generationId": 10900,
+		"manufacturerName": "Cadillac",
+		"modelName": "Optiq",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
+	"Cadillac|Vistiq|I": {
+		"generationId": 10901,
+		"manufacturerName": "Cadillac",
+		"modelName": "Vistiq",
+		"generationCode": "I",
+		"startYear": 2025,
+		"endYear": null
+	},
+	"Cadillac|Celestiq|I": {
+		"generationId": 10902,
+		"manufacturerName": "Cadillac",
+		"modelName": "Celestiq",
+		"generationCode": "I",
+		"startYear": 2024,
+		"endYear": null
+	},
 	"Tesla|Model S|I": {
-		"generationId": 10797,
+		"generationId": 10903,
 		"manufacturerName": "Tesla",
 		"modelName": "Model S",
 		"generationCode": "I",
@@ -6376,7 +7224,7 @@
 		"endYear": 2021
 	},
 	"Tesla|Model S|Plaid": {
-		"generationId": 10798,
+		"generationId": 10904,
 		"manufacturerName": "Tesla",
 		"modelName": "Model S",
 		"generationCode": "Plaid",
@@ -6384,7 +7232,7 @@
 		"endYear": null
 	},
 	"Tesla|Model 3|I": {
-		"generationId": 10799,
+		"generationId": 10905,
 		"manufacturerName": "Tesla",
 		"modelName": "Model 3",
 		"generationCode": "I",
@@ -6392,7 +7240,7 @@
 		"endYear": 2023
 	},
 	"Tesla|Model 3|Highland": {
-		"generationId": 10800,
+		"generationId": 10906,
 		"manufacturerName": "Tesla",
 		"modelName": "Model 3",
 		"generationCode": "Highland",
@@ -6400,7 +7248,7 @@
 		"endYear": null
 	},
 	"Tesla|Model X|I": {
-		"generationId": 10801,
+		"generationId": 10907,
 		"manufacturerName": "Tesla",
 		"modelName": "Model X",
 		"generationCode": "I",
@@ -6408,7 +7256,7 @@
 		"endYear": 2021
 	},
 	"Tesla|Model X|Plaid": {
-		"generationId": 10802,
+		"generationId": 10908,
 		"manufacturerName": "Tesla",
 		"modelName": "Model X",
 		"generationCode": "Plaid",
@@ -6416,7 +7264,7 @@
 		"endYear": null
 	},
 	"Tesla|Model Y|I": {
-		"generationId": 10803,
+		"generationId": 10909,
 		"manufacturerName": "Tesla",
 		"modelName": "Model Y",
 		"generationCode": "I",
@@ -6424,7 +7272,7 @@
 		"endYear": null
 	},
 	"Tesla|Cybertruck|I": {
-		"generationId": 10804,
+		"generationId": 10910,
 		"manufacturerName": "Tesla",
 		"modelName": "Cybertruck",
 		"generationCode": "I",
@@ -6432,7 +7280,7 @@
 		"endYear": null
 	},
 	"Genesis|G70|I": {
-		"generationId": 10805,
+		"generationId": 10911,
 		"manufacturerName": "Genesis",
 		"modelName": "G70",
 		"generationCode": "I",
@@ -6440,7 +7288,7 @@
 		"endYear": null
 	},
 	"Genesis|G80|II": {
-		"generationId": 10806,
+		"generationId": 10912,
 		"manufacturerName": "Genesis",
 		"modelName": "G80",
 		"generationCode": "II",
@@ -6448,7 +7296,7 @@
 		"endYear": 2020
 	},
 	"Genesis|G80|III": {
-		"generationId": 10807,
+		"generationId": 10913,
 		"manufacturerName": "Genesis",
 		"modelName": "G80",
 		"generationCode": "III",
@@ -6456,7 +7304,7 @@
 		"endYear": null
 	},
 	"Genesis|G90|II": {
-		"generationId": 10808,
+		"generationId": 10914,
 		"manufacturerName": "Genesis",
 		"modelName": "G90",
 		"generationCode": "II",
@@ -6464,7 +7312,7 @@
 		"endYear": 2022
 	},
 	"Genesis|G90|III": {
-		"generationId": 10809,
+		"generationId": 10915,
 		"manufacturerName": "Genesis",
 		"modelName": "G90",
 		"generationCode": "III",
@@ -6472,7 +7320,7 @@
 		"endYear": null
 	},
 	"Genesis|GV70|I": {
-		"generationId": 10810,
+		"generationId": 10916,
 		"manufacturerName": "Genesis",
 		"modelName": "GV70",
 		"generationCode": "I",
@@ -6480,7 +7328,7 @@
 		"endYear": null
 	},
 	"Genesis|GV80|I": {
-		"generationId": 10811,
+		"generationId": 10917,
 		"manufacturerName": "Genesis",
 		"modelName": "GV80",
 		"generationCode": "I",
@@ -6488,7 +7336,7 @@
 		"endYear": null
 	},
 	"Genesis|GV60|I": {
-		"generationId": 10812,
+		"generationId": 10918,
 		"manufacturerName": "Genesis",
 		"modelName": "GV60",
 		"generationCode": "I",
@@ -6496,11 +7344,27 @@
 		"endYear": null
 	},
 	"Genesis|G70 Shooting Brake|I": {
-		"generationId": 10813,
+		"generationId": 10919,
 		"manufacturerName": "Genesis",
 		"modelName": "G70 Shooting Brake",
 		"generationCode": "I",
 		"startYear": 2021,
+		"endYear": null
+	},
+	"Genesis|GV80 Coupe|I": {
+		"generationId": 10920,
+		"manufacturerName": "Genesis",
+		"modelName": "GV80 Coupe",
+		"generationCode": "I",
+		"startYear": 2023,
+		"endYear": null
+	},
+	"Genesis|GV90|I": {
+		"generationId": 10921,
+		"manufacturerName": "Genesis",
+		"modelName": "GV90",
+		"generationCode": "I",
+		"startYear": 2026,
 		"endYear": null
 	}
 }
