@@ -4,9 +4,10 @@ import json
 import re
 from pathlib import Path
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, HTTPException, Response, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
+from starlette.concurrency import run_in_threadpool
 
 from .censor import censor_to_base64
 from .model_loader import CarClassifier, BASE_DIR, LABELS_PATH, REF_IMAGES_PATH
@@ -81,7 +82,14 @@ def build_router(classifier: CarClassifier) -> APIRouter:
     _preferred_map = _load_preferred_display()
 
     @router.get("/health")
-    def health() -> dict:
+    def health(response: Response) -> dict:
+        # A missing/empty reference index means every /recognize call would
+        # fail regardless of the process being "up" — surface that here
+        # instead of always reporting ok.
+        ready = classifier._index is not None and classifier._index.ntotal > 0
+        if not ready:
+            response.status_code = 503
+            return {"service": "ai-service", "status": "degraded", "error": "no reference embeddings loaded"}
         return {"service": "ai-service", "status": "ok"}
 
     @router.get("/images/{generation_id}")
@@ -134,10 +142,15 @@ def build_router(classifier: CarClassifier) -> APIRouter:
         image_bytes = b"".join(chunks)
         if not image_bytes:
             raise HTTPException(status_code=400, detail="Uploaded file is empty")
-        return _recognize_and_censor(image_bytes, classifier)
+        # _recognize_and_censor runs real YOLO+CLIP inference synchronously —
+        # calling it directly here would block the single asyncio event loop
+        # for the full duration, serializing every concurrent scan behind
+        # whichever one got there first. run_in_threadpool moves it onto a
+        # worker thread so concurrent requests actually run concurrently.
+        return await run_in_threadpool(_recognize_and_censor, image_bytes, classifier)
 
     @router.post("/predict")
-    def recognize_from_base64(payload: RecognizeBase64Request) -> dict:
+    async def recognize_from_base64(payload: RecognizeBase64Request) -> dict:
         try:
             image_bytes = decode_base64_image(payload.imageBase64)
         except Exception as error:
@@ -146,7 +159,7 @@ def build_router(classifier: CarClassifier) -> APIRouter:
         if len(image_bytes) > MAX_IMAGE_BYTES:
             raise HTTPException(status_code=413, detail="Image exceeds the 10MB upload limit")
 
-        return _recognize_and_censor(image_bytes, classifier)
+        return await run_in_threadpool(_recognize_and_censor, image_bytes, classifier)
 
     return router
 

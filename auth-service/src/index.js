@@ -8,7 +8,7 @@ const authRoutes = require("./routes/auth.routes");
 const friendsRoutes = require("./routes/friends.routes");
 const usersRoutes = require("./routes/users.routes");
 const internalRoutes = require("./routes/internal.routes");
-const { initDb } = require("./db");
+const { initDb, checkDbHealth } = require("./db");
 
 const app = express();
 
@@ -19,12 +19,22 @@ app.use(cors({ origin: corsOrigins }));
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("dev"));
 
-app.get("/health", (req, res) => {
-	res.status(200).json({
-		service: "auth-service",
-		status: "ok",
-		timestamp: new Date().toISOString()
-	});
+app.get("/health", async (req, res) => {
+	try {
+		await checkDbHealth();
+		res.status(200).json({
+			service: "auth-service",
+			status: "ok",
+			timestamp: new Date().toISOString()
+		});
+	} catch (error) {
+		res.status(503).json({
+			service: "auth-service",
+			status: "degraded",
+			error: "database unreachable",
+			timestamp: new Date().toISOString()
+		});
+	}
 });
 
 app.use("/", authRoutes);

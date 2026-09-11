@@ -8,6 +8,12 @@ const pool = new Pool({
 
 let initialized = false;
 
+// Used by /health so a dead DB connection actually shows up there instead
+// of a static "ok" that's true regardless of whether the database answers.
+async function checkDbHealth() {
+	await pool.query("SELECT 1");
+}
+
 async function initDb() {
 	if (initialized) {
 		return;
@@ -266,6 +272,7 @@ async function getCountryUnlockedMap(userId) {
 
 module.exports = {
 	addCollectionItem,
+	checkDbHealth,
 	getCollectionAchievementCatalogue,
 	getCompletionistUnlockedMap,
 	getCountryUnlockedMap,

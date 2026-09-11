@@ -8,7 +8,7 @@ const raceRoutes = require("./routes/races.routes");
 const achievementRoutes = require("./routes/achievements.routes");
 const leaderboardRoutes = require("./routes/leaderboard.routes");
 const challengeRoutes = require("./routes/challenges.routes");
-const { initDb } = require("./db");
+const { initDb, checkDbHealth } = require("./db");
 const { requireInternalSecret } = require("./middleware/internalSecret.middleware");
 
 const app = express();
@@ -20,12 +20,22 @@ app.use(cors({ origin: corsOrigins }));
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.get("/health", (req, res) => {
-	res.status(200).json({
-		service: "gamification-service",
-		status: "ok",
-		timestamp: new Date().toISOString()
-	});
+app.get("/health", async (req, res) => {
+	try {
+		await checkDbHealth();
+		res.status(200).json({
+			service: "gamification-service",
+			status: "ok",
+			timestamp: new Date().toISOString()
+		});
+	} catch (error) {
+		res.status(503).json({
+			service: "gamification-service",
+			status: "degraded",
+			error: "database unreachable",
+			timestamp: new Date().toISOString()
+		});
+	}
 });
 
 app.use(requireInternalSecret);

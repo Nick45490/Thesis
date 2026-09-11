@@ -5,7 +5,10 @@ const CATALOGUE_URL = process.env.CATALOGUE_URL || "http://localhost:3002";
 let _catalogueCountsCache = null;
 async function getCatalogueCounts() {
 	if (_catalogueCountsCache) return _catalogueCountsCache;
-	const res = await fetch(`${CATALOGUE_URL}/generation-counts`).catch(() => null);
+	// A hung (not down) catalogue-service would otherwise block this call
+	// indefinitely — a refused connection already fails fast, but a stalled
+	// one wouldn't without an explicit deadline.
+	const res = await fetch(`${CATALOGUE_URL}/generation-counts`, { signal: AbortSignal.timeout(5000) }).catch(() => null);
 	if (!res?.ok) return {};
 	const data = await res.json();
 	_catalogueCountsCache = data.counts || {};
@@ -16,7 +19,12 @@ const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || "http://localhost:3001"
 async function isFriendOf(requesterId, targetId) {
 	const res = await fetch(
 		`${AUTH_SERVICE_URL}/internal/friends/${requesterId}/${targetId}`,
-		{ headers: { "x-internal-secret": process.env.INTERNAL_SERVICE_SECRET || "" } }
+		{
+			headers: { "x-internal-secret": process.env.INTERNAL_SERVICE_SECRET || "" },
+			// A hung (not down) auth-service would otherwise block this call
+			// indefinitely instead of failing closed within a bounded time.
+			signal: AbortSignal.timeout(5000)
+		}
 	).catch(() => null);
 	// Fail closed — a network error or auth-service being down must not turn into
 	// "assume they're friends" for what is otherwise the actual access check.

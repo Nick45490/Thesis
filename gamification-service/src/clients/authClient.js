@@ -10,7 +10,13 @@ async function getUsernamesByIds(ids) {
 
 	const res = await fetch(
 		`${AUTH_SERVICE_URL}/internal/users?ids=${uniqueIds.join(",")}`,
-		{ headers: { "x-internal-secret": process.env.INTERNAL_SERVICE_SECRET || "" } }
+		{
+			headers: { "x-internal-secret": process.env.INTERNAL_SERVICE_SECRET || "" },
+			// A hung (not down) auth-service would otherwise block this call
+			// indefinitely — a refused connection already fails fast, but a
+			// stalled one wouldn't without an explicit deadline.
+			signal: AbortSignal.timeout(5000)
+		}
 	).catch(() => null);
 
 	if (!res?.ok) return {};

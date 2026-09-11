@@ -5,7 +5,7 @@ const morgan = require("morgan");
 require("dotenv").config();
 
 const collectionRoutes = require("./routes/collection.routes");
-const { initDb } = require("./db");
+const { initDb, checkDbHealth } = require("./db");
 const { requireInternalSecret } = require("./middleware/internalSecret.middleware");
 
 const app = express();
@@ -17,12 +17,22 @@ app.use(cors({ origin: corsOrigins }));
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("dev"));
 
-app.get("/health", (req, res) => {
-	res.status(200).json({
-		service: "collection-service",
-		status: "ok",
-		timestamp: new Date().toISOString()
-	});
+app.get("/health", async (req, res) => {
+	try {
+		await checkDbHealth();
+		res.status(200).json({
+			service: "collection-service",
+			status: "ok",
+			timestamp: new Date().toISOString()
+		});
+	} catch (error) {
+		res.status(503).json({
+			service: "collection-service",
+			status: "degraded",
+			error: "database unreachable",
+			timestamp: new Date().toISOString()
+		});
+	}
 });
 
 app.use("/", requireInternalSecret, collectionRoutes);
