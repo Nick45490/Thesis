@@ -16,6 +16,12 @@ async function checkDbHealth() {
 	await pool.query("SELECT 1");
 }
 
+// Used on graceful shutdown so the process doesn't exit with open DB
+// connections mid-close.
+async function closePool() {
+	await pool.end();
+}
+
 async function initDb() {
 	if (initialized) {
 		return;
@@ -497,6 +503,7 @@ module.exports = {
 	addRace,
 	attachUsernames,
 	checkDbHealth,
+	closePool,
 	createChallenge,
 	declineChallenge,
 	getAchievementCatalogue,

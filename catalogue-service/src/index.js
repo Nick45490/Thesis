@@ -10,6 +10,9 @@ const modelRoutes = require("./routes/models.routes");
 
 const app = express();
 
+// Trust exactly one hop of X-Forwarded-For — see gateway/src/index.js for why.
+app.set("trust proxy", 1);
+
 const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
@@ -64,6 +67,16 @@ app.use((error, req, res, next) => {
 });
 
 const port = Number(process.env.PORT || 3002);
-app.listen(port, () => {
-	console.log(`Catalogue service listening on port ${port}`);
+// Defaults to loopback-only — see auth-service/src/index.js for why.
+const host = process.env.HOST || "127.0.0.1";
+const server = app.listen(port, host, () => {
+	console.log(`Catalogue service listening on ${host}:${port}`);
 });
+
+function shutdown(signal) {
+	console.log(`${signal} received, closing server`);
+	server.close(() => process.exit(0));
+	setTimeout(() => process.exit(1), 10000).unref();
+}
+process.on("SIGTERM", () => shutdown("SIGTERM"));
+process.on("SIGINT", () => shutdown("SIGINT"));

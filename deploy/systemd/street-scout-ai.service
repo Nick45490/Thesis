@@ -1,0 +1,34 @@
+# Reference unit for self-hosting on a plain Linux VPS (no Docker).
+# Copy to /etc/systemd/system/street-scout-ai.service, adjust paths for your
+# actual deploy location, then:
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now street-scout-ai
+#
+# Start at --workers 1: each worker loads the full model set (YOLO + CLIP +
+# the ~339MB reference-embeddings cache) into memory independently, and
+# concurrency within one worker is already handled by ai-service's own
+# run_in_threadpool usage. Only raise this if real load shows the single
+# process is CPU-bound — check available RAM first, since it multiplies.
+
+[Unit]
+Description=Street Scout AI Recognition Service
+After=network.target
+
+[Service]
+Type=simple
+User=streetscout
+WorkingDirectory=/opt/street-scout/ai-service
+EnvironmentFile=/opt/street-scout/ai-service/.env
+ExecStart=/opt/street-scout/ai-service/venv/bin/uvicorn src.main:app --host 127.0.0.1 --port 8000 --workers 1
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=true
+ProtectSystem=strict
+# Only the model/ directory needs write access — that's where the embedding
+# cache reconciliation writes at startup (model_loader.py). Everything else
+# in the service directory stays read-only.
+ReadWritePaths=/opt/street-scout/ai-service/model
+
+[Install]
+WantedBy=multi-user.target

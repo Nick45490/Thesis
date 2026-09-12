@@ -12,6 +12,13 @@ async function checkDbHealth() {
 	await pool.query("SELECT 1");
 }
 
+// Used on graceful shutdown so the process doesn't exit with open DB
+// connections mid-close — closes cleanly instead of relying on the OS to tear
+// the sockets down when the process dies.
+async function closePool() {
+	await pool.end();
+}
+
 async function initDb() {
 	if (initialized) {
 		return;
@@ -329,6 +336,7 @@ module.exports = {
 	createFriendRequest,
 	createInviteCode,
 	checkDbHealth,
+	closePool,
 	createUser,
 	findUserByEmail,
 	findUserById,

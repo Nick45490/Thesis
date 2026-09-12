@@ -1,0 +1,25 @@
+# Reference unit for self-hosting on a plain Linux VPS (no Docker).
+# Copy to /etc/systemd/system/street-scout-catalogue.service, adjust paths for
+# your actual deploy location, then:
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now street-scout-catalogue
+
+[Unit]
+Description=Street Scout Catalogue Service
+After=network.target
+
+[Service]
+Type=simple
+User=streetscout
+WorkingDirectory=/opt/street-scout/catalogue-service
+EnvironmentFile=/opt/street-scout/catalogue-service/.env
+ExecStart=/usr/bin/node src/index.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/street-scout/catalogue-service
+
+[Install]
+WantedBy=multi-user.target

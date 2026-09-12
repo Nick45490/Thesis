@@ -8,9 +8,16 @@ const authRoutes = require("./routes/auth.routes");
 const friendsRoutes = require("./routes/friends.routes");
 const usersRoutes = require("./routes/users.routes");
 const internalRoutes = require("./routes/internal.routes");
-const { initDb, checkDbHealth } = require("./db");
+const { initDb, checkDbHealth, closePool } = require("./db");
 
 const app = express();
+
+// Trust exactly one hop of X-Forwarded-For — this service is meant to sit
+// behind the gateway (and, in production, a reverse proxy in front of that),
+// but is also reachable directly on its own port today; if that direct port
+// is ever fronted by its own proxy too, req.ip needs this to resolve to the
+// real client rather than the proxy.
+app.set("trust proxy", 1);
 
 const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
 
@@ -47,12 +54,28 @@ app.use((req, res) => {
 });
 
 const port = Number(process.env.PORT || 3001);
+// Defaults to loopback-only — this and every other backend service should
+// only be reachable from the gateway (or a process on the same box), never
+// directly from the public internet. Only the gateway itself should bind to
+// a public interface.
+const host = process.env.HOST || "127.0.0.1";
 
 async function start() {
 	await initDb();
-	app.listen(port, () => {
-		console.log(`Auth service listening on port ${port}`);
+	const server = app.listen(port, host, () => {
+		console.log(`Auth service listening on ${host}:${port}`);
 	});
+
+	function shutdown(signal) {
+		console.log(`${signal} received, closing server`);
+		server.close(async () => {
+			await closePool();
+			process.exit(0);
+		});
+		setTimeout(() => process.exit(1), 10000).unref();
+	}
+	process.on("SIGTERM", () => shutdown("SIGTERM"));
+	process.on("SIGINT", () => shutdown("SIGINT"));
 }
 
 start().catch((error) => {

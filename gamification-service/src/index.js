@@ -8,10 +8,13 @@ const raceRoutes = require("./routes/races.routes");
 const achievementRoutes = require("./routes/achievements.routes");
 const leaderboardRoutes = require("./routes/leaderboard.routes");
 const challengeRoutes = require("./routes/challenges.routes");
-const { initDb, checkDbHealth } = require("./db");
+const { initDb, checkDbHealth, closePool } = require("./db");
 const { requireInternalSecret } = require("./middleware/internalSecret.middleware");
 
 const app = express();
+
+// Trust exactly one hop of X-Forwarded-For — see gateway/src/index.js for why.
+app.set("trust proxy", 1);
 
 const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",").map((o) => o.trim());
 
@@ -49,12 +52,25 @@ app.use((req, res) => {
 });
 
 const port = Number(process.env.PORT || 3004);
+// Defaults to loopback-only — see auth-service/src/index.js for why.
+const host = process.env.HOST || "127.0.0.1";
 
 async function start() {
 	await initDb();
-	app.listen(port, () => {
-		console.log(`Gamification service listening on port ${port}`);
+	const server = app.listen(port, host, () => {
+		console.log(`Gamification service listening on ${host}:${port}`);
 	});
+
+	function shutdown(signal) {
+		console.log(`${signal} received, closing server`);
+		server.close(async () => {
+			await closePool();
+			process.exit(0);
+		});
+		setTimeout(() => process.exit(1), 10000).unref();
+	}
+	process.on("SIGTERM", () => shutdown("SIGTERM"));
+	process.on("SIGINT", () => shutdown("SIGINT"));
 }
 
 start().catch((error) => {

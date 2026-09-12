@@ -4,6 +4,9 @@
 	"description": "Authentication and friends service",
 	"main": "src/index.js",
 	"type": "commonjs",
+	"engines": {
+		"node": ">=20 <21"
+	},
 	"scripts": {
 		"start": "node src/index.js",
 		"dev": "nodemon src/index.js",

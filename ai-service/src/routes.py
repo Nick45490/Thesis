@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from pathlib import Path
 
-from fastapi import APIRouter, File, HTTPException, Response, UploadFile
+from fastapi import APIRouter, Depends, File, Header, HTTPException, Response, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
@@ -26,6 +27,20 @@ MAX_BASE64_CHARS = int(MAX_IMAGE_BYTES * 4 / 3) + 1024
 
 class RecognizeBase64Request(BaseModel):
     imageBase64: str = Field(max_length=MAX_BASE64_CHARS)
+
+
+def _require_internal_secret(x_internal_secret: str | None = Header(default=None)) -> None:
+    """This service is also reachable directly on its own port, bypassing the
+    gateway's requireAuth/rate-limit entirely — and unlike collection-service
+    and gamification-service, it has never checked anything of its own before
+    running inference. Mirrors collection-service's requireInternalSecret
+    middleware: the gateway sets this header on every proxied request
+    (gateway/src/routes.js's applyIdentityHeaders), so without a match here,
+    the request didn't come through the gateway.
+    """
+    expected = os.environ.get("INTERNAL_SERVICE_SECRET")
+    if not expected or x_internal_secret != expected:
+        raise HTTPException(status_code=401, detail="Missing or invalid internal credentials")
 
 
 def _build_image_index() -> tuple[dict[int, str], dict[str, list[str]]]:
@@ -92,7 +107,7 @@ def build_router(classifier: CarClassifier) -> APIRouter:
             return {"service": "ai-service", "status": "degraded", "error": "no reference embeddings loaded"}
         return {"service": "ai-service", "status": "ok"}
 
-    @router.get("/images/{generation_id}")
+    @router.get("/images/{generation_id}", dependencies=[Depends(_require_internal_secret)])
     def get_generation_image(generation_id: int) -> FileResponse:
         key = _gen_id_to_key.get(generation_id)
         if not key:
@@ -122,7 +137,7 @@ def build_router(classifier: CarClassifier) -> APIRouter:
         media  = "image/jpeg" if suffix in (".jpg", ".jpeg") else "image/png"
         return FileResponse(str(chosen), media_type=media)
 
-    @router.post("/")
+    @router.post("/", dependencies=[Depends(_require_internal_secret)])
     async def recognize_from_upload(file: UploadFile = File(...)) -> dict:
         # Read in chunks and abort as soon as the limit is crossed, instead of
         # buffering an arbitrarily large body into memory before checking its
@@ -149,7 +164,7 @@ def build_router(classifier: CarClassifier) -> APIRouter:
         # worker thread so concurrent requests actually run concurrently.
         return await run_in_threadpool(_recognize_and_censor, image_bytes, classifier)
 
-    @router.post("/predict")
+    @router.post("/predict", dependencies=[Depends(_require_internal_secret)])
     async def recognize_from_base64(payload: RecognizeBase64Request) -> dict:
         try:
             image_bytes = decode_base64_image(payload.imageBase64)
