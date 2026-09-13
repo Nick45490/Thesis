@@ -25,7 +25,7 @@ import { useCollection } from "../context/CollectionContext";
 const AMBIGUOUS_RATIO = 0.6;
 const LOW_CONFIDENCE_FLOOR = 0.30;
 
-function isAmbiguous(candidates) {
+export function isAmbiguous(candidates) {
 	if (!Array.isArray(candidates) || candidates.length === 0) return false;
 	if (candidates[0].confidence < LOW_CONFIDENCE_FLOOR) return true;
 	return candidates.length > 1

@@ -6,5 +6,9 @@ export default defineConfig({
 	server: {
 		port: 5173,
 		host: "0.0.0.0"
+	},
+	test: {
+		// jsdom, not node — api/http.js reads sessionStorage, a browser global.
+		environment: "jsdom"
 	}
 });
