@@ -13,6 +13,21 @@ function getTokenFromHeader(authHeader) {
 	return token;
 }
 
+// JWT_SECRET_PREVIOUS lets tokens issued before a secret rotation keep
+// working until they naturally expire, instead of logging out every active
+// session the instant the secret changes. Only ever used for verifying —
+// auth-service always signs new tokens with the current secret alone.
+function verifyWithRotation(token, secret, previousSecret) {
+	try {
+		return jwt.verify(token, secret);
+	} catch (error) {
+		if (previousSecret) {
+			return jwt.verify(token, previousSecret);
+		}
+		throw error;
+	}
+}
+
 function requireAuth(req, res, next) {
 	const token = getTokenFromHeader(req.headers.authorization);
 
@@ -26,7 +41,7 @@ function requireAuth(req, res, next) {
 	}
 
 	try {
-		const payload = jwt.verify(token, jwtSecret);
+		const payload = verifyWithRotation(token, jwtSecret, process.env.JWT_SECRET_PREVIOUS);
 		req.user = {
 			id: payload.sub || payload.id || payload.userId || null,
 			email: payload.email || null,
@@ -41,5 +56,6 @@ function requireAuth(req, res, next) {
 
 module.exports = {
 	requireAuth,
-	getTokenFromHeader
+	getTokenFromHeader,
+	verifyWithRotation
 };

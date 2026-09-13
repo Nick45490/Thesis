@@ -9,9 +9,11 @@ function mockRes() {
 
 describe("requireInternalSecret", () => {
 	const ORIGINAL_ENV = process.env.INTERNAL_SERVICE_SECRET;
+	const ORIGINAL_PREVIOUS = process.env.INTERNAL_SERVICE_SECRET_PREVIOUS;
 
 	afterEach(() => {
 		process.env.INTERNAL_SERVICE_SECRET = ORIGINAL_ENV;
+		process.env.INTERNAL_SERVICE_SECRET_PREVIOUS = ORIGINAL_PREVIOUS;
 	});
 
 	test("calls next() when the header matches the configured secret", () => {
@@ -59,6 +61,60 @@ describe("requireInternalSecret", () => {
 	test("rejects every request when INTERNAL_SERVICE_SECRET itself is unset, even with a matching empty header", () => {
 		delete process.env.INTERNAL_SERVICE_SECRET;
 		const req = { headers: { "x-internal-secret": "" } };
+		const res = mockRes();
+		const next = jest.fn();
+
+		requireInternalSecret(req, res, next);
+
+		expect(next).not.toHaveBeenCalled();
+		expect(res.status).toHaveBeenCalledWith(401);
+	});
+
+	// The following four cover rotation: INTERNAL_SERVICE_SECRET_PREVIOUS lets
+	// a secret roll out to every receiver before the gateway switches to
+	// sending it, without a hard cutover that would reject every request in
+	// between.
+	test("accepts the current secret even while a previous one is also configured", () => {
+		process.env.INTERNAL_SERVICE_SECRET = "new-secret";
+		process.env.INTERNAL_SERVICE_SECRET_PREVIOUS = "old-secret";
+		const req = { headers: { "x-internal-secret": "new-secret" } };
+		const res = mockRes();
+		const next = jest.fn();
+
+		requireInternalSecret(req, res, next);
+
+		expect(next).toHaveBeenCalledTimes(1);
+	});
+
+	test("accepts the previous secret during a rotation window", () => {
+		process.env.INTERNAL_SERVICE_SECRET = "new-secret";
+		process.env.INTERNAL_SERVICE_SECRET_PREVIOUS = "old-secret";
+		const req = { headers: { "x-internal-secret": "old-secret" } };
+		const res = mockRes();
+		const next = jest.fn();
+
+		requireInternalSecret(req, res, next);
+
+		expect(next).toHaveBeenCalledTimes(1);
+	});
+
+	test("rejects a value that matches neither the current nor the previous secret", () => {
+		process.env.INTERNAL_SERVICE_SECRET = "new-secret";
+		process.env.INTERNAL_SERVICE_SECRET_PREVIOUS = "old-secret";
+		const req = { headers: { "x-internal-secret": "some-other-value" } };
+		const res = mockRes();
+		const next = jest.fn();
+
+		requireInternalSecret(req, res, next);
+
+		expect(next).not.toHaveBeenCalled();
+		expect(res.status).toHaveBeenCalledWith(401);
+	});
+
+	test("an unset previous secret doesn't relax the check — still fails closed", () => {
+		process.env.INTERNAL_SERVICE_SECRET = "new-secret";
+		delete process.env.INTERNAL_SERVICE_SECRET_PREVIOUS;
+		const req = { headers: { "x-internal-secret": "old-secret" } };
 		const res = mockRes();
 		const next = jest.fn();
 

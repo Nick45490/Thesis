@@ -51,3 +51,36 @@ def test_rejects_every_request_when_secret_itself_is_unset():
     with pytest.raises(HTTPException) as exc_info:
         _require_internal_secret(x_internal_secret="")
     assert exc_info.value.status_code == 401
+
+
+# The following four cover rotation: INTERNAL_SERVICE_SECRET_PREVIOUS lets a
+# secret roll out to every receiver before the gateway switches to sending
+# it, without a hard cutover that would reject every request in between.
+# Mirrors the equivalent JS tests in the Node services.
+
+def test_accepts_current_secret_even_while_previous_is_also_configured():
+    os.environ["INTERNAL_SERVICE_SECRET"] = "new-secret"
+    os.environ["INTERNAL_SERVICE_SECRET_PREVIOUS"] = "old-secret"
+    _require_internal_secret(x_internal_secret="new-secret")
+
+
+def test_accepts_previous_secret_during_a_rotation_window():
+    os.environ["INTERNAL_SERVICE_SECRET"] = "new-secret"
+    os.environ["INTERNAL_SERVICE_SECRET_PREVIOUS"] = "old-secret"
+    _require_internal_secret(x_internal_secret="old-secret")
+
+
+def test_rejects_value_matching_neither_current_nor_previous():
+    os.environ["INTERNAL_SERVICE_SECRET"] = "new-secret"
+    os.environ["INTERNAL_SERVICE_SECRET_PREVIOUS"] = "old-secret"
+    with pytest.raises(HTTPException) as exc_info:
+        _require_internal_secret(x_internal_secret="some-other-value")
+    assert exc_info.value.status_code == 401
+
+
+def test_unset_previous_secret_does_not_relax_the_check():
+    os.environ["INTERNAL_SERVICE_SECRET"] = "new-secret"
+    os.environ.pop("INTERNAL_SERVICE_SECRET_PREVIOUS", None)
+    with pytest.raises(HTTPException) as exc_info:
+        _require_internal_secret(x_internal_secret="old-secret")
+    assert exc_info.value.status_code == 401

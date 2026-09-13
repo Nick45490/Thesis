@@ -280,8 +280,22 @@ audit (2026-08-17).
   the remaining moderate `qs`/`body-parser` findings are pulled in
   transitively by Express itself — fixing those needs a breaking Express
   major-version bump, not attempted without dedicated testing.
-- `INTERNAL_SERVICE_SECRET`/`JWT_SECRET` have no rotation story — fine for a
-  personal project, but worth knowing if this ever goes further.
+- ~~`INTERNAL_SERVICE_SECRET`/`JWT_SECRET` have no rotation story~~ — done
+  (2026-09-13): each now accepts an optional `_PREVIOUS` value alongside the
+  current one during verification only (`INTERNAL_SERVICE_SECRET_PREVIOUS` in
+  auth/collection/gamification-service's `internalSecret.middleware.js` and
+  ai-service's `_require_internal_secret`; `JWT_SECRET_PREVIOUS` in the
+  gateway's and auth-service's own JWT verify, via a shared
+  `verifyWithRotation` helper). Signing/sending always uses the current
+  secret only — a receiver accepts either value, so a new secret can roll out
+  to every service one at a time instead of needing a perfectly synchronized
+  simultaneous restart; drop `_PREVIOUS` in a final deploy once everything's
+  confirmed on the new value. Documented in every affected `.env.example`.
+  Covered by new unit tests in all 5 affected services (gateway, auth,
+  collection, gamification, ai-service — including a first-ever test file
+  for auth-service's `jwt.js` and its internal-secret middleware, neither of
+  which had coverage before) and live-verified end-to-end against the
+  running stack with a rotated secret pair.
 - ~~Rate limiting is IP-based only — no additional per-user limiting on
   authenticated routes~~ — done (2026-09-13): added a second limiter keyed
   by the authenticated user's id (`gateway/src/rateLimit.js`'s

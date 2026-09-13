@@ -37,9 +37,19 @@ def _require_internal_secret(x_internal_secret: str | None = Header(default=None
     middleware: the gateway sets this header on every proxied request
     (gateway/src/routes.js's applyIdentityHeaders), so without a match here,
     the request didn't come through the gateway.
+
+    INTERNAL_SERVICE_SECRET_PREVIOUS lets this value be rotated without a
+    perfectly-synchronized simultaneous restart of every service: roll the
+    new secret out to every receiver first (as _PREVIOUS here, alongside the
+    still-current old one), then update the gateway to send the new value,
+    then once that's confirmed, drop _PREVIOUS in a final deploy. The gateway
+    itself only ever sends the current value, never the previous one.
     """
-    expected = os.environ.get("INTERNAL_SERVICE_SECRET")
-    if not expected or x_internal_secret != expected:
+    valid_secrets = {
+        s for s in (os.environ.get("INTERNAL_SERVICE_SECRET"), os.environ.get("INTERNAL_SERVICE_SECRET_PREVIOUS"))
+        if s
+    }
+    if not valid_secrets or x_internal_secret not in valid_secrets:
         raise HTTPException(status_code=401, detail="Missing or invalid internal credentials")
 
 
