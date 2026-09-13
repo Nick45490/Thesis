@@ -52,9 +52,24 @@ jobs:
         working-directory: ai-service
         run: pip install -r requirements-dev.txt
 
+      # TEMPORARY DIAGNOSTIC: the previous two attempts at this job failed
+      # instantly (~1s) with no visible cause — the raw log viewer isn't
+      # reachable without an authenticated GitHub session, so this captures
+      # the real output into the job summary instead, which renders without
+      # auth. Revert to a plain `pytest tests/ -v` once the cause is found.
       - name: Run tests
         working-directory: ai-service
-        run: pytest tests/ -v
+        run: |
+          set +e
+          python -m pytest tests/ -v --tb=long > pytest_output.txt 2>&1
+          code=$?
+          {
+            echo "### pytest output (exit $code)"
+            echo '```'
+            cat pytest_output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit $code
 
   smoke-test:
     name: End-to-end smoke test
