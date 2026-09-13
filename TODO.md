@@ -194,9 +194,29 @@ audit (2026-08-17).
   tiers, collection-payload validation, the achievement/completionist/country
   catalogue logic) — 87 tests total.
 - ~~No CI~~ — done (2026-08-20): GitHub Actions runs all four test suites
-  on every push/PR to master, confirmed green on the actual runners. Doesn't
-  run smoke-test.ps1 yet — that needs Postgres + all 5 services up in CI, a
-  bigger lift than the unit tests were.
+  on every push/PR to master, confirmed green on the actual runners.
+- ~~CI doesn't run smoke-test.ps1 — only unit tests, so a real integration
+  break (gateway routing, JWT flow, the full recognize→collect→leaderboard
+  path) could still go green~~ — done (2026-09-13): new `smoke-test` job in
+  `.github/workflows/test.yml`, gated on the existing unit-test jobs passing
+  first (`needs: [test, ai-service]`). Spins up a real Postgres service
+  container, starts all 5 backend services with a throwaway shared
+  JWT/internal secret and localhost upstream URLs (the gateway's own code
+  still defaults to Docker-style hostnames like `http://auth-service:3001`,
+  so CI — like any Docker-free deployment — has to override them), waits on
+  each `/health` endpoint, then runs the existing `scripts/smoke-test.ps1`
+  via `pwsh` (preinstalled on GitHub's Ubuntu runners). ai-service runs with
+  real YOLO+CLIP inference, not a mock — turned out the only genuinely
+  required model file (`classifier.pkl`) is already checked into git, so no
+  Google-Drive-hosted files are needed to exercise the real `/predict` path;
+  CLIP/YOLO base weights download from HuggingFace/Ultralytics on first run
+  and are cached (`actions/cache`) afterward. Service logs upload as a build
+  artifact on any failure. Live-verified by dry-running the exact same
+  script and env-var scheme locally end to end (all 6 services, real
+  Postgres) before trusting it in CI — caught and fixed a real false-start
+  along the way: a leftover process from earlier manual testing was still
+  squatting on auth-service's port with a stale secret, which produced a 401
+  that had nothing to do with the new workflow logic once traced down.
 
 ## Features / gameplay
 
