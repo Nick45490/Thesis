@@ -108,13 +108,18 @@ def build_router(classifier: CarClassifier) -> APIRouter:
 
     @router.get("/health")
     def health(response: Response) -> dict:
-        # A missing/empty reference index means every /recognize call would
-        # fail regardless of the process being "up" — surface that here
-        # instead of always reporting ok.
-        ready = classifier._index is not None and classifier._index.ntotal > 0
-        if not ready:
+        # Either the classifier (preferred) or the FAISS reference index
+        # (fallback) is enough to serve real predictions — see predict()'s own
+        # order of preference in model_loader.py. Only the reference index
+        # requires the (large, separately-shipped) reference_images set, so
+        # requiring it here would misreport a classifier-only deploy — CI
+        # included, since it doesn't ship that folder either — as perpetually
+        # unhealthy even though /recognize works fine.
+        has_classifier = classifier._clf is not None
+        has_faiss = classifier._index is not None and classifier._index.ntotal > 0
+        if not has_classifier and not has_faiss:
             response.status_code = 503
-            return {"service": "ai-service", "status": "degraded", "error": "no reference embeddings loaded"}
+            return {"service": "ai-service", "status": "degraded", "error": "no classifier or reference embeddings loaded"}
         return {"service": "ai-service", "status": "ok"}
 
     @router.get("/images/{generation_id}", dependencies=[Depends(_require_internal_secret)])

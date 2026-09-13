@@ -217,6 +217,35 @@ audit (2026-08-17).
   along the way: a leftover process from earlier manual testing was still
   squatting on auth-service's port with a stale secret, which produced a 401
   that had nothing to do with the new workflow logic once traced down.
+- The new smoke-test job's first several real runs on GitHub's own runners
+  still failed even after the above, in ways the local dry-run above never
+  hit (it has real reference images on disk; CI never will). Chased down
+  with `gh` CLI (installed and authenticated mid-session specifically to
+  read the actual failure logs — GitHub blocks the logs/artifacts API
+  without a token, and every unauthenticated workaround tried first came up
+  empty or gave a stale/wrong answer). Two real, distinct bugs found this
+  way, both fixed (2026-09-13):
+  1. **CI's ai-service unit-test job failed on every run since it was
+     added** — `ultralytics` pulls in `opencv-python` (not `-headless`),
+     which needs `libGL.so.1` at import time; present on a desktop OS but
+     not on GitHub's bare Ubuntu runner, so `pytest` failed at import before
+     a single test ran. Fixed with `apt-get install libgl1 libglib2.0-0` in
+     both CI jobs that import ai-service code.
+  2. **ai-service's own `/health` endpoint was wrong**, not just uncovered
+     by tests: it only reported "ok" when the FAISS reference index was
+     loaded, but `model_loader.py`'s own `predict()` prefers the classifier
+     and doesn't need that index at all when one is present (see the AI
+     pipeline section above). CI (and any production deploy that reasonably
+     skips shipping the 3.3GB reference-images folder, same as CI) would
+     have a fully working `/recognize` behind a `/health` that reports
+     perpetually degraded — not a CI-only fake, a real latent bug in
+     `ai-service/src/routes.py`'s `health()`. Fixed to report healthy when
+     *either* the classifier or the FAISS index is available, matching
+     `predict()`'s own preference order; only reports 503 when truly neither
+     is loaded. Verified the corrected logic against all four
+     classifier/index combinations in isolation before trusting it, since
+     reproducing the exact "no reference images" condition locally would
+     have meant moving real model files out of the way.
 
 ## Features / gameplay
 
