@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const { requireAuth } = require("./auth.middleware");
-const { authLimiter, aiLimiter, createRateLimiter } = require("./rateLimit");
+const { authLimiter, aiLimiter, aiUserLimiter, userLimiter, createRateLimiter } = require("./rateLimit");
 
 function sanitizePrefix(prefix) {
 	return prefix.replace(/\/+$/, "");
@@ -74,11 +74,12 @@ function registerGatewayRoutes(app) {
 			target: process.env.AI_SERVICE_URL || "http://ai-service:8000",
 			protected: true,
 			limiter: aiLimiter,
+			userLimiter: aiUserLimiter,
 			timeoutMs: 120000
 		}
 	];
 
-	serviceConfig.forEach(({ prefix, target, protected: needsAuth, limiter, timeoutMs }) => {
+	serviceConfig.forEach(({ prefix, target, protected: needsAuth, limiter, userLimiter: userLimiterForRoute, timeoutMs }) => {
 		const middleware = [];
 
 		if (limiter) {
@@ -89,6 +90,9 @@ function registerGatewayRoutes(app) {
 
 		if (needsAuth) {
 			middleware.push(requireAuth);
+			// Per-user limiting only makes sense once req.user exists, so this
+			// must come after requireAuth, never before it.
+			middleware.push(userLimiterForRoute || userLimiter);
 		}
 
 		middleware.push(createServiceProxy(target, prefix, timeoutMs));

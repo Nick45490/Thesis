@@ -282,5 +282,18 @@ audit (2026-08-17).
   major-version bump, not attempted without dedicated testing.
 - `INTERNAL_SERVICE_SECRET`/`JWT_SECRET` have no rotation story — fine for a
   personal project, but worth knowing if this ever goes further.
-- Rate limiting is IP-based only — no additional per-user limiting on
-  authenticated routes.
+- ~~Rate limiting is IP-based only — no additional per-user limiting on
+  authenticated routes~~ — done (2026-09-13): added a second limiter keyed
+  by the authenticated user's id (`gateway/src/rateLimit.js`'s
+  `userKeyGenerator`/`createUserRateLimiter`), applied after `requireAuth`
+  on `/collection`, `/gamification`, and `/recognize` (its own tighter
+  `aiUserLimiter`, reusing `AI_RATE_LIMIT_MAX`) — on top of the existing
+  IP-based one, not instead of it, so a request must pass both. Closes two
+  real gaps the IP-only version left: a single user rotating IPs could
+  otherwise dodge their limit entirely, and several legitimate users behind
+  one shared IP/NAT would otherwise share one bucket regardless of who's
+  actually making the requests. Verified live against the real running
+  stack, not just unit tests: registered two real users, confirmed each
+  gets an independent `RateLimit-Remaining` count that decrements per
+  request (999 -> 995 for user 1 across 4 requests) while a second user's
+  first request starts fresh at 999 rather than continuing user 1's count.
