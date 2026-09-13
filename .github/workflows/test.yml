@@ -52,30 +52,15 @@ jobs:
         working-directory: ai-service
         run: pip install -r requirements-dev.txt
 
-      # TEMPORARY DIAGNOSTIC: the previous two attempts at this job failed
-      # instantly (~1s) with no visible cause — the raw log viewer isn't
-      # reachable without an authenticated GitHub session, so this captures
-      # the real output into the job summary instead, which renders without
-      # auth. Revert to a plain `pytest tests/ -v` once the cause is found.
       - name: Run tests
         working-directory: ai-service
-        run: |
-          set +e
-          python -m pytest tests/ -v --tb=long > pytest_output.txt 2>&1
-          code=$?
-          {
-            echo "### pytest output (exit $code)"
-            echo '```'
-            cat pytest_output.txt
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
-          exit $code
+        run: python -m pytest tests/ -v
 
   smoke-test:
     name: End-to-end smoke test
     runs-on: ubuntu-latest
     needs: [test, ai-service]
-    timeout-minutes: 20
+    timeout-minutes: 25
     services:
       postgres:
         image: postgres:16
@@ -147,6 +132,25 @@ jobs:
       - name: Install ai-service dependencies
         working-directory: ai-service
         run: pip install -r requirements.txt
+
+      # Downloads CLIP + YOLO explicitly, with its own timeout and visible
+      # output, instead of letting it happen silently inside the backgrounded
+      # `uvicorn` process below — a download failure or a slow cold cache
+      # (first run of the "Cache downloaded model weights" key above) would
+      # otherwise just look like ai-service "never became healthy", with the
+      # real cause buried in a log file this step makes unnecessary to read.
+      - name: Pre-download CLIP/YOLO model weights
+        working-directory: ai-service
+        timeout-minutes: 10
+        run: |
+          python -c "
+          from transformers import CLIPModel, CLIPProcessor
+          CLIPProcessor.from_pretrained('openai/clip-vit-large-patch14')
+          CLIPModel.from_pretrained('openai/clip-vit-large-patch14')
+          from ultralytics import YOLO
+          YOLO('yolov8n.pt')
+          print('Model weights ready.')
+          "
 
       - name: Start services and run smoke test
         run: |
