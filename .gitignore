@@ -36,3 +36,4 @@ CLAUDE.md
 .DS_Store
 Thumbs.db
 *.log
+missing_engines.json
